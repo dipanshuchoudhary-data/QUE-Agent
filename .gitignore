@@ -50,6 +50,5 @@ Desktop.ini
 .ai-memory/
 AGENTS.local.md
 
-# Product knowledge packs (repo root only) — keep local / untracked.
-# Do NOT use a bare "knowledge/" pattern: that also ignores app/knowledge/.
-/knowledge/
+# knowledge/ is tracked — required at runtime and in the Docker image.
+# Edit packs in-repo and redeploy to ship updates to users.

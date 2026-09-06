@@ -11,6 +11,8 @@
 - LLM access goes through `app/core/llm.py` (`ChatOpenAI` / LangChain).
 - Identity lives only in `app/identity/` (thin persona). Product knowledge lives in `knowledge/`
   (domain folders + `manifest.json`) and is selected by `app/knowledge/retrieve.py`.
+  **`knowledge/` is committed and copied into the Docker image** — without it, deployed QUE
+  has no product brain. Update packs in git and redeploy to ship better answers.
 - Knowledge rules: answer-oriented guides with click paths, decision trees, SAY/NEVER —
   not tab FAQ dumps or thin template stubs. See `knowledge/README.md`.
 - CORE.md is always injected; up to `max_guides` (3) keyword-matched docs are added per turn

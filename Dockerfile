@@ -32,6 +32,7 @@ ENV PATH="/app/.venv/bin:$PATH" \
 
 COPY --from=deps /app/.venv /app/.venv
 COPY app ./app
+COPY knowledge ./knowledge
 COPY scripts/start.sh ./scripts/start.sh
 RUN chmod +x scripts/start.sh \
     && chown -R que:que /app

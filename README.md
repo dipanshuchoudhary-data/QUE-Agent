@@ -411,14 +411,21 @@ Deploy/CI should prefer `**uv sync --frozen**`.
 
 ## 🚢 Production Deploy
 
+`knowledge/` **must** be in the image (the Dockerfile copies it). A deploy without packs
+will boot, but QUE cannot ground answers in product guides.
+
 ```bash
 docker build -t que-agent:latest .
 docker run --rm -p 8100:8100 --env-file .env que-agent:latest
 ```
 
+**Regular knowledge updates:** edit markdown under `knowledge/` → commit → rebuild/redeploy.
+No separate knowledge service is required for v0.1.
+
 
 | Check      | Requirement                                 |
 | ---------- | ------------------------------------------- |
+| Knowledge  | `knowledge/manifest.json` + packs in image  |
 | Env        | `APP_ENV=production`                        |
 | Secrets    | Strong `QUE_JWT_SECRET` + `QUE_SERVICE_KEY` |
 | CORS       | Exact frontend origins only                 |

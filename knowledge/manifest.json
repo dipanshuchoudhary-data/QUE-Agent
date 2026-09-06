@@ -1,0 +1,349 @@
+{
+  "version": "3.0.0",
+  "phase": "complete",
+  "description": "Answer-oriented QUE knowledge. CORE always injected; guides matched by keywords. No embeddings.",
+  "always": ["core"],
+  "max_guides": 3,
+  "documents": [
+    {
+      "id": "core",
+      "path": "CORE.md",
+      "always": true,
+      "title": "QUE Core Product Knowledge",
+      "keywords": []
+    },
+    {
+      "id": "product-overview",
+      "path": "product/overview.md",
+      "title": "What is Quizzer",
+      "keywords": [
+        "what is quizzer", "what can I do", "who is it for", "what does quizzer do",
+        "overview", "about", "introduction", "platform", "product", "features",
+        "self-study", "teacher", "institution", "audience", "beta", "free",
+        "how does quizzer work"
+      ]
+    },
+    {
+      "id": "terminology",
+      "path": "product/terminology.md",
+      "title": "Quizzer Terminology and Glossary",
+      "keywords": [
+        "what does", "what is the difference", "meaning", "definition", "term",
+        "glossary", "terminology", "confused", "difference between",
+        "exam vs quiz", "monitoring vs analytics", "results vs analytics",
+        "link window vs duration", "live vs monitoring", "arena vs exam",
+        "verification vs grading", "students workspace vs student"
+      ]
+    },
+    {
+      "id": "roles",
+      "path": "product/roles.md",
+      "title": "User Roles and Permissions",
+      "keywords": [
+        "role", "student role", "teacher role", "admin", "permission", "access",
+        "cannot access", "cannot see", "limited", "restricted", "persona",
+        "onboarding", "student account", "what can students see",
+        "why can't I", "only see dashboard"
+      ]
+    },
+    {
+      "id": "navigation",
+      "path": "navigation/navigation.md",
+      "title": "Navigation and UI Map",
+      "keywords": [
+        "where", "sidebar", "tab", "tabs", "menu", "navigate", "open", "find",
+        "monitoring", "results", "settings", "links", "dashboard", "exams",
+        "students", "analytics", "integrations", "create exam", "ui", "screen",
+        "page", "nav", "workspace", "command palette", "search", "help",
+        "help & support", "explore quizzer", "feature tour", "send feedback",
+        "account section", "ask que", "sidebar account"
+      ]
+    },
+    {
+      "id": "creating-exams",
+      "path": "exams/creating-exams.md",
+      "title": "Creating Exams",
+      "keywords": [
+        "create", "make", "build", "new exam", "new quiz", "source", "upload",
+        "file", "pdf", "document", "youtube", "url", "paste", "ai generation",
+        "generate", "source-first", "guided", "custom", "blueprint", "wizard",
+        "draft", "processing", "import", "drive import", "how do I create",
+        "add sources", "generation failed", "generation mode", "daily limit",
+        "quota"
+      ]
+    },
+    {
+      "id": "questions",
+      "path": "exams/questions.md",
+      "title": "Question Types and Review",
+      "keywords": [
+        "question", "questions", "question type", "mcq", "multiple choice",
+        "true false", "short answer", "long answer", "multi-select",
+        "approve", "reject", "draft", "review", "edit", "regenerate",
+        "section", "marks", "correct answer", "bulk approve",
+        "how do I approve", "cannot publish", "question status"
+      ]
+    },
+    {
+      "id": "exam-settings",
+      "path": "exams/exam-settings.md",
+      "title": "Exam Settings",
+      "keywords": [
+        "setting", "settings", "configure", "configuration", "duration",
+        "time limit", "timer", "proctoring", "fullscreen", "tab switch",
+        "copy paste", "webcam", "phone detection", "face monitoring",
+        "violation", "auto submit", "scoring", "negative marking", "penalty",
+        "grading style", "attempts", "retake", "retry", "multiple attempts",
+        "resume", "access code", "shuffle", "randomize",
+        "how do I set", "how do I enable", "how do I allow"
+      ]
+    },
+    {
+      "id": "publishing",
+      "path": "exams/publishing-and-sharing.md",
+      "title": "Publishing and Sharing Exams",
+      "keywords": [
+        "publish", "published", "draft", "approve", "share", "link",
+        "link window", "available", "expired", "deadline", "archive",
+        "archived", "cannot publish", "unpublish", "unarchive",
+        "share by email", "exam link", "student link", "renew",
+        "extend", "republish", "results after unpublish",
+        "how do I publish", "why can't I publish", "link not working"
+      ]
+    },
+    {
+      "id": "taking-exams",
+      "path": "exams/taking-exams.md",
+      "title": "Taking Exams (Student Experience)",
+      "keywords": [
+        "take", "taking", "attempt", "start", "submit", "student experience",
+        "exam interface", "answer", "timer", "countdown", "auto-save",
+        "proctoring", "violation", "fullscreen", "resume", "retake",
+        "multiple attempts", "how do students", "what do students see",
+        "close browser", "time runs out", "auto submit"
+      ]
+    },
+    {
+      "id": "verification",
+      "path": "exams/verification-schema.md",
+      "title": "Verification Schema",
+      "keywords": [
+        "verification", "verification schema", "identity", "identity field",
+        "enrollment", "student name", "roll number", "batch", "schema",
+        "before entering", "before the exam", "workspace default",
+        "preset", "college", "school", "coaching", "minimal"
+      ]
+    },
+    {
+      "id": "grading",
+      "path": "scoring/grading.md",
+      "title": "Scoring and Grading",
+      "keywords": [
+        "score", "scoring", "grade", "grading", "marks", "auto-grade",
+        "how scoring works", "answer grading", "grading style", "grading pipeline",
+        "smart grading", "ai grading", "fuzzy match", "embedding", "keyword",
+        "exact match", "pending professor review", "manual review",
+        "how are answers checked", "negative marking", "violation penalty",
+        "answer key", "frozen", "score calculation", "integrity flag",
+        "balanced", "stem", "writing", "concepts", "key terms"
+      ]
+    },
+    {
+      "id": "results-exports",
+      "path": "scoring/results-and-exports.md",
+      "title": "Results and Exports",
+      "keywords": [
+        "results", "result", "scores", "export", "download", "csv", "excel",
+        "google sheets", "spreadsheet", "where are results", "see scores",
+        "export results", "download results", "integrity flag", "violation",
+        "result status", "graded", "pending review", "score trend",
+        "results after unpublish", "results after archive"
+      ]
+    },
+    {
+      "id": "live-monitoring",
+      "path": "monitoring/live-and-monitoring.md",
+      "title": "LIVE, Monitoring, and Real-Time Tracking",
+      "keywords": [
+        "live", "monitoring", "monitor", "in progress", "in-progress",
+        "heartbeat", "integrity", "violation", "proctor", "webcam",
+        "real-time", "who is taking", "live badge", "live not showing",
+        "tab switch", "fullscreen exit", "phone detection", "face check",
+        "websocket", "auto-submit", "violation limit", "live exams panel"
+      ]
+    },
+    {
+      "id": "analytics",
+      "path": "analytics/analytics.md",
+      "title": "Analytics and Reporting",
+      "keywords": [
+        "analytics", "reports", "statistics", "insights", "trends",
+        "performance", "completion rate", "average score", "score distribution",
+        "charts", "visualization", "aggregate", "portfolio", "date range",
+        "filter", "why is analytics empty", "arena analytics",
+        "analytics vs results", "cross-exam"
+      ]
+    },
+    {
+      "id": "students-workspace",
+      "path": "students/students-workspace.md",
+      "title": "Students Workspace (Teacher View)",
+      "keywords": [
+        "students", "student list", "learner", "roster", "readiness",
+        "support", "coaching", "needs check-in", "strong learner",
+        "cohort", "scope bar", "students empty", "student directory",
+        "student export", "classroom roster", "student performance",
+        "who took my exam", "class roster"
+      ]
+    },
+    {
+      "id": "arena",
+      "path": "arena/arena.md",
+      "title": "Arena — Live Quiz Battles",
+      "keywords": [
+        "arena", "battle", "host", "live quiz", "pack", "competition", "game",
+        "room code", "team mode", "leaderboard", "spectator", "player",
+        "arena scoring", "speed bonus", "streak", "lobby", "room",
+        "arena vs exam", "game history", "scheduled battle",
+        "one word answer", "guess it", "kick", "idle timeout",
+        "arena quiz limits", "arena beta"
+      ]
+    },
+    {
+      "id": "onboarding",
+      "path": "account/onboarding.md",
+      "title": "Onboarding and Signup",
+      "keywords": [
+        "signup", "sign up", "register", "registration", "onboarding",
+        "getting started", "first time", "new account", "create account",
+        "persona", "google sign-in", "microsoft sign-in", "email verification",
+        "four steps", "welcome", "workspace setup"
+      ]
+    },
+    {
+      "id": "account-settings",
+      "path": "account/account-settings.md",
+      "title": "Account Settings",
+      "keywords": [
+        "settings", "account", "profile", "preferences", "theme", "dark mode",
+        "light mode", "density", "motion", "password", "change password",
+        "sign out", "logout", "security", "two-factor", "2fa", "avatar",
+        "timezone", "time format", "default marks", "default duration",
+        "subscription", "tier", "plan", "explorer", "professional", "elite",
+        "upgrade", "deactivate", "delete account"
+      ]
+    },
+    {
+      "id": "feedback",
+      "path": "account/feedback.md",
+      "title": "Send Feedback and Report a Bug",
+      "keywords": [
+        "feedback", "send feedback", "report a bug", "report bug", "bug report",
+        "found a bug", "suggestion", "feature request", "feature idea",
+        "contact support", "support email", "tell the team", "submit feedback",
+        "how to report", "ui issue", "something is broken"
+      ]
+    },
+    {
+      "id": "notifications",
+      "path": "account/notifications.md",
+      "title": "Notifications",
+      "keywords": [
+        "notification", "notifications", "alert", "alerts", "bell", "inbox",
+        "in-app", "email notification", "does quizzer send email",
+        "generation complete", "generation failed", "attempt milestone",
+        "integrity alert", "export ready", "announcement", "reminder",
+        "notification preferences", "turn off notifications"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "path": "dashboard/dashboard.md",
+      "title": "Dashboard",
+      "keywords": [
+        "dashboard", "home", "landing page", "overview", "main page",
+        "live exams panel", "quick actions", "activation checklist",
+        "student dashboard", "teacher dashboard", "getting started",
+        "dashboard empty", "what is on dashboard"
+      ]
+    },
+    {
+      "id": "google-classroom",
+      "path": "integrations/google-classroom.md",
+      "title": "Google Classroom Integration",
+      "keywords": [
+        "classroom", "google classroom", "import courses", "import roster",
+        "sync roster", "push grades", "grade sync", "coursework",
+        "announcement", "classroom assignment", "connect classroom",
+        "disconnect classroom", "class roster", "classroom integration"
+      ]
+    },
+    {
+      "id": "google-calendar",
+      "path": "integrations/google-calendar.md",
+      "title": "Google Calendar Integration",
+      "keywords": [
+        "calendar", "google calendar", "schedule", "schedule exam",
+        "calendar event", "scheduling", "connect calendar",
+        "calendar integration", "exam calendar", "timed exam"
+      ]
+    },
+    {
+      "id": "google-drive",
+      "path": "integrations/google-drive.md",
+      "title": "Google Drive Integration",
+      "keywords": [
+        "drive", "google drive", "import from drive", "google sheets",
+        "sheets export", "drive import", "file picker", "connect drive",
+        "drive integration", "upload from drive"
+      ]
+    },
+    {
+      "id": "common-problems",
+      "path": "troubleshooting/common-problems.md",
+      "title": "Common Problems and Solutions",
+      "keywords": [
+        "problem", "issue", "error", "bug", "not working", "broken",
+        "fix", "help", "troubleshoot", "troubleshooting", "cannot",
+        "failed", "stuck", "wrong", "unexpected", "how to fix",
+        "something went wrong", "why is", "disabled", "missing",
+        "does not work", "slow", "loading", "blank page", "report a bug",
+        "send feedback", "contact support"
+      ]
+    },
+    {
+      "id": "empty-states",
+      "path": "troubleshooting/empty-states.md",
+      "title": "Empty States and What to Do",
+      "keywords": [
+        "empty", "blank", "no data", "no students", "no attempts", "nothing",
+        "why don't", "why doesnt", "not showing", "missing data", "zero",
+        "analytics empty", "no one", "nobody", "filter", "range",
+        "dependency chain", "prerequisites", "why is it empty"
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "path": "workflows/exam-lifecycle.md",
+      "title": "Exam Lifecycle",
+      "keywords": [
+        "lifecycle", "exam states", "draft", "published", "archived",
+        "state transition", "unpublish", "unarchive", "delete exam",
+        "what happens when", "link deactivated", "results preserved",
+        "re-publish", "link window vs lifecycle", "settings after publish"
+      ]
+    },
+    {
+      "id": "common-workflows",
+      "path": "workflows/common-workflows.md",
+      "title": "Common Workflows",
+      "keywords": [
+        "how to", "step by step", "walkthrough", "tutorial", "guide",
+        "recipe", "workflow", "end to end", "first exam", "proctored exam",
+        "export results", "host arena", "schedule exam", "default verification",
+        "monitor students", "pending professor review", "improve exam",
+        "classroom grades", "help me with"
+      ]
+    }
+  ]
+}
