@@ -30,7 +30,7 @@ from app.tools.select import ToolSelection
 
 _TEST_LANE = ChatLane(model="test-model", key_index=0, api_key="test")
 
-MODELS_CSV = "openai/gpt-4o-mini,google/gemma-4-31b-it:free"
+MODELS_CSV = "model-a,model-b"
 _EMPTY_NUMBERED = {f"llm_api_key_{i}": "" for i in range(1, 9)}
 
 
@@ -41,6 +41,7 @@ def _pool(**overrides) -> Settings:
         "llm_api_key": "key-a",
         **_EMPTY_NUMBERED,
         "llm_api_key_1": "key-b",
+        "llm_model": "model-a",
         "llm_models_raw": MODELS_CSV,
         "llm_gateway_rr": True,
         "llm_max_attempts": 3,
@@ -85,7 +86,7 @@ async def test_ainvoke_does_not_retry_401():
         with pytest.raises(LLMError, match="Unauthorized"):
             await ainvoke_chat([HumanMessage(content="hi")], settings=cfg)
 
-    assert seen == [("openai/gpt-4o-mini", 0)]
+    assert seen == [("model-a", 0)]
 
 
 @pytest.mark.asyncio

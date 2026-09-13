@@ -50,7 +50,8 @@
   stays pure liveness. Runbook: `docs/RUNBOOK.md`.
 - LLM access goes through `app/core/llm.py` (`get_chat_model` / `ainvoke_chat` /
   `astream_chat`). Chat round-robins `LLM_MODELS` + `LLM_API_KEY` / `LLM_API_KEY_N`
-  with capped failover. Agent / `multi_step` turns try `openai/gpt-4o-mini` first.
+  with capped failover. Agent / `multi_step` turns try `LLM_MODEL` first
+  when that id is in `LLM_MODELS`. Set both in `.env` — do not hardcode model ids.
   Embeddings stay on the first key. Logs use `model` + `key_index` — never raw keys.
 - Identity lives only in `app/identity/` (thin persona). Product knowledge lives in `knowledge/`
   (domain folders + `manifest.json`). Runtime selection is hybrid RAG when enabled

@@ -267,7 +267,7 @@ Browser never receives the service key.
 - **Not retryable:** 400/401/403/404/422. Retryable: 408/429/5xx/timeouts
 - LLM circuit (`QUE_LLM_CIRCUIT_FAILURES` / `QUE_LLM_CIRCUIT_TTL_SECONDS`); open → `LLMError` → public try-again
 - Records `usage_metadata` (prompt/completion tokens) for Phase 12 cost
-- Agent / `complexity=multi_step` prefers `openai/gpt-4o-mini` first, then the rest of the pool
+- Agent / `complexity=multi_step` prefers `LLM_MODEL` first (when it is in `LLM_MODELS`), then the rest of the pool
 - Logs `model`, `key_index`, `attempt`, `fallback` — never the API key
 - Embeddings (`app/knowledge/embeddings.py`) stay on the first configured key
 
