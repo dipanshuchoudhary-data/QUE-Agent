@@ -45,6 +45,7 @@ def _pool(**overrides) -> Settings:
         "llm_models_raw": MODELS_CSV,
         "llm_gateway_rr": True,
         "llm_max_attempts": 3,
+        "llm_max_attempts_non_agent": 3,
         "llm_retry_base_ms": 0,
         "llm_retry_cap_ms": 0,
         "que_llm_circuit_failures": 5,
@@ -251,7 +252,7 @@ async def test_cache_disabled_falls_through_to_llm(monkeypatch):
         ]
     )
     req = ChatRequest(
-        messages=[{"role": "user", "content": "How do I publish an exam?"}],
+        messages=[{"role": "user", "content": "What's the difference between exam duration and link window?"}],
         conversation_id="cache-off-1",
         user_id="teacher-cache",
     )
