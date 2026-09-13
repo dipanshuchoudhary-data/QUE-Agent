@@ -1,0 +1,16 @@
+{
+  "id": "exam.share",
+  "version": "1.0.0",
+  "domain": "exams",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "prerequisites": ["Exam is Published"],
+  "steps": [
+    "Open the exam, go to the **Links** tab, click **Copy Link**, then send it (paste, **Share by Email**, Classroom, or QR)."
+  ],
+  "resulting_state": "Students use that URL to start the exam (while the link window is active).",
+  "ui": {"page": "exam_workspace", "tab": "Links"},
+  "related": ["exam.publish", "exam.settings"],
+  "student_reply": "Your teacher shares an exam link. Open that link to start — students do not copy links from **Exams**."
+}
