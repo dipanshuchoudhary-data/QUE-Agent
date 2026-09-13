@@ -7,8 +7,9 @@ Injected between the prepare and generate steps of the QUE agent graph.
 
 - Answer-oriented, not engineering-oriented. Written for users, not developers.
 - Decision guides: when user asks X, navigate to the right path and explain.
-- CORE.md is always injected. Up to 3 extra guides match the latest user
-  message via keywords in manifest.json.
+- CORE.md is listed in the manifest but **not retrieved**. Hybrid RAG + workflow
+  cards (`knowledge/intents/*.json`) select domain packs. A tiny CORE skeleton is
+  injected only when retrieval is thin or no-answer.
 - Every claim is verified against the Quizzer codebase. Unverified claims
   are marked as UNKNOWN.
 - Live account numbers still need tools. Guides must not invent them.
@@ -17,7 +18,7 @@ Injected between the prepare and generate steps of the QUE agent graph.
 
 ```
 knowledge/
-  CORE.md                              # Always injected — product map + answer contract
+  CORE.md                              # Product map (not retrieved; skeleton only if RAG is thin)
   manifest.json                        # Retrieval config (keywords, paths, max_guides)
 
   product/
@@ -72,9 +73,14 @@ knowledge/
   workflows/
     exam-lifecycle.md                  # Draft → Published → Archived states and transitions
     common-workflows.md                # Step-by-step recipes for common multi-feature tasks
+
+  intents/
+    exam.publish.json                  # Deterministic how-to cards (no LLM)
+    exam.share.json
+    …
 ```
 
-## Document Count: 27 documents (1 always-injected + 26 keyword-matched)
+## Document Count: 27 documents (CORE listed, not retrieved) + workflow cards in `intents/`
 
 ## Document Standards
 
@@ -134,9 +140,9 @@ uv run python scripts/run_retrieval_eval.py --mode hybrid --latency
 
 **Dense-only:** set `QUE_RAG_HYBRID=false` or omit the BM25 sidecar.
 
-**Keyword (fallback):** CORE.md always injected; `manifest.json` keywords
-select up to `max_guides` guides when the Chroma index is missing or RAG
-is disabled (`QUE_RAG_ENABLED=false`).
+**Keyword (fallback):** CORE skeleton only when retrieval is thin; `manifest.json`
+keywords select up to `max_guides` domain guides when the Chroma index is missing
+or RAG is disabled (`QUE_RAG_ENABLED=false`). CORE.md is not retrieved.
 
 ### Chunking rationale
 
