@@ -59,6 +59,24 @@ def test_extract_usage_from_usage_metadata():
     assert usage.total == 16
 
 
+def test_extract_usage_reasoning_tokens():
+    class _Msg:
+        usage_metadata = {}
+        response_metadata = {
+            "usage": {
+                "prompt_tokens": 100,
+                "completion_tokens": 1400,
+                "completion_tokens_details": {"reasoning_tokens": 1280},
+            }
+        }
+        content = "ok"
+
+    usage = extract_usage(_Msg(), model="nvidia/nemotron-3.5-lightning:free")
+    assert usage.prompt_tokens == 100
+    assert usage.completion_tokens == 1400
+    assert usage.reasoning_tokens == 1280
+
+
 def test_snapshot_includes_percentiles_and_zero_cost_success(monkeypatch):
     reset_obs()
     for ms in (10.0, 20.0, 30.0, 40.0):
@@ -100,7 +118,7 @@ async def test_complete_tiny_token_budget_does_not_call_llm(monkeypatch):
     with patch("app.graphs.nodes.ainvoke_chat", fake):
         response = await complete(
             ChatRequest(
-                messages=[{"role": "user", "content": "How do I publish an exam?"}],
+                messages=[{"role": "user", "content": "What's the difference between exam duration and link window?"}],
                 conversation_id="budget-1",
                 user_id="teacher-1",
             )
@@ -137,7 +155,7 @@ async def test_user_hour_usd_budget_skips_llm():
     ):
         response = await complete(
             ChatRequest(
-                messages=[{"role": "user", "content": "How do I publish an exam?"}],
+                messages=[{"role": "user", "content": "What's the difference between exam duration and link window?"}],
                 conversation_id="budget-2",
                 user_id="teacher-hour",
             ),
