@@ -54,6 +54,7 @@ def record_turn(trace: TurnTrace, *, latency_ms: float, settings: Settings | Non
         "latency_ms": e2e,
         "prompt_tokens": trace.prompt_tokens,
         "completion_tokens": trace.completion_tokens,
+        "reasoning_tokens": trace.reasoning_tokens,
         "cost_usd": trace.cost_usd,
         "error": trace.error,
         "spans": [
@@ -108,11 +109,21 @@ def snapshot(settings: Settings | None = None) -> dict[str, Any]:
     errors = sum(1 for r in rows if r.get("error"))
     by_model: dict[str, int] = {}
     by_route: dict[str, int] = {}
+    ttft_vals: list[float] = []
+    attempt_vals: list[float] = []
     for row in rows:
         model = str(row.get("model") or "unknown")
         route = str(row.get("route") or "unknown")
         by_model[model] = by_model.get(model, 0) + 1
         by_route[route] = by_route.get(route, 0) + 1
+        for span in row.get("spans") or []:
+            name = str(span.get("name") or "")
+            if name == "ttft":
+                ttft_vals.append(float(span.get("ms") or 0))
+            if name == "llm":
+                extra = span.get("extra") or {}
+                if "attempt" in extra:
+                    attempt_vals.append(float(extra.get("attempt") or 0))
     return {
         "n": len(rows),
         "errors": errors,
@@ -121,6 +132,18 @@ def snapshot(settings: Settings | None = None) -> dict[str, Any]:
             "p50": percentile(lat, 50),
             "p95": percentile(lat, 95),
             "p99": percentile(lat, 99),
+        },
+        "ttft_ms": {
+            "p50": percentile(ttft_vals, 50),
+            "p95": percentile(ttft_vals, 95),
+            "p99": percentile(ttft_vals, 99),
+            "n": len(ttft_vals),
+        },
+        "llm_attempts": {
+            "p50": percentile(attempt_vals, 50),
+            "p95": percentile(attempt_vals, 95),
+            "mean": round(sum(attempt_vals) / len(attempt_vals), 3) if attempt_vals else None,
+            "n": len(attempt_vals),
         },
         "spans": {
             name: {
