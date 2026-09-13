@@ -46,6 +46,7 @@ def _pool(**overrides) -> Settings:
         "llm_models_raw": MODELS_CSV,
         "llm_gateway_rr": True,
         "llm_max_attempts": 3,
+        "llm_max_attempts_non_agent": 3,
         "llm_retry_base_ms": 0,
         "llm_retry_cap_ms": 0,
     }
@@ -213,3 +214,23 @@ def test_embeddings_use_first_configured_key():
     assert secret is not None
     value = secret.get_secret_value() if hasattr(secret, "get_secret_value") else str(secret)
     assert value == "embed-key"
+
+
+def test_get_chat_model_disables_reasoning_for_simple(monkeypatch):
+    from app.core.llm import get_chat_model
+
+    seen: dict = {}
+
+    class FakeChat:
+        def __init__(self, **kwargs):
+            seen.update(kwargs)
+            self.model_name = kwargs.get("model")
+            self._que_lane = None
+
+    monkeypatch.setattr("app.core.llm.ChatOpenAI", FakeChat)
+    cfg = _pool()
+    get_chat_model(settings=cfg, execution_class="simple_knowledge")
+    assert seen.get("extra_body") == {"reasoning": {"enabled": False, "effort": "none"}}
+    seen.clear()
+    get_chat_model(settings=cfg, execution_class="tool_required")
+    assert seen.get("extra_body") == {"reasoning": {"enabled": True}}
