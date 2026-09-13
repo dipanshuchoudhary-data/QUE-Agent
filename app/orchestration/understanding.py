@@ -8,7 +8,7 @@ instead of re-parsing the user text.
 from __future__ import annotations
 
 import re
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from typing import Any, Literal
 
 Scope = Literal["in_scope", "out_of_scope", "clarification"]
@@ -26,6 +26,14 @@ Freshness = Literal["static", "slow_changing", "dynamic", "critical"]
 DataNeed = Literal["none", "knowledge", "live_tool"]
 Complexity = Literal["single_step", "multi_step"]
 Route = Literal["refuse", "canned_eligible", "knowledge", "tool", "clarify"]
+ExecutionClass = Literal[
+    "deterministic",
+    "simple_knowledge",
+    "complex_knowledge",
+    "tool_required",
+    "conversational",
+    "out_of_scope",
+]
 
 
 @dataclass(frozen=True)
@@ -38,6 +46,9 @@ class RequestUnderstanding:
     complexity: Complexity
     route: Route
     reasons: tuple[str, ...] = ()
+    execution_class: ExecutionClass = "simple_knowledge"
+    canonical_intent: str | None = None
+    confidence: float = 0.0
 
     def as_log_dict(self) -> dict[str, Any]:
         data = asdict(self)
@@ -187,7 +198,15 @@ _META_PATTERNS: tuple[re.Pattern[str], ...] = tuple(
         r"^(hi|hello|hey|yo|hiya|hola|namaste|sup|howdy)(\s|$)",
         r"^(hi|hello|hey)\s+(there|que)\b",
         r"^(good\s+)?(morning|afternoon|evening|night)\b",
-        r"\bwhat can you (do|help with)\b",
+        r"\bwhat can you (do|help(?: me)?(?: with)?)\b",
+        r"\bwhat do you (do|help(?: with)?)\b",
+        r"\bhow can you help(?: me)?(?: with)?\b",
+        r"\bwhat can que (do|help(?: me)?(?: with)?)\b",
+        r"^can you help(?: me)?(?: with)?(?:\s+(?:in|on|with)\s+(?:quizzer|the\s+app|this\s+app))?[\s?]*$",
+        r"^i(?:'m| am|m)?\s+new(?:\s+here)?(?:\s*[,.]?\s*explain\s+this(?:\s+to\s+me)?)?[\s,.!]*$",
+        r"^explain this(?: to me)?[\s,.!]*$",
+        r"^what is this(?: page)?[\s,.!]*$",
+        r"^(?:help me )?get(?:ting)? started[\s,.!]*$",
         r"\bwho are you\b",
         r"\bwhat is quizzer\b",
         r"^(help|help me)$",
@@ -322,7 +341,70 @@ def is_hard_out_of_scope(text: str) -> bool:
     return any(pat.search(n) for pat in _OUT_OF_SCOPE_PATTERNS)
 
 
+def _is_count_live_ask(n: str) -> bool:
+    return bool(
+        re.search(r"\bhow many\b", n)
+        or re.search(r"\bwho\s+(failed|passed|scored)\b", n)
+        or re.search(r"\bbelow\s+\d+\b", n)
+        or re.search(r"\blive\s+(count|students?|attempts?)\b", n)
+    )
+
+
+def _is_product_howto(n: str) -> bool:
+    return (
+        "how do i" in n
+        or "how to" in n
+        or "how does" in n
+        or "how can i" in n
+        or n.startswith("how ")
+        or "where is" in n
+        or "where do i" in n
+        or n.startswith("help me")
+        or n.startswith("help with")
+    )
+
+
+def _is_troubleshooting_ask(n: str) -> bool:
+    return bool(
+        re.search(r"\bwhy (can'?t|isn'?t|doesn'?t|won'?t)\b", n)
+        or re.search(r"\bwhat happens (when|if|after)\b", n)
+        or re.search(r"\bwhat'?s wrong\b|\bwhat is wrong\b", n)
+        or re.search(r"\bnot (working|showing|appearing)\b", n)
+    )
+
+
+def _with_execution(u: RequestUnderstanding, text: str) -> RequestUnderstanding:
+    """Fill execution_class from route. Canonical intent is attached later."""
+    if u.route == "refuse":
+        cls: ExecutionClass = "out_of_scope"
+    elif u.route == "canned_eligible" or u.intent in {"chitchat", "meta"}:
+        cls = "conversational"
+    elif u.route == "clarify":
+        cls = "conversational"
+    elif u.route == "tool" or u.data_need == "live_tool":
+        cls = "tool_required"
+    elif u.complexity == "multi_step":
+        cls = "complex_knowledge"
+    else:
+        cls = "simple_knowledge"
+    if u.execution_class == cls:
+        return u
+    return replace(u, execution_class=cls)
+
+
 def classify_request(
+    text: str,
+    *,
+    conversation_active: bool = False,
+) -> RequestUnderstanding:
+    """Classify a user ask (usually the *resolved* query)."""
+    return _with_execution(
+        _classify_core(text, conversation_active=conversation_active),
+        text,
+    )
+
+
+def _classify_core(
     text: str,
     *,
     conversation_active: bool = False,
@@ -387,6 +469,11 @@ def classify_request(
 
     for pat in _LIVE_DATA_PATTERNS:
         if pat.search(n):
+            if (
+                _is_product_howto(n) or _is_troubleshooting_ask(n)
+            ) and not _is_count_live_ask(n):
+                reasons.append("live_pattern_as_howto")
+                break
             reasons.append("live_data_pattern")
             return RequestUnderstanding(
                 scope="in_scope",
@@ -400,6 +487,18 @@ def classify_request(
             )
 
     if any(h in n for h in _ANALYTICS_HINTS) and _has_quizzer_hint(n):
+        if _is_troubleshooting_ask(n) and not _is_count_live_ask(n):
+            reasons.append("analytics_troubleshooting_as_knowledge")
+            return RequestUnderstanding(
+                scope="in_scope",
+                intent="knowledge",
+                risk="read",
+                freshness="static",
+                data_need="knowledge",
+                complexity="multi_step",
+                route="knowledge",
+                reasons=tuple(reasons),
+            )
         reasons.append("analytics_hint")
         return RequestUnderstanding(
             scope="in_scope",
@@ -417,9 +516,12 @@ def classify_request(
         "how" in n
         or "where" in n
         or "what" in n
+        or "why" in n
         or "?" in raw
         or n.startswith("help me")
         or n.startswith("help with")
+        or _is_troubleshooting_ask(n)
+        or _is_product_howto(n)
     )
     if action_hit and howto_ask:
         # "How do I publish?" / "Help me publish" is knowledge, not execution.
