@@ -519,6 +519,7 @@ def resolve_request(
     *,
     prior_topic: str | None = None,
     prior_task: str | None = None,
+    previous_intent: str | None = None,
 ) -> ResolvedRequest:
     """Resolve the latest user turn against recent conversation context."""
     users = [m for m in messages if m.role == "user" and (m.content or "").strip()]
@@ -556,12 +557,12 @@ def resolve_request(
         # (e.g. "how to report a bug" after an analytics question).
         if _looks_like_new_topic_ask(raw):
             resolved = raw.strip()
-            topic = _infer_topic(raw) or _infer_topic(resolved) or prior_topic
+            topic = _infer_topic(raw) or _infer_topic(resolved) or prior_topic or previous_intent
             reasons.append("new_topic_override")
         elif _is_conversation_meta(raw):
             # Keep the chat-history question intact — do not rewrite it into a how-to.
             resolved = raw.strip()
-            topic = _infer_topic(anchor or "") or prior_topic
+            topic = _infer_topic(anchor or "") or prior_topic or previous_intent
             reasons.append("conversation_meta")
         else:
             resolved = _compose_resolved(
@@ -574,6 +575,7 @@ def resolve_request(
                 _infer_topic(resolved)
                 or _infer_topic(anchor or "")
                 or prior_topic
+                or previous_intent
             )
         intent = _detect_intent(raw, is_follow_up=True, mode=mode)
         reasons.append("resolved_against_prior")
@@ -591,7 +593,7 @@ def resolve_request(
         )
 
     # Standalone turn — may still set response mode from phrasing.
-    topic = _infer_topic(raw) or prior_topic
+    topic = _infer_topic(raw) or prior_topic or previous_intent
     intent = _detect_intent(raw, is_follow_up=False, mode=mode)
     if mode != "normal":
         reasons.append(f"mode:{mode}")
@@ -611,68 +613,32 @@ def resolve_request(
 
 
 def build_turn_instruction(resolution: ResolvedRequest) -> str:
-    """Per-turn generation guidance (keeps identity prompt short)."""
+    """Compact structured turn state for the generator (one copy only)."""
     lines = [
-        "This turn's resolved user request (answer THIS, not only the raw short follow-up):",
-        f"- Resolved ask: {resolution.resolved_query}",
-        f"- Response mode: {resolution.response_mode}",
-        f"- Intent: {resolution.intent}",
+        "TURN_STATE (answer THIS ask):",
+        f"resolved_ask: {resolution.resolved_query}",
+        f"intent: {resolution.intent}",
+        f"response_mode: {resolution.response_mode}",
+        f"follow_up: {str(resolution.is_follow_up).lower()}",
     ]
-    if resolution.is_follow_up:
-        if "new_topic_override" in resolution.reasons:
-            lines.append(
-                "- The user switched to a new Quizzer question. Answer the resolved ask; "
-                "do not keep explaining the previous topic unless they ask."
-            )
-        else:
-            lines.append(
-                "- This is a follow-up. Continue the prior Quizzer topic; do not restart or refuse."
-            )
     if resolution.topic:
-        lines.append(f"- Topic: {resolution.topic}")
+        lines.append(f"topic: {resolution.topic}")
+    if "new_topic_override" in resolution.reasons:
+        lines.append("note: user switched topics — answer the new ask")
     if _is_conversation_meta(resolution.raw_message):
-        lines.append(
-            "- The user is asking about THIS chat (first question, which exam, what we were "
-            "talking about). Answer from the messages above. Do not refuse and do not say "
-            "you only help with Quizzer."
-        )
+        lines.append("note: answer from this chat's messages (conversation meta)")
 
     mode = resolution.response_mode
     if mode == "step_by_step":
-        lines.extend(
-            [
-                "Format: numbered steps as 1. 2. 3. Wrap button/tab names in **bold**.",
-                "Each step: short title then one or two sentences of how-to from product knowledge.",
-                "Include click paths / UI labels when the packs provide them.",
-                "Do not invent screens or settings. Prefer 4–8 useful steps over a vague overview.",
-            ]
-        )
+        lines.append("format: numbered steps 1. 2. 3.; bold UI labels")
     elif mode == "example":
-        lines.append(
-            "Give one concrete Quizzer-style example grounded in the knowledge packs."
-        )
+        lines.append("format: one concrete Quizzer example")
     elif mode == "brief":
-        lines.extend(
-            [
-                "Use short everyday words; avoid jargon.",
-                "Keep the answer short: 2–5 short sentences.",
-                "If the prior ask was step-by-step, keep a few plain steps but simpler wording.",
-            ]
-        )
+        lines.append("format: 2–5 short plain sentences")
     elif mode == "detailed":
-        lines.append(
-            "Provide a fuller explanation than a quick tip. Bold key UI labels with **name**."
-        )
+        lines.append("format: fuller how-to; bold key UI labels")
     elif mode == "comparison":
-        lines.append("Compare clearly; bold key product terms with **name**.")
+        lines.append("format: clear comparison; bold product terms")
     elif mode == "troubleshooting":
-        lines.append("Lead with likely cause, then what to check in the UI.")
-    else:
-        lines.append(
-            "Be useful and specific. Prefer a clear how-to over a one-line tip when the user asked for help."
-        )
-
-    lines.append(
-        "If knowledge packs lack a detail, say you are not sure — do not invent Quizzer features."
-    )
+        lines.append("format: likely cause first, then UI checks")
     return "\n".join(lines)
