@@ -9,14 +9,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from app.core.config import Settings, get_settings
-from app.knowledge.assemble import (
-    AssembledKnowledge,
-    assemble_selection,
-    load_core_text,
-    preamble,
-    truncate_text,
-)
-from app.knowledge.embeddings import EmbeddingsClient, get_embeddings
+from app.knowledge.assemble import AssembledKnowledge, assemble_selection
+from app.knowledge.embeddings import EmbeddingsClient
 from app.knowledge.sparse import query_bm25, sparse_ready
 from app.knowledge.store import RetrievedChunk, index_ready, query_chunks
 
@@ -31,6 +25,46 @@ class HybridSelection:
     no_answer: bool = False
     hits: list[RetrievedChunk] = field(default_factory=list)
     mode: str = "hybrid"
+
+
+def unique_by_doc_id(hits: list[RetrievedChunk]) -> list[RetrievedChunk]:
+    """Keep the first (highest-ranked) chunk per document."""
+    seen: set[str] = set()
+    out: list[RetrievedChunk] = []
+    for hit in hits:
+        doc = hit.doc_id or hit.chunk_id
+        if not doc or doc in seen or doc == "core":
+            continue
+        seen.add(doc)
+        out.append(hit)
+    return out
+
+
+def prefer_canonical_intent(
+    hits: list[RetrievedChunk],
+    canonical_intent: str | None,
+) -> list[RetrievedChunk]:
+    intent = (canonical_intent or "").strip()
+    if not intent or not hits:
+        return hits
+    matched: list[RetrievedChunk] = []
+    rest: list[RetrievedChunk] = []
+    for hit in hits:
+        intents = {p.strip() for p in (hit.intents or "").split(",") if p.strip()}
+        if intent in intents:
+            matched.append(hit)
+        else:
+            rest.append(hit)
+    return matched + rest if matched else hits
+
+
+def top_k_for_execution(execution_class: str | None, default_k: int) -> int:
+    exec_l = (execution_class or "").strip()
+    if exec_l == "simple_knowledge":
+        return 1
+    if exec_l == "complex_knowledge":
+        return max(default_k, 2)
+    return max(1, default_k)
 
 
 def reciprocal_rank_fusion(
@@ -65,6 +99,8 @@ def reciprocal_rank_fusion(
                 text=base.text,
                 score=float(rrf_score),
                 corpus_version=base.corpus_version,
+                domain=base.domain,
+                intents=base.intents,
             )
         )
     return out
@@ -88,31 +124,34 @@ def select_hybrid(
     *,
     settings: Settings | None = None,
     embeddings: EmbeddingsClient | None = None,
+    query_vector: list[float] | None = None,
+    canonical_intent: str | None = None,
+    execution_class: str | None = None,
 ) -> HybridSelection | None:
-    """Dense + BM25 → RRF → top-K. Returns None if dense index unavailable."""
+    """Dense + BM25 → RRF → unique-doc top-K. Returns None if dense index unavailable."""
     cfg = settings or get_settings()
     if not cfg.que_rag_enabled or not index_ready(cfg):
         return None
 
     q = (query or "").strip()
     if not q:
-        core_id, core_body = load_core_text()
-        core_body, _ = truncate_text(core_body, 8_500)
-        parts = [preamble(no_answer=False)]
-        pack_ids: list[str] = []
-        if core_body:
-            parts.append(f"### QUE Core Product Knowledge\n{core_body}")
-            pack_ids.append(core_id)
-        return HybridSelection(pack_ids=pack_ids, content="\n\n".join(parts).strip(), mode="hybrid")
+        asm = assemble_selection([], no_answer=True)
+        return _from_assembled(asm, mode="hybrid")
 
-    candidate_k = max(int(cfg.que_rag_candidate_k), int(cfg.que_rag_top_k))
-    emb = embeddings or get_embeddings(settings=cfg)
-    vector = emb.embed_query(q)
+    take = top_k_for_execution(execution_class, int(cfg.que_rag_top_k))
+    candidate_k = max(int(cfg.que_rag_candidate_k), take)
+    if query_vector is not None:
+        vector = query_vector
+    else:
+        from app.knowledge.query_embed import embed_query_cached
+
+        vector = embed_query_cached(q, settings=cfg, embeddings=embeddings)
     dense_hits = query_chunks(vector, top_k=candidate_k, settings=cfg)
 
     sparse_hits: list[RetrievedChunk] = []
     if sparse_ready(cfg):
         sparse_hits = query_bm25(q, top_k=candidate_k, settings=cfg)
+        sparse_hits = [h for h in sparse_hits if h.doc_id != "core"]
 
     if sparse_hits:
         fused = reciprocal_rank_fusion(
@@ -124,7 +163,9 @@ def select_hybrid(
         fused = dense_hits
         mode = "dense"
 
-    top = fused[: int(cfg.que_rag_top_k)]
+    fused = prefer_canonical_intent(fused, canonical_intent)
+    fused = unique_by_doc_id(fused)
+    top = fused[:take]
 
     # Honest no-answer stays dense-gated: BM25 alone must not invent product
     # packs for out-of-domain asks (e.g. weather). Sparse still enriches recall

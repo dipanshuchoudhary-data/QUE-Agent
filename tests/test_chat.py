@@ -50,7 +50,7 @@ def test_stream_knowledge_needs_llm_key(client, service_key):
     response = client.post(
         "/v1/chat/stream",
         headers={"X-Que-Service-Key": service_key},
-        json={"messages": [{"role": "user", "content": "How do I publish a quiz?"}]},
+        json={"messages": [{"role": "user", "content": "What's the difference between exam duration and link window?"}]},
     )
     assert response.status_code == 200
     assert "llm_not_configured" in response.text

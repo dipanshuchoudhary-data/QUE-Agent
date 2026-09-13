@@ -1,0 +1,15 @@
+{
+  "id": "results.export",
+  "version": "1.0.0",
+  "domain": "results",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "steps": [
+    "Open the exam **Results** tab and choose **CSV**, **Excel**, or **Google Sheets**."
+  ],
+  "resulting_state": "Same as exporting from **Results**. Scores stay after archive.",
+  "ui": {"page": "exam_results"},
+  "related": ["exam.export_results"],
+  "student_reply": "Teachers export class results. You see your score in the attempt summary after grading."
+}

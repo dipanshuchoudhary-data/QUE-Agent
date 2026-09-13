@@ -13,13 +13,19 @@ from app.core.llm import LLMError, ainvoke_chat, last_llm_usage
 from app.graphs.memory import append_assistant, max_dialog_turns, merge_dialog_with_incoming
 from app.graphs.state import QueGraphState
 from app.guardrails.output import apply_output_guardrail, grounding_from_messages
-from app.identity import IDENTITY_VERSION, build_system_prompt
+from app.identity import (
+    IDENTITY_VERSION,
+    build_system_prompt,
+    pieces_for_prepare,
+    pieces_from_messages,
+)
 from app.knowledge import select_knowledge
 from app.obs.budget import CAPACITY_REPLY, allow_llm_call, note_llm_usage
 from app.obs.context import add_span, current_trace
 from app.obs.cost import usd_for_usage
 from app.orchestration.history import sanitize_history
-from app.orchestration.resolve import ResolvedRequest, build_turn_instruction, resolve_request
+from app.orchestration.prompt_pack import compose_leading_systems
+from app.orchestration.resolve import ResolvedRequest, resolve_request
 from app.orchestration.ui_context import format_ui_context_system_message
 from app.orchestration.understanding import OUT_OF_SCOPE_REFUSAL
 from app.schemas.chat import ChatMessage
@@ -68,8 +74,11 @@ def _resolution_from_state(state: QueGraphState, incoming: list[ChatMessage]) ->
         )
     return resolve_request(
         incoming,
-        prior_topic=state.get("topic"),
+        prior_topic=state.get("topic")
+        or state.get("previous_intent")
+        or state.get("canonical_intent"),
         prior_task=state.get("current_task"),
+        previous_intent=state.get("previous_intent") or state.get("canonical_intent"),
     )
 
 
@@ -88,30 +97,41 @@ def prepare_node(state: QueGraphState) -> dict:
     resolution = _resolution_from_state(state, resolve_msgs)
 
     history = sanitize_history(_dialog_to_schema(dialog)) if dialog else sanitize_history(incoming)
-    system = ChatMessage(role="system", content=build_system_prompt())
-    turn = build_turn_instruction(resolution)
+    # Standalone asks: keep a tighter recent window (follow-ups need more).
+    if not resolution.is_follow_up:
+        history = sanitize_history(history, max_messages=3, max_chars=1_500)
+    else:
+        history = sanitize_history(history, max_messages=6, max_chars=3_000)
 
-    prompt: list[BaseMessage] = [
-        SystemMessage(content=system.content),
-        SystemMessage(content=turn),
-    ]
-    for message in history:
+    route = (state.get("understanding_route") or "").strip() or None
+    pieces = pieces_for_prepare(
+        intent=resolution.intent,
+        route=route,
+        response_mode=resolution.response_mode,
+    )
+    leading = compose_leading_systems(
+        resolution=resolution,
+        execution_class=state.get("execution_class"),
+        route=route,
+        pieces=pieces,
+    )
+
+    resolved = (resolution.resolved_query or "").strip()
+    raw = (resolution.raw_message or "").strip()
+    prompt: list[BaseMessage] = list(leading)
+    for index, message in enumerate(history):
+        # Drop a duplicate of the latest ask when older turns remain.
+        if (
+            index == len(history) - 1
+            and message.role == "user"
+            and message.content.strip() in {resolved, raw}
+            and any(m.role == "user" for m in history[:-1])
+        ):
+            continue
         if message.role == "user":
             prompt.append(HumanMessage(content=message.content))
         else:
             prompt.append(AIMessage(content=message.content))
-
-    # Ensure the model sees the resolved ask even if the last user turn is short.
-    if resolution.is_follow_up and resolution.resolved_query.strip():
-        last = prompt[-1] if prompt else None
-        if not (isinstance(last, HumanMessage) and last.content == resolution.resolved_query):
-            prompt.append(
-                HumanMessage(
-                    content=(
-                        f"(Resolved follow-up for this turn: {resolution.resolved_query})"
-                    )
-                )
-            )
 
     sources = list(state.get("sources_used") or [])
     if "identity" not in sources:
@@ -151,9 +171,10 @@ def context_node(state: QueGraphState) -> dict:
     """Inject structured Quizzer UI context as a labeled system message.
 
     Phase 3: page/entity/role are never concatenated into the user message.
-    Missing context is a no-op (backward compatible).
+    Missing context is a no-op (backward compatible). Meta/chitchat skips UI.
     """
     from app.orchestration.runtime_mode import decide_runtime_mode_from_state
+    from app.orchestration.ui_context import format_ui_context_system_message, ui_context_needed
 
     raw = state.get("ui_context")
     messages = list(state.get("messages") or [])
@@ -162,7 +183,13 @@ def context_node(state: QueGraphState) -> dict:
 
     if isinstance(raw, dict) and raw:
         ui = {k: v for k, v in raw.items() if v is not None and v != ""}
-        if ui:
+        if ui and ui_context_needed(
+            ui,
+            route=state.get("understanding_route"),
+            intent=state.get("intent"),
+            query=state.get("resolved_query") or state.get("raw_user_message"),
+            execution_class=state.get("execution_class"),
+        ):
             messages = _insert_after_leading_systems(
                 messages,
                 SystemMessage(content=format_ui_context_system_message(ui)),
@@ -326,13 +353,51 @@ def apply_agent_loop_result(state: QueGraphState, result: object) -> dict:
     }
 
 
+# Short stub when meta/capabilities somehow reach knowledge without canned.
+_CAPABILITIES_STUB = (
+    "PRIVATE REFERENCE — capabilities only. QUE explains Quizzer how-tos; "
+    "cannot change settings or invent live numbers. 2–4 short sentences; **bold** UI labels."
+)
+
+
+def _skip_full_knowledge(state: QueGraphState) -> bool:
+    """Meta/chitchat must not pay CORE + RAG cost."""
+    intent = (state.get("intent") or "").strip()
+    route = (state.get("understanding_route") or "").strip()
+    if intent in {"chitchat", "meta"}:
+        return True
+    if route == "canned_eligible":
+        return True
+    if (state.get("execution_class") or "").strip() == "deterministic":
+        return True
+    return False
+
+
 def knowledge_node(state: QueGraphState) -> dict:
     """Inject selected product-knowledge packs after identity, before generate.
 
     Phase 2: ``select_knowledge`` prefers dense Chroma hits when an index exists;
     otherwise keyword packs. Mode / no-answer are recorded in ``sources_used``.
+    Meta/capabilities turns inject a tiny stub instead of CORE+RAG.
     """
     from app.orchestration.cache_policy import allow_retrieval_from_fields
+
+    messages = list(state.get("messages") or [])
+    sources = list(state.get("sources_used") or [])
+
+    if _skip_full_knowledge(state):
+        messages = _insert_after_leading_systems(
+            messages,
+            SystemMessage(content=_CAPABILITIES_STUB),
+        )
+        if "knowledge_stub:capabilities" not in sources:
+            sources.append("knowledge_stub:capabilities")
+        return {
+            "messages": messages,
+            "sources_used": sources,
+            "knowledge_packs": [],
+            "retrieval_query": state.get("retrieval_query"),
+        }
 
     retrieval_query = (state.get("retrieval_query") or state.get("resolved_query") or "").strip()
     selection = select_knowledge(
@@ -343,8 +408,9 @@ def knowledge_node(state: QueGraphState) -> dict:
             route=state.get("understanding_route"),
             data_need=state.get("data_need"),
         ),
+        canonical_intent=state.get("canonical_intent"),
+        execution_class=state.get("execution_class"),
     )
-    messages = list(state.get("messages") or [])
     if selection.content.strip():
         # Place knowledge after identity / turn / UI-context system messages.
         messages = _insert_after_leading_systems(
@@ -352,7 +418,6 @@ def knowledge_node(state: QueGraphState) -> dict:
             SystemMessage(content=selection.content),
         )
 
-    sources = list(state.get("sources_used") or [])
     if selection.pack_ids and "knowledge" not in sources:
         sources.append("knowledge")
     mode_tag = f"knowledge_mode:{selection.mode}"
@@ -407,9 +472,23 @@ def _apply_output_guard_to_state(state: QueGraphState, content: str) -> tuple[st
     return safe, "guardrail:output"
 
 
+def _refresh_identity_pieces(state: QueGraphState, messages: list[BaseMessage]) -> list[BaseMessage]:
+    """Rebuild the first system message with pieces that actually apply this turn."""
+    pieces = pieces_for_prepare(
+        intent=state.get("intent"),
+        route=state.get("understanding_route"),
+        response_mode=state.get("response_mode"),
+    )
+    pieces |= pieces_from_messages(messages)
+    identity = build_system_prompt(pieces)
+    if messages and isinstance(messages[0], SystemMessage):
+        return [SystemMessage(content=identity), *messages[1:]]
+    return [SystemMessage(content=identity), *messages]
+
+
 async def generate_node(state: QueGraphState) -> dict:
     """Call the chat model with the prepared message list; append reply to dialog."""
-    messages = state.get("messages") or []
+    messages = _refresh_identity_pieces(state, list(state.get("messages") or []))
     if not messages:
         raise LLMError("No messages prepared for generation")
 
@@ -440,21 +519,53 @@ async def generate_node(state: QueGraphState) -> dict:
             }
 
     t_llm = time.perf_counter()
+    input_chars = sum(
+        len(m.content if isinstance(m.content, str) else str(m.content or ""))
+        for m in messages
+    )
     try:
         response, lane = await ainvoke_chat(
             messages,
             complexity=state.get("understanding_complexity"),
             runtime_mode=state.get("runtime_mode"),
+            intent=state.get("intent"),
+            execution_class=state.get("execution_class"),
         )
     except LLMError:
-        add_span("llm", (time.perf_counter() - t_llm) * 1000.0, ok=False)
+        add_span(
+            "llm",
+            (time.perf_counter() - t_llm) * 1000.0,
+            ok=False,
+            extra={
+                "route": state.get("understanding_route"),
+                "runtime_mode": state.get("runtime_mode"),
+                "input_chars": input_chars,
+                "knowledge_used": bool(state.get("knowledge_packs")),
+                "ui_injected": "ui_context" in (state.get("sources_used") or []),
+            },
+        )
         raise
     except Exception as exc:  # noqa: BLE001 — normalize provider errors
         add_span("llm", (time.perf_counter() - t_llm) * 1000.0, ok=False)
         raise LLMError(str(exc)) from exc
 
     llm_ms = (time.perf_counter() - t_llm) * 1000.0
-    add_span("llm", llm_ms, extra={"model": lane.model, "key_index": lane.key_index})
+    add_span(
+        "llm",
+        llm_ms,
+            extra={
+                "model": lane.model,
+                "key_index": lane.key_index,
+                "route": state.get("understanding_route"),
+                "execution_class": state.get("execution_class"),
+                "canonical_intent": state.get("canonical_intent"),
+                "runtime_mode": state.get("runtime_mode"),
+                "input_chars": input_chars,
+                "knowledge_used": bool(state.get("knowledge_packs")),
+                "ui_injected": "ui_context" in (state.get("sources_used") or []),
+                "fallback": lane.key_index > 0 or ":free" in lane.model.casefold(),
+            },
+    )
     usage = last_llm_usage()
     usd = usd_for_usage(usage)
     if request_id:
@@ -470,6 +581,7 @@ async def generate_node(state: QueGraphState) -> dict:
         if usage.total:
             trace.prompt_tokens = usage.prompt_tokens
             trace.completion_tokens = usage.completion_tokens
+            trace.reasoning_tokens = usage.reasoning_tokens
             if usd is not None:
                 trace.cost_usd = usd
             elif ":free" in lane.model.casefold():

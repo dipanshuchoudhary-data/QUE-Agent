@@ -5,13 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from app.core.config import Settings, get_settings
-from app.knowledge.assemble import (
-    AssembledKnowledge,
-    assemble_selection,
-    load_core_text,
-    preamble,
-    truncate_text,
-)
+from app.knowledge.assemble import AssembledKnowledge, assemble_selection
 from app.knowledge.embeddings import EmbeddingsClient, get_embeddings
 from app.knowledge.store import RetrievedChunk, index_ready, query_chunks
 
@@ -44,6 +38,8 @@ def select_dense(
     *,
     settings: Settings | None = None,
     embeddings: EmbeddingsClient | None = None,
+    canonical_intent: str | None = None,
+    execution_class: str | None = None,
 ) -> DenseSelection | None:
     """Retrieve top-K chunks. Returns None if the index is unavailable."""
     cfg = settings or get_settings()
@@ -52,20 +48,19 @@ def select_dense(
 
     q = (query or "").strip()
     if not q:
-        # Empty query → CORE only, not a failed retrieval.
-        core_id, core_body = load_core_text()
-        core_body, _ = truncate_text(core_body, 8_500)
-        parts = [preamble(no_answer=False)]
-        pack_ids: list[str] = []
-        if core_body:
-            parts.append(f"### QUE Core Product Knowledge\n{core_body}")
-            pack_ids.append(core_id)
-        return DenseSelection(pack_ids=pack_ids, content="\n\n".join(parts).strip())
+        asm = assemble_selection([], no_answer=True)
+        return _from_assembled(asm)
 
     emb = embeddings or get_embeddings(settings=cfg)
-    vector = emb.embed_query(q)
-    hits = query_chunks(vector, top_k=cfg.que_rag_top_k, settings=cfg)
-    kept = [h for h in hits if h.score >= cfg.que_rag_min_score]
+    from app.knowledge.hybrid import prefer_canonical_intent, top_k_for_execution, unique_by_doc_id
+    from app.knowledge.query_embed import embed_query_cached
+
+    take = top_k_for_execution(execution_class, int(cfg.que_rag_top_k))
+    vector = embed_query_cached(q, settings=cfg, embeddings=emb)
+    hits = query_chunks(vector, top_k=max(take * 3, int(cfg.que_rag_top_k)), settings=cfg)
+    hits = prefer_canonical_intent(hits, canonical_intent)
+    hits = unique_by_doc_id(hits)
+    kept = [h for h in hits if h.score >= cfg.que_rag_min_score][:take]
     no_answer = not kept
     asm = assemble_selection(kept if kept else hits, no_answer=no_answer, score_label="score")
     return _from_assembled(asm)

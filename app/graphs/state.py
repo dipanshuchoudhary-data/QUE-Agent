@@ -49,14 +49,21 @@ class QueGraphState(TypedDict):
     response_mode: NotRequired[str | None]
     retrieval_query: NotRequired[str | None]
 
-    # --- Phase 3 UI context (structured; not free-text) ---
-    ui_context: NotRequired[dict[str, Any] | None]
+    # --- Compact conversational state (Wave 3) ---
+    active_topic: NotRequired[str | None]
+    previous_intent: NotRequired[str | None]
+    active_entity: NotRequired[str | None]
+    unresolved_question: NotRequired[str | None]
+    pending_action: NotRequired[str | None]
 
     # --- Phase 4 tools ---
     understanding_route: NotRequired[str | None]
     data_need: NotRequired[str | None]
     understanding_complexity: NotRequired[str | None]
     understanding_freshness: NotRequired[str | None]
+    execution_class: NotRequired[str | None]
+    canonical_intent: NotRequired[str | None]
+    understanding_confidence: NotRequired[float | None]
     runtime_mode: NotRequired[str | None]
     runtime_mode_reason: NotRequired[str | None]
     agent_steps: NotRequired[int]

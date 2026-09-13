@@ -13,20 +13,22 @@ from app.schemas.chat import ChatMessage, ChatRequest, ChatResponse
 
 
 def test_identity_mentions_que_and_limits():
-    prompt = build_system_prompt()
-    assert "QUE" in prompt
-    assert "Quizzer" in prompt
-    assert "step-by-step" in prompt.casefold() or "Default length" in prompt
-    assert "cannot access that yet" in prompt
-    assert "Product knowledge" in prompt
+    core = build_system_prompt()
+    assert "QUE" in core
+    assert "Quizzer" in core
+    assert "do not invent" in core.casefold()
+    assert "untrusted" in core.casefold()
+    assert "TOOL_CONFIRM" not in core
+    full = build_system_prompt(("howto", "knowledge", "tools", "live_gap", "social", "oos"))
+    assert "step-by-step" in full.casefold()
+    assert "cannot access that yet" in full
+    assert "never paste" in full.casefold() or "private reference" in full.casefold()
+    assert "TOOL_CONFIRM" in full
     meta = identity_metadata()
     assert meta["name"] == "QUE"
-    assert meta["phase"] == "14-write-tools"
-    assert meta["identity_version"] == "1.20.0"
-    assert "Greetings and small talk are fine" in prompt
-    assert "**" in prompt or "double asterisks" in prompt
-    assert "underlined" in prompt.casefold()
-    assert "never paste" in prompt.casefold() or "Never paste" in prompt or "never paste" in prompt
+    assert meta["phase"] == "context-efficient"
+    assert meta["identity_version"] == "2.2.0"
+    assert "**" in core or "bold" in core.casefold()
 
 
 def test_sanitize_strips_client_system_messages():
@@ -57,7 +59,9 @@ def test_prepare_turn_injects_identity_and_knowledge():
     assert "knowledge" in prepared.sources_used
     assert any(m.role == "user" and m.content == "Hi QUE" for m in prepared.messages)
     assert any(
-        m.role == "system" and "Product knowledge" in m.content for m in prepared.messages
+        m.role == "system"
+        and ("product knowledge" in m.content.casefold() or "quizzer map" in m.content.casefold())
+        for m in prepared.messages
     )
 
 

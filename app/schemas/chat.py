@@ -36,6 +36,7 @@ class QueUiContext(BaseModel):
 
     current_page: str = Field(default="unknown", max_length=64)
     current_exam_id: str | None = Field(default=None, max_length=64)
+    current_exam_title: str | None = Field(default=None, max_length=200)
     current_entity_type: str | None = Field(default=None, max_length=64)
     current_entity_id: str | None = Field(default=None, max_length=128)
     user_role: str | None = Field(
@@ -49,6 +50,7 @@ class QueUiContext(BaseModel):
     @field_validator(
         "current_page",
         "current_exam_id",
+        "current_exam_title",
         "current_entity_type",
         "current_entity_id",
         "user_role",

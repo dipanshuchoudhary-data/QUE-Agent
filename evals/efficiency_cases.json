@@ -1,0 +1,243 @@
+{
+  "version": "1.0.0",
+  "description": "Routed-efficiency cases. Offline harness measures prompt size / LLM-would-run without calling a model.",
+  "prompt_char_cap_simple": 2500,
+  "cases": [
+    {
+      "id": "pub-01",
+      "query": "How do I publish an exam?",
+      "bucket": "exact",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "pub-02",
+      "query": "How do I publish a draft exam?",
+      "bucket": "exact",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "pub-03",
+      "query": "how to published the draft exam",
+      "bucket": "grammar",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "pub-04",
+      "query": "How do I make my exam live?",
+      "bucket": "paraphrase",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "pub-05",
+      "query": "How do I release my test?",
+      "bucket": "paraphrase",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "pub-06",
+      "query": "How can students access this?",
+      "bucket": "paraphrase",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "pub-07",
+      "query": "how make exam live",
+      "bucket": "grammar",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "pub-08",
+      "query": "exam publish how",
+      "bucket": "grammar",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "pub-09",
+      "query": "How do I publish this?",
+      "bucket": "deictic",
+      "expected_canonical_intent": "exam.publish",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false,
+      "ui": {"current_page": "exam_workspace", "current_exam_title": "Midterm"}
+    },
+    {
+      "id": "share-01",
+      "query": "How do I share an exam?",
+      "bucket": "exact",
+      "expected_canonical_intent": "exam.share",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "arch-01",
+      "query": "How do I archive an exam?",
+      "bucket": "exact",
+      "expected_canonical_intent": "exam.archive",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "set-01",
+      "query": "Where are exam settings?",
+      "bucket": "exact",
+      "expected_canonical_intent": "exam.settings",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "set-02",
+      "query": "How do I change exam duration?",
+      "bucket": "exact",
+      "expected_canonical_intent": "exam.settings",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "exp-01",
+      "query": "How do I export results?",
+      "bucket": "exact",
+      "expected_canonical_intent": "exam.export_results",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "appr-01",
+      "query": "How do I approve questions?",
+      "bucket": "exact",
+      "expected_canonical_intent": "exam.approve_questions",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "stu-01",
+      "query": "Where can I see students?",
+      "bucket": "exact",
+      "expected_canonical_intent": "student.view",
+      "expected_execution_class": "deterministic",
+      "expect_llm": false
+    },
+    {
+      "id": "nav-01",
+      "query": "What is negative marking on this exam?",
+      "bucket": "deictic",
+      "expected_execution_class": "simple_knowledge",
+      "expect_llm": true,
+      "ui": {"current_page": "exam_workspace"}
+    },
+    {
+      "id": "mod-01",
+      "query": "What's the difference between exam duration and link window?",
+      "bucket": "moderate",
+      "expected_execution_class": "complex_knowledge",
+      "expect_llm": true
+    },
+    {
+      "id": "mod-02",
+      "query": "Can students resume an exam?",
+      "bucket": "moderate",
+      "expected_execution_class": "simple_knowledge",
+      "expect_llm": true
+    },
+    {
+      "id": "mod-03",
+      "query": "What happens when I archive an exam?",
+      "bucket": "moderate",
+      "expected_canonical_intent": "exam.archive",
+      "expected_execution_class": "complex_knowledge",
+      "expect_llm": true
+    },
+    {
+      "id": "mod-04",
+      "query": "How does written-question grading work?",
+      "bucket": "moderate",
+      "expected_execution_class": "simple_knowledge",
+      "expect_llm": true
+    },
+    {
+      "id": "cx-01",
+      "query": "Why can't students access my exam?",
+      "bucket": "complex",
+      "expected_execution_class": "complex_knowledge",
+      "expect_llm": true
+    },
+    {
+      "id": "cx-02",
+      "query": "Why isn't this exam appearing in Analytics?",
+      "bucket": "complex",
+      "expected_execution_class": "complex_knowledge",
+      "expect_llm": true
+    },
+    {
+      "id": "cx-03",
+      "query": "Why is this student's result missing?",
+      "bucket": "complex",
+      "expected_execution_class": "complex_knowledge",
+      "expect_llm": true
+    },
+    {
+      "id": "cx-04",
+      "query": "What is wrong with my current exam configuration?",
+      "bucket": "complex",
+      "expected_execution_class": "complex_knowledge",
+      "expect_llm": true
+    },
+    {
+      "id": "live-01",
+      "query": "How many students scored below 10 on this exam?",
+      "bucket": "tool",
+      "expected_execution_class": "tool_required",
+      "expect_llm": true
+    },
+    {
+      "id": "act-01",
+      "query": "Publish this exam",
+      "bucket": "tool",
+      "expected_execution_class": "tool_required",
+      "expect_llm": true
+    },
+    {
+      "id": "oos-01",
+      "query": "What is the capital of France?",
+      "bucket": "oos",
+      "expected_execution_class": "out_of_scope",
+      "expect_llm": false
+    },
+    {
+      "id": "oos-02",
+      "query": "Write a Java program.",
+      "bucket": "oos",
+      "expected_execution_class": "out_of_scope",
+      "expect_llm": false
+    },
+    {
+      "id": "oos-03",
+      "query": "Tell me a joke.",
+      "bucket": "oos",
+      "expected_execution_class": "out_of_scope",
+      "expect_llm": false
+    },
+    {
+      "id": "meta-01",
+      "query": "What can you help me with in Quizzer?",
+      "bucket": "conversational",
+      "expected_execution_class": "conversational",
+      "expect_llm": false
+    }
+  ]
+}

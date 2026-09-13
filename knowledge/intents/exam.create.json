@@ -1,0 +1,15 @@
+{
+  "id": "exam.create",
+  "version": "1.0.0",
+  "domain": "exams",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "steps": [
+    "Use **Create Exam**, add sources (files, text, or links), generate questions, then review them on the **Questions** tab."
+  ],
+  "resulting_state": "The exam stays **Draft** until you approve questions and **Publish**.",
+  "ui": {"page": "create_exam"},
+  "related": ["exam.approve_questions", "exam.publish"],
+  "student_reply": "Students do not create exams. Open a link from your teacher to take one."
+}

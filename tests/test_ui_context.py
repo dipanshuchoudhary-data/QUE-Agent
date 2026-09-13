@@ -72,7 +72,7 @@ def test_context_node_injects_structured_system_not_user_message():
     assert any("QUIZZER_UI_CONTEXT" in b for b in system_blobs)
     assert any("quiz-123" in b for b in system_blobs)
     assert any("exam_results" in b for b in system_blobs)
-    assert any("Precedence" in b for b in system_blobs)
+    assert any("Untrusted" in b or "untrusted" in b for b in system_blobs)
     # Must not append context into the human message.
     humans = [m for m in out["messages"] if isinstance(m, HumanMessage)]
     assert humans

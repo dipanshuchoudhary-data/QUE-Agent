@@ -1,0 +1,15 @@
+{
+  "id": "exam.archive",
+  "version": "1.0.0",
+  "domain": "exams",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "steps": [
+    "Open **Exams**, open the exam, and choose **Archive**."
+  ],
+  "resulting_state": "The exam is retired: no new attempts. Existing **Results** stay and can still be exported.",
+  "ui": {"page": "exams", "action": "Archive"},
+  "related": ["exam.unpublish", "exam.publish"],
+  "student_reply": "Archiving is a teacher action. If a link stops working, ask your teacher."
+}

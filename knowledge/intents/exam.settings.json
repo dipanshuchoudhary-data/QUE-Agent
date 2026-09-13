@@ -1,0 +1,15 @@
+{
+  "id": "exam.settings",
+  "version": "1.0.0",
+  "domain": "exams",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "steps": [
+    "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code)."
+  ],
+  "resulting_state": "Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+  "ui": {"page": "exam_workspace", "tab": "Settings"},
+  "related": ["exam.share", "exam.publish"],
+  "student_reply": "Exam settings are configured by the teacher. During an attempt you only see the timer and rules they enabled."
+}

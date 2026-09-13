@@ -46,8 +46,17 @@ class Settings(BaseSettings):
     llm_temperature: float = Field(default=0.35, alias="LLM_TEMPERATURE")
     llm_gateway_rr: bool = Field(default=True, alias="LLM_GATEWAY_RR")
     llm_max_attempts: int = Field(default=3, alias="LLM_MAX_ATTEMPTS")
+    # Knowledge/workflow turns: fail faster than agent (avoids 3×45s free-tier hangs).
+    llm_max_attempts_non_agent: int = Field(default=2, alias="LLM_MAX_ATTEMPTS_NON_AGENT")
+    llm_prefer_paid_first: bool = Field(default=True, alias="LLM_PREFER_PAID_FIRST")
     llm_retry_base_ms: int = Field(default=200, alias="LLM_RETRY_BASE_MS")
     llm_retry_cap_ms: int = Field(default=2000, alias="LLM_RETRY_CAP_MS")
+    # Task-based completion budgets (Wave 2).
+    llm_max_tokens_meta: int = Field(default=150, alias="LLM_MAX_TOKENS_META")
+    llm_max_tokens_simple: int = Field(default=128, alias="LLM_MAX_TOKENS_SIMPLE")
+    llm_max_tokens_howto: int = Field(default=128, alias="LLM_MAX_TOKENS_HOWTO")
+    llm_max_tokens_moderate: int = Field(default=300, alias="LLM_MAX_TOKENS_MODERATE")
+    llm_max_tokens_complex: int = Field(default=700, alias="LLM_MAX_TOKENS_COMPLEX")
 
     # QUE-owned in-process cache (NOT Quizzer Redis).
     que_cache_enabled: bool = Field(default=True, alias="QUE_CACHE_ENABLED")
@@ -73,7 +82,7 @@ class Settings(BaseSettings):
         default="openai/text-embedding-3-small",
         alias="QUE_EMBEDDING_MODEL",
     )
-    que_rag_top_k: int = Field(default=6, alias="QUE_RAG_TOP_K")
+    que_rag_top_k: int = Field(default=2, alias="QUE_RAG_TOP_K")
     # Cosine similarity floor (Chroma hnsw:space=cosine returns distance;
     # we convert to similarity = 1 - distance). Below this → honest no-answer.
     que_rag_min_score: float = Field(default=0.28, alias="QUE_RAG_MIN_SCORE")
@@ -83,7 +92,7 @@ class Settings(BaseSettings):
     )
     # Phase 6 hybrid — BM25 + dense RRF (default on when corpus exists).
     que_rag_hybrid: bool = Field(default=True, alias="QUE_RAG_HYBRID")
-    que_rag_candidate_k: int = Field(default=20, alias="QUE_RAG_CANDIDATE_K")
+    que_rag_candidate_k: int = Field(default=8, alias="QUE_RAG_CANDIDATE_K")
     que_rag_rrf_k: int = Field(default=60, alias="QUE_RAG_RRF_K")
 
     # Phase 4 insight tools (QUE → Quizzer internal API).
@@ -137,6 +146,17 @@ class Settings(BaseSettings):
     # Phase 13 — LLM provider circuit (tools already have a breaker).
     que_llm_circuit_failures: int = Field(default=5, alias="QUE_LLM_CIRCUIT_FAILURES")
     que_llm_circuit_ttl_seconds: float = Field(default=30.0, alias="QUE_LLM_CIRCUIT_TTL_SECONDS")
+
+    # Wave 3 — embedding prototype router (off until embeddings configured).
+    que_semantic_router: bool = Field(default=True, alias="QUE_SEMANTIC_ROUTER")
+
+    # LangSmith — off by default. Production requires ALLOW_LANGSMITH_IN_PROD.
+    langsmith_tracing: bool = Field(default=False, alias="LANGSMITH_TRACING")
+    langsmith_endpoint: str | None = Field(default=None, alias="LANGSMITH_ENDPOINT")
+    langsmith_api_key: str | None = Field(default=None, alias="LANGSMITH_API_KEY")
+    langsmith_project: str | None = Field(default=None, alias="LANGSMITH_PROJECT")
+    langchain_tracing_v2: bool = Field(default=False, alias="LANGCHAIN_TRACING_V2")
+    allow_langsmith_in_prod: bool = Field(default=False, alias="ALLOW_LANGSMITH_IN_PROD")
 
     host: str = Field(default="0.0.0.0", alias="HOST")
     port: int = Field(default=8100, alias="PORT")
@@ -193,6 +213,20 @@ class Settings(BaseSettings):
     def strip_secrets(cls, value: str) -> str:
         return (value or "").strip()
 
+    def _apply_langsmith_env(self) -> None:
+        import os
+
+        if self.langsmith_tracing:
+            os.environ["LANGSMITH_TRACING"] = "true"
+        if self.langsmith_endpoint:
+            os.environ["LANGSMITH_ENDPOINT"] = self.langsmith_endpoint
+        if self.langsmith_api_key:
+            os.environ["LANGSMITH_API_KEY"] = self.langsmith_api_key
+        if self.langsmith_project:
+            os.environ["LANGSMITH_PROJECT"] = self.langsmith_project
+        if self.langchain_tracing_v2:
+            os.environ["LANGCHAIN_TRACING_V2"] = "true"
+
     @model_validator(mode="after")
     def enforce_production_guards(self) -> "Settings":
         if not self.is_local:
@@ -223,6 +257,13 @@ class Settings(BaseSettings):
                     "CORS_ALLOW_ORIGINS must be set in non-local environments "
                     "(empty means the browser client cannot reach QUE at all)"
                 )
+            if self.langsmith_tracing or self.langchain_tracing_v2:
+                if not self.allow_langsmith_in_prod:
+                    raise ValueError(
+                        "LangSmith tracing is disabled outside local/dev unless "
+                        "ALLOW_LANGSMITH_IN_PROD=true (exports prompts to a third party)"
+                    )
+        self._apply_langsmith_env()
         return self
 
 

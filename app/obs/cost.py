@@ -15,6 +15,7 @@ _PAID_PER_MILLION: dict[str, tuple[float, float]] = {
 class TokenUsage:
     prompt_tokens: int = 0
     completion_tokens: int = 0
+    reasoning_tokens: int = 0
     model: str = ""
 
     @property
@@ -22,21 +23,48 @@ class TokenUsage:
         return int(self.prompt_tokens) + int(self.completion_tokens)
 
 
+def _as_int(value: Any) -> int:
+    try:
+        return int(value or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _reasoning_from_mapping(payload: dict[str, Any]) -> int:
+    """OpenRouter / OpenAI-style reasoning token details."""
+    if not payload:
+        return 0
+    direct = _as_int(payload.get("reasoning_tokens") or payload.get("reasoning"))
+    if direct:
+        return direct
+    details = payload.get("completion_tokens_details") or payload.get("output_token_details") or {}
+    if isinstance(details, dict):
+        return _as_int(details.get("reasoning_tokens") or details.get("reasoning"))
+    return 0
+
+
 def extract_usage(message: Any, *, model: str = "") -> TokenUsage:
     """Read LangChain usage_metadata or OpenAI-style response_metadata."""
-    prompt = completion = 0
+    prompt = completion = reasoning = 0
     meta = getattr(message, "usage_metadata", None)
     if isinstance(meta, dict):
-        prompt = int(meta.get("input_tokens") or meta.get("prompt_tokens") or 0)
-        completion = int(meta.get("output_tokens") or meta.get("completion_tokens") or 0)
+        prompt = _as_int(meta.get("input_tokens") or meta.get("prompt_tokens"))
+        completion = _as_int(meta.get("output_tokens") or meta.get("completion_tokens"))
+        reasoning = _reasoning_from_mapping(meta)
     if prompt == 0 and completion == 0:
         resp = getattr(message, "response_metadata", None) or {}
         if isinstance(resp, dict):
             usage = resp.get("token_usage") or resp.get("usage") or {}
             if isinstance(usage, dict):
-                prompt = int(usage.get("prompt_tokens") or usage.get("input_tokens") or 0)
-                completion = int(usage.get("completion_tokens") or usage.get("output_tokens") or 0)
-    return TokenUsage(prompt_tokens=prompt, completion_tokens=completion, model=model)
+                prompt = _as_int(usage.get("prompt_tokens") or usage.get("input_tokens"))
+                completion = _as_int(usage.get("completion_tokens") or usage.get("output_tokens"))
+                reasoning = _reasoning_from_mapping(usage)
+    return TokenUsage(
+        prompt_tokens=prompt,
+        completion_tokens=completion,
+        reasoning_tokens=reasoning,
+        model=model,
+    )
 
 
 def estimate_prompt_tokens(text_or_messages: Any) -> int:

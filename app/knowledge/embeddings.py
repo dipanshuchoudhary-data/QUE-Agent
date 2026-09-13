@@ -33,3 +33,10 @@ def get_embeddings(*, settings: Settings | None = None) -> OpenAIEmbeddings:
         model=cfg.que_embedding_model,
         timeout=cfg.llm_timeout_seconds,
     )
+
+
+def embed_texts(texts: list[str], *, settings: Settings | None = None) -> list[list[float]]:
+    """Embed many documents (prototype warmup). Use embed_query_cached for queries."""
+    if not texts:
+        return []
+    return get_embeddings(settings=settings).embed_documents(list(texts))

@@ -23,8 +23,10 @@ One markdown file per **shipped** handbook phase. Use these to:
 | [phase-12-observability.md](phase-12-observability.md) | 12 Observability + cost | Done |
 | [phase-13-reliability.md](phase-13-reliability.md) | 13 Reliability | Done |
 | [phase-14-write-tools-and-readiness.md](phase-14-write-tools-and-readiness.md) | 14 Write tools (human-in-the-loop) + rate limits + production readiness | Done |
+| [phase-15-context-efficiency.md](phase-15-context-efficiency.md) | 15 Context-efficient routing + slim prompts | Done |
+| [phase-16-routed-efficiency.md](phase-16-routed-efficiency.md) | 16 Routed efficiency (cards + no-reasoning how-tos) | Done |
 
-**You are next:** Phase 15 — async workflows.
+**You are next:** Phase 16 async workflows (job queue) — **Later**. Routed efficiency above is a pipeline upgrade, not the handbook async phase.
 
 Related living docs:
 

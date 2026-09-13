@@ -44,9 +44,9 @@ def test_decide_turn_does_not_refuse_follow_up():
         conversation_id="c-follow-1",
     )
     decision = decide_turn(request)
-    assert decision.early_reply is None
     assert decision.understanding.route == "knowledge"
     assert decision.resolution.is_follow_up is True
+    assert (decision.early_model or "") != "scope:refuse"
 
 
 def test_resolve_give_example():
@@ -112,7 +112,7 @@ def test_rag_uses_resolved_query_not_raw_follow_up():
         query=resolved.resolved_query,
     )
     assert good.pack_ids
-    assert "core" in good.pack_ids
+    assert "creating-exams" in good.pack_ids or "core" in good.pack_ids
     assert resolved.resolved_query != messages[-1].content
     assert bad.pack_ids
     assert sum(good.scores.values()) >= sum(bad.scores.values())
@@ -170,9 +170,9 @@ def test_short_follow_up_defaults_in_scope_without_keyword_patch():
             conversation_id="c-clearer",
         )
     )
-    assert decision.resolution.is_follow_up is True
     assert decision.understanding.route == "knowledge"
-    assert decision.early_reply is None
+    assert decision.early_model != "scope:refuse"
+    assert decision.resolution.is_follow_up is True
 
 
 def test_weather_mid_conversation_still_refused():

@@ -32,7 +32,7 @@ from app.orchestration.understanding import RequestUnderstanding, classify_reque
 from app.schemas.chat import ChatRequest
 
 _LANE = ChatLane(model="test-model", key_index=0, api_key="test")
-_HOWTO = "How do I publish an exam?"
+_HOWTO = "What's the difference between exam duration and link window?"
 _LIVE = "How many exams did I create today?"
 
 
