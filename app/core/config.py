@@ -39,7 +39,7 @@ class Settings(BaseSettings):
     llm_api_key_7: str = Field(default="", alias="LLM_API_KEY_7")
     llm_api_key_8: str = Field(default="", alias="LLM_API_KEY_8")
     llm_base_url: str = Field(default="https://openrouter.ai/api/v1", alias="LLM_BASE_URL")
-    llm_model: str = Field(default="openai/gpt-4o-mini", alias="LLM_MODEL")
+    llm_model: str = Field(default="", alias="LLM_MODEL")
     llm_models_raw: str = Field(default="", alias="LLM_MODELS")
     llm_timeout_seconds: float = Field(default=45.0, alias="LLM_TIMEOUT_SECONDS")
     llm_max_tokens: int = Field(default=700, alias="LLM_MAX_TOKENS")

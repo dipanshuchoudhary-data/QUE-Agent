@@ -18,8 +18,6 @@ from app.obs.cost import TokenUsage, extract_usage
 
 logger = logging.getLogger(__name__)
 
-PREFERRED_STRONG_MODEL = "openai/gpt-4o-mini"
-
 _NON_RETRYABLE_CODES = {400, 401, 403, 404, 422}
 _RETRYABLE_CODES = {408, 429, 500, 502, 503, 504}
 
@@ -177,10 +175,11 @@ def iter_failover_lanes(
     rotate_model = settings.llm_gateway_rr_active and not strong
     key_ticket, model_ticket = _take_tickets(rotate_model=rotate_model)
 
+    preferred = (settings.llm_model or "").strip()
     if settings.llm_gateway_rr_active:
         k0 = key_ticket % len(keys)
-        if strong and PREFERRED_STRONG_MODEL in models:
-            m0 = models.index(PREFERRED_STRONG_MODEL)
+        if strong and preferred in models:
+            m0 = models.index(preferred)
         else:
             m0 = model_ticket % len(models)
     else:
