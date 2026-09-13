@@ -440,7 +440,7 @@ Re-exports persona helpers.
 #### `app/knowledge/retrieve.py`
 Runtime selection: **hybrid** (dense + BM25 RRF) when `QUE_RAG_HYBRID` and
 `bm25_corpus.json` exist; else dense Chroma; else keyword fallback on `manifest.json`.
-CORE always injected; below `QUE_RAG_MIN_SCORE` → honest no-answer (dense-gated).
+CORE.md is listed but not retrieved (`retrieve: false`); a tiny skeleton is used only when RAG is thin. Below `QUE_RAG_MIN_SCORE` → honest no-answer (dense-gated).
 
 #### `app/knowledge/hybrid.py` / `sparse.py` / `assemble.py`
 Phase 6 — BM25 sidecar, reciprocal rank fusion, shared CORE+chunk assembly.
@@ -460,7 +460,7 @@ This folder is the **product brain**. Code in `app/knowledge/` only selects and 
 | File | Role |
 |---|---|
 | `knowledge/README.md` | How to write guides (SAY/NEVER, click paths) |
-| `knowledge/CORE.md` | Always injected — product map + answer contract |
+| `knowledge/CORE.md` | Product map — **not retrieved**; skeleton only if RAG is thin |
 | `knowledge/manifest.json` | Pack index: paths, `always`, keywords, `max_guides` |
 | `knowledge/guides/navigation.md` | Sidebar vs exam tabs / where things live |
 | `knowledge/guides/publish-share.md` | Create → approve → publish → link window |
@@ -484,7 +484,7 @@ Live counts (“how many students…”) must wait for future tools — guides m
 | `tests/test_chat.py` | Service-key + Que JWT auth, validation, stream without LLM key |
 | `tests/test_graph.py` | Graph topology / nodes |
 | `tests/test_pipeline.py` | prepare/complete/stream wiring |
-| `tests/test_knowledge.py` | Keyword selection, CORE always-on, caches |
+| `tests/test_knowledge.py` | Keyword selection, manifest health, caches |
 
 Tests avoid live LLM calls where possible; CI runs with empty `LLM_API_KEY` / `LLM_API_KEY_N`.
 
