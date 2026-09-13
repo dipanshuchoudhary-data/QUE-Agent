@@ -372,6 +372,71 @@ def score_retrieval_dense(threshold: float) -> CategoryScore:
     )
 
 
+def score_intent(threshold: float) -> CategoryScore:
+    from app.orchestration.intent_catalog import finalize_understanding
+    from app.orchestration.understanding import classify_request
+
+    payload = json.loads((ROOT / "evals" / "efficiency_cases.json").read_text(encoding="utf-8"))
+    cases = [c for c in list(payload.get("cases") or []) if c.get("expected_execution_class")]
+    hits = 0
+    misses: list[str] = []
+    for case in cases:
+        query = str(case["query"])
+        result = finalize_understanding(classify_request(query), query)
+        ok = result.execution_class == case["expected_execution_class"]
+        expected_intent = case.get("expected_canonical_intent")
+        if expected_intent:
+            ok = ok and result.canonical_intent == expected_intent
+        if ok:
+            hits += 1
+        else:
+            misses.append(
+                f"{case['id']}: got {result.execution_class}/{result.canonical_intent} "
+                f"expected {case['expected_execution_class']}/{expected_intent}"
+            )
+    n = len(cases) or 1
+    return CategoryScore(
+        id="intent",
+        metric="canonical_intent_accuracy",
+        score=hits / n,
+        hits=hits,
+        n=n,
+        threshold=threshold,
+        misses=misses,
+    )
+
+
+def score_efficiency(threshold: float) -> CategoryScore:
+    from app.orchestration.pipeline import decide_turn
+    from app.schemas.chat import ChatRequest, QueUiContext
+
+    payload = json.loads((ROOT / "evals" / "efficiency_cases.json").read_text(encoding="utf-8"))
+    cases = [c for c in list(payload.get("cases") or []) if not c.get("expect_llm")]
+    hits = 0
+    misses: list[str] = []
+    for case in cases:
+        ui = case.get("ui")
+        request = ChatRequest(
+            messages=[{"role": "user", "content": case["query"]}],
+            context=QueUiContext.model_validate(ui) if ui else None,
+        )
+        decision = decide_turn(request)
+        if decision.early_reply is not None:
+            hits += 1
+        else:
+            misses.append(f"{case['id']}: expected 0-LLM early reply")
+    n = len(cases) or 1
+    return CategoryScore(
+        id="efficiency",
+        metric="zero_llm_simple_rate",
+        score=hits / n,
+        hits=hits,
+        n=n,
+        threshold=threshold,
+        misses=misses,
+    )
+
+
 _RUNNERS = {
     "scope": score_scope,
     "tools": score_tools,
@@ -382,6 +447,8 @@ _RUNNERS = {
     "groundedness": score_groundedness,
     "retrieval": score_retrieval_keyword,
     "retrieval_dense": score_retrieval_dense,
+    "intent": score_intent,
+    "efficiency": score_efficiency,
 }
 
 
