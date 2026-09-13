@@ -1,0 +1,15 @@
+{
+  "id": "exam.unpublish",
+  "version": "1.0.0",
+  "domain": "exams",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "steps": [
+    "Open the **Published** exam and click **Unpublish**."
+  ],
+  "resulting_state": "The share link deactivates and the exam returns to **Draft**. Existing **Results** are kept.",
+  "ui": {"page": "exams", "action": "Unpublish"},
+  "related": ["exam.publish", "exam.archive"],
+  "student_reply": "Only the teacher can unpublish. If you cannot open a link, it may have been unpublished."
+}
