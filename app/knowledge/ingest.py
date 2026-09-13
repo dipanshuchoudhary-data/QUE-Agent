@@ -64,13 +64,28 @@ def _chunk_doc(doc: dict, *, corpus_version: str) -> list[KnowledgeChunk]:
         return []
     path = KNOWLEDGE_ROOT / rel
     raw = path.read_text(encoding="utf-8")
+    intents = doc.get("intents") or []
+    if isinstance(intents, list):
+        intents_s = ",".join(str(i) for i in intents)
+    else:
+        intents_s = str(intents or "")
     return chunk_markdown(
         doc_id=doc_id,
         path=rel,
         title=title,
         raw_markdown=raw,
         corpus_version=corpus_version,
+        domain=str(doc.get("domain") or ""),
+        intents=intents_s,
     )
+
+
+def _is_retrievable(doc: dict) -> bool:
+    if doc.get("retrieve") is False:
+        return False
+    if doc.get("always"):
+        return False
+    return True
 
 
 def _embed_batches(
@@ -118,6 +133,7 @@ def build_index(
     unchanged = 0
     upserted_docs = 0
     chunks_written = 0
+    deleted = 0
 
     for doc in docs:
         doc_id = str(doc.get("id") or "")
@@ -127,6 +143,12 @@ def build_index(
         path = KNOWLEDGE_ROOT / rel
         if not path.is_file():
             logger.warning("rag_skip_missing_file", extra={"doc_id": doc_id, "path": rel})
+            continue
+        if not _is_retrievable(doc):
+            deleted_core = delete_doc_chunks(doc_id, settings=cfg)
+            prior_docs.pop(doc_id, None)
+            if deleted_core:
+                deleted += deleted_core
             continue
         active_ids.add(doc_id)
         file_hash = _doc_file_hash(path)
@@ -161,7 +183,6 @@ def build_index(
         upserted_docs += 1
         chunks_written += len(chunks)
 
-    deleted = 0
     for stale_id in list(prior_docs.keys()):
         if stale_id not in active_ids:
             deleted += delete_doc_chunks(stale_id, settings=cfg)
@@ -215,6 +236,8 @@ def _write_bm25_corpus(
                     section=c.section,
                     text=c.text,
                     corpus_version=c.corpus_version,
+                    domain=c.domain,
+                    intents=c.intents,
                 )
             )
     save_bm25_corpus(entries, settings=settings, corpus_version=corpus_version)

@@ -1,0 +1,15 @@
+{
+  "id": "exam.approve_questions",
+  "version": "1.0.0",
+  "domain": "exams",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "steps": [
+    "Open the exam **Questions** tab. Review each item, then **Approve** (or use **Bulk Approve** after you have reviewed)."
+  ],
+  "resulting_state": "Every question must be **Approved** before **Publish** is allowed. Draft or Rejected items block publishing.",
+  "ui": {"page": "exam_workspace", "tab": "Questions"},
+  "related": ["exam.publish"],
+  "student_reply": "Question review is a teacher step. You only see approved questions in a published exam."
+}

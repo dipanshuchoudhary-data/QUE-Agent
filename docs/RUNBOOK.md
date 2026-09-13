@@ -67,6 +67,31 @@ TTL), restart the QUE process — breaker state is in-process, not persisted.
 `QUE_RATE_LIMIT_ENABLED=false` to disable entirely as a stopgap (not
 recommended in prod for more than a few minutes).
 
+## LangSmith (AI failure capture)
+
+QUE chat LLM failover is instrumented with `@traceable` / `trace`
+(`app/core/llm.py`). Failed lanes still appear as child runs when a later
+key/model succeeds. Meta/capabilities asks should be **canned** (no LLM) —
+if LangSmith shows a 120s `generate` on "what can you help me with", the
+deploy is missing Wave 1 context-efficiency fixes (see
+`docs/phases/phase-15-context-efficiency.md`). How-tos such as
+`"How do I publish an exam?"` should be a parent `que.turn` tagged
+`que.route.deterministic` **without** a generate child (Phase 16 cards).
+
+| Var | Value |
+|---|---|
+| `LANGSMITH_PROJECT` | `Que_agent` (keep distinct from Quizzer) |
+| `LANGSMITH_TRACING` | `true` to enable |
+| `ALLOW_LANGSMITH_IN_PROD` | **required** when `APP_ENV` is not local/dev |
+| `LANGSMITH_ENDPOINT` | `https://api.smith.langchain.com` |
+| `LANGSMITH_API_KEY` | LangSmith personal/org key for the Que project |
+| `LLM_PREFER_PAID_FIRST` | `true` — paid models before `:free` |
+| `LLM_MAX_ATTEMPTS_NON_AGENT` | `2` — fail faster on knowledge/workflow |
+| `QUE_SEMANTIC_ROUTER` | default **true** when embeddings are configured; fail-open to heuristics |
+
+Exports prompts to LangSmith — treat as third-party data sharing. Never commit
+keys; set them on Render / local `.env` only.
+
 ## Rollback
 
 QUE-Agent is stateless per request (short-term memory is in-process

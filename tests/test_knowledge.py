@@ -21,16 +21,16 @@ def test_manifest_files_all_exist():
 @requires_knowledge
 def test_core_always_selected():
     selection = select_knowledge([{"role": "user", "content": "hello"}])
-    assert "core" in selection.pack_ids
-    assert "ground truth" in selection.content.casefold() or "Always inject" in selection.content
+    assert "core" in selection.pack_ids or "quizzer map" in selection.content.casefold()
+    assert "quizzer" in selection.content.casefold()
     # Frontmatter should not be injected into the model context.
     assert not selection.content.lstrip().startswith("---")
+    assert "Always inject this pack" not in selection.content
 
 
 @requires_knowledge
 def test_selects_creating_exams():
     selection = select_knowledge([{"role": "user", "content": "How do I create a quiz?"}])
-    assert "core" in selection.pack_ids
     assert "creating-exams" in selection.pack_ids
     assert "Create Exam" in selection.content or "create" in selection.content.casefold()
 
@@ -38,7 +38,6 @@ def test_selects_creating_exams():
 @requires_knowledge
 def test_selects_live_monitoring_for_monitoring_question():
     selection = select_knowledge([{"role": "user", "content": "Where is Monitoring?"}])
-    assert "core" in selection.pack_ids
     assert "live-monitoring" in selection.pack_ids or "navigation" in selection.pack_ids
     assert "Monitoring" in selection.content
 

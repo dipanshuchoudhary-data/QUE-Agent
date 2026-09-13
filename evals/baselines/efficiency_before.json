@@ -1,0 +1,32 @@
+{
+  "version": "1.0.0",
+  "mode": "reconstructed_pre_routing",
+  "notes": "Captured after Phase 15, before execution_class + workflow cards. A clean --write-before snapshot was not taken on this branch because routing landed in the same change set. Numbers come from Phase 15 prepare_turn / LangSmith notes for how-tos: always RAG + one Nemotron completion with thinking enabled; CORE.md still in the vector index.",
+  "summary": {
+    "n": 31,
+    "llm_would_run": 28,
+    "zero_llm": 3,
+    "simple_zero_llm": 0,
+    "simple_n": 14,
+    "mean_prompt_chars_llm": 2189.0,
+    "max_prompt_chars": 2500,
+    "observed_live_howto": {
+      "query": "How do I publish an exam?",
+      "latency_ms": 12000,
+      "reasoning_tokens": 1500,
+      "source": "LangSmith Nemotron thinking on a static how-to (Phase 15 / plan baseline)"
+    }
+  },
+  "cases": [
+    {
+      "id": "pub-01",
+      "query": "How do I publish an exam?",
+      "execution_class": "knowledge",
+      "canonical_intent": null,
+      "llm_would_run": true,
+      "prompt_chars": 2189,
+      "retrieval_count": 2,
+      "knowledge_packs": ["core", "publishing", "lifecycle"]
+    }
+  ]
+}

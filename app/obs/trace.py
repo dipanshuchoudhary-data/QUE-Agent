@@ -32,6 +32,9 @@ class TurnTrace:
     model: str | None = None
     prompt_tokens: int = 0
     completion_tokens: int = 0
+    reasoning_tokens: int = 0
+    execution_class: str | None = None
+    canonical_intent: str | None = None
     cost_usd: float | None = None
     error: bool = False
     spans: list[Span] = field(default_factory=list)
@@ -67,6 +70,9 @@ class TurnTrace:
             "model": self.model,
             "prompt_tokens": self.prompt_tokens,
             "completion_tokens": self.completion_tokens,
+            "reasoning_tokens": self.reasoning_tokens,
+            "execution_class": self.execution_class,
+            "canonical_intent": self.canonical_intent,
             "cost_usd": self.cost_usd,
             "error": self.error,
             "spans": [

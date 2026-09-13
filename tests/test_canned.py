@@ -32,6 +32,11 @@ from app.schemas.chat import ChatMessage, ChatRequest
         ("ok", "ack"),
         ("got it", "ack"),
         ("what can you do", "capabilities"),
+        ("what can you help me with", "capabilities"),
+        ("What can you help me with in Quizzer?", "capabilities"),
+        ("how can you help me with", "capabilities"),
+        ("I am new here ,explain this to me", "getting_started"),
+        ("explain this to me", "getting_started"),
         ("What is Quizzer?", "what_is_quizzer"),
         ("what is quizer", "what_is_quizzer"),  # small typo
         ("who are you", "capabilities"),

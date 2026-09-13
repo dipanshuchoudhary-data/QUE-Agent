@@ -1,0 +1,15 @@
+{
+  "id": "student.view",
+  "version": "1.0.0",
+  "domain": "students",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "steps": [
+    "Open **Students** in the sidebar to see the learner directory, recent attempts, and the support queue."
+  ],
+  "resulting_state": "The list stays empty until an exam is published and students have started attempts.",
+  "ui": {"page": "students"},
+  "related": ["exam.publish", "exam.export_results"],
+  "student_reply": "The **Students** directory is a teacher view. Students use **Dashboard** and exam links."
+}

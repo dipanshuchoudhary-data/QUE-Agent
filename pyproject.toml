@@ -23,6 +23,7 @@ dependencies = [
     "langchain-openai==1.1.14",
     "langgraph==1.0.10",
     "langgraph-checkpoint==4.1.1",
+    "langsmith==0.8.18",
     # Observability
     "structlog==25.5.0",
     "PyJWT==2.13.0",

@@ -34,6 +34,8 @@ class KnowledgeChunk:
     content_hash: str
     corpus_version: str
     char_count: int
+    domain: str = ""
+    intents: str = ""
 
 
 def strip_frontmatter(text: str) -> str:
@@ -107,6 +109,8 @@ def chunk_markdown(
     max_chars: int = DEFAULT_MAX_CHARS,
     overlap_chars: int = DEFAULT_OVERLAP_CHARS,
     min_chars: int = DEFAULT_MIN_CHARS,
+    domain: str = "",
+    intents: str = "",
 ) -> list[KnowledgeChunk]:
     """Parse one knowledge file into embeddable chunks with metadata."""
     body = strip_frontmatter(raw_markdown)
@@ -149,6 +153,8 @@ def chunk_markdown(
                     content_hash=content_hash(piece),
                     corpus_version=corpus_version,
                     char_count=len(piece),
+                    domain=domain,
+                    intents=intents,
                 )
             )
     return out

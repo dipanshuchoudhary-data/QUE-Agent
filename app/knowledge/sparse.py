@@ -31,6 +31,8 @@ class SparseCorpusEntry:
     section: str
     text: str
     corpus_version: str
+    domain: str = ""
+    intents: str = ""
 
 
 @dataclass
@@ -231,8 +233,10 @@ def query_bm25(
                 title=entry.title,
                 section=entry.section,
                 text=entry.text,
-                score=float(score),
+        score=float(score),
                 corpus_version=entry.corpus_version,
+                domain=getattr(entry, "domain", "") or "",
+                intents=getattr(entry, "intents", "") or "",
             )
         )
     return out

@@ -33,6 +33,8 @@ class RetrievedChunk:
     text: str
     score: float  # cosine similarity in [0, 1] approx
     corpus_version: str
+    domain: str = ""
+    intents: str = ""
 
 
 @dataclass
@@ -167,6 +169,8 @@ def upsert_chunks(
                 "embedding_model": embedding_model,
                 "char_count": c.char_count,
                 "indexed_at": now,
+                "domain": c.domain or "",
+                "intents": c.intents or "",
             }
             for c in chunks
         ],
@@ -192,7 +196,7 @@ def query_chunks(
     collection = get_or_create_collection(settings=settings)
     if collection.count() == 0:
         return []
-    n = min(top_k, collection.count())
+    n = min(max(top_k * 2, top_k + 4), collection.count())
     result = collection.query(
         query_embeddings=[query_embedding],
         n_results=n,
@@ -222,6 +226,8 @@ def query_chunks(
                 text=str(text or ""),
                 score=score,
                 corpus_version=str(meta.get("corpus_version") or ""),
+                domain=str(meta.get("domain") or ""),
+                intents=str(meta.get("intents") or ""),
             )
         )
-    return out
+    return [h for h in out if h.doc_id != "core"][: max(top_k, 1)]

@@ -9,34 +9,36 @@
     "injection": 1.0,
     "guardrail_fp": 1.0,
     "groundedness": 1.0,
+    "intent": 0.85,
+    "efficiency": 0.8,
     "retrieval_dense": 0.8
   },
   "categories": {
     "scope": {
       "score": 1.0,
-      "hits": 36,
-      "n": 36,
+      "hits": 42,
+      "n": 42,
       "metric": "scope_and_route_accuracy",
       "threshold": 0.9
     },
     "retrieval": {
-      "score": 0.9412,
-      "hits": 31,
+      "score": 1.0,
+      "hits": 34,
       "n": 34,
       "metric": "mean_recall_at_k",
       "threshold": 0.7
     },
     "tools": {
       "score": 1.0,
-      "hits": 19,
-      "n": 19,
+      "hits": 24,
+      "n": 24,
       "metric": "selection_accuracy",
       "threshold": 0.85
     },
     "permissions": {
       "score": 1.0,
-      "hits": 5,
-      "n": 5,
+      "hits": 8,
+      "n": 8,
       "metric": "gate_accuracy",
       "threshold": 1.0
     },
@@ -49,15 +51,15 @@
     },
     "injection": {
       "score": 1.0,
-      "hits": 14,
-      "n": 14,
+      "hits": 17,
+      "n": 17,
       "metric": "block_rate",
       "threshold": 1.0
     },
     "guardrail_fp": {
       "score": 1.0,
-      "hits": 26,
-      "n": 26,
+      "hits": 32,
+      "n": 32,
       "metric": "in_scope_clean_rate",
       "threshold": 1.0
     },
@@ -67,6 +69,20 @@
       "n": 8,
       "metric": "heuristic_accuracy",
       "threshold": 1.0
+    },
+    "intent": {
+      "score": 1.0,
+      "hits": 31,
+      "n": 31,
+      "metric": "canonical_intent_accuracy",
+      "threshold": 0.85
+    },
+    "efficiency": {
+      "score": 1.0,
+      "hits": 20,
+      "n": 20,
+      "metric": "zero_llm_simple_rate",
+      "threshold": 0.8
     }
   }
 }

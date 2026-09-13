@@ -188,15 +188,46 @@ _PHRASE_INTENTS: list[tuple[str, str]] = [
     ("have a good day", "bye"),
     ("have a nice day", "bye"),
     ("signing off", "bye"),
-    # what can you do
+    # what can you do / capabilities
     ("what can you do", "capabilities"),
     ("what do you do", "capabilities"),
+    ("what do you help with", "capabilities"),
     ("what are you", "capabilities"),
     ("who are you", "capabilities"),
     ("help", "capabilities"),
     ("help me", "capabilities"),
     ("what can you help with", "capabilities"),
+    ("what can you help me with", "capabilities"),
     ("how can you help", "capabilities"),
+    ("how can you help me", "capabilities"),
+    ("how can you help me with", "capabilities"),
+    ("what can you help me with in quizzer", "capabilities"),
+    ("what can you help with in quizzer", "capabilities"),
+    ("how can you help me in quizzer", "capabilities"),
+    ("what can que help with", "capabilities"),
+    ("what can que do", "capabilities"),
+    ("can you help me", "capabilities"),
+    ("can you help me with", "capabilities"),
+    ("can you help me with quizzer", "capabilities"),
+    ("can you help with quizzer", "capabilities"),
+    # New-user / vague orientation (UI context may refine the reply text)
+    ("i am new here", "getting_started"),
+    ("im new here", "getting_started"),
+    ("i'm new here", "getting_started"),
+    ("i am new", "getting_started"),
+    ("im new", "getting_started"),
+    ("i'm new", "getting_started"),
+    ("i am new here explain this to me", "getting_started"),
+    ("im new here explain this to me", "getting_started"),
+    ("i am new here, explain this to me", "getting_started"),
+    ("explain this to me", "getting_started"),
+    ("explain this", "getting_started"),
+    ("explain the page", "getting_started"),
+    ("what is this page", "getting_started"),
+    ("what is this", "getting_started"),
+    ("help me get started", "getting_started"),
+    ("how do i get started", "getting_started"),
+    ("getting started", "getting_started"),
     # what is quizzer
     ("what is quizzer", "what_is_quizzer"),
     ("what's quizzer", "what_is_quizzer"),
@@ -209,6 +240,52 @@ _PHRASE_INTENTS: list[tuple[str, str]] = [
     ("what's que", "who_is_que"),
     ("whats que", "who_is_que"),
 ]
+
+# Trailing product location that users add after capability asks.
+_PRODUCT_TAIL_RE = re.compile(
+    r"\s+(?:in|on|with)\s+(?:quizzer|the\s+app|this\s+app)\s*$",
+    re.I,
+)
+_CAPABILITIES_ASK_RE = re.compile(
+    r"^(?:(?:what|how)\s+can\s+(?:you|que)\s+"
+    r"(?:do|help(?:\s+me)?(?:\s+with)?)|"
+    r"can\s+you\s+help(?:\s+me)?(?:\s+with)?)"
+    r"(?:\s+(?:in|on|with)\s+(?:quizzer|the\s+app|this\s+app))?"
+    r"\s*$",
+    re.I,
+)
+_GETTING_STARTED_ASK_RE = re.compile(
+    r"^(?:i(?:'m| am|m)?\s+new(?:\s+here)?"
+    r"(?:\s*[,.]?\s*explain\s+this(?:\s+to\s+me)?)?|"
+    r"explain\s+this(?:\s+to\s+me)?|"
+    r"explain\s+(?:the\s+)?page|"
+    r"what\s+is\s+this(?:\s+page)?|"
+    r"(?:help\s+me\s+)?get(?:ting)?\s+started|"
+    r"how\s+do\s+i\s+get\s+started)\s*$",
+    re.I,
+)
+
+
+def _strip_product_tail(text: str) -> str:
+    return _PRODUCT_TAIL_RE.sub("", text).strip()
+
+
+def pick_canned_intent(
+    intent: str,
+    *,
+    conversation_id: str | None = None,
+    rng: random.Random | None = None,
+) -> CannedReply | None:
+    """Return a varied canned reply for a known intent id (no phrase matching)."""
+    variants = _VARIANTS.get(intent) or ()
+    if not variants:
+        return None
+    picker = rng or random.SystemRandom()
+    last = get_last_canned_variant(conversation_id, intent)
+    choices = [v for v in variants if v != last] or list(variants)
+    text = picker.choice(choices)
+    set_last_canned_variant(conversation_id, intent, text)
+    return CannedReply(intent=intent, text=text)
 
 
 _VARIANTS: dict[str, tuple[str, ...]] = {
@@ -282,6 +359,14 @@ _VARIANTS: dict[str, tuple[str, ...]] = {
         "I'm QUE. I answer Quizzer questions in plain language so you can keep moving without "
         "leaving the app.",
     ),
+    "getting_started": (
+        "Welcome — you're on **Exams**, your exam list. Click **Create Exam** (emerald) to "
+        "start, approve questions, then **Publish** and share the link. Ask me any step.",
+        "New here: create → approve questions → publish → share link → watch **Monitoring** / "
+        "**Results**. Open **Create Exam** when you're ready, or ask me about one step.",
+        "You're in the teacher workspace. **Dashboard** is the overview; **Exams** is where "
+        "exams live. Start with **Create Exam**, then ask me about publish, links, or monitoring.",
+    ),
 }
 
 
@@ -313,28 +398,40 @@ def match_canned_reply(
     back-to-back in a conversation.
     """
     query = _norm(user_text)
-    if not query or len(query) > 100:
+    if not query or len(query) > 120:
         return None
 
     squashed = _squash(query)
-    intent: str | None = get_cached_intent(squashed)
+    stripped = _strip_product_tail(squashed)
+    intent: str | None = get_cached_intent(squashed) or get_cached_intent(stripped)
 
     # 1) Exact after squash (handles Heelllo / hellloooo / Hi!!!!).
     if intent is None:
-        for phrase, name in sorted(_PHRASE_INTENTS, key=lambda item: len(item[0]), reverse=True):
-            if squashed == _squash(phrase):
-                intent = name
+        for candidate in (squashed, stripped):
+            if not candidate:
+                continue
+            for phrase, name in sorted(_PHRASE_INTENTS, key=lambda item: len(item[0]), reverse=True):
+                if candidate == _squash(phrase):
+                    intent = name
+                    break
+            if intent is not None:
                 break
 
+    # 1b) Capability paraphrases with optional "in Quizzer" tail.
+    if intent is None and _CAPABILITIES_ASK_RE.match(query):
+        intent = "capabilities"
+    if intent is None and _GETTING_STARTED_ASK_RE.match(query):
+        intent = "getting_started"
+
     # 2) Tiny typo tolerance on short turns only (avoid stealing real questions).
-    if intent is None and len(squashed) <= 28:
+    if intent is None and len(stripped) <= 36:
         best: tuple[int, str] | None = None
         for phrase, name in _PHRASE_INTENTS:
             target = _squash(phrase)
             # Only compare similar-length phrases (don't map "hi" → "what is quizzer").
-            if abs(len(squashed) - len(target)) > 2:
+            if abs(len(stripped) - len(target)) > 2:
                 continue
-            dist = _levenshtein(squashed, target)
+            dist = _levenshtein(stripped, target)
             # Allow 1 edit for short, 2 for slightly longer FAQ lines.
             allowed = 1 if len(target) <= 8 else 2
             if dist <= allowed and (best is None or dist < best[0]):
@@ -357,17 +454,10 @@ def match_canned_reply(
         return None
 
     set_cached_intent(squashed, intent)
+    if stripped and stripped != squashed:
+        set_cached_intent(stripped, intent)
 
-    variants = _VARIANTS.get(intent) or ()
-    if not variants:
-        return None
-
-    picker = rng or random.SystemRandom()
-    last = get_last_canned_variant(conversation_id, intent)
-    choices = [v for v in variants if v != last] or list(variants)
-    text = picker.choice(choices)
-    set_last_canned_variant(conversation_id, intent, text)
-    return CannedReply(intent=intent, text=text)
+    return pick_canned_intent(intent, conversation_id=conversation_id, rng=rng)
 
 
 def latest_user_text(messages: list) -> str:

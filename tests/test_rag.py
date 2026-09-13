@@ -184,4 +184,9 @@ def test_select_knowledge_falls_back_to_keyword():
         ),
     )
     assert sel.mode in {"keyword", "dense_unavailable_keyword"}
-    assert "core" in sel.pack_ids
+    assert sel.pack_ids
+    assert "creating-exams" in sel.pack_ids
+    # ≥2 retrieved packs skip the CORE skeleton; thin hits still include it.
+    if len(sel.pack_ids) < 2:
+        assert "core" in sel.pack_ids
+    assert len(sel.content) < 6_000

@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
   "phase": "complete",
-  "description": "Answer-oriented QUE knowledge. CORE always injected; dense RAG when indexed, else keyword guides.",
+  "description": "Answer-oriented QUE knowledge. CORE.md is indexed as overview only (not retrieved). Hybrid RAG + workflow cards select domain packs.",
   "always": ["core"],
   "max_guides": 3,
   "documents": [
@@ -9,6 +9,7 @@
       "id": "core",
       "path": "CORE.md",
       "always": true,
+      "retrieve": false,
       "title": "QUE Core Product Knowledge",
       "keywords": []
     },
@@ -63,6 +64,8 @@
       "id": "creating-exams",
       "path": "exams/creating-exams.md",
       "title": "Creating Exams",
+      "domain": "exams",
+      "intents": ["exam.create"],
       "keywords": [
         "create", "make", "build", "new exam", "new quiz", "source", "upload",
         "file", "pdf", "document", "youtube", "url", "paste", "ai generation",
@@ -76,6 +79,8 @@
       "id": "questions",
       "path": "exams/questions.md",
       "title": "Question Types and Review",
+      "domain": "exams",
+      "intents": ["exam.approve_questions"],
       "keywords": [
         "question", "questions", "question type", "mcq", "multiple choice",
         "true false", "short answer", "long answer", "multi-select",
@@ -88,6 +93,8 @@
       "id": "exam-settings",
       "path": "exams/exam-settings.md",
       "title": "Exam Settings",
+      "domain": "exams",
+      "intents": ["exam.settings"],
       "keywords": [
         "setting", "settings", "configure", "configuration", "duration",
         "time limit", "timer", "proctoring", "fullscreen", "tab switch",
@@ -102,12 +109,14 @@
       "id": "publishing",
       "path": "exams/publishing-and-sharing.md",
       "title": "Publishing and Sharing Exams",
+      "domain": "exams",
+      "intents": ["exam.publish", "exam.share", "exam.unpublish"],
       "keywords": [
-        "publish", "published", "draft", "approve", "share", "link",
-        "link window", "available", "expired", "deadline", "archive",
-        "archived", "cannot publish", "unpublish", "unarchive",
+        "publish", "share", "link",
+        "link window", "available", "expired", "deadline",
+        "cannot publish", "unpublish",
         "share by email", "exam link", "student link", "renew",
-        "extend", "republish", "results after unpublish",
+        "extend", "republish",
         "how do I publish", "why can't I publish", "link not working"
       ]
     },
@@ -152,6 +161,8 @@
       "id": "results-exports",
       "path": "scoring/results-and-exports.md",
       "title": "Results and Exports",
+      "domain": "results",
+      "intents": ["exam.export_results", "results.export"],
       "keywords": [
         "results", "result", "scores", "export", "download", "csv", "excel",
         "google sheets", "spreadsheet", "where are results", "see scores",
@@ -188,6 +199,8 @@
       "id": "students-workspace",
       "path": "students/students-workspace.md",
       "title": "Students Workspace (Teacher View)",
+      "domain": "students",
+      "intents": ["student.view"],
       "keywords": [
         "students", "student list", "learner", "roster", "readiness",
         "support", "coaching", "needs check-in", "strong learner",
@@ -327,11 +340,14 @@
       "id": "lifecycle",
       "path": "workflows/exam-lifecycle.md",
       "title": "Exam Lifecycle",
+      "domain": "exams",
+      "intents": ["exam.archive", "exam.unpublish"],
       "keywords": [
-        "lifecycle", "exam states", "draft", "published", "archived",
-        "state transition", "unpublish", "unarchive", "delete exam",
+        "lifecycle", "exam states", "state transition",
+        "unpublish", "unarchive", "delete exam",
         "what happens when", "link deactivated", "results preserved",
-        "re-publish", "link window vs lifecycle", "settings after publish"
+        "re-publish", "link window vs lifecycle", "settings after publish",
+        "draft published archived", "archived exam", "draft vs published"
       ]
     },
     {
@@ -339,7 +355,7 @@
       "path": "workflows/common-workflows.md",
       "title": "Common Workflows",
       "keywords": [
-        "how to", "step by step", "walkthrough", "tutorial", "guide",
+        "step by step", "walkthrough", "tutorial", "guide",
         "recipe", "workflow", "end to end", "first exam", "proctored exam",
         "export results", "host arena", "schedule exam", "default verification",
         "monitor students", "pending professor review", "improve exam",

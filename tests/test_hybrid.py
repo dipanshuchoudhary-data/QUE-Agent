@@ -91,6 +91,21 @@ def test_rrf_prefers_complementary_hits():
     assert ids.index("a") < ids.index("b")
 
 
+def test_unique_by_doc_id_keeps_first_chunk_skips_core():
+    from app.knowledge.hybrid import unique_by_doc_id
+
+    hits = unique_by_doc_id(
+        [
+            _chunk("c1", "core", "encyclopedia"),
+            _chunk("a1", "publishing", "publish 1", score=0.9),
+            _chunk("a2", "publishing", "publish 2", score=0.8),
+            _chunk("b1", "lifecycle", "states", score=0.7),
+        ]
+    )
+    assert [h.doc_id for h in hits] == ["publishing", "lifecycle"]
+    assert [h.chunk_id for h in hits] == ["a1", "b1"]
+
+
 def test_save_and_query_bm25(hybrid_settings: Settings):
     save_bm25_corpus(
         [
@@ -148,7 +163,9 @@ def test_hybrid_selects_when_enabled(hybrid_settings: Settings):
     )
     assert sel is not None
     assert sel.mode == "hybrid"
-    assert "core" in sel.pack_ids
+    # CORE skeleton is skipped when enough RAG hits exist (token budget).
+    assert sel.pack_ids
+    assert "PRIVATE REFERENCE" in sel.content or "RETRIEVED_DOCUMENT" in sel.content
 
 
 @requires_knowledge

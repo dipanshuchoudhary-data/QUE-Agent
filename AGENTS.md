@@ -30,6 +30,15 @@
 - Observability (Phase 12): `app/obs/` spans + in-process P50/P95/P99. `GET /v1/ops/metrics`
   is **service key only**. Token/USD budgets (`QUE_BUDGET_*`) skip LLM with a capacity reply.
   Never log raw query, emails, or exam answers. Script: `scripts/summarize_obs.py`.
+  Optional LangSmith (dual-control): `LANGSMITH_TRACING` + `ALLOW_LANGSMITH_IN_PROD` in
+  non-local; project **`Que_agent`**. Instrumented in `app/core/llm.py` (`@traceable`).
+  Exports prompts when enabled — see `docs/RUNBOOK.md`.
+  Context efficiency (Phase 15): canned meta/capabilities, slim CORE_POLICY, selective UI,
+  paid-first failover, optional `QUE_SEMANTIC_ROUTER` — see
+  `docs/phases/phase-15-context-efficiency.md`.
+  Routed efficiency (Phase 16): execution_class + workflow cards for stable how-tos
+  (0 LLM), CORE not retrieved, reasoning off on non-agent turns — see
+  `docs/phases/phase-16-routed-efficiency.md`.
 - Reliability (Phase 13): do **not** retry LLM 401/403/400. LLM circuit
   `QUE_LLM_CIRCUIT_*` (tools already have a breaker). Matrix: `docs/FAILURE_MATRIX.md`.
 - Write tools (Phase 14): `publish_exam` / `notify_students` / `delete_draft_exam` are
@@ -60,9 +69,12 @@
   copied into the Docker image** — without it, deployed QUE has no product brain.
 - Knowledge rules: answer-oriented guides with click paths, decision trees, SAY/NEVER —
   not tab FAQ dumps or thin template stubs. See `knowledge/README.md`.
-- CORE.md is always injected; dense/hybrid top-K chunks (or up to `max_guides` keyword guides)
-  are added per turn. Below `QUE_RAG_MIN_SCORE` → honest no-answer (dense-gated even in hybrid).
+- Knowledge injects a tiny CORE skeleton (or skips it when ≥2 RAG hits) plus dense/hybrid
+  top-K chunks (or up to 2 keyword guides). Full CORE.md is **not retrieved** (`retrieve: false`).
+  Below `QUE_RAG_MIN_SCORE` → honest no-answer (dense-gated even in hybrid).
   Frontmatter stripped. Hybrid: `QUE_RAG_HYBRID` (default true) + `bm25_corpus.json` from ingest.
+  High-confidence static workflows use `knowledge/intents/*.json` cards (no RAG/LLM).
+  `QUE_SEMANTIC_ROUTER` defaults on when an embedding key exists; fail-open to heuristics.
 - UI context (Phase 3): Quizzer sends structured `context` (page/entity/role hint) each turn.
   Quizzer BFF overwrites `user_role` from the authenticated user. QUE injects it as a labeled
   system block — never concatenated into the user message. Precedence: explicit user wording
