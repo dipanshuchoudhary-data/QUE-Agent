@@ -14,7 +14,6 @@ from dataclasses import dataclass, field
 
 import structlog
 from langchain_core.messages import AIMessage, BaseMessage
-
 from langsmith.run_helpers import trace as langsmith_trace
 
 from app.core.config import Settings, get_settings

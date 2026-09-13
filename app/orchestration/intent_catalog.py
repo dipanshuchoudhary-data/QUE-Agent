@@ -53,7 +53,6 @@ _STOP = frozenset(
         "when",
         "does",
         "did",
-        "a",
     }
 )
 

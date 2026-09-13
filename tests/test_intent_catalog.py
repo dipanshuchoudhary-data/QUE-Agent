@@ -5,11 +5,11 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from app.core.config import Settings
 from app.core.llm import (
     max_tokens_for_turn,
     reasoning_enabled_for_turn,
 )
-from app.core.config import Settings
 from app.orchestration.intent_catalog import (
     finalize_understanding,
     has_workflow_card,
@@ -18,8 +18,8 @@ from app.orchestration.intent_catalog import (
 from app.orchestration.pipeline import decide_turn
 from app.orchestration.prompt_pack import compose_leading_systems
 from app.orchestration.resolve import ResolvedRequest
-from app.orchestration.understanding import classify_request
 from app.orchestration.ui_context import ui_context_needed
+from app.orchestration.understanding import classify_request
 from app.schemas.chat import ChatRequest, QueUiContext
 
 ROOT = Path(__file__).resolve().parents[1]
