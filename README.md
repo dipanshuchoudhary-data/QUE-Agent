@@ -50,7 +50,7 @@ Postgres · Redis · Celery           No Quizzer DB · QUE-local cache
 
 | LangGraph | Knowledge | Streaming | Fast Paths |
 |---|---|---|---|
-| prepare | CORE.md always | SSE token stream | Canned FAQs |
+| prepare | Hybrid RAG + cards | SSE token stream | Canned FAQs |
 | knowledge | Keyword guides | Non-stream chat | Typo-tolerant |
 | generate | SAY / NEVER | Meta → token* | Multi-variant |
 | Stateless turn | Click paths | done / error | No LLM cost |
@@ -327,7 +327,7 @@ Recommended production path — **mint on Quizzer, chat on QUE**:
 
 ```
 knowledge/
-  CORE.md                 # always on
+  CORE.md                 # not retrieved; skeleton if RAG is thin
   manifest.json           # retrieval config
   guides/
     navigation.md
