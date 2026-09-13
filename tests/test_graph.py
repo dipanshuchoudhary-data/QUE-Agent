@@ -56,7 +56,7 @@ async def test_complete_runs_through_langgraph():
     with patch("app.graphs.nodes.ainvoke_chat", fake_ainvoke):
         response = await complete(
             ChatRequest(
-                messages=[{"role": "user", "content": "How do I publish an exam?"}],
+                messages=[{"role": "user", "content": "What's the difference between exam duration and link window?"}],
                 conversation_id="c1",
             )
         )
@@ -82,14 +82,21 @@ async def test_complete_remembers_prior_turn_in_prompt():
     with patch("app.graphs.nodes.ainvoke_chat", fake_ainvoke):
         await complete(
             ChatRequest(
-                messages=[{"role": "user", "content": "How do I publish?"}],
+                messages=[{"role": "user", "content": "What's the difference between exam duration and link window?"}],
                 conversation_id=cid,
                 user_id="u-graph",
             )
         )
         await complete(
             ChatRequest(
-                messages=[{"role": "user", "content": "What about results?"}],
+                messages=[
+                    {
+                        "role": "user",
+                        "content": "What's the difference between exam duration and link window?",
+                    },
+                    {"role": "assistant", "content": "Duration is the in-exam timer."},
+                    {"role": "user", "content": "Give an example of that distinction."},
+                ],
                 conversation_id=cid,
                 user_id="u-graph",
             )
@@ -97,5 +104,5 @@ async def test_complete_remembers_prior_turn_in_prompt():
 
     second_prompt = fake_ainvoke.await_args_list[1].args[0]
     blob = " ".join(str(m.content) for m in second_prompt)
-    assert "publish" in blob.casefold()
+    assert "duration" in blob.casefold() or "window" in blob.casefold()
     get_que_graph.cache_clear()
