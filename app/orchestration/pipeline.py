@@ -15,6 +15,8 @@ from dataclasses import dataclass, field
 import structlog
 from langchain_core.messages import AIMessage, BaseMessage
 
+from langsmith.run_helpers import trace as langsmith_trace
+
 from app.core.config import Settings, get_settings
 from app.core.config import get_settings as _get_settings_for_tools
 from app.core.llm import LLMError, astream_chat, last_llm_usage
@@ -59,7 +61,11 @@ from app.obs.cost import usd_for_usage
 from app.obs.metrics import record_turn
 from app.obs.trace import TurnTrace, hash_user_id, new_trace
 from app.orchestration.cache_policy import allow_llm_reply_cache, allow_retrieval_cache
-from app.orchestration.canned import latest_user_text, match_canned_reply
+from app.orchestration.canned import (
+    latest_user_text,
+    match_canned_reply,
+    pick_canned_intent,
+)
 from app.orchestration.history import sanitize_history
 from app.orchestration.pending_actions import clear_pending, get_pending, is_affirmative_reply, is_negative_reply
 from app.orchestration.resolve import (
@@ -115,6 +121,8 @@ def _begin_obs(decision: TurnDecision, request: ChatRequest) -> TurnTrace:
         route=decision.understanding.route,
         freshness=decision.understanding.freshness,
     )
+    trace.execution_class = getattr(decision.understanding, "execution_class", None)
+    trace.canonical_intent = getattr(decision.understanding, "canonical_intent", None)
     bind_trace(trace)
     return trace
 
@@ -134,11 +142,14 @@ def _end_obs(
     if usage.total and not trace.prompt_tokens and not trace.completion_tokens:
         trace.prompt_tokens = usage.prompt_tokens
         trace.completion_tokens = usage.completion_tokens
+        trace.reasoning_tokens = usage.reasoning_tokens
         usd = usd_for_usage(usage)
         if usd is not None:
             trace.cost_usd = usd
         elif ":free" in (trace.model or "").casefold():
             trace.cost_usd = 0.0
+    elif usage.reasoning_tokens and not trace.reasoning_tokens:
+        trace.reasoning_tokens = usage.reasoning_tokens
     if trace.cost_usd is None and not trace.prompt_tokens:
         trace.cost_usd = 0.0
     record_turn(trace, latency_ms=(time.perf_counter() - started) * 1000.0, settings=settings)
@@ -157,6 +168,29 @@ def _capacity_response(
         conversation_id=request.conversation_id,
         model=model,
     )
+
+def _langsmith_turn(decision: TurnDecision):
+    """Parent LangSmith run so a turn is visible as que.turn + route tag."""
+    from app.orchestration.intent_catalog import smith_route_tag
+
+    tag = smith_route_tag(
+        getattr(decision.understanding, "execution_class", None),
+        decision.understanding.route,
+    )
+    return langsmith_trace(
+        name="que.turn",
+        run_type="chain",
+        tags=["que-agent", f"que.route.{tag}"],
+        metadata={
+            "route": decision.understanding.route,
+            "execution_class": getattr(decision.understanding, "execution_class", None),
+            "canonical_intent": getattr(decision.understanding, "canonical_intent", None),
+            "confidence": getattr(decision.understanding, "confidence", None),
+            "runtime_mode": None,
+        },
+        inputs={"route": decision.understanding.route},
+    )
+
 
 TOOL_NOT_READY_REPLY = (
     "I can't read live Quizzer account or exam numbers yet. "
@@ -313,11 +347,22 @@ def _request_to_input(
         payload["intent"] = resolution.intent
         payload["response_mode"] = resolution.response_mode
         payload["retrieval_query"] = resolution.resolved_query
+        payload["active_topic"] = resolution.topic
+        payload["previous_intent"] = resolution.intent
+        payload["unresolved_question"] = (
+            resolution.resolved_query if resolution.response_mode == "clarify" else None
+        )
     if understanding is not None:
         payload["understanding_route"] = understanding.route
         payload["data_need"] = understanding.data_need
         payload["understanding_complexity"] = understanding.complexity
         payload["understanding_freshness"] = understanding.freshness
+        payload["execution_class"] = getattr(understanding, "execution_class", None)
+        payload["canonical_intent"] = getattr(understanding, "canonical_intent", None)
+        payload["understanding_confidence"] = getattr(understanding, "confidence", None)
+        if getattr(understanding, "canonical_intent", None):
+            payload["previous_intent"] = understanding.canonical_intent
+            payload["active_topic"] = understanding.canonical_intent
     return payload
 
 
@@ -349,6 +394,8 @@ def _log_request_trace(
         understanding_data_need=understanding.data_need,
         understanding_complexity=understanding.complexity,
         understanding_reasons=list(understanding.reasons),
+        execution_class=getattr(understanding, "execution_class", None),
+        canonical_intent=getattr(understanding, "canonical_intent", None),
         ui_page=(request.context.current_page if request.context else None),
         ui_role=(request.context.user_role if request.context else None),
     )
@@ -416,6 +463,7 @@ def _guardrail_understanding(reason: str) -> RequestUnderstanding:
         complexity="single_step",
         route="refuse",
         reasons=(reason,),
+        execution_class="out_of_scope",
     )
 
 
@@ -509,6 +557,7 @@ def decide_turn(request: ChatRequest) -> TurnDecision:
                 complexity="single_step",
                 route="canned_eligible",
                 reasons=("canned_social", *understanding.reasons),
+                execution_class="conversational",
             )
         _log_request_trace(
             request_id=request_id,
@@ -541,6 +590,65 @@ def decide_turn(request: ChatRequest) -> TurnDecision:
         resolution.resolved_query or user_text,
         conversation_active=conversation_active,
     )
+    from app.orchestration.intent_catalog import (
+        best_lexical_hit,
+        finalize_understanding,
+        render_workflow_card,
+    )
+    from app.orchestration.semantic_router import maybe_override_understanding
+
+    understanding = maybe_override_understanding(
+        resolution.resolved_query or user_text,
+        understanding,
+        settings=get_settings(),
+    )
+    prior_canonical = None
+    if resolution.is_follow_up and resolution.prior_user_message:
+        prior_hit = best_lexical_hit(resolution.prior_user_message)
+        if prior_hit is not None and prior_hit.score >= 0.36:
+            prior_canonical = prior_hit.intent_id
+    semantic_hit = None
+    if getattr(understanding, "canonical_intent", None) and float(understanding.confidence or 0) >= 0.78:
+        from app.orchestration.intent_catalog import IntentHit
+
+        semantic_hit = IntentHit(
+            intent_id=str(understanding.canonical_intent),
+            score=float(understanding.confidence or 0),
+            source="semantic",
+        )
+    understanding = finalize_understanding(
+        understanding,
+        resolution.resolved_query or user_text,
+        hit=semantic_hit,
+        prior_canonical=prior_canonical,
+    )
+
+    # Classifier says social/meta but phrase matcher missed → still skip LLM.
+    if understanding.route == "canned_eligible" or understanding.intent in {
+        "chitchat",
+        "meta",
+    }:
+        intent_id = "capabilities"
+        if understanding.intent == "chitchat":
+            intent_id = "greeting"
+        fallback = pick_canned_intent(
+            intent_id,
+            conversation_id=request.conversation_id,
+        )
+        if fallback is not None:
+            _log_request_trace(
+                request_id=request_id,
+                request=request,
+                resolution=resolution,
+                understanding=understanding,
+            )
+            return TurnDecision(
+                request_id=request_id,
+                understanding=understanding,
+                resolution=resolution,
+                early_reply=fallback.text,
+                early_model=fallback.model,
+            )
 
     _log_request_trace(
         request_id=request_id,
@@ -548,6 +656,39 @@ def decide_turn(request: ChatRequest) -> TurnDecision:
         resolution=resolution,
         understanding=understanding,
     )
+
+    if (
+        understanding.execution_class == "deterministic"
+        and understanding.canonical_intent
+        and understanding.route != "tool"
+    ):
+        ui = request.context.model_dump(exclude_none=True) if request.context else {}
+        role = str((ui or {}).get("user_role") or "")
+        title = str((ui or {}).get("current_exam_title") or "")
+        cache_id = (
+            f"workflow::{understanding.canonical_intent}::{role or 'any'}::{title or '-'}"
+        )
+        from app.core.que_cache import get_cached_intent, set_cached_intent
+
+        cached_card = get_cached_intent(cache_id)
+        reply = cached_card
+        if not reply:
+            reply = render_workflow_card(
+                understanding.canonical_intent,
+                user_role=role or None,
+                exam_title=title or None,
+                current_page=str((ui or {}).get("current_page") or "") or None,
+            )
+            if reply:
+                set_cached_intent(cache_id, reply)
+        if reply:
+            return TurnDecision(
+                request_id=request_id,
+                understanding=understanding,
+                resolution=resolution,
+                early_reply=reply,
+                early_model=f"workflow:{understanding.canonical_intent}",
+            )
 
     if understanding.route == "refuse":
         return TurnDecision(
@@ -679,9 +820,31 @@ async def complete(request: ChatRequest, *, settings: Settings | None = None) ->
     decision = decide_turn(request)
     decision = await resolve_write_confirmation(decision, request, settings=cfg)
     decide_ms = (time.perf_counter() - t_decide) * 1000.0
+    with _langsmith_turn(decision):
+        return await _complete_after_decide(
+            request, decision, cfg=cfg, started=started, decide_ms=decide_ms
+        )
+
+
+async def _complete_after_decide(
+    request: ChatRequest,
+    decision: TurnDecision,
+    *,
+    cfg: Settings,
+    started: float,
+    decide_ms: float,
+) -> ChatResponse:
     thread_id, mem_config = _thread_config(request)
     trace = _begin_obs(decision, request)
-    trace.add_span("decide", decide_ms, extra={"route": decision.understanding.route})
+    trace.add_span(
+        "decide",
+        decide_ms,
+        extra={
+            "route": decision.understanding.route,
+            "execution_class": getattr(decision.understanding, "execution_class", None),
+            "canonical_intent": getattr(decision.understanding, "canonical_intent", None),
+        },
+    )
     if decision.guardrail:
         trace.add_span("guardrail", 0.0, extra={"layer": decision.guardrail})
 
@@ -757,28 +920,7 @@ async def complete(request: ChatRequest, *, settings: Settings | None = None) ->
             sources_used=["cache", "knowledge", *[f"knowledge:{p}" for p in packs]],
         )
 
-    # Resolve packs before generate so logs/response always show what was loaded.
-    from app.knowledge import select_knowledge
-
-    t_ret = time.perf_counter()
-    selection = select_knowledge(
-        [{"role": m.role, "content": m.content} for m in request.messages],
-        query=decision.resolution.resolved_query,
-        use_cache=allow_retrieval_cache(decision.understanding),
-    )
-    trace.add_span(
-        "retrieve",
-        (time.perf_counter() - t_ret) * 1000.0,
-        extra={"cache": allow_retrieval_cache(decision.understanding)},
-    )
-    _log_request_trace(
-        request_id=decision.request_id,
-        request=request,
-        resolution=decision.resolution,
-        understanding=decision.understanding,
-        knowledge_packs=selection.pack_ids,
-    )
-
+    # Knowledge packs come from the graph knowledge_node (no duplicate pre-retrieve).
     graph = get_que_graph()
     initial = _request_to_input(
         request,
@@ -799,9 +941,7 @@ async def complete(request: ChatRequest, *, settings: Settings | None = None) ->
             request=request,
             latency_ms=(time.perf_counter() - started) * 1000,
             error="llm_error",
-            knowledge_packs=selection.pack_ids,
-            knowledge_scores=selection.scores,
-            knowledge_truncated=selection.truncated,
+            knowledge_packs=[],
         )
         _end_obs(trace, started=started, error=True, settings=cfg)
         raise
@@ -812,9 +952,7 @@ async def complete(request: ChatRequest, *, settings: Settings | None = None) ->
             request=request,
             latency_ms=(time.perf_counter() - started) * 1000,
             error="bad_request",
-            knowledge_packs=selection.pack_ids,
-            knowledge_scores=selection.scores,
-            knowledge_truncated=selection.truncated,
+            knowledge_packs=[],
         )
         _end_obs(trace, started=started, error=True, settings=cfg)
         raise
@@ -825,16 +963,14 @@ async def complete(request: ChatRequest, *, settings: Settings | None = None) ->
             request=request,
             latency_ms=(time.perf_counter() - started) * 1000,
             error=type(exc).__name__,
-            knowledge_packs=selection.pack_ids,
-            knowledge_scores=selection.scores,
-            knowledge_truncated=selection.truncated,
+            knowledge_packs=[],
         )
         _end_obs(trace, started=started, error=True, settings=cfg)
         raise LLMError(str(exc)) from exc
 
     content = _assistant_text(result.get("messages") or [])
     model_name = result.get("model_name") or cfg.llm_model
-    packs = list(result.get("knowledge_packs") or selection.pack_ids)
+    packs = list(result.get("knowledge_packs") or [])
     sources = list(result.get("sources_used") or [])
     content, out_model = _apply_output_guard(
         content, request=request, messages=result.get("messages") or []
@@ -858,8 +994,6 @@ async def complete(request: ChatRequest, *, settings: Settings | None = None) ->
         latency_ms=(time.perf_counter() - started) * 1000,
         model=model_name,
         knowledge_packs=packs,
-        knowledge_scores=selection.scores,
-        knowledge_truncated=selection.truncated,
     )
     _maybe_online(
         decision=decision,
@@ -893,7 +1027,6 @@ async def stream_turn_events(
     decision: TurnDecision | None = None,
 ) -> AsyncIterator[dict]:
     """Yield SSE-ready dicts: status events then token events (same context as complete)."""
-    from app.knowledge import select_knowledge
     from app.orchestration.agent_loop import iter_agent_loop
     from app.orchestration.agent_status import status_event, tool_status_label
 
@@ -909,6 +1042,8 @@ async def stream_turn_events(
         trace.add_span("guardrail", 0.0, extra={"layer": decision.guardrail})
     model_used: str | None = None
     errored = False
+    smith = _langsmith_turn(decision)
+    smith.__enter__()
     try:
         yield status_event(stage="prepare", label="Reading your question…")
 
@@ -982,25 +1117,6 @@ async def stream_turn_events(
                 yield {"type": "token", "content": piece}
             return
 
-        t_ret = time.perf_counter()
-        selection = select_knowledge(
-            [{"role": m.role, "content": m.content} for m in request.messages],
-            query=decision.resolution.resolved_query,
-            use_cache=allow_retrieval_cache(decision.understanding),
-        )
-        trace.add_span(
-            "retrieve",
-            (time.perf_counter() - t_ret) * 1000.0,
-            extra={"cache": allow_retrieval_cache(decision.understanding)},
-        )
-        _log_request_trace(
-            request_id=decision.request_id,
-            request=request,
-            resolution=decision.resolution,
-            understanding=decision.understanding,
-            knowledge_packs=selection.pack_ids,
-        )
-
         existing_dialog: list = []
         if mem_config is not None:
             try:
@@ -1021,6 +1137,7 @@ async def stream_turn_events(
         state = {**state, **context_node(state)}
         mode = (state.get("runtime_mode") or "knowledge").strip()
         tool_name: str | None = None
+        packs: list[str] = []
         if mode == "agent":
             query = str(state.get("retrieval_query") or state.get("resolved_query") or "")
             raw = str(state.get("raw_user_message") or "")
@@ -1076,10 +1193,15 @@ async def stream_turn_events(
             packs = list(state.get("knowledge_packs") or [])
         else:
             yield status_event(stage="knowledge", label="Searching Quizzer guides…")
+            t_ret = time.perf_counter()
             state = knowledge_node(state)
-            packs = list(state.get("knowledge_packs") or selection.pack_ids)
+            packs = list(state.get("knowledge_packs") or [])
+            trace.add_span("retrieve", (time.perf_counter() - t_ret) * 1000.0)
 
-        messages = state["messages"]
+        from app.graphs.nodes import _refresh_identity_pieces
+
+        messages = _refresh_identity_pieces(state, list(state.get("messages") or []))
+        state = {**state, "messages": messages}
         dialog_after_prepare = list(state.get("dialog") or existing_dialog)
 
         yield status_event(stage="generate", label="Writing answer…")
@@ -1101,7 +1223,20 @@ async def stream_turn_events(
                 settings=cfg,
                 complexity=state.get("understanding_complexity"),
                 runtime_mode=state.get("runtime_mode"),
+                intent=state.get("intent"),
+                execution_class=state.get("execution_class")
+                or getattr(decision.understanding, "execution_class", None),
             ):
+                if not collected:
+                    trace.add_span(
+                        "ttft",
+                        (time.perf_counter() - t_llm) * 1000.0,
+                        extra={
+                            "model": lane.model,
+                            "attempt": 0,
+                            "route": decision.understanding.route,
+                        },
+                    )
                 collected.append(piece)
                 lane_used = lane
                 yield {"type": "token", "content": piece}
@@ -1114,9 +1249,7 @@ async def stream_turn_events(
                 latency_ms=(time.perf_counter() - started) * 1000,
                 error="llm_error",
                 knowledge_packs=packs,
-                knowledge_scores=selection.scores,
-                knowledge_truncated=selection.truncated,
-            )
+                            )
             raise
         except ValueError:
             errored = True
@@ -1127,9 +1260,7 @@ async def stream_turn_events(
                 latency_ms=(time.perf_counter() - started) * 1000,
                 error="bad_request",
                 knowledge_packs=packs,
-                knowledge_scores=selection.scores,
-                knowledge_truncated=selection.truncated,
-            )
+                            )
             raise
         except Exception as exc:  # noqa: BLE001
             errored = True
@@ -1140,9 +1271,7 @@ async def stream_turn_events(
                 latency_ms=(time.perf_counter() - started) * 1000,
                 error=type(exc).__name__,
                 knowledge_packs=packs,
-                knowledge_scores=selection.scores,
-                knowledge_truncated=selection.truncated,
-            )
+                            )
             raise LLMError(str(exc)) from exc
 
         usage = last_llm_usage()
@@ -1233,9 +1362,7 @@ async def stream_turn_events(
             latency_ms=(time.perf_counter() - started) * 1000,
             model=str(model_name),
             knowledge_packs=packs,
-            knowledge_scores=selection.scores,
-            knowledge_truncated=selection.truncated,
-        )
+                    )
         _maybe_online(
             decision=decision,
             request=request,
@@ -1243,7 +1370,10 @@ async def stream_turn_events(
             settings=cfg,
         )
     finally:
-        _end_obs(trace, started=started, error=errored, model=model_used, settings=cfg)
+        try:
+            _end_obs(trace, started=started, error=errored, model=model_used, settings=cfg)
+        finally:
+            smith.__exit__(None, None, None)
 
 
 async def stream_tokens(
