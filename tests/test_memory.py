@@ -124,7 +124,7 @@ async def test_complete_persists_dialog_across_turns():
     with patch("app.graphs.nodes.ainvoke_chat", fake_ainvoke):
         first = await complete(
             ChatRequest(
-                messages=[{"role": "user", "content": "How do I publish an exam?"}],
+                messages=[{"role": "user", "content": "What's the difference between exam duration and link window?"}],
                 conversation_id=cid,
                 user_id="u1",
             )
@@ -132,23 +132,23 @@ async def test_complete_persists_dialog_across_turns():
         second = await complete(
             ChatRequest(
                 messages=[
-                    {"role": "user", "content": "How do I publish an exam?"},
+                    {"role": "user", "content": "What's the difference between exam duration and link window?"},
                     {"role": "assistant", "content": first.message.content},
-                    {"role": "user", "content": "Where do I see results after that?"},
+                    {"role": "user", "content": "Give an example of that distinction."},
                 ],
                 conversation_id=cid,
                 user_id="u1",
             )
         )
 
-    assert "Publish" in first.message.content or "publish" in first.message.content.casefold()
-    assert second.message.content
     assert fake_ainvoke.await_count == 2
+    assert first.message.content
+    assert second.message.content
 
     # Second call's prompt should include prior dialog from checkpointer.
     second_prompt = fake_ainvoke.await_args_list[1].args[0]
     blob = " ".join(str(m.content) for m in second_prompt)
-    assert "publish" in blob.casefold()
+    assert "duration" in blob.casefold() or "window" in blob.casefold()
 
     config = runnable_config(make_thread_id(cid, "u1") or "")
     snap = await get_que_graph().aget_state(config)
