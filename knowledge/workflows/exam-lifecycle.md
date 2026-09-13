@@ -36,9 +36,8 @@ can be unarchived.
 ## State Transitions
 
 Draft → Published (Publish):
-Requirements: at least one Approved question.
-Effect: generates a public share link, exam becomes accessible to
-students.
+Canonical how-to: `exam.publish` (approve all questions, then **Publish**).
+Effect: generates a public share link; students can access the exam.
 Reversible: yes, by unpublishing.
 
 Published → Draft (Unpublish):
