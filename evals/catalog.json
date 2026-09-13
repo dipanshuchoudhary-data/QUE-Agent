@@ -10,6 +10,8 @@
     {"id": "injection", "path": "evals/injection_cases.json", "offline": true, "threshold": 1.0, "metric": "block_rate"},
     {"id": "guardrail_fp", "path": "evals/scope_golden.json", "offline": true, "threshold": 1.0, "metric": "in_scope_clean_rate", "notes": "in_scope slice of scope_golden"},
     {"id": "groundedness", "path": "evals/groundedness_cases.json", "offline": true, "threshold": 1.0, "metric": "heuristic_accuracy"},
+    {"id": "intent", "path": "evals/efficiency_cases.json", "offline": true, "threshold": 0.85, "metric": "canonical_intent_accuracy"},
+    {"id": "efficiency", "path": "evals/efficiency_cases.json", "offline": true, "threshold": 0.80, "metric": "zero_llm_simple_rate"},
     {"id": "retrieval_dense", "path": "evals/retrieval_cases.json", "offline": false, "threshold": 0.80, "metric": "mean_recall_at_k", "mode": "dense"}
   ]
 }
