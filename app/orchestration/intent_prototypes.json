@@ -1,0 +1,178 @@
+{
+  "version": "2.0.0",
+  "threshold_high": 0.78,
+  "threshold_medium": 0.62,
+  "threshold_lexical": 0.36,
+  "prototypes": [
+    {
+      "id": "greeting",
+      "route": "canned_eligible",
+      "intent": "chitchat",
+      "texts": ["hello", "hi que", "hey there", "good morning", "namaste"]
+    },
+    {
+      "id": "capabilities",
+      "route": "canned_eligible",
+      "intent": "meta",
+      "texts": [
+        "what can you do",
+        "what can you help me with in quizzer",
+        "how can you help",
+        "what can que help with",
+        "who are you"
+      ]
+    },
+    {
+      "id": "what_is_quizzer",
+      "route": "canned_eligible",
+      "intent": "meta",
+      "texts": ["what is quizzer", "tell me about quizzer", "explain quizzer"]
+    },
+    {
+      "id": "exam.create",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "how do i create an exam",
+        "make a test from notes",
+        "generate a quiz from pdf",
+        "how can i create an assessment",
+        "build a question paper",
+        "how do i create a quiz"
+      ]
+    },
+    {
+      "id": "exam.publish",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "how do i publish an exam",
+        "how do i publish a draft exam",
+        "how to published the draft exam",
+        "make the exam live",
+        "how do i make my exam live",
+        "release my test to students",
+        "how do i release my test",
+        "how do students access this exam",
+        "how can students access this",
+        "how do i put the exam online",
+        "how do i activate this exam",
+        "make my exam available to students",
+        "how do i open this exam for students",
+        "how make exam live",
+        "exam publish how",
+        "how do i publish this"
+      ]
+    },
+    {
+      "id": "exam.share",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "how do i share an exam",
+        "how do i share a quiz link",
+        "copy the exam link",
+        "what about sharing it",
+        "send the exam to students",
+        "share by email",
+        "where is the exam link"
+      ]
+    },
+    {
+      "id": "exam.archive",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "how do i archive an exam",
+        "how do i retire an exam",
+        "archive this test"
+      ]
+    },
+    {
+      "id": "exam.unpublish",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "how do i unpublish an exam",
+        "take the exam offline",
+        "unpublish the quiz"
+      ]
+    },
+    {
+      "id": "exam.settings",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "where are exam settings",
+        "how do i change exam duration",
+        "how do i set the timer",
+        "where is the settings tab",
+        "how do i enable proctoring"
+      ]
+    },
+    {
+      "id": "exam.approve_questions",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "how do i approve questions",
+        "how do i approve draft questions",
+        "bulk approve questions",
+        "questions stuck in draft"
+      ]
+    },
+    {
+      "id": "exam.export_results",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "how do i export results",
+        "how do i export exam results",
+        "download results csv",
+        "export scores to excel"
+      ]
+    },
+    {
+      "id": "results.export",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "export results from the results tab",
+        "download student scores"
+      ]
+    },
+    {
+      "id": "student.view",
+      "route": "knowledge",
+      "intent": "knowledge",
+      "texts": [
+        "where can i see students",
+        "where is the students page",
+        "how do i view my roster",
+        "open the students directory"
+      ]
+    },
+    {
+      "id": "analytics_live",
+      "route": "tool",
+      "intent": "live_data",
+      "texts": [
+        "how many students scored below ten",
+        "show live student count",
+        "what were my dashboard metrics",
+        "compare exam results for my class"
+      ]
+    },
+    {
+      "id": "oos",
+      "route": "refuse",
+      "intent": "out_of_scope",
+      "texts": [
+        "what is the weather today",
+        "write a python sorting algorithm",
+        "tell me a joke",
+        "who is the president of france"
+      ]
+    }
+  ]
+}
