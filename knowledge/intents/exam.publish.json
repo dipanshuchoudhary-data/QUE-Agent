@@ -1,0 +1,17 @@
+{
+  "id": "exam.publish",
+  "version": "1.0.0",
+  "domain": "exams",
+  "teacher_only": true,
+  "requires_tool": false,
+  "requires_live_data": false,
+  "prerequisites": ["At least one question", "Every question Approved"],
+  "steps": [
+    "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**."
+  ],
+  "resulting_state": "The exam becomes **Published** and a shareable link appears on the **Links** tab.",
+  "ui": {"page": "exams", "action": "Publish"},
+  "restrictions": ["Students cannot enter a **Draft** exam."],
+  "related": ["exam.share", "exam.approve_questions", "exam.unpublish", "exam.archive"],
+  "student_reply": "Teachers publish exams. You join with a link they share — there is no **Publish** control on a student account."
+}
