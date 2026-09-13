@@ -9,7 +9,6 @@ from langchain_core.messages import AIMessage, HumanMessage
 
 from app.core.config import Settings
 from app.core.llm import (
-    PREFERRED_STRONG_MODEL,
     LLMError,
     ainvoke_chat,
     astream_chat,
@@ -20,10 +19,9 @@ from app.core.llm import (
 )
 from app.knowledge.embeddings import get_embeddings
 
-MODELS_CSV = (
-    "openai/gpt-4o-mini,google/gemma-4-31b-it:free,nvidia/nemotron-3.5-lightning:free"
-)
+MODELS_CSV = "model-a,model-b,model-c"
 MODELS = tuple(part.strip() for part in MODELS_CSV.split(","))
+PREFERRED = MODELS[1]
 
 _EMPTY_NUMBERED = {
     "llm_api_key_1": "",
@@ -44,6 +42,7 @@ def _pool(**overrides) -> Settings:
         "llm_api_key": "key-a",
         **_EMPTY_NUMBERED,
         "llm_api_key_1": "key-b",
+        "llm_model": PREFERRED,
         "llm_models_raw": MODELS_CSV,
         "llm_gateway_rr": True,
         "llm_max_attempts": 3,
@@ -81,20 +80,21 @@ def test_round_robin_rotates_key_then_model():
     assert first_lanes[1].api_key == "key-b"
 
 
-def test_agent_and_multi_step_prefer_gpt_4o_mini_first():
+def test_agent_and_multi_step_prefer_llm_model_first():
     cfg = _pool()
     agent_starts = [iter_failover_lanes(cfg, runtime_mode="agent")[0] for _ in range(3)]
-    assert all(lane.model == PREFERRED_STRONG_MODEL for lane in agent_starts)
+    assert all(lane.model == PREFERRED for lane in agent_starts)
     assert [lane.key_index for lane in agent_starts] == [0, 1, 0]
 
     reset_gateway_counters()
     lanes = iter_failover_lanes(cfg, complexity="multi_step")
-    assert lanes[0].model == PREFERRED_STRONG_MODEL
+    assert lanes[0].model == PREFERRED
     model_order: list[str] = []
     for lane in lanes:
         if lane.model not in model_order:
             model_order.append(lane.model)
-    assert model_order == list(MODELS)
+    start = MODELS.index(PREFERRED)
+    assert model_order == [MODELS[(start + i) % len(MODELS)] for i in range(len(MODELS))]
 
 
 def test_empty_key_pool_raises_llm_error():
