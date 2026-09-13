@@ -4,9 +4,9 @@ Open the interactive tracker: [`que-agent-handbook.html`](que-agent-handbook.htm
 (**Progress tracker** section — Done / Now / Next / Later, You Are Here, **Mark baseline**).
 
 **Phase deep-dives (interview + code map):** [`phases/README.md`](phases/README.md)
-— one MD per shipped phase (0–14): what changed, which files, how it works.
+— one MD per shipped phase (0–16): what changed, which files, how it works.
 
-## Current focus: Phase 14 done → Phase 15 next
+## Current focus: Phase 16 routed-efficiency done (async still Later)
 
 | Phase | Status | Notes |
 |---|---|---|
@@ -25,9 +25,27 @@ Open the interactive tracker: [`que-agent-handbook.html`](que-agent-handbook.htm
 | 12 Observability / cost | **Done** | Spans, `/v1/ops/metrics` P50/P95/P99, token/USD budgets |
 | 13 Reliability | **Done** | 401/403 not retried; LLM circuit; [`FAILURE_MATRIX.md`](FAILURE_MATRIX.md) |
 | 14 Write tools + rate limits + readiness | **Done** | Confirmed publish/notify/delete; rate limiter; real `/ready`; `RUNBOOK.md` |
-| 15 Async workflows | **Next** | Job queue — not this drop |
+| 15 Context efficiency | **Done** | Canned meta, slim CORE_POLICY, paid-first failover, optional semantic router |
+| 16 Routed efficiency | **Done** | Execution class + workflow cards; CORE not retrieved; reasoning off on how-tos |
+| 16 Async workflows | **Later** | Job queue — not this drop |
 
-Deep dive: [`phases/phase-12-observability.md`](phases/phase-12-observability.md) · [`phases/phase-13-reliability.md`](phases/phase-13-reliability.md) · [`phases/phase-14-write-tools-and-readiness.md`](phases/phase-14-write-tools-and-readiness.md)
+Deep dive: [`phases/phase-16-routed-efficiency.md`](phases/phase-16-routed-efficiency.md) · [`phases/phase-15-context-efficiency.md`](phases/phase-15-context-efficiency.md) · [`phases/phase-14-write-tools-and-readiness.md`](phases/phase-14-write-tools-and-readiness.md)
+
+## Phase 16 — what landed
+
+- `execution_class` + `canonical_intent` on Request Understanding; lexical/semantic overlay
+- High-confidence how-tos (`exam.publish`, share, archive, settings, …) render JSON
+  workflow cards in `decide_turn` — 0 LLM, never `publish_exam`
+- CORE.md skipped at ingest/query; unique-doc hybrid; publish vs lifecycle deduped
+- OpenRouter `reasoning.enabled: false` on non-agent turns; `LLM_MAX_TOKENS_SIMPLE=128`
+- Parent LangSmith `que.turn` + `que.route.*` tags; eval categories `intent` + `efficiency`
+- Harness: `scripts/benchmark_efficiency.py` (offline default)
+
+## Phase 15 — what landed
+
+- Canned meta/capabilities; slim `CORE_POLICY`; selective UI; paid-first failover
+- Optional `QUE_SEMANTIC_ROUTER`; assemble caps 4k/700; howto `max_tokens` 400
+- Details: [`phases/phase-15-context-efficiency.md`](phases/phase-15-context-efficiency.md)
 
 ## Phase 14 — what landed
 
