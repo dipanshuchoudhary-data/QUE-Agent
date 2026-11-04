@@ -47,7 +47,9 @@ async def ready(response: Response) -> dict[str, object]:
     checks["llm_configured"] = bool(settings.llm_api_keys)
 
     if settings.que_rag_enabled:
-        checks["knowledge_index"] = _chroma_ready(settings.que_chroma_path)
+        from app.knowledge.store import chroma_path
+
+        checks["knowledge_index"] = _chroma_ready(str(chroma_path(settings)))
     else:
         checks["knowledge_index"] = True  # not required when RAG is off
 
