@@ -33,6 +33,10 @@ Archived: the exam is retired. Students cannot start new attempts.
 All existing results remain accessible and exportable. Archived exams
 can be unarchived.
 
+Draft means being prepared and not accessible; Published means live and
+students can take it; Archived means retired, with no new attempts and
+results preserved.
+
 ## State Transitions
 
 Draft → Published (Publish):
@@ -62,6 +66,10 @@ archived.
 Archived → Draft (Unarchive):
 Effect: exam goes back to draft state for editing. No share link.
 Results preserved.
+
+Unpublishing deactivates the link; results are never deleted by state
+changes. To re-publish an archived exam, unarchive it, then publish
+again.
 
 ## Delete Behavior
 
@@ -126,6 +134,9 @@ Best practice: finalize settings before publishing. If changes are
 needed on a live exam, be aware of the impact on students who are
 mid-attempt.
 
+Timer changes affect future attempts only; in-progress attempts use the
+timer from when they started.
+
 ## Typical Teacher Workflow (with UI steps)
 
 1. Open Create Exam from the Dashboard quick actions or press Ctrl+K
@@ -152,31 +163,6 @@ mid-attempt.
 
 Teachers can have multiple exams in different states simultaneously.
 There is no limit on the number of draft, published, or archived exams.
-
-## Common Questions
-
-What are the exam states?
-Draft (being prepared, not accessible), Published (live, students can
-take it), and Archived (retired, no new attempts, results preserved).
-
-Can I unpublish a live exam?
-Yes. Unpublishing deactivates the link. No new attempts can start.
-Existing results are preserved.
-
-What happens to results if I unpublish or archive?
-Nothing. Results are never deleted by state changes. They remain
-accessible and exportable.
-
-Can I delete an exam that has results?
-No. If the exam has any attempts, deleting archives it instead. Results
-are protected.
-
-Can I re-publish an archived exam?
-Yes. Unarchive it, then publish again. Previous results remain.
-
-I changed the timer on a published exam. Does it affect current takers?
-No. Timer changes affect future attempts only. In-progress attempts use
-the timer from when they started.
 
 ## Related Features
 
