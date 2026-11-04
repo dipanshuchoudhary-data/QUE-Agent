@@ -5,13 +5,15 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from app.guardrails.sanitize import neutralize_untrusted_text
-from app.knowledge.chunking import strip_frontmatter
+from app.knowledge.chunking import DEFAULT_MAX_CHARS, strip_frontmatter
 from app.knowledge.paths import KNOWLEDGE_ROOT
 from app.knowledge.store import RetrievedChunk
 
 _MAX_CHARS_TOTAL = 4_000
 _MAX_CORE_CHARS = 1_800  # retained for helpers/tests; prompts use _CORE_SKELETON
-_MAX_CHUNK_CHARS = 700
+# Injection cap per chunk follows the chunk size (plus the section-title prefix). A cap
+# below the chunk size silently cut the tail of 7 of 12 sampled answers' evidence.
+_MAX_CHUNK_CHARS = DEFAULT_MAX_CHARS + 100
 
 _NO_ANSWER_INSTRUCTION = (
     "RETRIEVAL: no strong match. Say you are not sure from current Quizzer guides — "
@@ -66,7 +68,11 @@ def preamble(*, no_answer: bool) -> str:
     )
     if no_answer:
         return f"{base}\n\n{_NO_ANSWER_INSTRUCTION}"
-    return f"{base} If packs lack a detail, say you are not sure — do not invent features."
+    return (
+        f"{base} If packs lack a detail, say you are not sure — do not invent features."
+        " Explicit denials in a pack (\"there is no ...\", \"never ...\", \"not available\") "
+        "are facts: state them and never contradict them with a guess."
+    )
 
 
 def assemble_selection(
