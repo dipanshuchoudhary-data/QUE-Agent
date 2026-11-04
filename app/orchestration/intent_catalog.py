@@ -119,6 +119,9 @@ def _distinctive(tokens: set[str]) -> set[str]:
     return {t for t in tokens if t not in _GENERIC and t not in _STOP and len(t) > 2}
 
 
+_SINGLE_TOPIC_WORD_CAP = 0.30  # below the 0.32 hit threshold in finalize_understanding
+
+
 def lexical_score(query: str, prototype: str) -> float:
     q = _content_tokens(query)
     p = _content_tokens(prototype)
@@ -134,7 +137,15 @@ def lexical_score(query: str, prototype: str) -> float:
     jaccard = len(inter) / len(q | p)
     coverage = len(inter) / max(1, len(p))
     q_cover = len(inter) / max(1, len(q))
-    return min(1.0, 0.35 * jaccard + 0.65 * max(coverage, q_cover))
+    score = min(1.0, 0.35 * jaccard + 0.65 * max(coverage, q_cover))
+    # One shared topic word is not evidence of the same intent when the query carries
+    # other topic words the prototype does not explain ("live exam monitor" shares only
+    # "live" with "make the exam live", but it is about Monitoring, not publishing).
+    # Generic words (exam, student, ...) never count as shared topic.
+    shared = inter & q_dist
+    if len(shared) == 1 and len(q_dist) > 1 and len(p_dist) > 1:
+        score = min(score, _SINGLE_TOPIC_WORD_CAP)
+    return score
 
 
 @lru_cache
@@ -171,6 +182,37 @@ def card_for(intent_id: str | None) -> dict[str, Any] | None:
 def has_workflow_card(intent_id: str | None) -> bool:
     card = card_for(intent_id)
     return bool(card) and not card.get("requires_tool") and not card.get("requires_live_data")
+
+
+@lru_cache
+def _intent_vocab(intent_id: str) -> frozenset[str]:
+    """Distinctive words used anywhere in an intent's prototypes (what the card is about)."""
+    out: set[str] = set()
+    for proto in load_prototypes_meta().get("prototypes") or []:
+        if proto.get("id") == intent_id:
+            for text in proto.get("texts") or []:
+                out |= _distinctive(_content_tokens(str(text)))
+    return frozenset(out)
+
+
+# A card answers a whole workflow. Two or more topic words in the query that the intent never
+# mentions mean the user asked about a facet of it ("negative marking settings",
+# "integrity events and live proctoring"), which the generic card cannot answer.
+_MAX_UNEXPLAINED_TOPIC_WORDS = 1
+
+
+def has_unexplained_facet(query: str, intent_id: str | None) -> bool:
+    if not intent_id:
+        return False
+    vocab = _intent_vocab(intent_id)
+    if not vocab:
+        return False
+    unexplained = 0
+    for word in re.findall(r"[a-z0-9]+", (query or "").casefold()):
+        forms = _content_tokens(word)  # the word plus its stems count as one word
+        if _distinctive(forms) and not (forms & vocab):
+            unexplained += 1
+    return unexplained > _MAX_UNEXPLAINED_TOPIC_WORDS
 
 
 def best_lexical_hit(query: str) -> IntentHit | None:
@@ -281,6 +323,7 @@ def finalize_understanding(
         and not is_diagnostic_ask(q)
         and not is_comparison_ask(q)
         and confidence >= 0.36
+        and not (hit is not None and hit.source == "lexical" and has_unexplained_facet(q, canonical))
         and execution != "complex_knowledge"
     ):
         execution = "deterministic"
