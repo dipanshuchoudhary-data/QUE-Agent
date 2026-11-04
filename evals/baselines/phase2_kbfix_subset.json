@@ -1,0 +1,690 @@
+{
+  "summary": {
+    "config": {
+      "top_k": 3,
+      "candidate_k": 5,
+      "rrf_k": 60,
+      "min_score": 0.28,
+      "hybrid": true,
+      "embedding_model": "openai/text-embedding-3-large",
+      "rerank": true,
+      "rerank_model": "nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+      "judge_model": "nvidia/nemotron-3.5-lightning:free"
+    },
+    "mode": "raw",
+    "rerank_status": {
+      "failed": 14,
+      "skipped": 1
+    },
+    "not_judged_buckets": {},
+    "rows_in_gate": 15,
+    "rows_human_verified": 0,
+    "provisional": true,
+    "judge_calls_per_answered_row": 1,
+    "judge_models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "contextual_recall_mean": 0.7287,
+    "contextual_precision_mean": 0.7113,
+    "contextual_relevancy_mean": 0.6593,
+    "metrics_average": 0.6998,
+    "recall_cases_below_0_5": [
+      "r11",
+      "a06"
+    ],
+    "abstention": "0/0",
+    "injected_chars_mean": 2248.3,
+    "latency_ms_p50": 9929.0,
+    "latency_ms_p95": 10180.2
+  },
+  "cases": [
+    {
+      "id": "r11",
+      "query": "How do students take an exam from a link?",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "google-classroom",
+        "taking-exams",
+        "product-overview"
+      ],
+      "injected_chars": 2736,
+      "latency_ms": 12169.1,
+      "guide_id_diagnostic": {
+        "expected": [
+          "taking-exams"
+        ],
+        "retrieved": [
+          "google-classroom",
+          "taking-exams",
+          "product-overview"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.33,
+        "reason": "The chunks mention clicking the shared link and opening it in a browser, but miss details about the verification form, access code entry, starting the exam, permissions, and submission steps."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.33,
+        "reason": "Chunk 2 contains relevant information about how students access the exam via a link, but it is ranked second behind a chunk about Google Classroom integration."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.4,
+        "reason": "While some parts of the chunks discuss student exam access via links, a significant portion of the text covers teacher-facing features like Google Classroom integrations, roster imports, and general platform FAQs."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r19",
+      "query": "How does onboarding work after signup?",
+      "rerank": "skipped",
+      "execution_class": null,
+      "final_docs": [
+        "onboarding"
+      ],
+      "injected_chars": 368,
+      "latency_ms": 2923.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "onboarding"
+        ],
+        "retrieved": [
+          "onboarding"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunk mentions the four-step onboarding flow, collecting the name, persona, and details, but misses the specific details about the ten options grid, celebration animation, and dashboard redirection."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The only retrieved chunk is relevant and contains the partial facts from the expected answer."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "The retrieved text is entirely focused on explaining the onboarding process after signup."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "p01",
+      "query": "I want to make a test for my class from my PDF notes",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "common-workflows",
+        "onboarding",
+        "creating-exams"
+      ],
+      "injected_chars": 2618,
+      "latency_ms": 9931.5,
+      "guide_id_diagnostic": {
+        "expected": [
+          "creating-exams"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "onboarding",
+          "creating-exams"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks contain information about uploading files and choosing AI generation modes, but miss the initial steps of navigating to the Dashboard and clicking the Create Exam quick action."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.33,
+        "reason": "Only the third chunk contains relevant facts about creating an exam from a PDF, while the first chunk is about post-creation review and the second is about onboarding."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.67,
+        "reason": "While parts of the chunks cover creating exams and file uploads, some retrieved content like onboarding FAQs and exam publishing settings are unrelated to the specific question."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "p03",
+      "query": "give students the link to the exam",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "taking-exams",
+        "publishing",
+        "exam-settings"
+      ],
+      "injected_chars": 2508,
+      "latency_ms": 10150.0,
+      "guide_id_diagnostic": {
+        "expected": [
+          "publishing"
+        ],
+        "retrieved": [
+          "taking-exams",
+          "publishing",
+          "exam-settings"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to explain how to find and share the exam link with students are fully present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.67,
+        "reason": "Chunk 2 directly answers how to find and share the exam link, but Chunk 3 is about access control codes rather than the link itself."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.67,
+        "reason": "Chunks 1 and 2 are directly relevant to student exam access and sharing links, whereas Chunk 3 discusses access codes which is secondary noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "p06",
+      "query": "stop students from switching tabs during the test",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "taking-exams",
+        "exam-settings",
+        "results-exports"
+      ],
+      "injected_chars": 2177,
+      "latency_ms": 10180.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings",
+          "live-monitoring"
+        ],
+        "retrieved": [
+          "taking-exams",
+          "exam-settings",
+          "results-exports"
+        ],
+        "missing": [
+          "live-monitoring"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks mention that tab switching is detected and that there is a 'Block Tab Switching' setting, but they lack the navigational steps (opening Exams, clicking the exam card, and going to Settings) required by the expected answer."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "Chunk 2 correctly identifies the 'Block Tab Switching' setting, but the top-ranked chunk discusses proctoring during the exam rather than how to configure the setting to stop it."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.67,
+        "reason": "Chunks 1 and 2 are directly relevant to proctoring and tab switching, while chunk 3 is mostly noise discussing result exports and integrity flags."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "p10",
+      "query": "can students retake the exam",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "taking-exams",
+        "exam-settings",
+        "lifecycle"
+      ],
+      "injected_chars": 2786,
+      "latency_ms": 9838.7,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings",
+          "taking-exams"
+        ],
+        "retrieved": [
+          "taking-exams",
+          "exam-settings",
+          "lifecycle"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "The chunks contain all necessary facts about retaking the exam, including the Maximum Attempts setting and independent attempt properties."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The most relevant chunk directly addressing the question is ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.85,
+        "reason": "Most of the retrieved text is directly about exam attempts and retakes, with minimal extraneous information."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "p11",
+      "query": "what happens to my exam when I archive it",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "lifecycle",
+        "publishing",
+        "onboarding"
+      ],
+      "injected_chars": 1409,
+      "latency_ms": 10030.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "lifecycle"
+        ],
+        "retrieved": [
+          "lifecycle",
+          "publishing",
+          "onboarding"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunks mention that archiving retires the exam, preserves results, and allows unarchiving, but do not explicitly mention that students cannot start new attempts or that the share link is deactivated."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.67,
+        "reason": "The first two chunks correctly contain relevant information about archiving exams, while the third chunk is completely irrelevant onboarding noise."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.55,
+        "reason": "While the first two chunks are directly about archiving exams, the third chunk contains entirely unrelated onboarding and sign-up FAQs."
+      },
+      "weak_metrics": [
+        "relevancy"
+      ],
+      "weak_group": "below_0.6"
+    },
+    {
+      "id": "t04",
+      "query": "exam link not working for student",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "common-problems",
+        "taking-exams",
+        "publishing"
+      ],
+      "injected_chars": 2488,
+      "latency_ms": 10076.8,
+      "guide_id_diagnostic": {
+        "expected": [
+          "common-problems",
+          "publishing"
+        ],
+        "retrieved": [
+          "common-problems",
+          "taking-exams",
+          "publishing"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All the necessary troubleshooting steps mentioned in the expected answer are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly and completely addresses the student exam link troubleshooting steps."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.9,
+        "reason": "Almost all of the retrieved text focuses directly on student access problems and exam links, with minimal extraneous information."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "t08",
+      "query": "student ko exam link kaise bheje",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "taking-exams",
+        "publishing",
+        "empty-states"
+      ],
+      "injected_chars": 2238,
+      "latency_ms": 9529.1,
+      "guide_id_diagnostic": {
+        "expected": [
+          "publishing"
+        ],
+        "retrieved": [
+          "taking-exams",
+          "publishing",
+          "empty-states"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All steps and sharing options required to send the exam link to students are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The highly relevant chunk containing the step-by-step UI guide for publishing and sharing is ranked second, immediately preceded by a relevant overview chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.85,
+        "reason": "Most of the retrieved text directly addresses how to publish and share exam links, with only a minor portion containing general workflow context."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "a02",
+      "query": "It's not working",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "common-problems",
+        "taking-exams",
+        "empty-states"
+      ],
+      "injected_chars": 2199,
+      "latency_ms": 9867.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "common-problems"
+        ],
+        "retrieved": [
+          "common-problems",
+          "taking-exams",
+          "empty-states"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": true,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The retrieved chunks mention checking the common-problems guide and sending feedback for errors, but miss the complete guidance on naming terms and feature-specific guides."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.67,
+        "reason": "The first chunk contains relevant troubleshooting and error reporting information, while the subsequent chunks are less directly related to the general 'not working' query."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.67,
+        "reason": "Chunk 1 is directly relevant to troubleshooting and errors, whereas chunks 2 and 3 focus on specific exam rules and empty workspace checklists rather than general 'not working' issues."
+      },
+      "weak_metrics": [
+        "recall"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "a05",
+      "query": "Can I change it after?",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "questions",
+        "exam-settings",
+        "onboarding"
+      ],
+      "injected_chars": 2455,
+      "latency_ms": 9841.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings",
+          "publishing"
+        ],
+        "retrieved": [
+          "questions",
+          "exam-settings",
+          "onboarding"
+        ],
+        "missing": [
+          "publishing"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "Chunk 2 explicitly confirms that most exam settings can be changed after publishing and affect future attempts only."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "The relevant chunk (Chunk 2) is ranked second behind Chunk 1, which discusses editing AI questions instead of exam settings."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.67,
+        "reason": "Chunks 1 and 2 directly relate to changing settings or content after creation, while Chunk 3 is irrelevant onboarding noise."
+      },
+      "weak_metrics": [
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "a06",
+      "query": "How do I start?",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "account-settings",
+        "creating-exams",
+        "empty-states"
+      ],
+      "injected_chars": 1736,
+      "latency_ms": 9929.0,
+      "guide_id_diagnostic": {
+        "expected": [
+          "onboarding",
+          "common-workflows"
+        ],
+        "retrieved": [
+          "account-settings",
+          "creating-exams",
+          "empty-states"
+        ],
+        "missing": [
+          "onboarding",
+          "common-workflows"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "None of the facts needed to answer how to start and create an account appear in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "The retrieved chunks do not contain the expected facts, so no relevant chunks are ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.33,
+        "reason": "Chunk 2 discusses how to start creating exams, but the other chunks are about settings and empty states rather than getting started."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s05",
+      "query": "How do I set up webcam monitoring and auto-submit for a proctored exam?",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "common-workflows",
+        "exam-settings",
+        "taking-exams"
+      ],
+      "injected_chars": 2772,
+      "latency_ms": 9736.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "common-workflows"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "exam-settings",
+          "taking-exams"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the question about setting up webcam monitoring and auto-submit are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The most relevant chunk containing the step-by-step instructions is ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved chunks are directly relevant to proctored exam settings and monitoring."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s19",
+      "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "onboarding",
+        "navigation",
+        "product-overview"
+      ],
+      "injected_chars": 2813,
+      "latency_ms": 9999.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "onboarding"
+        ],
+        "retrieved": [
+          "onboarding",
+          "navigation",
+          "product-overview"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks mention entering details in Screen 3 (Details) of onboarding, but do not specifically mention Step 5 or clicking Continue as stated in the expected answer."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The chunk containing the necessary onboarding information is correctly ranked at the top."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.33,
+        "reason": "Only the first chunk is relevant to the question about workspace setup, while the other two chunks discuss navigation and product overview."
+      },
+      "weak_metrics": [
+        "recall",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s22",
+      "query": "How do I set the correct answer for a True/False question?",
+      "rerank": "failed",
+      "execution_class": null,
+      "final_docs": [
+        "questions",
+        "taking-exams",
+        "terminology"
+      ],
+      "injected_chars": 2422,
+      "latency_ms": 9901.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "questions"
+        ],
+        "retrieved": [
+          "questions",
+          "taking-exams",
+          "terminology"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "The expected fact that True or False must be marked as correct is present in the first chunk."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The chunk containing the necessary fact is ranked first, while the irrelevant chunks follow."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.33,
+        "reason": "Only the first chunk is directly relevant to setting the correct answer, while the other two chunks discuss taking exams and general terminology."
+      },
+      "weak_metrics": [
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    }
+  ]
+}
