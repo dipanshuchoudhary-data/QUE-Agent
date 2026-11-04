@@ -23,6 +23,8 @@ from app.knowledge import select_knowledge
 from app.obs.budget import CAPACITY_REPLY, allow_llm_call, note_llm_usage
 from app.obs.context import add_span, current_trace
 from app.obs.cost import usd_for_usage
+from app.obs.evidence import note as note_evidence
+from app.obs.evidence import record_generator_context
 from app.orchestration.history import sanitize_history
 from app.orchestration.prompt_pack import compose_leading_systems
 from app.orchestration.resolve import ResolvedRequest, resolve_request
@@ -247,14 +249,10 @@ async def tools_node(state: QueGraphState) -> dict:
         ok=not execution.error_code,
         extra={"name": execution.selection.tool.name if execution.selection.tool else None},
     )
-    messages = _insert_after_leading_systems(
-        list(state.get("messages") or []),
-        SystemMessage(content=execution.system_message),
-    )
+    tool_name = execution.selection.tool.name if execution.selection.tool else None
     sources = list(state.get("sources_used") or [])
     if "tools" not in sources:
         sources.append("tools")
-    tool_name = execution.selection.tool.name if execution.selection.tool else None
     if tool_name:
         tag = f"tool:{tool_name}"
         if tag not in sources:
@@ -264,8 +262,7 @@ async def tools_node(state: QueGraphState) -> dict:
     if execution.selection.needs_clarify and "tool_clarify" not in sources:
         sources.append("tool_clarify")
 
-    return {
-        "messages": messages,
+    out: dict = {
         "sources_used": sources,
         "tool_name": tool_name,
         "tool_args": dict(execution.selection.args),
@@ -276,6 +273,68 @@ async def tools_node(state: QueGraphState) -> dict:
         "agent_steps": 1 if tool_name else 0,
         "agent_termination_reason": "converged",
     }
+    base = {**dict(state), **out}
+
+    if execution.error_code:
+        add_span("tool_recovery", 0.0, extra={"live": _is_live_turn(state), "code": execution.error_code})
+        if _is_live_turn(state):
+            # Live data that could not be fetched: answer deterministically. No LLM
+            # paraphrase and no static docs standing in for real-time numbers.
+            return {
+                **out,
+                "messages": list(state.get("messages") or []),
+                "direct_reply": tool_failure_reply(execution.error_code),
+                "tool_fallback": "none",
+            }
+        # The ask did not need live data: the failed tool adds nothing, so answer
+        # from product knowledge instead of surfacing a tool error.
+        recovered = knowledge_node(base)
+        recovered["sources_used"] = [*recovered["sources_used"], "tool_fallback:knowledge"]
+        return {**out, **recovered, "tool_fallback": "knowledge"}
+
+    messages = _insert_after_leading_systems(
+        list(state.get("messages") or []),
+        SystemMessage(content=execution.system_message),
+    )
+    base["messages"] = messages
+    out["messages"] = messages
+    if _wants_guidance_with_live(state) and not execution.selection.needs_clarify:
+        out.update(knowledge_node(base))
+    return out
+
+
+def _is_live_turn(state: QueGraphState) -> bool:
+    """Whether this turn asked for live Quizzer data (so docs can never substitute).
+
+    Understanding says so explicitly for most live asks. A data-shaped ask that
+    understanding left as "knowledge" but the tool selector claimed ("show me live
+    exam health") is live too; only guidance-shaped asks are safe to answer from the KB.
+    """
+    from app.orchestration.understanding import is_guidance_ask
+
+    if (state.get("understanding_route") or "").strip() == "tool" or (
+        state.get("data_need") or ""
+    ).strip() in {"live_tool", "insight_tool"}:
+        return True
+    text = str(state.get("raw_user_message") or state.get("resolved_query") or "")
+    return not is_guidance_ask(text)
+
+
+def _wants_guidance_with_live(state: QueGraphState) -> bool:
+    """Live ask that is also a chained how-to: give the model KB next to TOOL_RESULT."""
+    return _is_live_turn(state) and (state.get("understanding_complexity") or "") == "multi_step"
+
+
+def tool_failure_reply(error_code: str | None) -> str:
+    if error_code == "forbidden":
+        return (
+            "That live insight isn't available for your account role, so I can't pull it. "
+            "Ask me how it works in Quizzer, or open the page directly."
+        )
+    return (
+        "I couldn't reach your live Quizzer data just now, so I won't guess at numbers. "
+        "Please try again in a moment, or open the relevant exam or page in Quizzer to see it directly."
+    )
 
 
 async def agent_node(state: QueGraphState) -> dict:
@@ -339,7 +398,7 @@ def apply_agent_loop_result(state: QueGraphState, result: object) -> dict:
             ok=step.ok,
             extra={"name": step.tool_name},
         )
-    return {
+    out = {
         "messages": messages,
         "sources_used": sources,
         "runtime_mode": "agent",
@@ -351,6 +410,18 @@ def apply_agent_loop_result(state: QueGraphState, result: object) -> dict:
         "tool_error": last.error_code if last else None,
         "tool_latency_ms": sum(s.elapsed_ms for s in result.steps),
     }
+    attempted = [ex for ex in result.executions if ex.selection.tool is not None]
+    if attempted and all(ex.error_code for ex in attempted):
+        # Every tool failed: no live evidence exists, so don't let the model improvise.
+        return {
+            **out,
+            "messages": list(state.get("messages") or []),
+            "direct_reply": tool_failure_reply(attempted[-1].error_code),
+            "tool_fallback": "none",
+        }
+    if _wants_guidance_with_live(state) and result.successful_count:
+        out.update(knowledge_node({**dict(state), **out}))
+    return out
 
 
 # Short stub when meta/capabilities somehow reach knowledge without canned.
@@ -429,13 +500,115 @@ def knowledge_node(state: QueGraphState) -> dict:
         tag = f"knowledge:{pack_id}"
         if tag not in sources:
             sources.append(tag)
+    note_evidence(
+        retrieved={
+            "query": retrieval_query,
+            "mode": selection.mode,
+            "no_answer": selection.no_answer,
+            "chunk_ids": list(selection.chunk_ids),
+            "scores": dict(selection.scores),
+            "truncated": selection.truncated,
+        }
+    )
 
-    return {
+    update: dict = {
         "messages": messages,
         "sources_used": sources,
         "knowledge_packs": list(selection.pack_ids),
         "retrieval_query": retrieval_query or state.get("retrieval_query"),
     }
+    if _is_unmatched_turn(state, selection):
+        if get_settings().que_interpret_on_miss:
+            update["knowledge_miss"] = True
+        elif get_settings().que_noanswer_deterministic:
+            _set_no_answer_reply(update, state, retrieval_query)
+    return update
+
+
+def _is_unmatched_turn(state: QueGraphState, selection) -> bool:
+    """Retrieval found nothing and nothing else can ground the answer.
+
+    Not for follow-ups (the thread may hold the answer), turns with UI context (the
+    page/exam may be the referent), or tool-fallback turns.
+    """
+    if not selection.no_answer:
+        return False
+    if state.get("is_follow_up") or state.get("tool_fallback"):
+        return False
+    ui = state.get("ui_context") if isinstance(state.get("ui_context"), dict) else {}
+    page = str(ui.get("current_page") or "").lower()
+    if (page and page != "unknown") or ui.get("current_exam_id") or ui.get("current_entity_id"):
+        return False
+    return True
+
+
+def _should_answer_no_match(state: QueGraphState, selection) -> bool:
+    return bool(get_settings().que_noanswer_deterministic) and _is_unmatched_turn(state, selection)
+
+
+def _set_no_answer_reply(update: dict, state: QueGraphState, retrieval_query: str) -> None:
+    from app.orchestration.clarify import no_answer_reply
+
+    update["direct_reply"] = no_answer_reply(str(state.get("raw_user_message") or retrieval_query))
+    update["direct_model"] = "deterministic:no_answer"
+
+
+async def resolve_knowledge_miss(state: QueGraphState) -> dict:
+    """E2: interpret a missed ask once, then retry retrieval, ask, or decline honestly.
+
+    Returns a state update (empty when the turn is not a pending miss). Called right
+    before generation, in both the graph and the streaming path.
+    """
+    if not state.get("knowledge_miss") or (state.get("direct_reply") or "").strip():
+        return {}
+    from app.knowledge.interpret import interpret_query
+
+    raw = str(state.get("raw_user_message") or state.get("retrieval_query") or "")
+    out: dict = {"knowledge_miss": False}
+    interp, cost = await interpret_query(raw, request_id=str(state.get("request_id") or ""), user_id=state.get("user_id"))
+    outcome = "none"
+    if interp is not None and interp.ambiguous:
+        out["direct_reply"] = interp.clarify
+        out["direct_model"] = "interpret:clarify"
+        outcome = "clarify"
+    elif interp is not None and interp.english and interp.english.casefold() != raw.casefold():
+        from app.knowledge.assemble import _NO_ANSWER_INSTRUCTION  # noqa: PLC0415
+
+        selection = select_knowledge(
+            list(state.get("input_messages") or []),
+            query=interp.english,
+            use_cache=True,
+            canonical_intent=state.get("canonical_intent"),
+            execution_class=state.get("execution_class"),
+        )
+        if not selection.no_answer and selection.content.strip():
+            kept = [
+                m for m in list(state.get("messages") or [])
+                if not (isinstance(m, SystemMessage) and _NO_ANSWER_INSTRUCTION in str(m.content))
+            ]
+            out["messages"] = _insert_after_leading_systems(kept, SystemMessage(content=selection.content))
+            sources = [s for s in list(state.get("sources_used") or []) if s != "knowledge_no_answer"]
+            sources.append("knowledge:interpreted")
+            out["sources_used"] = sources
+            out["knowledge_packs"] = list(selection.pack_ids)
+            out["retrieval_query"] = interp.english
+            note_evidence(
+                retrieved={
+                    "query": interp.english,
+                    "mode": selection.mode,
+                    "no_answer": False,
+                    "chunk_ids": list(selection.chunk_ids),
+                    "scores": dict(selection.scores),
+                    "truncated": selection.truncated,
+                }
+            )
+            outcome = "retry_hit"
+        else:
+            outcome = "retry_miss"
+    if "direct_reply" not in out and outcome != "retry_hit" and get_settings().que_noanswer_deterministic:
+        _set_no_answer_reply(out, state, raw)
+    note_evidence(interpret={**cost, "outcome": outcome})
+    return out
 
 
 def _validate_answer(content: str, *, response_mode: str | None, in_scope: bool) -> str:
@@ -488,10 +661,39 @@ def _refresh_identity_pieces(state: QueGraphState, messages: list[BaseMessage]) 
 
 async def generate_node(state: QueGraphState) -> dict:
     """Call the chat model with the prepared message list; append reply to dialog."""
+    resolved = await resolve_knowledge_miss(state)
+    if resolved:
+        state = {**state, **resolved}
+    carry = {k: resolved[k] for k in ("knowledge_packs", "retrieval_query") if k in resolved}
     messages = _refresh_identity_pieces(state, list(state.get("messages") or []))
     if not messages:
         raise LLMError("No messages prepared for generation")
 
+    direct = (state.get("direct_reply") or "").strip()
+    if direct:
+        record_generator_context(state, [])
+        note_evidence(llm_called=False)
+        sources = list(state.get("sources_used") or [])
+        dialog = append_assistant(
+            list(state.get("dialog") or []), direct, max_turns=max_dialog_turns()
+        )
+        return {
+            **carry,
+            "messages": [*messages, AIMessage(content=direct)],
+            "dialog": dialog,
+            "sources_used": sources,
+            "model_name": state.get("direct_model") or "deterministic:tool_unavailable",
+            "memory_turns": len(dialog),
+            "topic": state.get("topic"),
+            "current_task": state.get("resolved_query") or state.get("current_task"),
+            "intent": state.get("intent"),
+            "response_mode": state.get("response_mode"),
+            "resolved_query": state.get("resolved_query"),
+            "is_follow_up": state.get("is_follow_up"),
+        }
+
+    record_generator_context(state, messages)
+    note_evidence(llm_called=True)
     request_id = str(state.get("request_id") or "").strip()
     cfg = get_settings()
     if request_id:
@@ -505,6 +707,7 @@ async def generate_node(state: QueGraphState) -> dict:
                 max_turns=max_dialog_turns(),
             )
             return {
+                **carry,
                 "messages": [*messages, AIMessage(content=content)],
                 "dialog": dialog,
                 "sources_used": sources,
@@ -609,6 +812,7 @@ async def generate_node(state: QueGraphState) -> dict:
         max_turns=max_dialog_turns(),
     )
     return {
+        **carry,
         "messages": [*messages, AIMessage(content=content)],
         "dialog": dialog,
         "sources_used": sources,
