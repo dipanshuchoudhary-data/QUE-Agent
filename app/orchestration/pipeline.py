@@ -65,6 +65,7 @@ from app.orchestration.canned import (
     match_canned_reply,
     pick_canned_intent,
 )
+from app.orchestration.clarify import needs_referent, referent_reply
 from app.orchestration.history import sanitize_history
 from app.orchestration.pending_actions import clear_pending, get_pending, is_affirmative_reply, is_negative_reply
 from app.orchestration.resolve import (
@@ -487,6 +488,27 @@ def _apply_output_guard(
     return safe, "guardrail:output"
 
 
+def _ui_context_has_referent(request: ChatRequest) -> bool:
+    """True when Quizzer UI context gives "this/it" something to point at."""
+    ctx = request.context
+    if ctx is None:
+        return False
+    return bool(
+        (ctx.current_page or "unknown") != "unknown"
+        or ctx.current_exam_id
+        or ctx.current_exam_title
+        or ctx.current_entity_id
+    )
+
+
+def _should_ask_referent(request: ChatRequest, resolution, user_text: str) -> bool:
+    if resolution.is_follow_up or not needs_referent(user_text):
+        return False
+    if _ui_context_has_referent(request):
+        return False
+    return get_pending(make_thread_id(request.conversation_id, request.user_id)) is None
+
+
 def decide_turn(request: ChatRequest) -> TurnDecision:
     """Resolve follow-ups, then classify with conversation-aware scope."""
     request_id = uuid.uuid4().hex[:12]
@@ -570,6 +592,36 @@ def decide_turn(request: ChatRequest) -> TurnDecision:
             resolution=resolution,
             early_reply=canned.text,
             early_model=canned.model,
+        )
+
+    # "Can I change it after?" with nothing to anchor "it": ask what they mean
+    # instead of retrieving on filler words. Never fires when the resolver tied
+    # the turn to an earlier topic, when UI context names a page/exam, or while
+    # a write confirmation is pending.
+    if _should_ask_referent(request, resolution, user_text):
+        understanding = RequestUnderstanding(
+            scope="clarification",
+            intent="knowledge",
+            risk="read",
+            freshness="static",
+            data_need="none",
+            complexity="single_step",
+            route="clarify",
+            reasons=("ambiguous_reference",),
+            execution_class="conversational",
+        )
+        _log_request_trace(
+            request_id=request_id,
+            request=request,
+            resolution=resolution,
+            understanding=understanding,
+        )
+        return TurnDecision(
+            request_id=request_id,
+            understanding=understanding,
+            resolution=resolution,
+            early_reply=referent_reply(user_text),
+            early_model="scope:clarify_referent",
         )
 
     # Active Quizzer thread → classifier may continue without keyword matches.
@@ -1197,13 +1249,36 @@ async def stream_turn_events(
             packs = list(state.get("knowledge_packs") or [])
             trace.add_span("retrieve", (time.perf_counter() - t_ret) * 1000.0)
 
-        from app.graphs.nodes import _refresh_identity_pieces
+        from app.graphs.nodes import _refresh_identity_pieces, resolve_knowledge_miss
 
+        resolved = await resolve_knowledge_miss(state)
+        if resolved:
+            state = {**state, **resolved}
+            packs = list(state.get("knowledge_packs") or [])
         messages = _refresh_identity_pieces(state, list(state.get("messages") or []))
         state = {**state, "messages": messages}
         dialog_after_prepare = list(state.get("dialog") or existing_dialog)
 
+        direct_reply = (state.get("direct_reply") or "").strip()
+        if direct_reply:
+            # Live data could not be fetched: deterministic text, no LLM call.
+            from app.obs.evidence import note as note_evidence
+            from app.obs.evidence import record_generator_context
+
+            record_generator_context(state, [])
+            note_evidence(llm_called=False)
+            await _persist_dialog_turn(request, direct_reply)
+            for piece in _chunk_text(direct_reply):
+                yield {"type": "token", "content": piece}
+            return
+
         yield status_event(stage="generate", label="Writing answer…")
+        from app.obs.evidence import record_generator_context as _record_ctx
+
+        _record_ctx(state, messages)
+        from app.obs.evidence import note as _note_evidence
+
+        _note_evidence(llm_called=True)
 
         ok_llm, deny = allow_llm_call(decision.request_id, messages=messages, settings=cfg)
         if not ok_llm:
