@@ -1,0 +1,337 @@
+{
+ "r02": {
+  "id": "r02",
+  "query": "Where is Monitoring in the sidebar?",
+  "category": "multi_doc",
+  "difficulty": "medium",
+  "expected": "Monitoring is not located in the sidebar. To find it, click Exams in the left sidebar, open the specific exam card, and then select the Monitoring tab.",
+  "answer": "Monitoring is located in the left sidebar under the **Monitoring** section.",
+  "chunks": [
+   "[live-monitoring] Where to Find It\n## Where to Find It\nLIVE badges: appear on exam cards in the Exams workspace and on the\nDashboard's live exams panel. These are at-a-glance indicators.\n\nMonitoring tab: open Exams from the sidebar, open a specific exam, then\nselect the Monitoring tab. This shows detailed per-attempt data.\n\nThere is no top-level Monitoring or LIVE item in the sidebar. The URL\n/monitoring redirects to the Exams workspace. Always navigate through\nthe specific exam."
+  ]
+ },
+ "s17": {
+  "id": "s17",
+  "query": "Where is the Monitoring tab?",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "Open Exams, open the specific exam, then select the Monitoring tab.",
+  "answer": "The **Monitoring** tab is located in the top navigation bar of the Quizzer dashboard. Click **Monitoring** to view real-time exam progress, participant activity, and performance metrics. If live data is temporarily unavailable, please try refreshing the page or check back shortly.",
+  "chunks": [
+   "[terminology] Monitoring\n## Monitoring\nA tab within each exam workspace showing in-progress and completed\nattempts with detailed integrity and violation data. Not a sidebar\nitem. Access it by opening an exam from Exams, then selecting the\nMonitoring tab.\n\nShows real-time integrity events via WebSocket for active attempts.\n\nUsers may call this: proctoring view, live view, watch students,\nsupervision, real-time tracking."
+  ]
+ },
+ "r16": {
+  "id": "r16",
+  "query": "Students workspace cohort health",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "To access information about cohort health, open the Students workspace by clicking Students in the left sidebar. Below the scope bar, check the metrics strip, which includes a \"Cohort count\" card showing the number of distinct cohorts or groups. Additionally, a cohort health visualization displays the distribution of readiness across the student population to provide a snapshot of overall performance.",
+  "answer": "Cohort health is a visualization that shows the distribution of readiness across your student population, giving a snapshot of how the class is performing overall. If you don’t see it, check that the exam is published, students have started attempts, and grading is complete upstream.",
+  "chunks": [
+   "[students-workspace] Cohort Health\n## Cohort Health\nA cohort health visualization shows the distribution of readiness\nacross the student population. This gives a snapshot of how the class\nor group is performing overall."
+  ]
+ },
+ "s11": {
+  "id": "s11",
+  "query": "How do I schedule an exam in Quizzer using Google Calendar?",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "To schedule an exam, use the 'Schedule exam' feature to create a Google Calendar event on your primary calendar, which includes the exam title, link, and timing information.",
+  "answer": "1. Go to the **Integrations** section in the Teacher sidebar.  \n2. Find and select **Google Calendar** from the list of available integrations.  \n3. Click **Connect** or **Authorize** to link your Google account to Quizzer.  \n4. Once connected, open the exam you want to schedule and navigate to its **Settings** tab.  \n5. Look for the **Schedule with Google Calendar** option and click it.  \n6. Choose the date and time for your exam, then confirm to create the calendar event.  \n7. The exam will now appear as an",
+  "chunks": [
+   "[google-calendar] Overview\n## Overview\nQuizzer integrates with Google Calendar to let teachers schedule exams\nas calendar events. When you schedule an exam, a calendar event is\ncreated in your Google Calendar with the exam details and link.\n\nUsers may call this: calendar scheduling, schedule exam, add to\ncalendar, exam calendar."
+  ]
+ },
+ "p06": {
+  "id": "p06",
+  "query": "stop students from switching tabs during the test",
+  "category": "paraphrase",
+  "difficulty": "hard",
+  "expected": "To stop students from switching tabs during a test, open Exams from the left sidebar and click on your exam card to open the workspace. Click the Settings tab at the top of the workspace, and scroll down to the Proctoring and Integrity section. Ensure the \"Block Tab Switching\" toggle switch is turned on, as it is enabled by default to detect when students leave the exam tab. Settings auto-save as you make changes.",
+  "answer": "To stop students from switching tabs during a test, enable the **Block Tab Switching** setting in the exam’s Proctoring and Integrity options. This setting detects and reports any tab or window switches as violations. You can find it under **Exam Settings** → **Proctoring and Integrity** when creating or editing an exam. It is enabled by default, but ensure it is turned on for your exam.",
+  "chunks": [
+   "[exam-settings] Proctoring and Integrity\n## Proctoring and Integrity\nThese settings control browser-based integrity monitoring during the\nexam. They detect and report suspicious behavior.\n\nRequire Fullscreen: forces the exam into fullscreen mode when the\nstudent starts. Exiting fullscreen counts as a violation.\nDefault: On.\n\nBlock Tab Switching: detects and reports when a student leaves the\nexam tab (switching to another browser tab or window). Each tab switch\ncounts as a violation.\nDefault: On.\n\nBlock Copy/Paste: prevents copying or pasting text during the exam.\nAttempts to copy or paste are blocked and counted as violations.\nDefault: On.\n\nViolation Limit: the maximum number of integrity violations tolerated\n…[truncated]"
+  ]
+ },
+ "s03": {
+  "id": "s03",
+  "query": "How can I export my game history to a CSV file?",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "Game history can be exported to CSV, JSON, or Google Sheets from the Arena workspace.",
+  "answer": "To export your game history to a CSV file:\n\n1. Go to the **Arena** workspace.\n2. Open the **Game History** section.\n3. Click the **Export** button.\n4. Select **CSV** as the format.\n5. Confirm the export to download the file.",
+  "chunks": [
+   "[arena] Game History\n## Game History\nAfter a game ends, a summary is saved to permanent storage:\n\nWinner and top rankings (top 20).\nPer-question stats: accuracy (what percentage got it right), option\ndistribution, average response time.\nOverall stats: average score, hardest question, fastest player, team\nstandings.\n\nGame history is accessible from the Arena workspace and can be exported\nto CSV, JSON, or Google Sheets.\n\nArena game history also appears in the Analytics workspace under the\nArena section."
+  ]
+ },
+ "r12": {
+  "id": "r12",
+  "query": "Question types MCQ and true false",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "Multiple Choice (MCQ) presents a set of answer options where exactly one is correct and is graded instantly by comparing to the correct option. True/False is a binary choice question where the student selects True or False and is graded instantly by comparing to the correct answer. Both MCQ and True/False question cards show their question type as a small badge on the Questions tab in the exam workspace.",
+  "answer": "**MCQ** (Multiple Choice): presents a set of answer options where exactly one is correct. The student selects one answer; grading compares to the correct option.\n\n**True/False**: a binary choice. The student selects **True** or **False**; grading compares to the correct answer.",
+  "chunks": [
+   "[questions] Question Types\n## Question Types\nQuizzer supports five question types for graded exams:\n\nMultiple Choice (MCQ): presents a set of answer options where exactly\none is correct. The student selects one answer. Graded instantly by\ncomparing to the correct option.\n\nTrue/False: a binary choice question. The student selects True or\nFalse. Graded instantly by comparing to the correct answer.\n\nShort Answer: the student types a text response. Graded automatically\nthrough a 6-step smart matching pipeline: exact match (normalized),\nfuzzy match (for typos), keyword overlap, embedding similarity, AI\nevaluation, and Pending Professor Review if needed. One or more accepted\n…[truncated]"
+  ]
+ },
+ "s07": {
+  "id": "s07",
+  "query": "Why is my teacher dashboard completely empty right now?",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "Your teacher dashboard is empty because the account is brand new, no exams have been created yet, or no exams currently have LIVE activity.",
+  "answer": "Your teacher dashboard is likely empty because no exams have been created, published, or taken by students yet. Check if you’ve created any exams and published them—without live activity, the dashboard will show minimal or no data. Start by creating an exam, approving questions, and publishing it to begin seeing activity.",
+  "chunks": [
+   "[dashboard] What Makes the Dashboard Empty\n## What Makes the Dashboard Empty\nThe teacher dashboard may show an empty or minimal state when:\n- No exams have been created yet (the activation checklist guides you)\n- No exams have LIVE activity\n- The account is brand new\n\nThe Dashboard fills up as you create exams, publish them, and students\nstart taking them."
+  ]
+ },
+ "p05": {
+  "id": "p05",
+  "query": "how are written answers scored",
+  "category": "paraphrase",
+  "difficulty": "medium",
+  "expected": "Written answers (Short Answer and Long Answer) go through a layered grading pipeline. \nStep 1 is exact match after normalization, awarding full marks immediately if correct. \nStep 2 uses fuzzy match for short strings to catch minor typos. \nStep 3 checks keyword overlap for essential concepts, and Step 4 applies embedding similarity for semantic comparison. \nStep 5 uses a batched AI model if previous steps cannot score it, and Step 6 marks it as \"Pending Professor Review\" for manual grading if AI confidence is too low.",
+  "answer": "Written answers are scored using a layered grading pipeline. First, the system checks for an exact match after normalizing the answer (lowercasing, trimming, removing punctuation). If no exact match is found, it proceeds to a fuzzy match step, which allows for minor typos or spelling variations, especially useful for short answers. If the answer still doesn’t match, further layers may apply, but the system prioritizes resolving the answer at the earliest, least expensive step possible. Full marks are awarded only if the answer matches at any stage of this pipeline.",
+  "chunks": [
+   "[exam-settings] Scoring\nAnswer Grading Style: controls how written answers (Short Answer, Long\nAnswer) are evaluated by the AI grading system. This setting ONLY\nappears when the exam contains at least one written question. If the\nexam has only MCQ, True/False, or Multi-Select questions, this setting\nis hidden.\nDefault: Balanced.\n\nOptions:\n- Balanced: standard evaluation considering correctness, completeness,\n  and clarity. Good for most subjects.\n- Writing and Language: emphasizes grammar, structure, expression, and\n  language quality. Best for language arts, literature, writing.\n- Formulas and STEM: emphasizes mathematical notation, formulas, units,\n…[truncated]"
+  ]
+ },
+ "m06": {
+  "id": "m06",
+  "query": "How do I bring in my Classroom roster and push grades back after grading?",
+  "category": "multi_doc",
+  "difficulty": "hard",
+  "expected": "To bring in your Google Classroom roster and push grades back, go to the Integrations page in the sidebar and click Connect on the Google Classroom card to complete the Google OAuth authorization. After connecting, go to the Classroom section in Integrations to import your courses, and then click Import Roster for a specific course to pull in student names and enrollment info. Once students take the exam and grading completes, scores are automatically synced back to the Classroom coursework entry, or you can trigger a manual grade push from the Classroom section in Integrations.",
+  "answer": "To bring in your Classroom roster and push grades back after grading:\n\n1. Go to the **Integrations** section in the Teacher sidebar and connect your Google Classroom account.\n2. Click on an imported course, then select **Import Roster** to pull student names and enrollment into Quizzer’s **Students** workspace.\n3. After publishing an exam, open the exam’s **Links** tab, click **Assign to Classroom**, choose the course, and confirm to assign it as coursework.\n4. Once students complete the exam and grading is finished, scores sync automatically back to the corresponding Classroom coursework entry.",
+  "chunks": [
+   "[google-classroom] Step-by-Step UI Guide: Connecting and Using Google Classroom\nStep 4 — Import a roster:\nClick on an imported course. Click Import Roster. Student names and\nenrollment info from Google Classroom are pulled into Quizzer. These\nappear in the Students workspace when you filter by this Classroom\ncluster.\n\nStep 5 — Assign an exam as coursework:\nAfter publishing an exam, go to the exam's Links tab. Find the Assign\nto Classroom option. Click it, select the Classroom course from the\ndropdown, and click Assign. Students see the assignment in their\nGoogle Classroom with a link to the exam.\n\nStep 6 — Push grades:\nAfter students take the exam and grading completes, scores are\nautomatically synced back to the Classroom coursework entry. You can\n…[truncated]"
+  ]
+ },
+ "a06": {
+  "id": "a06",
+  "query": "How do I start?",
+  "category": "ambiguous",
+  "difficulty": "hard",
+  "expected": "To start using Quizzer, open the app in your browser and click the Sign Up link on the login page. You can create your account using your email and password, or choose Google or Microsoft Sign-In. After signing in, you will go through a four-step onboarding flow where you enter your display name, choose a persona, fill in optional details, and automatically create your workspace.",
+  "answer": "Click **Create Exam** from the Dashboard quick actions panel (emerald-green card), the Exams workspace, or use the command palette (**Ctrl+K / Cmd+K**, type \"Create Exam\"). If you have a draft, choose **Restore** or **Start Fresh**.",
+  "chunks": [
+   "[creating-exams] How to Start\n## How to Start\nClick Create Exam from:\n- The Dashboard quick actions panel (emerald-green Create Exam card)\n- The Exams workspace (create action)\n- The command palette (press Ctrl+K or Cmd+K and type \"Create Exam\")\n\nThis opens the exam creation wizard.\n\nIf you have an unfinished draft from a previous session, Quizzer shows\na restore dialog. Click Restore to continue where you left off, or\nStart Fresh to begin a new exam. Creation drafts are saved automatically\nduring the creation process."
+  ]
+ },
+ "t06": {
+  "id": "t06",
+  "query": "arena room code",
+  "category": "typo_short_hinglish",
+  "difficulty": "medium",
+  "expected": "When a teacher creates an Arena room, Quizzer generates a six-character room code and a join URL. The room screen prominently displays this code, which can be shared by clicking copy code, copying the link, or using the scannable QR code. Teachers should project this screen on a classroom display so students can see the code. Players then join the game by opening the join link or going to the Arena join page to enter the room code manually alongside a nickname.",
+  "answer": "To get an arena room code in Quizzer:\n\n1. Go to the **Arena** section from the teacher sidebar.\n2. Select an approved quiz pack to host a live battle.\n3. Click **Start Arena** or **Create Room**.\n4. The system will generate a six-character room code.\n5. Share this code with players so they can join the live quiz battle.\n\nThe room code is displayed prominently on the host screen after creating the arena session. Let me know if you need help finding where to start an arena session.",
+  "chunks": [
+   "[arena] Overview\n## Overview\nArena is Quizzer's live, real-time quiz battle mode. A teacher (host)\ncreates a room from an approved quiz pack, shares a six-character room\ncode, and runs the game live while players answer questions for\nspeed-based points. Arena is completely separate from the graded exam\nflow — it has its own scoring, its own history, and its own section\nin Analytics.\n\nThink of it as a Kahoot-style live quiz competition built into Quizzer.\n\nUsers may call this: live quiz, battle, game, competition, quiz game,\nKahoot-style, live quiz battle."
+  ]
+ },
+ "r06": {
+  "id": "r06",
+  "query": "Connect Google Classroom and push grades",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "Scores are automatically pushed back to the Google Classroom coursework entry after a student submits and grading completes. Teachers can also trigger a manual grade push from the Classroom section in Integrations.",
+  "answer": "To connect Google Classroom and push grades from Quizzer:\n\n1. Go to the **Integrations** page in the Teacher sidebar.\n2. Connect your Google Classroom account.\n3. Import your Classroom course.\n4. When publishing an exam, assign it as coursework to the selected Classroom course.\n5. After students complete the exam and grading is finished, scores sync automatically to Google Classroom.\n6. Monitor sync status in the Classroom integration dashboard.",
+  "chunks": [
+   "[google-classroom] Step-by-Step UI Guide: Connecting and Using Google Classroom\nStep 4 — Import a roster:\nClick on an imported course. Click Import Roster. Student names and\nenrollment info from Google Classroom are pulled into Quizzer. These\nappear in the Students workspace when you filter by this Classroom\ncluster.\n\nStep 5 — Assign an exam as coursework:\nAfter publishing an exam, go to the exam's Links tab. Find the Assign\nto Classroom option. Click it, select the Classroom course from the\ndropdown, and click Assign. Students see the assignment in their\nGoogle Classroom with a link to the exam.\n\nStep 6 — Push grades:\nAfter students take the exam and grading completes, scores are\nautomatically synced back to the Classroom coursework entry. You can\n…[truncated]"
+  ]
+ },
+ "t01": {
+  "id": "t01",
+  "query": "publsh exam",
+  "category": "typo_short_hinglish",
+  "difficulty": "medium",
+  "expected": "To publish an exam, first ensure that all questions are approved by checking the Questions tab in the exam workspace. Next, click the emerald-green Publish button located either on the exam card in the Exams workspace or at the top of the exam workspace view. Once published, a success screen will appear providing the unique shareable exam link.",
+  "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+  "chunks": [
+   "[publishing] How to Publish\n## How to Publish\nOpen your exam from the Exams workspace, then use the Publish action.\nThe Publish button is available:\n- On the exam card in the Exams workspace list\n- Inside the exam workspace (top-level action)\n\nOn publish, the system:\n- Validates all publish requirements\n- Generates a unique public link (UUID-based) if this is the first\n  publish\n- Sets a link window based on your subscription tier\n- Makes the exam accessible to students via the link\n- Sends a Publish confirmation notification\n\nAfter publishing, the exam's status changes from Draft to Published."
+  ]
+ },
+ "p07": {
+  "id": "p07",
+  "query": "play a live quiz game with my class",
+  "category": "paraphrase",
+  "difficulty": "medium",
+  "expected": "To play a live quiz game with your class, go to Arena in the left sidebar and select or create an approved quiz pack. Configure your battle settings, click Create Room to generate a six-character code and join URL, and project the room screen so students can see it. Share the code with your players so they can join the lobby with a nickname, and click Start when you are ready. You can then control the game flow using the Reveal, Next, Skip, Pause, and End buttons while students answer questions in real time.",
+  "answer": "**To play a live quiz game with your class:**\n\n1. Go to **Arena** in the sidebar.\n2. Create or select a quiz pack with **Approved** questions.\n3. Configure battle settings (timer, scoring, team mode, etc.).\n4. Create the room and copy the **room code**.\n5. Share the code with your class (projector, chat, etc.).\n6. Wait in the lobby for players to join.\n7. Click **Start** when enough players have joined.\n8. Control the game: reveal answers, advance questions, skip, or pause as needed.",
+  "chunks": [
+   "[common-workflows] Host a Live Arena Battle\n## Host a Live Arena Battle\nGoal: run a live, real-time quiz competition with your class.\n\n1. Go to Arena in the sidebar.\n2. Create a quiz pack: either quick-create with new questions, or use\n   an existing quiz with Approved questions.\n3. Review and approve all questions in the pack.\n4. Configure battle settings: timer per question, scoring options,\n   team mode, negative marking, randomization.\n5. Create the room. Copy the room code or share the join URL.\n6. Wait in the lobby for players to join (share the code via\n   projector, chat, etc.).\n7. Click Start when enough players have joined.\n8. Control the game: reveal answers, advance questions, skip, pause\n   as needed.\n…[truncated]"
+  ]
+ },
+ "c03": {
+  "id": "c03",
+  "query": "What is the difference between an Exam and an Arena game?",
+  "category": "confusable",
+  "difficulty": "hard",
+  "expected": "An Exam is asynchronous, individually timed, and includes detailed proctoring, with results sent to the Results tab and regular exam Monitoring tabs. In contrast, an Arena game is synchronous where everyone plays at the same time, uses speed-based scoring with streaks, is controlled by the host, and has its results saved to game history and a separate section in Analytics.",
+  "answer": "**Exam**\n- Asynchronous: students take it on their own schedule\n- Individually timed per student\n- Detailed proctoring and grading\n- Results appear in the **Results** tab\n\n**Arena game**\n- Synchronous: everyone plays at the same time\n- Host controls the pace\n- Speed-based scoring with streaks\n- No detailed proctoring\n- Results go to **game history**, not the Exam Results tab\n- Analytics appear in a separate **Analytics** workspace section",
+  "chunks": [
+   "[terminology] Common Confusions\nArena vs Exams: Arena is a live, synchronous game with speed scoring.\nExams are asynchronous, individually timed assessments with detailed\ngrading.\n\nNotifications vs Email: Most notifications are in-app only. Quizzer\ndoes not email about generation, attempts, integrity, or exports.\nEmail is only for signup verification, password reset, and exam share\ninvitations.\n\nDraft (exam) vs Draft (question): An exam in Draft state means it is\nunpublished. A question in Draft status means it has not been reviewed\nyet. Different concepts sharing the same word.",
+   "[arena] How Arena Differs from Graded Exams\n## How Arena Differs from Graded Exams\nGraded exams: asynchronous. Publish a link, students take it on their\nown time, individually timed, detailed proctoring, graded results in\nthe Results tab.\n\nArena: synchronous. Everyone plays at the same time. Host controls the\npace. Speed-based scoring with streaks. No detailed proctoring.\nResults go to game history, not the exam Results tab.\n\nArena packs do not appear in the regular exam Results or Monitoring\ntabs. Arena analytics appear in a separate section of the Analytics\nworkspace."
+  ]
+ },
+ "m04": {
+  "id": "m04",
+  "query": "How is negative marking applied and where do I switch it on?",
+  "category": "multi_doc",
+  "difficulty": "hard",
+  "expected": "To switch on negative marking, open your exam from the Exams workspace, go to the Settings tab, scroll to the Scoring section, and toggle on Negative Marking. Once enabled, a Penalty field appears where you can set the specific deduction amount per wrong answer.",
+  "answer": "Negative marking is applied by deducting a configured penalty for each wrong answer, while correct answers earn full marks and unanswered questions receive no marks or penalty. To switch it on, go to the **Settings** tab of your exam and enable the **Penalty for Wrong Answer** option, where you can also set the penalty amount.",
+  "chunks": [
+   "[grading] Negative Marking\n## Negative Marking\nWhen negative marking is enabled in the exam settings:\n\nCorrect answer: full marks for the question.\nWrong answer: the configured penalty is deducted.\nUnanswered: no marks gained, no penalty.\n\nThe penalty amount is set per exam via the Penalty for Wrong Answer\nsetting. Negative marking applies to all question types.\n\nUsers may call this: penalty for wrong answers, mark deduction, minus\nmarking, negative scoring."
+  ]
+ },
+ "r15": {
+  "id": "r15",
+  "query": "Teacher vs student role permissions",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "Teachers have full access to the sidebar workspaces (Dashboard, Exams, Arena, Students, Analytics, Integrations), exam workspace tabs, and account settings, allowing them to create and manage assessments. In contrast, students who select the Student persona during onboarding receive a deliberately limited interface and cannot access the Exams workspace, Arena hosting, Analytics, or teacher tools. Students enter exams exclusively through shared links, while exam takers without an account only interact with a separate, focused exam interface using a verification form and attempt token.",
+  "answer": "I can't share that. Ask a Quizzer how-to, or open the relevant screen in the app for account-specific numbers.",
+  "chunks": [
+   "[roles] Teacher Role\n## Teacher Role\nAnyone who signs up and selects a non-student persona during onboarding\ngets the Teacher role. This includes actual teachers, trainers,\nfreelancers, HR professionals, developers, content creators, business\nteam leads, self-study users, and anyone else who wants to create\nassessments.\n\nWhat teachers can access:\n\nSidebar workspaces:\n- Dashboard: overview of exam activity, live exams, metrics, quick\n  actions, activation checklist\n- Exams: full exam library (draft, published, archived), create,\n  manage, publish, share, delete\n- Arena: host live quiz battles, create packs, view game history\n…[truncated]",
+   "[students-workspace] Students Workspace vs Student Accounts\n## Students Workspace vs Student Accounts\nThe Students sidebar item is a teacher tool showing learner data from\nexam attempts.\n\nA student account is a logged-in Quizzer user with a student role who\nhas a limited interface (Dashboard + Help only).\n\nThese are different things. The Students workspace shows anyone who\ntook your exams (they do not need Quizzer accounts), while a student\naccount is a specific type of Quizzer login."
+  ]
+ },
+ "t02": {
+  "id": "t02",
+  "query": "quiz kaise banaye",
+  "category": "typo_short_hinglish",
+  "difficulty": "hard",
+  "expected": "To create a quiz or exam in Quizzer, go to the Dashboard in the sidebar and click the Create Exam quick action card (or press Ctrl+K / Cmd+K and type \"Create Exam\") to open the creation wizard. Enter an exam title, add your source content by pasting text, uploading files, providing a URL, or importing from Google Drive, and then choose an AI generation mode (Source-first, Guided, or Custom). Finally, click the Generate button at the bottom to produce your questions.",
+  "answer": "**Quizzer** se quiz banane ke liye yeh steps follow karein:\n\n1. **Dashboard** par ja kar **Exams** par click karein.\n2. **Create Exam** button par click karke exam ka naam aur description daalein.\n3. **Questions** tab par ja kar **Add Questions** select karein (AI generate ya manual entry).\n4. Questions set karne ke baad **Monitoring** set karein agar chahen.\n5. **Publish** par click karke exam ko active karein.\n6. Generated link copy kar ke students ko",
+  "chunks": [
+   "[arena] Creating an Arena Quiz Pack\n## Creating an Arena Quiz Pack\nArena uses quiz packs, not regular published exams. Two ways to get one:\n\nQuick-create: go to Arena in the sidebar, use the quick-create flow.\nAdd questions (Multiple Choice, True/False, Multi-Select, One Word\nAnswer, or Guess It), review and approve them. Guess It questions can\ninclude an image.\n\nUse an existing quiz: if you have a quiz with approved questions,\nyou can use it as an Arena pack. All questions must be Approved before\nhosting.\n\nQuestion types supported in Arena:\n- Multiple Choice (MCQ) — pick one correct answer\n- True/False — binary choice\n- Multi-Select — pick all correct answers\n…[truncated]"
+  ]
+ },
+ "p10": {
+  "id": "p10",
+  "query": "can students retake the exam",
+  "category": "paraphrase",
+  "difficulty": "hard",
+  "expected": "Yes, students can retake the exam if the teacher sets the Maximum Attempts option to a number greater than 1 in the exam settings. Each retake is a fully independent attempt with its own timer, answers, and violation record. To take another attempt, the student opens the same shared exam link again and is identified by their verification fields.",
+  "answer": "If the teacher has enabled **Allow Retake** in the exam Settings, students can retake the exam from the same link after completing it. If retakes are not allowed, the option will not appear for students. Check the exam’s Settings tab to confirm.",
+  "chunks": [
+   "[taking-exams] Common Questions\n## Common Questions\nHow do students take the exam?\nThe teacher shares a published link. Students open it, fill the\nverification form with their identity, and start. No account needed.\n\nDo students need a Quizzer account?\nNo. Students access the exam via the shared link and identify\nthemselves through the verification form.\n\nCan students go back to previous questions?\nYes. Students can navigate freely between all questions during the\nexam using the question navigator.\n\nWhat happens if a student closes their browser?\nIf Allow Resume is on, they can reopen the link and continue (timer\ndoes not pause). If off, the attempt may be interrupted. Auto-saved\n…[truncated]"
+  ]
+ },
+ "r31": {
+  "id": "r31",
+  "query": "Link window vs exam duration meaning",
+  "category": "confusable",
+  "difficulty": "hard",
+  "expected": "Link window controls when students can begin by defining how long the published link accepts new starts (measured in hours or days). Duration is the per-attempt timer that controls how long students can work once they begin (measured in minutes). For example, a 60-minute exam with a 24-hour link window means students have 24 hours to start and 60 minutes once they start.",
+  "answer": "I can't share that. Ask a Quizzer how-to, or open the relevant screen in the app for account-specific numbers.",
+  "chunks": [
+   "[terminology] Link Window vs Duration\n## Link Window vs Duration\nThese are different and commonly confused:\n\nLink window: how long the published link accepts new starts (hours\nor days). Controls WHEN students can begin.\n\nDuration: how long each student has once they start (minutes). Controls\nHOW LONG students can work.\n\nA 60-minute exam with a 24-hour link window means students have 24\nhours to start, and 60 minutes once they begin.",
+   "[publishing] Link Window\nUsers may call this: deadline, expiry, availability, when does the\nlink close, how long is the link active, available until."
+  ]
+ },
+ "r17": {
+  "id": "r17",
+  "query": "Schedule exam on Google Calendar",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "To schedule an exam, first connect Google Calendar by clicking \"Integrations\" in the left sidebar, finding the Google Calendar card, and clicking \"Connect\" to authorize Quizzer. Next, ensure your exam is published by going to \"Exams\" and verifying the green \"Published\" badge. Finally, schedule the exam either from the post-publish success screen by clicking \"Schedule on Calendar,\" or from the \"Integrations\" page by clicking \"Schedule Exam\" and selecting the published exam from the dropdown.",
+  "answer": "**To schedule an exam on Google Calendar:**\n\n1. Open the **Integrations** page and connect your Google Calendar account.  \n2. Create and **publish** your exam.  \n3. After publishing, go to the **Calendar** section in Integrations (or use the post‑publish screen) to schedule the exam.  \n4. A calendar event will be created with the exam link.  \n5. Optionally share the event or invite students directly through Google Calendar.",
+  "chunks": [
+   "[common-workflows] Schedule an Exam with Google Calendar\n## Schedule an Exam with Google Calendar\nGoal: create a calendar event for an upcoming exam.\n\n1. Connect Google Calendar from the Integrations page.\n2. Create and publish your exam.\n3. After publishing, use the Calendar section in Integrations or the\n   post-publish screen to schedule the exam.\n4. A calendar event is created on your Google Calendar with the exam\n   link.\n5. Optionally share the calendar event or invite students directly\n   through Google Calendar."
+  ]
+ },
+ "t04": {
+  "id": "t04",
+  "query": "exam link not working for student",
+  "category": "typo_short_hinglish",
+  "difficulty": "hard",
+  "expected": "To troubleshoot a non-working exam link for a student, perform the following checks: first, verify that the exam is published and not unpublished or archived. Second, check if the link window (`available_until` time) has expired, and if so, extend or renew it from the Links tab. Third, confirm that the students are using the correct link provided from the Links tab.",
+  "answer": "**Likely causes first, then UI checks:**\n\n1. **Exam not published** — Unpublished or archived exams cannot be accessed. Confirm the exam status is **Published** in the Exams workspace.\n\n2. **Link window expired** — Check the **available_until** date on the **Links** tab. If the window has passed, students will be blocked.\n\n3. **Verification form required** — If the exam has a verification schema, students must complete all required fields before starting. Review **Verification schema** settings.\n\n4. **Max attempts exhausted** — If **max attempts** is set and the student has used all allowed attempts, they cannot start again.\n\n**UI checks (in order):**\n\n- Open the **Exams** workspace → select the exam → verify the **Publish** action is active and all questions are approved on the **Questions** tab.\n- Go to the **Links** tab and confirm the link is active and the **available_until** date has not passed.\n- If verification is enabled, open the **Verification** tab and ensure the schema does not block entry.\n- Check **Attempts** settings under the exam configuration to see if the student has reached the limit.\n\nIf none of these resolve the issue, contact support with the exam ID and student details.",
+  "chunks": [
+   "[common-problems] Student Access Problems\n## Student Access Problems\nStudents say the link does not work:\nFirst check: is the exam published? Unpublished or archived exams\ncannot be accessed. Second check: has the link window expired\n(available_until passed)? Third check: are they using the correct\nlink from the Links tab?\n\nStudents say they cannot start the exam:\nIf the exam requires a verification form, students must fill in all\nrequired fields before starting. Check your verification schema\nsettings. Also, if max attempts is set and they have already used all\nattempts, they cannot start again.\n\nA student's exam was auto-submitted unexpectedly:\n…[truncated]",
+   "[taking-exams] How Students Access an Exam\n## How Students Access an Exam\nThe teacher publishes the exam and shares the link (via copy/paste,\nemail, Google Classroom, or QR code). Students open the link in a web\nbrowser.\n\nRequirements for the link to work:\n- The exam must be published (not unpublished or archived)\n- The link window must still be open (available_until not expired)\n- If access codes are required, the student needs a valid unused code\n- The student must not have exceeded the maximum attempts limit\n\nStudents do NOT find exams through the Quizzer website, a search, or\na dashboard listing. They ONLY access exams through links shared by\nthe teacher. Even students with Quizzer accounts cannot discover exams\non their own."
+  ]
+ },
+ "r18": {
+  "id": "r18",
+  "query": "Import source files from Google Drive",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "To import source files from Google Drive, first connect Drive by clicking **Integrations** in the left sidebar, finding the Google Drive card, and clicking **Connect**. Next, start creating an exam from the Dashboard quick actions or by pressing Ctrl+K and typing \"Create Exam.\" In the source content area's **Files tab**, click the **Import from Google Drive** button, browse or search for your file, and click **Select or Import**.",
+  "answer": "1. In the exam creation wizard, go to the **Files** tab.  \n2. Click **Import from Google Drive**.  \n3. Select a supported file (Google Docs, PDF, Word, or plain text) from your Drive.  \n4. The file is downloaded and processed for AI question generation.",
+  "chunks": [
+   "[google-drive] Importing Source Files\n## Importing Source Files\nAfter connecting Google Drive, the exam creation wizard shows an\nImport from Google Drive option in the Files tab.\n\nHow it works:\n1. Click Import from Google Drive during exam creation.\n2. A file picker shows your Drive files, filtered to supported types\n   (Google Docs, PDFs, Word documents, plain text files).\n3. Select a file to import.\n4. The file is downloaded from your Drive and processed through the\n   same document extraction pipeline as any direct upload.\n5. The extracted text becomes source material for AI question\n   generation.\n\nThis is the same pipeline as uploading a file directly — the only\n…[truncated]"
+  ]
+ },
+ "r19": {
+  "id": "r19",
+  "query": "How does onboarding work after signup?",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "After signing up, you complete a four-step onboarding flow where you enter your display name, choose a persona from a grid of ten options, and optionally fill in details like your institution or subject area. Finally, a celebration animation plays while your workspace is set up, after which you are automatically redirected to your dashboard.",
+  "answer": "After signup, you go through a four-step onboarding flow:\n\n1. **Enter your name** and choose a persona (e.g., Teacher, Student).\n2. Fill in relevant details for that persona.\n3. The system creates your workspace and applies default settings.\n4. You’re taken to the **Dashboard**, where you can start creating exams or explore **Exams**, **Arena**, **Students**, and **Analytics**.",
+  "chunks": [
+   "[onboarding] Overview\n## Overview\nWhen you first sign up for Quizzer, you go through a four-step\nonboarding flow that personalizes your workspace. The onboarding\ncollects your name, lets you choose a persona, fills in relevant\ndetails, and then creates your workspace.\n\nUsers may call this: signup, getting started, first-time setup,\nregistration, creating an account."
+  ]
+ },
+ "r21": {
+  "id": "r21",
+  "query": "How do I send feedback about Quizzer?",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "On desktop, scroll to the **ACCOUNT** section in the left sidebar and click **Send feedback** to open the `/feedback` page. On mobile, open the account or more menu from the bottom navigation and tap **Send feedback**.",
+  "answer": "To send feedback in Quizzer:\n\n1. Open the **Teacher sidebar** (click the menu icon or your profile).\n2. Click **Ask QUE**.\n3. Type your feedback or bug report and submit.\n\nThe submission goes to the Quizzer support inbox.",
+  "chunks": [
+   "[feedback] Overview\n## Overview\nUse **Send feedback** to tell the Quizzer team about bugs, confusing UI,\nperformance issues, or feature ideas. Submissions go to the Quizzer\nsupport inbox.\n\nUsers may call this: report a bug, send feedback, contact support,\nsuggestion, feature request, something is broken, tell the team."
+  ]
+ },
+ "r22": {
+  "id": "r22",
+  "query": "Notification preferences and email",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "To change which notifications you receive, go to Account Settings via sidebar ACCOUNT, select **Settings**, and click the Notifications tab to toggle switches on or off. Quizzer does not send email notifications for events like exam generation, student attempts, integrity alerts, or export readiness, as these are in-app only. Email is used exclusively for signup email verification, password resets, and exam share invitations.",
+  "answer": "In Account Settings → **Notifications** tab, you can toggle:\n\n- **Attempt notifications** – milestone attempt counts\n- **Integrity alerts** – violation limit exceeded\n- **Generation complete** – AI generation finished\n- **Export complete** – export ready for download\n\nAlways visible (cannot be turned off): exam published, system announcements.\n\nThese toggles filter the in-app inbox only; they do not control email delivery for these events.",
+  "chunks": [
+   "[notifications] Notification Preferences\n## Notification Preferences\nIn Account Settings, Notifications tab, you can toggle:\n\nAttempt notifications: milestone attempt counts.\nIntegrity alerts: violation limit exceeded.\nGeneration complete: AI generation finished.\nExport complete: export ready for download.\n\nAlways visible (cannot be turned off): exam published, system\nannouncements.\n\nThese toggles filter the in-app inbox, not email delivery (since email\nis not sent for these events)."
+  ]
+ },
+ "r32": {
+  "id": "r32",
+  "query": "Join Arena as a player with code",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "Players open the join link or go to the Arena join page and enter the room code manually. They choose a unique nickname consisting of 2 to 20 characters (alphanumeric plus spaces, underscores, and hyphens). Alternatively, if the host linked a Google Classroom course, players can pick from the class roster instead of typing a nickname. No Quizzer account is required.",
+  "answer": "To join an Arena game using a room code:\n\n1. Open the Arena join page (or click the host‑provided join link).  \n2. Enter the **room code** in the field provided.  \n3. Choose a **nickname** (2–20 characters; alphanumeric, spaces, underscores, hyphens; must be unique in the room).  \n4. Click **Join**.\n\nIf the host linked a Google Classroom course, you may select your name from the class roster instead of typing a nickname. You can join during the lobby phase; if the game has already started, you",
+  "chunks": [
+   "[arena] Joining a Game (Players)\n## Joining a Game (Players)\nPlayers open the join link or go to the Arena join page and enter the\nroom code manually.\n\nThey choose a nickname (2 to 20 characters, alphanumeric plus spaces,\nunderscores, and hyphens). Nicknames must be unique in the room.\nProfanity and reserved names are filtered.\n\nIf the host linked a Google Classroom course, players can pick from the\nclass roster instead of typing a nickname.\n\nPlayers can join during the lobby phase. If the game has already started,\nthey can join mid-game only if the allow_late_join setting is on (it is\non by default, though the host cannot toggle it from the UI currently).\n\nMaximum players per room: 100 (configurable by the server)."
+  ]
+ },
+ "s05": {
+  "id": "s05",
+  "query": "How do I set up webcam monitoring and auto-submit for a proctored exam?",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "To set up webcam monitoring and auto-submit, go to the Settings tab in the exam workspace under the Proctoring section, toggle on Enable Webcam Monitoring (and configure Phone Detection or Face Monitoring as needed), set the Violation Limit, and toggle on Enable Auto-Submit.",
+  "answer": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"How do I set up webcam monitoring and auto-submit for a proctored exam?\"\n   - This is a \"how_to\" intent, normal response mode, no follow-up requested, topic is monitoring.\n   - I need to answer based on the provided knowledge packs, specifically the retrieved documents.\n\n2.  **Identify Key Information from Retrieved Documents:**\n   - From the first retrieved doc (\"Common Workflows / Run a Proctored Exam\"):\n     - Step 2: Click Settings tab in exam workspace, scroll to Proctoring section.\n     - Step 3: Verify toggles are on (Require Fullscreen, Block Tab Switching, Block Copy/Paste) - they're on by default.\n     - Step 4: Toggle on Enable Webcam Monitoring. Additional settings appear: Phone Detection (on by default), Face Monitoring (toggle on if wanted).\n     - Step 5: Set Violation Limit field (default 3) to desired threshold.\n     - Step 6: Toggle on Enable Auto-Submit if you want exam to end automatically when limit is reached.\n\n   - From the second retrieved doc (\"Taking Exams (Student Experience) / Proctoring During the Exam\"):\n     - Webcam monitoring details: Phone detection, face monitoring, preview.\n     - Violation warnings work based on the limit set.\n     - This is more about student experience, not setup.\n\n3.  **Formulate Response Based on Packs Only:**\n   - I must not invent features or live counts.\n   - I must use click-paths and UI labels from knowledge packs.\n   - If a detail is missing, say \"I'm not sure.\"\n   - The retrieved docs give clear steps for setup.\n\n   Steps to include (based on pack):\n   1. Open the exam workspace and click the **Settings** tab.\n   2. Scroll to the **Proctoring** section.\n   3. Toggle on **Enable Webcam Monitoring**.\n   4. (Optional) Toggle on **Face Monitoring** if you want face presence checks.\n   5. Phone Detection is on by default; adjust confidence if needed (though pack says default 70% but that's from student experience doc, might be okay to mention as default but not invent).\n   6. Set the **Violation Limit** field to your desired threshold (default is 3).\n   7. Toggle on **Enable Auto-Submit** if you want the exam to end automatically when the violation limit is reached.\n\n   I need to be careful not to add anything not in the packs. The packs mention: \"Phone Detection (on by default)\", \"Face Monitoring (toggle on if you want face presence checks)\", \"Violation Limit field (default 3)\", \"Enable Auto-Submit\".\n\n   I should structure it as a numbered step",
+  "chunks": [
+   "[common-workflows] Run a Proctored Exam\n1. Create an exam and generate questions (see workflow above).\n2. Click the Settings tab in the exam workspace. Scroll to the\n   Proctoring section.\n3. Verify these toggles are on (green): Require Fullscreen, Block Tab\n   Switching, Block Copy/Paste. They are on by default.\n4. Toggle on Enable Webcam Monitoring. Additional webcam settings\n   appear below: Phone Detection (on by default), Face Monitoring\n   (toggle on if you want face presence checks).\n5. Set the Violation Limit field (default 3) to your desired threshold.\n6. Toggle on Enable Auto-Submit if you want the exam to end\n   automatically when the limit is reached.\n…[truncated]",
+   "[taking-exams] Proctoring During the Exam (Step 7)\nWebcam monitoring (if enabled):\n- Phone detection: the AI model scans the webcam feed for phones or\n  remote devices. Detections above the confidence threshold (default\n  70%) count as violations.\n- Face monitoring (if enabled): checks whether a face is present in\n  the frame. No face detected (student left, camera blocked) counts\n  as a violation.\n- A small webcam preview may be shown so students can verify their\n  camera is working.\n\nViolation warnings: when a violation occurs, the student sees a\nwarning notification. The remaining violation count may be displayed.\nRepeated violations show increasingly urgent warnings.\n…[truncated]"
+  ]
+ },
+ "s06": {
+  "id": "s06",
+  "query": "How do I get better AI-generated questions in Quizzer?",
+  "category": "basic",
+  "difficulty": "easy",
+  "expected": "Provide clear, well-structured source content with organized material, clear topics, and concepts.",
+  "answer": "To improve AI-generated questions in Quizzer:\n\n1. **Use Guided mode** — specify the exact number of questions, types (Multiple Choice, True/False, Short Answer, etc.), and structure you want.\n2. **Provide high-quality source material** — paste text, upload a document (PDF, DOCX, PPTX, TXT), or share a YouTube/web page URL. The AI extracts questions from this content.\n3. **Review and approve** — AI questions start as drafts. Use the **Review and approve** step to edit or discard any that don't meet your standards before publishing.",
+  "chunks": [
+   "[creating-exams] Tips for Better AI Generation\n## Tips for Better AI Generation\nProvide clear, well-structured source content. The AI generates better\nquestions from organized material with clear topics and concepts.\n\nUse Guided mode when you need exact control. Source-first is convenient\nbut may not match your exact expectations for question count or type.\n\nFor best OCR results on scanned PDFs, ensure the scan is clean and\ntext is legible. Blurry or low-resolution scans produce poor text\nextraction.\n\nYouTube URLs work best when the video has good captions (manual or\nauto-generated). Videos with poor audio or no captions may not produce\nuseful text.\n…[truncated]"
+  ]
+ }
+}
