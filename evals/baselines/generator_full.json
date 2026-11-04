@@ -1,0 +1,1304 @@
+{
+  "summary": {
+    "rows": 66,
+    "errors": 7,
+    "completeness": 0.533,
+    "contradiction": 0.264,
+    "relevancy": 0.748,
+    "by_route": {
+      "retrieval": {
+        "completeness": 0.627,
+        "contradiction": 0.223,
+        "relevancy": 0.871
+      },
+      "workflow_card": {
+        "completeness": 0.427,
+        "contradiction": 0.311,
+        "relevancy": 0.613
+      }
+    },
+    "judge_calls": 66,
+    "provisional": true
+  },
+  "cases": [
+    {
+      "id": "r12",
+      "query": "Question types MCQ and true false",
+      "served_by": "retrieval",
+      "answer": "**MCQ** (Multiple Choice): presents a set of answer options where exactly one is correct. The student selects one answer; grading compares to the correct option.\n\n**True/False**: a binary choice. The student selects **True** or **False**; grading compares to the correct answer.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "questions"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:questions",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0,
+        "relevancy": 1.0,
+        "note": "The answer covers the core definitions and grading of MCQ and True/False well, though it omits the detail about the badge in the exam workspace."
+      }
+    },
+    {
+      "id": "s07",
+      "query": "Why is my teacher dashboard completely empty right now?",
+      "served_by": "retrieval",
+      "answer": "Your teacher dashboard is likely empty because no exams have been created, published, or taken by students yet. Check if you’ve created any exams and published them—without live activity, the dashboard will show minimal or no data. Start by creating an exam, approving questions, and publishing it to begin seeing activity.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "dashboard"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:dashboard",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.67,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers most reference points while adding helpful actionable steps."
+      }
+    },
+    {
+      "id": "r16",
+      "query": "Students workspace cohort health",
+      "served_by": "retrieval",
+      "answer": "Cohort health is a visualization that shows the distribution of readiness across your student population, giving a snapshot of how the class is performing overall. If you don’t see it, check that the exam is published, students have started attempts, and grading is complete upstream.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "students-workspace"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:students-workspace",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.6,
+        "contradiction": 0.1,
+        "relevancy": 0.9,
+        "note": "The answer explains cohort health well but misses the navigation steps from the reference answer."
+      }
+    },
+    {
+      "id": "s03",
+      "query": "How can I export my game history to a CSV file?",
+      "served_by": "retrieval",
+      "answer": "To export your game history to a CSV file:\n\n1. Go to the **Arena** workspace.\n2. Open the **Game History** section.\n3. Click the **Export** button.\n4. Select **CSV** as the format.\n5. Confirm the export to download the file.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "arena"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:arena",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately follows the reference and provides clear, step-by-step instructions."
+      }
+    },
+    {
+      "id": "p09",
+      "query": "put the exam date in my calendar",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.1,
+        "contradiction": 0.2,
+        "relevancy": 0.2,
+        "note": "The answer explains how to publish an exam instead of explaining how to add the exam date to the calendar."
+      }
+    },
+    {
+      "id": "p04",
+      "query": "download my students' marks sheet",
+      "served_by": "retrieval",
+      "error": "Connection error."
+    },
+    {
+      "id": "r29",
+      "query": "Negative marking settings",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.0,
+        "relevancy": 0.2,
+        "note": "The answer discusses exam settings and duration in general but completely fails to explain negative marking settings as requested."
+      }
+    },
+    {
+      "id": "t08",
+      "query": "student ko exam link kaise bheje",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Links** tab, click **Copy Link**, then send it (paste, **Share by Email**, Classroom, or QR). Students use that URL to start the exam (while the link window is active).",
+      "model": "workflow:exam.share",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately covers most key steps to send an exam link to students."
+      }
+    },
+    {
+      "id": "m03",
+      "query": "Schedule my published exam on Google Calendar and watch who is attempting it live",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.3,
+        "relevancy": 0.2,
+        "note": "The answer explains how to publish an exam instead of answering how to schedule it on Google Calendar and monitor live attempts."
+      }
+    },
+    {
+      "id": "p05",
+      "query": "how are written answers scored",
+      "served_by": "retrieval",
+      "answer": "Written answers are scored using a layered grading pipeline. First, the system checks for an exact match after normalizing the answer (lowercasing, trimming, removing punctuation). If no exact match is found, it proceeds to a fuzzy match step, which allows for minor typos or spelling variations, especially useful for short answers. If the answer still doesn’t match, further layers may apply, but the system prioritizes resolving the answer at the earliest, least expensive step possible. Full marks are awarded only if the answer matches at any stage of this pipeline.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "grading"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:grading",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.33,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer explains the pipeline concept and first few steps well, but omits the later steps like keyword overlap, embeddings, AI grading, and manual review."
+      }
+    },
+    {
+      "id": "r01",
+      "query": "How do I create a quiz?",
+      "served_by": "workflow_card",
+      "answer": "Use **Create Exam**, add sources (files, text, or links), generate questions, then review them on the **Questions** tab. The exam stays **Draft** until you approve questions and **Publish**.",
+      "model": "workflow:exam.create",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.6,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers the core steps well but omits navigation details like the Dashboard and keyboard shortcut."
+      }
+    },
+    {
+      "id": "r32",
+      "query": "Join Arena as a player with code",
+      "served_by": "retrieval",
+      "answer": "To join an Arena game using a room code:\n\n1. Open the Arena join page (or click the host‑provided join link).  \n2. Enter the **room code** in the field provided.  \n3. Choose a **nickname** (2–20 characters; alphanumeric, spaces, underscores, hyphens; must be unique in the room).  \n4. Click **Join**.\n\nIf the host linked a Google Classroom course, you may select your name from the class roster instead of typing a nickname. You can join during the lobby phase; if the game has already started, you",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "arena"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:arena",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.9,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer is very thorough and accurate, though it cuts off slightly at the very end."
+      }
+    },
+    {
+      "id": "r02",
+      "query": "Where is Monitoring in the sidebar?",
+      "served_by": "retrieval",
+      "answer": "Monitoring is located in the left sidebar under the **Monitoring** section.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:workflow",
+        "tools",
+        "tool:summarize_live_exam_health",
+        "tool_error",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 1.0,
+        "note": "The answer directly contradicts the reference by claiming Monitoring is in the sidebar."
+      }
+    },
+    {
+      "id": "r20",
+      "query": "Change account settings and profile",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.0,
+        "note": "The answer discusses exam settings instead of user account settings and profile."
+      }
+    },
+    {
+      "id": "p07",
+      "query": "play a live quiz game with my class",
+      "served_by": "retrieval",
+      "answer": "**To play a live quiz game with your class:**\n\n1. Go to **Arena** in the sidebar.\n2. Create or select a quiz pack with **Approved** questions.\n3. Configure battle settings (timer, scoring, team mode, etc.).\n4. Create the room and copy the **room code**.\n5. Share the code with your class (projector, chat, etc.).\n6. Wait in the lobby for players to join.\n7. Click **Start** when enough players have joined.\n8. Control the game: reveal answers, advance questions, skip, or pause as needed.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "common-workflows"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:common-workflows",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer provides a clear, accurate, and well-structured breakdown of all the steps from the reference guide."
+      }
+    },
+    {
+      "id": "r24",
+      "query": "Exam lifecycle draft published archived",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.5,
+        "contradiction": 0.0,
+        "relevancy": 0.85,
+        "note": "The answer covers the draft and published states well, but completely omits the archived state."
+      }
+    },
+    {
+      "id": "r15",
+      "query": "Teacher vs student role permissions",
+      "served_by": "retrieval",
+      "answer": "I can't share that. Ask a Quizzer how-to, or open the relevant screen in the app for account-specific numbers.",
+      "model": "guardrail:output",
+      "knowledge_packs": [
+        "roles",
+        "students-workspace"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:roles",
+        "knowledge:students-workspace",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.5,
+        "relevancy": 0.2,
+        "note": "The answer refuses to provide the requested role permissions information."
+      }
+    },
+    {
+      "id": "s09",
+      "query": "How do I change my exam settings after it's already been published?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.2,
+        "note": "The answer describes how to publish a draft exam instead of how to change settings on an already published one."
+      }
+    },
+    {
+      "id": "s21",
+      "query": "How do I publish an exam in Quizzer?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers all reference steps accurately while adding helpful context."
+      }
+    },
+    {
+      "id": "m01",
+      "query": "If I archive an exam can students still see their results, and can I still export them?",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Results** tab, then export **CSV**, **Excel**, or **Google Sheets**. Exports include graded scores. Results remain after unpublish or archive.",
+      "model": "workflow:exam.export_results",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers most key facts efficiently, though it misses the exact navigation path from the sidebar."
+      }
+    },
+    {
+      "id": "m06",
+      "query": "How do I bring in my Classroom roster and push grades back after grading?",
+      "served_by": "retrieval",
+      "answer": "To bring in your Classroom roster and push grades back after grading:\n\n1. Go to the **Integrations** section in the Teacher sidebar and connect your Google Classroom account.\n2. Click on an imported course, then select **Import Roster** to pull student names and enrollment into Quizzer’s **Students** workspace.\n3. After publishing an exam, open the exam’s **Links** tab, click **Assign to Classroom**, choose the course, and confirm to assign it as coursework.\n4. Once students complete the exam and grading is finished, scores sync automatically back to the corresponding Classroom coursework entry.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "google-classroom"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:google-classroom",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.85,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer provides clear, actionable steps that closely align with the reference guide."
+      }
+    },
+    {
+      "id": "m02",
+      "query": "How do I build an exam from a Drive file and then publish it?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.2,
+        "contradiction": 0.3,
+        "relevancy": 0.6,
+        "note": "The answer skips the entire process of building an exam from a Drive file and only covers publishing."
+      }
+    },
+    {
+      "id": "r27",
+      "query": "Integrity events and live proctoring",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.2,
+        "note": "The answer discusses exam settings instead of explaining how to view integrity events for live proctored exams."
+      }
+    },
+    {
+      "id": "a06",
+      "query": "How do I start?",
+      "served_by": "retrieval",
+      "answer": "Click **Create Exam** from the Dashboard quick actions panel (emerald-green card), the Exams workspace, or use the command palette (**Ctrl+K / Cmd+K**, type \"Create Exam\"). If you have a draft, choose **Restore** or **Start Fresh**.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "creating-exams"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:creating-exams",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.2,
+        "note": "The answer describes creating an exam instead of how to start and sign up for the app as outlined in the reference."
+      }
+    },
+    {
+      "id": "p06",
+      "query": "stop students from switching tabs during the test",
+      "served_by": "retrieval",
+      "answer": "To stop students from switching tabs during a test, enable the **Block Tab Switching** setting in the exam’s Proctoring and Integrity options. This setting detects and reports any tab or window switches as violations. You can find it under **Exam Settings** → **Proctoring and Integrity** when creating or editing an exam. It is enabled by default, but ensure it is turned on for your exam.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "exam-settings"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:exam-settings",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers all key facts accurately, though it slightly generalizes the navigation path."
+      }
+    },
+    {
+      "id": "r22",
+      "query": "Notification preferences and email",
+      "served_by": "retrieval",
+      "answer": "In Account Settings → **Notifications** tab, you can toggle:\n\n- **Attempt notifications** – milestone attempt counts\n- **Integrity alerts** – violation limit exceeded\n- **Generation complete** – AI generation finished\n- **Export complete** – export ready for download\n\nAlways visible (cannot be turned off): exam published, system announcements.\n\nThese toggles filter the in-app inbox only; they do not control email delivery for these events.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "notifications"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:notifications",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.2,
+        "contradiction": 0.9,
+        "relevancy": 0.5,
+        "note": "The answer contradicts the reference guide by inventing settings and notifications that the product does not actually have."
+      }
+    },
+    {
+      "id": "s11",
+      "query": "How do I schedule an exam in Quizzer using Google Calendar?",
+      "served_by": "retrieval",
+      "answer": "1. Go to the **Integrations** section in the Teacher sidebar.  \n2. Find and select **Google Calendar** from the list of available integrations.  \n3. Click **Connect** or **Authorize** to link your Google account to Quizzer.  \n4. Once connected, open the exam you want to schedule and navigate to its **Settings** tab.  \n5. Look for the **Schedule with Google Calendar** option and click it.  \n6. Choose the date and time for your exam, then confirm to create the calendar event.  \n7. The exam will now appear as an",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "google-calendar"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:google-calendar",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer provides a detailed, relevant, and non-contradictory walkthrough of the reference procedure, though it gets cut off at the end."
+      }
+    },
+    {
+      "id": "r21",
+      "query": "How do I send feedback about Quizzer?",
+      "served_by": "retrieval",
+      "answer": "To send feedback in Quizzer:\n\n1. Open the **Teacher sidebar** (click the menu icon or your profile).\n2. Click **Ask QUE**.\n3. Type your feedback or bug report and submit.\n\nThe submission goes to the Quizzer support inbox.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "feedback"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:feedback",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.8,
+        "note": "The answer provides completely different and incorrect steps compared to the reference guide."
+      }
+    },
+    {
+      "id": "m04",
+      "query": "How is negative marking applied and where do I switch it on?",
+      "served_by": "retrieval",
+      "answer": "Negative marking is applied by deducting a configured penalty for each wrong answer, while correct answers earn full marks and unanswered questions receive no marks or penalty. To switch it on, go to the **Settings** tab of your exam and enable the **Penalty for Wrong Answer** option, where you can also set the penalty amount.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "grading"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:grading",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.2,
+        "relevancy": 1.0,
+        "note": "The answer covers most steps well, though it slightly alters the specific UI labels from the reference."
+      }
+    },
+    {
+      "id": "s14",
+      "query": "How do I change how short answer questions are graded in my exam settings?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 0.8,
+        "note": "The answer correctly identifies the setting location but includes extra details not in the reference."
+      }
+    },
+    {
+      "id": "r11",
+      "query": "How do students take an exam from a link?",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Links** tab, click **Copy Link**, then send it (paste, **Share by Email**, Classroom, or QR). Students use that URL to start the exam (while the link window is active).",
+      "model": "workflow:exam.share",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.1,
+        "contradiction": 0.8,
+        "relevancy": 0.2,
+        "note": "The answer describes how a teacher shares a link rather than how students take the exam."
+      }
+    },
+    {
+      "id": "r10",
+      "query": "What exam settings control time limits?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately covers the reference steps and adds helpful context about timing."
+      }
+    },
+    {
+      "id": "c03",
+      "query": "What is the difference between an Exam and an Arena game?",
+      "served_by": "retrieval",
+      "answer": "**Exam**\n- Asynchronous: students take it on their own schedule\n- Individually timed per student\n- Detailed proctoring and grading\n- Results appear in the **Results** tab\n\n**Arena game**\n- Synchronous: everyone plays at the same time\n- Host controls the pace\n- Speed-based scoring with streaks\n- No detailed proctoring\n- Results go to **game history**, not the Exam Results tab\n- Analytics appear in a separate **Analytics** workspace section",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "terminology",
+        "arena"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:terminology",
+        "knowledge:arena",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately captures all key differences outlined in the reference guide."
+      }
+    },
+    {
+      "id": "t06",
+      "query": "arena room code",
+      "served_by": "retrieval",
+      "answer": "To get an arena room code in Quizzer:\n\n1. Go to the **Arena** section from the teacher sidebar.\n2. Select an approved quiz pack to host a live battle.\n3. Click **Start Arena** or **Create Room**.\n4. The system will generate a six-character room code.\n5. Share this code with players so they can join the live quiz battle.\n\nThe room code is displayed prominently on the host screen after creating the arena session. Let me know if you need help finding where to start an arena session.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "arena"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:arena",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer provides clear steps to get the room code, closely aligning with the reference information."
+      }
+    },
+    {
+      "id": "t04",
+      "query": "exam link not working for student",
+      "served_by": "retrieval",
+      "answer": "**Likely causes first, then UI checks:**\n\n1. **Exam not published** — Unpublished or archived exams cannot be accessed. Confirm the exam status is **Published** in the Exams workspace.\n\n2. **Link window expired** — Check the **available_until** date on the **Links** tab. If the window has passed, students will be blocked.\n\n3. **Verification form required** — If the exam has a verification schema, students must complete all required fields before starting. Review **Verification schema** settings.\n\n4. **Max attempts exhausted** — If **max attempts** is set and the student has used all allowed attempts, they cannot start again.\n\n**UI checks (in order):**\n\n- Open the **Exams** workspace → select the exam → verify the **Publish** action is active and all questions are approved on the **Questions** tab.\n- Go to the **Links** tab and confirm the link is active and the **available_until** date has not passed.\n- If verification is enabled, open the **Verification** tab and ensure the schema does not block entry.\n- Check **Attempts** settings under the exam configuration to see if the student has reached the limit.\n\nIf none of these resolve the issue, contact support with the exam ID and student details.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "common-problems",
+        "publishing"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:common-problems",
+        "knowledge:publishing",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer successfully covers all reference checks while adding helpful supplementary troubleshooting steps."
+      }
+    },
+    {
+      "id": "r33",
+      "query": "Results tab integrity review",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Results** tab, then export **CSV**, **Excel**, or **Google Sheets**. Exports include graded scores. Results remain after unpublish or archive.",
+      "model": "workflow:exam.export_results",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.5,
+        "relevancy": 0.2,
+        "note": "The answer misses the instruction on how to view integrity details and instead discusses exporting and archiving."
+      }
+    },
+    {
+      "id": "s17",
+      "query": "Where is the Monitoring tab?",
+      "served_by": "retrieval",
+      "answer": "The **Monitoring** tab is located in the top navigation bar of the Quizzer dashboard. Click **Monitoring** to view real-time exam progress, participant activity, and performance metrics. If live data is temporarily unavailable, please try refreshing the page or check back shortly.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:workflow",
+        "tools",
+        "tool:summarize_live_exam_health",
+        "tool_error",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.5,
+        "note": "The answer hallucinates a location for the Monitoring tab that contradicts the reference guide."
+      }
+    },
+    {
+      "id": "a05",
+      "query": "Can I change it after?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer directly confirms that settings can be changed and adds helpful navigation context."
+      }
+    },
+    {
+      "id": "s06",
+      "query": "How do I get better AI-generated questions in Quizzer?",
+      "served_by": "retrieval",
+      "answer": "To improve AI-generated questions in Quizzer:\n\n1. **Use Guided mode** — specify the exact number of questions, types (Multiple Choice, True/False, Short Answer, etc.), and structure you want.\n2. **Provide high-quality source material** — paste text, upload a document (PDF, DOCX, PPTX, TXT), or share a YouTube/web page URL. The AI extracts questions from this content.\n3. **Review and approve** — AI questions start as drafts. Use the **Review and approve** step to edit or discard any that don't meet your standards before publishing.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "product-overview"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:product-overview",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers the reference fact completely while adding helpful context."
+      }
+    },
+    {
+      "id": "r18",
+      "query": "Import source files from Google Drive",
+      "served_by": "retrieval",
+      "answer": "1. In the exam creation wizard, go to the **Files** tab.  \n2. Click **Import from Google Drive**.  \n3. Select a supported file (Google Docs, PDF, Word, or plain text) from your Drive.  \n4. The file is downloaded and processed for AI question generation.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "google-drive"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:google-drive",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.4,
+        "contradiction": 0.1,
+        "relevancy": 0.9,
+        "note": "The answer misses the crucial prerequisite of connecting Google Drive via the Integrations menu."
+      }
+    },
+    {
+      "id": "r09",
+      "query": "Export results to CSV or Excel",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Results** tab, then export **CSV**, **Excel**, or **Google Sheets**. Exports include graded scores. Results remain after unpublish or archive.",
+      "model": "workflow:exam.export_results",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.4,
+        "contradiction": 0.2,
+        "relevancy": 1.0,
+        "note": "The answer misses the navigation steps and background job details from the reference."
+      }
+    },
+    {
+      "id": "t02",
+      "query": "quiz kaise banaye",
+      "served_by": "retrieval",
+      "answer": "**Quizzer** se quiz banane ke liye yeh steps follow karein:\n\n1. **Dashboard** par ja kar **Exams** par click karein.\n2. **Create Exam** button par click karke exam ka naam aur description daalein.\n3. **Questions** tab par ja kar **Add Questions** select karein (AI generate ya manual entry).\n4. Questions set karne ke baad **Monitoring** set karein agar chahen.\n5. **Publish** par click karke exam ko active karein.\n6. Generated link copy kar ke students ko",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "product-overview"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:product-overview",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.3,
+        "contradiction": 0.6,
+        "relevancy": 1.0,
+        "note": "The answer misses key creation wizard steps and introduces steps not in the reference."
+      }
+    },
+    {
+      "id": "s05",
+      "query": "How do I set up webcam monitoring and auto-submit for a proctored exam?",
+      "served_by": "retrieval",
+      "answer": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"How do I set up webcam monitoring and auto-submit for a proctored exam?\"\n   - This is a \"how_to\" intent, normal response mode, no follow-up requested, topic is monitoring.\n   - I need to answer based on the provided knowledge packs, specifically the retrieved documents.\n\n2.  **Identify Key Information from Retrieved Documents:**\n   - From the first retrieved doc (\"Common Workflows / Run a Proctored Exam\"):\n     - Step 2: Click Settings tab in exam workspace, scroll to Proctoring section.\n     - Step 3: Verify toggles are on (Require Fullscreen, Block Tab Switching, Block Copy/Paste) - they're on by default.\n     - Step 4: Toggle on Enable Webcam Monitoring. Additional settings appear: Phone Detection (on by default), Face Monitoring (toggle on if wanted).\n     - Step 5: Set Violation Limit field (default 3) to desired threshold.\n     - Step 6: Toggle on Enable Auto-Submit if you want exam to end automatically when limit is reached.\n\n   - From the second retrieved doc (\"Taking Exams (Student Experience) / Proctoring During the Exam\"):\n     - Webcam monitoring details: Phone detection, face monitoring, preview.\n     - Violation warnings work based on the limit set.\n     - This is more about student experience, not setup.\n\n3.  **Formulate Response Based on Packs Only:**\n   - I must not invent features or live counts.\n   - I must use click-paths and UI labels from knowledge packs.\n   - If a detail is missing, say \"I'm not sure.\"\n   - The retrieved docs give clear steps for setup.\n\n   Steps to include (based on pack):\n   1. Open the exam workspace and click the **Settings** tab.\n   2. Scroll to the **Proctoring** section.\n   3. Toggle on **Enable Webcam Monitoring**.\n   4. (Optional) Toggle on **Face Monitoring** if you want face presence checks.\n   5. Phone Detection is on by default; adjust confidence if needed (though pack says default 70% but that's from student experience doc, might be okay to mention as default but not invent).\n   6. Set the **Violation Limit** field to your desired threshold (default is 3).\n   7. Toggle on **Enable Auto-Submit** if you want the exam to end automatically when the violation limit is reached.\n\n   I need to be careful not to add anything not in the packs. The packs mention: \"Phone Detection (on by default)\", \"Face Monitoring (toggle on if you want face presence checks)\", \"Violation Limit field (default 3)\", \"Enable Auto-Submit\".\n\n   I should structure it as a numbered step",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "common-workflows",
+        "taking-exams"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:common-workflows",
+        "knowledge:taking-exams",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately follows all necessary setup steps from the product guide."
+      }
+    },
+    {
+      "id": "m07",
+      "query": "What should I set up before publishing an exam where I need to know who each student is?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.8,
+        "relevancy": 0.2,
+        "note": "The answer explains how to publish an exam instead of explaining how to set up student identification."
+      }
+    },
+    {
+      "id": "t01",
+      "query": "publsh exam",
+      "served_by": "retrieval",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.3,
+        "relevancy": 1.0,
+        "note": "The answer misses the specific button locations and mentions a 'Links' tab instead of the success screen."
+      }
+    },
+    {
+      "id": "s19",
+      "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+      "served_by": "retrieval",
+      "answer": "You enter your information during the onboarding process when setting up a new workspace in Quizzer. This happens across four screens:  \n1. **Welcome** — enter your display name.  \n2. **Persona** — choose a persona card (e.g., Teacher, Student, Corporate Trainer).  \n3. **Details** — answer dynamic questions based on your persona (e.g., institution, subject, company name).  \n4. **Finish** — complete setup and access your workspace.  \n\nThese steps appear after initial signup and before reaching the main dashboard.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "onboarding"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:onboarding",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer is more detailed than the reference but does not contradict it."
+      }
+    },
+    {
+      "id": "r19",
+      "query": "How does onboarding work after signup?",
+      "served_by": "retrieval",
+      "answer": "After signup, you go through a four-step onboarding flow:\n\n1. **Enter your name** and choose a persona (e.g., Teacher, Student).\n2. Fill in relevant details for that persona.\n3. The system creates your workspace and applies default settings.\n4. You’re taken to the **Dashboard**, where you can start creating exams or explore **Exams**, **Arena**, **Students**, and **Analytics**.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "onboarding"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:onboarding",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.2,
+        "relevancy": 1.0,
+        "note": "The answer covers most steps accurately but includes extra speculative UI details not in the reference."
+      }
+    },
+    {
+      "id": "s15",
+      "query": "How do I unpublish an exam in Quizzer without losing my results?",
+      "served_by": "workflow_card",
+      "answer": "Open the **Published** exam and click **Unpublish**. The share link deactivates and the exam returns to **Draft**. Existing **Results** are kept.",
+      "model": "workflow:exam.unpublish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers all reference facts and correctly addresses the question."
+      }
+    },
+    {
+      "id": "p02",
+      "query": "how do I put my quiz online so students can attempt it",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers most essential steps accurately and concisely."
+      }
+    },
+    {
+      "id": "p03",
+      "query": "give students the link to the exam",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Links** tab, click **Copy Link**, then send it (paste, **Share by Email**, Classroom, or QR). Students use that URL to start the exam (while the link window is active).",
+      "model": "workflow:exam.share",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.1,
+        "relevancy": 1.0,
+        "note": "The answer covers the main steps well, though it introduces a slight limitation about the link window being active that isn't in the reference."
+      }
+    },
+    {
+      "id": "r06",
+      "query": "Connect Google Classroom and push grades",
+      "served_by": "retrieval",
+      "answer": "To connect Google Classroom and push grades from Quizzer:\n\n1. Go to the **Integrations** page in the Teacher sidebar.\n2. Connect your Google Classroom account.\n3. Import your Classroom course.\n4. When publishing an exam, assign it as coursework to the selected Classroom course.\n5. After students complete the exam and grading is finished, scores sync automatically to Google Classroom.\n6. Monitor sync status in the Classroom integration dashboard.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "common-workflows"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:common-workflows",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately covers the reference facts and provides a complete, logical workflow without contradiction."
+      }
+    },
+    {
+      "id": "r03",
+      "query": "How do I publish my exam?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers all essential publishing steps though omits the green badge detail."
+      }
+    },
+    {
+      "id": "r17",
+      "query": "Schedule exam on Google Calendar",
+      "served_by": "retrieval",
+      "answer": "**To schedule an exam on Google Calendar:**\n\n1. Open the **Integrations** page and connect your Google Calendar account.  \n2. Create and **publish** your exam.  \n3. After publishing, go to the **Calendar** section in Integrations (or use the post‑publish screen) to schedule the exam.  \n4. A calendar event will be created with the exam link.  \n5. Optionally share the event or invite students directly through Google Calendar.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "common-workflows"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:common-workflows",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers most core steps well, adding minor logical extensions about calendar events."
+      }
+    },
+    {
+      "id": "p08",
+      "query": "sync my scores to Google Classroom",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Results** tab, then export **CSV**, **Excel**, or **Google Sheets**. Exports include graded scores. Results remain after unpublish or archive.",
+      "model": "workflow:exam.export_results",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.5,
+        "relevancy": 0.3,
+        "note": "The answer provides export steps instead of explaining the automatic or manual Google Classroom score sync."
+      }
+    },
+    {
+      "id": "s16",
+      "query": "How can I see active attempts across all exams in the live panel?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.0,
+        "note": "The answer discusses publishing exams instead of explaining how to view active attempts in the live panel."
+      }
+    },
+    {
+      "id": "t03",
+      "query": "results?",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Results** tab, then export **CSV**, **Excel**, or **Google Sheets**. Exports include graded scores. Results remain after unpublish or archive.",
+      "model": "workflow:exam.export_results",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.6,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer provides a concise summary but misses specific navigation steps and integrity data details from the reference."
+      }
+    },
+    {
+      "id": "r31",
+      "query": "Link window vs exam duration meaning",
+      "served_by": "retrieval",
+      "answer": "I can't share that. Ask a Quizzer how-to, or open the relevant screen in the app for account-specific numbers.",
+      "model": "guardrail:output",
+      "knowledge_packs": [
+        "terminology",
+        "publishing"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:terminology",
+        "knowledge:publishing",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.0,
+        "relevancy": 0.0,
+        "note": "The answer refuses to provide the information."
+      }
+    },
+    {
+      "id": "r08",
+      "query": "How does grading work for short answers?",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "p10",
+      "query": "can students retake the exam",
+      "served_by": "retrieval",
+      "answer": "If the teacher has enabled **Allow Retake** in the exam Settings, students can retake the exam from the same link after completing it. If retakes are not allowed, the option will not appear for students. Check the exam’s Settings tab to confirm.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "taking-exams"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:taking-exams",
+        "llm"
+      ],
+      "judge": {
+        "completeness": 0.6,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer misses details about independent attempts and verification fields, but correctly addresses the core question."
+      }
+    },
+    {
+      "id": "c05",
+      "query": "Is the LIVE badge the same as Monitoring?",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "r05",
+      "query": "How do I host an Arena battle with a room code?",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "r04",
+      "query": "What is verification schema before an exam?",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "s22",
+      "query": "How do I set the correct answer for a True/False question?",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.0,
+        "note": "The answer discusses exam settings and timers instead of how to set the correct answer for a True/False question."
+      }
+    },
+    {
+      "id": "c02",
+      "query": "Draft vs published vs archived exam",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "r23",
+      "query": "What shows on the teacher dashboard?",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "a01",
+      "query": "Where are my results?",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Results** tab, then export **CSV**, **Excel**, or **Google Sheets**. Exports include graded scores. Results remain after unpublish or archive.",
+      "model": "workflow:exam.export_results",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.67,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers finding the results tab but adds extra export information not in the reference."
+      }
+    }
+  ]
+}
