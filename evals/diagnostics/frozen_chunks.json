@@ -1,0 +1,38 @@
+{
+ "r02": [
+  "[live-monitoring] Where to Find It\n## Where to Find It\nLIVE badges: appear on exam cards in the Exams workspace and on the\nDashboard's live exams panel. These are at-a-glance indicators.\n\nMonitoring tab: open Exams from the sidebar, open a specific exam, then\nselect the Monitoring tab. This shows detailed per-attempt data.\n\nThere is no top-level Monitoring or LIVE item in the sidebar. The URL\n/monitoring redirects to the Exams workspace. Always navigate through\nthe specific exam."
+ ],
+ "s17": [
+  "[terminology] Monitoring\n## Monitoring\nA tab within each exam workspace showing in-progress and completed\nattempts with detailed integrity and violation data. Not a sidebar\nitem. Access it by opening an exam from Exams, then selecting the\nMonitoring tab.\n\nShows real-time integrity events via WebSocket for active attempts.\n\nUsers may call this: proctoring view, live view, watch students,\nsupervision, real-time tracking."
+ ],
+ "r16": [
+  "[students-workspace] Cohort Health\n## Cohort Health\nA cohort health visualization shows the distribution of readiness\nacross the student population. This gives a snapshot of how the class\nor group is performing overall."
+ ],
+ "s11": [
+  "[google-calendar] Overview\n## Overview\nQuizzer integrates with Google Calendar to let teachers schedule exams\nas calendar events. When you schedule an exam, a calendar event is\ncreated in your Google Calendar with the exam details and link.\n\nUsers may call this: calendar scheduling, schedule exam, add to\ncalendar, exam calendar."
+ ],
+ "p06": [
+  "[exam-settings] Proctoring and Integrity\n## Proctoring and Integrity\nThese settings control browser-based integrity monitoring during the\nexam. They detect and report suspicious behavior.\n\nRequire Fullscreen: forces the exam into fullscreen mode when the\nstudent starts. Exiting fullscreen counts as a violation.\nDefault: On.\n\nBlock Tab Switching: detects and reports when a student leaves the\nexam tab (switching to another browser tab or window). Each tab switch\ncounts as a violation.\nDefault: On.\n\nBlock Copy/Paste: prevents copying or pasting text during the exam.\nAttempts to copy or paste are blocked and counted as violations.\nDefault: On.\n\nViolation Limit: the maximum number of integrity violations tolerated\n\u2026[truncated]"
+ ],
+ "s03": [
+  "[arena] Game History\n## Game History\nAfter a game ends, a summary is saved to permanent storage:\n\nWinner and top rankings (top 20).\nPer-question stats: accuracy (what percentage got it right), option\ndistribution, average response time.\nOverall stats: average score, hardest question, fastest player, team\nstandings.\n\nGame history is accessible from the Arena workspace and can be exported\nto CSV, JSON, or Google Sheets.\n\nArena game history also appears in the Analytics workspace under the\nArena section."
+ ],
+ "r12": [
+  "[questions] Question Types\n## Question Types\nQuizzer supports five question types for graded exams:\n\nMultiple Choice (MCQ): presents a set of answer options where exactly\none is correct. The student selects one answer. Graded instantly by\ncomparing to the correct option.\n\nTrue/False: a binary choice question. The student selects True or\nFalse. Graded instantly by comparing to the correct answer.\n\nShort Answer: the student types a text response. Graded automatically\nthrough a 6-step smart matching pipeline: exact match (normalized),\nfuzzy match (for typos), keyword overlap, embedding similarity, AI\nevaluation, and Pending Professor Review if needed. One or more accepted\n\u2026[truncated]"
+ ],
+ "s07": [
+  "[dashboard] What Makes the Dashboard Empty\n## What Makes the Dashboard Empty\nThe teacher dashboard may show an empty or minimal state when:\n- No exams have been created yet (the activation checklist guides you)\n- No exams have LIVE activity\n- The account is brand new\n\nThe Dashboard fills up as you create exams, publish them, and students\nstart taking them."
+ ],
+ "p05": [
+  "[exam-settings] Scoring\nAnswer Grading Style: controls how written answers (Short Answer, Long\nAnswer) are evaluated by the AI grading system. This setting ONLY\nappears when the exam contains at least one written question. If the\nexam has only MCQ, True/False, or Multi-Select questions, this setting\nis hidden.\nDefault: Balanced.\n\nOptions:\n- Balanced: standard evaluation considering correctness, completeness,\n  and clarity. Good for most subjects.\n- Writing and Language: emphasizes grammar, structure, expression, and\n  language quality. Best for language arts, literature, writing.\n- Formulas and STEM: emphasizes mathematical notation, formulas, units,\n\u2026[truncated]"
+ ],
+ "m06": [
+  "[google-classroom] Step-by-Step UI Guide: Connecting and Using Google Classroom\nStep 4 \u2014 Import a roster:\nClick on an imported course. Click Import Roster. Student names and\nenrollment info from Google Classroom are pulled into Quizzer. These\nappear in the Students workspace when you filter by this Classroom\ncluster.\n\nStep 5 \u2014 Assign an exam as coursework:\nAfter publishing an exam, go to the exam's Links tab. Find the Assign\nto Classroom option. Click it, select the Classroom course from the\ndropdown, and click Assign. Students see the assignment in their\nGoogle Classroom with a link to the exam.\n\nStep 6 \u2014 Push grades:\nAfter students take the exam and grading completes, scores are\nautomatically synced back to the Classroom coursework entry. You can\n\u2026[truncated]"
+ ],
+ "a06": [
+  "[creating-exams] How to Start\n## How to Start\nClick Create Exam from:\n- The Dashboard quick actions panel (emerald-green Create Exam card)\n- The Exams workspace (create action)\n- The command palette (press Ctrl+K or Cmd+K and type \"Create Exam\")\n\nThis opens the exam creation wizard.\n\nIf you have an unfinished draft from a previous session, Quizzer shows\na restore dialog. Click Restore to continue where you left off, or\nStart Fresh to begin a new exam. Creation drafts are saved automatically\nduring the creation process."
+ ],
+ "t06": [
+  "[arena] Overview\n## Overview\nArena is Quizzer's live, real-time quiz battle mode. A teacher (host)\ncreates a room from an approved quiz pack, shares a six-character room\ncode, and runs the game live while players answer questions for\nspeed-based points. Arena is completely separate from the graded exam\nflow \u2014 it has its own scoring, its own history, and its own section\nin Analytics.\n\nThink of it as a Kahoot-style live quiz competition built into Quizzer.\n\nUsers may call this: live quiz, battle, game, competition, quiz game,\nKahoot-style, live quiz battle."
+ ]
+}
