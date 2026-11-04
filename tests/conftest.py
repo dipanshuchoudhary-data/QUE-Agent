@@ -21,6 +21,12 @@ os.environ.setdefault("ALLOW_INSECURE_LOCAL_NO_AUTH", "false")
 os.environ["LLM_API_KEY"] = ""
 for _i in range(1, 9):
     os.environ[f"LLM_API_KEY_{_i}"] = ""
+# Local .env may select the nvidia_pool embeddings (2048 dims, live keys). Tests
+# use fake embeddings and must not depend on it.
+os.environ["EMBEDDING_PROVIDER"] = "existing_api"
+os.environ["NVIDIA_EMB_DIPANSHU"] = ""
+os.environ["OPENROUTER_EMB_DIPANSHU"] = ""
+os.environ["QUE_EMBEDDING_MODEL"] = "openai/text-embedding-3-large"
 os.environ.setdefault("LLM_MODEL", "test-model")
 os.environ.setdefault("QUE_BUDGET_TOKENS_PER_TURN", "32000")
 os.environ.setdefault("QUE_BUDGET_USD_PER_USER_HOUR", "0")
