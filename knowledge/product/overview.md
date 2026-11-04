@@ -124,6 +124,11 @@ exams as coursework, and auto-push grades. Link Google Calendar to
 schedule exams as events. Link Google Drive to import source files
 during creation and export results to Google Sheets.
 
+Arena is a live, synchronous quiz battle (like Kahoot) with speed-based
+scoring. Regular exams are asynchronous, individually timed assessments
+with detailed proctoring and grading. They have separate scoring systems
+and separate analytics sections.
+
 ## Quick Start: Your First Exam in 5 Minutes
 
 1. Open Create Exam from the Dashboard quick actions or press Ctrl+K
@@ -186,6 +191,9 @@ A teacher managing exams in the workspace and a student taking an
 exam are on completely separate interfaces. They never share the same
 screen or navigation.
 
+Students do not need a Quizzer account: they use a shared link and a
+verification form.
+
 ## Current Status
 
 Quizzer is in public beta. Every plan is free while the team gathers
@@ -212,6 +220,11 @@ beta ends.
 
 An Upgrade action is available in the sidebar for changing tiers.
 
+Quizzer is currently in public beta and every plan is free; pricing
+starts when beta ends. There is no limit on the number of exams you can
+create; the daily generation quota limits how many AI generations you
+can run per day (varies by tier).
+
 ## Privacy and Data
 
 Exam data, questions, and results belong to the teacher who created
@@ -222,48 +235,6 @@ client-side machine learning model (TensorFlow.js with COCO-SSD for
 phone detection). Webcam frames are analyzed locally and not uploaded
 to any server. Only violation event metadata (type, timestamp,
 confidence) is sent to the server.
-
-## Common Questions
-
-What is Quizzer?
-Quizzer is an AI assessment platform. You upload content, AI generates
-exam questions, you review and publish, students take the exam via a
-shared link, and results are graded automatically.
-
-Is Quizzer free?
-Quizzer is currently in public beta and every plan is free. Pricing
-starts when beta ends.
-
-Do students need an account?
-No. Students access exams via a shared link and identify themselves
-through a verification form. They do not need a Quizzer account to
-take an exam.
-
-Can I use Quizzer for self-study?
-Yes. You can create exams from your own study material, take them
-yourself, and track your performance over time.
-
-What file types can I upload?
-PDF, DOCX, PPTX, TXT, and images (PNG, JPG). You can also paste text
-directly, provide a YouTube video URL, or a web page URL.
-
-Is webcam data uploaded to a server?
-No. Webcam analysis runs entirely in the student's browser. Only
-violation event metadata is sent to the server, not video frames.
-
-What is the difference between Arena and regular exams?
-Arena is a live, synchronous quiz battle (like Kahoot) with speed-based
-scoring. Regular exams are asynchronous, individually timed assessments
-with detailed proctoring and grading. They have separate scoring
-systems and separate analytics sections.
-
-How many exams can I create?
-There is no limit on the number of exams. The daily generation quota
-limits how many AI generations you can run per day (varies by tier).
-
-Can I use Quizzer with Google Classroom?
-Yes. Connect Google Classroom from Integrations to import courses,
-sync rosters, assign exams as coursework, and auto-push grades.
 
 ## Related Features
 
