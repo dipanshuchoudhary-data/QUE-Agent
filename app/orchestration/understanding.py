@@ -364,6 +364,43 @@ def _is_product_howto(n: str) -> bool:
     )
 
 
+_GUIDANCE_SHAPES: tuple[re.Pattern[str], ...] = tuple(
+    re.compile(p)
+    for p in (
+        r"\bwhere (is|are|can i|do i|would i|should i|to)\b",
+        r"\bwhat (does|do)\b.*\b(show|mean|do|display)\b",
+        r"\bwhat (is|are) (a|an)\b",
+        r"\bwhat (is|are) the\b.*\b(tab|page|menu|sidebar|section|screen|button|feature|setting|option)s?\b",
+        r"\b(explain|describe) (how|what|the)\b",
+        r"\bdifference between\b",
+        r"\bwhat'?s the difference\b",
+        r"\b(is|are|does|do)\b.*\b(the same as|same thing as|different from|differ from)\b",
+        r"\btell me about the\b",
+    )
+)
+
+
+def is_guidance_ask(text: str) -> bool:
+    """Ask *form* of a product-guidance question (how/where/what-does), not a topic.
+
+    Feature names ("monitoring", "analytics", "results") appear in both guidance
+    asks and live-data asks, so they cannot decide the route. The way the
+    question is posed does: "where is X", "how do I X" and "what does X show"
+    want a procedure or explanation; "show me X", "how many X" want data.
+    """
+    from app.knowledge.query_normalize import normalize_for_retrieval  # noqa: PLC0415
+
+    n = _norm(text or "")
+    if re.search(r"\bhow (many|much)\b", n):  # quantity asks want data, not a procedure
+        return False
+    if _is_product_howto(n) or any(p.search(n) for p in _GUIDANCE_SHAPES):
+        return True
+    # Same small glossary retrieval uses ("kese kru" -> "how to"), so a Hinglish how-to is
+    # read as guidance and never run as a live tool. English text is unchanged by it.
+    translated = _norm(normalize_for_retrieval(text or ""))
+    return translated != n and (_is_product_howto(translated) or any(p.search(translated) for p in _GUIDANCE_SHAPES))
+
+
 def _is_troubleshooting_ask(n: str) -> bool:
     return bool(
         re.search(r"\bwhy (can'?t|isn'?t|doesn'?t|won'?t)\b", n)
@@ -470,7 +507,7 @@ def _classify_core(
     for pat in _LIVE_DATA_PATTERNS:
         if pat.search(n):
             if (
-                _is_product_howto(n) or _is_troubleshooting_ask(n)
+                is_guidance_ask(n) or _is_troubleshooting_ask(n)
             ) and not _is_count_live_ask(n):
                 reasons.append("live_pattern_as_howto")
                 break
@@ -487,7 +524,7 @@ def _classify_core(
             )
 
     if any(h in n for h in _ANALYTICS_HINTS) and _has_quizzer_hint(n):
-        if _is_troubleshooting_ask(n) and not _is_count_live_ask(n):
+        if (_is_troubleshooting_ask(n) or is_guidance_ask(n)) and not _is_count_live_ask(n):
             reasons.append("analytics_troubleshooting_as_knowledge")
             return RequestUnderstanding(
                 scope="in_scope",
@@ -522,6 +559,7 @@ def _classify_core(
         or n.startswith("help with")
         or _is_troubleshooting_ask(n)
         or _is_product_howto(n)
+        or is_guidance_ask(n)  # also reads Hinglish how-to forms via the retrieval glossary
     )
     if action_hit and howto_ask:
         # "How do I publish?" / "Help me publish" is knowledge, not execution.
