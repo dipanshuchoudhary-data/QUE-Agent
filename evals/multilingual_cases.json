@@ -1,0 +1,69 @@
+{
+  "version": "0.1.0",
+  "status": "provisional - expected docs/behaviours are my reading of the knowledge base, not human verified",
+  "notes": [
+    "Separate from retriever_goldens.json; existing English goldens are not edited.",
+    "kind: english_anchor | hinglish | informal_en | typo | shorthand | ambiguous | followup | unsupported",
+    "group: cases in one group mean the same thing; their retrieval/route should agree (cross-language consistency).",
+    "expected_docs: acceptable evidence docs (any one in the top-2 counts). [] means N/A, not zero.",
+    "acceptable: behaviours that are correct. Ambiguous cases list several; no single golden answer is forced.",
+    "history: earlier turns for follow-up cases (user/assistant)."
+  ],
+  "cases": [
+    {"id": "m01", "kind": "english_anchor", "group": "improve_marks", "query": "How can I help students improve their marks?", "expected_docs": [], "acceptable": ["no_answer", "clarify", "refuse"], "note": "Teaching advice is outside the product; honest decline is correct."},
+    {"id": "m02", "kind": "hinglish", "group": "improve_marks", "query": "Students ki performance kaise improve kru?", "expected_docs": [], "acceptable": ["no_answer", "clarify", "refuse"]},
+    {"id": "m03", "kind": "hinglish", "group": "improve_marks", "query": "Baccho ke marks improve kaise kare?", "expected_docs": [], "acceptable": ["no_answer", "clarify", "refuse"]},
+
+    {"id": "m04", "kind": "english_anchor", "group": "change_marks", "query": "How do I change already awarded exam marks?", "expected_docs": ["grading"], "acceptable": ["answer", "no_answer"], "note": "Only if the product supports it; see grading claims check in MULTILINGUAL.md."},
+    {"id": "m05", "kind": "hinglish", "group": "change_marks", "query": "Student ke existing marks kaise edit kru?", "expected_docs": ["grading"], "acceptable": ["answer", "no_answer"]},
+    {"id": "m06", "kind": "hinglish", "group": "change_marks", "query": "Exam check hone ke baad marks change kr sakte hain?", "expected_docs": ["grading"], "acceptable": ["answer", "no_answer"]},
+
+    {"id": "m07", "kind": "ambiguous", "group": "vague_marks", "query": "mujhe bato apne baccho ke marks kese badye", "expected_docs": [], "acceptable": ["clarify", "no_answer"], "interpretations": ["raise students' performance (teaching advice)", "edit already awarded scores", "view marks"], "forbidden": ["invented product feature"]},
+    {"id": "m08", "kind": "ambiguous", "group": "vague_marks", "query": "marks badhane hain", "expected_docs": [], "acceptable": ["clarify", "no_answer"], "interpretations": ["raise performance", "edit scores"], "forbidden": ["invented product feature"]},
+    {"id": "m09", "kind": "ambiguous", "group": "vague_marks", "query": "baccho ka result improve krna h", "expected_docs": [], "acceptable": ["clarify", "no_answer"], "interpretations": ["raise performance", "edit scores", "view results"], "forbidden": ["invented product feature"]},
+
+    {"id": "m10", "kind": "english_anchor", "group": "publish", "query": "How do I publish my exam?", "expected_docs": ["publishing"], "acceptable": ["answer"]},
+    {"id": "m11", "kind": "hinglish", "group": "publish", "query": "exam publish kese kru", "expected_docs": ["publishing"], "acceptable": ["answer"]},
+    {"id": "m12", "kind": "typo", "group": "publish", "query": "how to pubish my exm", "expected_docs": ["publishing"], "acceptable": ["answer"]},
+    {"id": "m13", "kind": "shorthand", "group": "publish", "query": "exam publish krna h kaise", "expected_docs": ["publishing"], "acceptable": ["answer"]},
+
+    {"id": "m14", "kind": "english_anchor", "group": "share_link", "query": "How do students take the exam from a link?", "expected_docs": ["taking-exams", "publishing"], "acceptable": ["answer"]},
+    {"id": "m15", "kind": "hinglish", "group": "share_link", "query": "students exam link se kaise denge", "expected_docs": ["taking-exams", "publishing"], "acceptable": ["answer"]},
+
+    {"id": "m16", "kind": "english_anchor", "group": "monitoring", "query": "Where can I find monitoring?", "expected_docs": ["live-monitoring", "navigation"], "acceptable": ["answer"]},
+    {"id": "m17", "kind": "hinglish", "group": "monitoring", "query": "monitoring kaha milega", "expected_docs": ["live-monitoring", "navigation"], "acceptable": ["answer"]},
+    {"id": "m18", "kind": "informal_en", "group": "monitoring", "query": "wheres the live monitor thing", "expected_docs": ["live-monitoring", "navigation"], "acceptable": ["answer"]},
+
+    {"id": "m19", "kind": "english_anchor", "group": "arena_code", "query": "Where is the arena room code?", "expected_docs": ["arena"], "acceptable": ["answer"]},
+    {"id": "m20", "kind": "hinglish", "group": "arena_code", "query": "arena room code kaha hai", "expected_docs": ["arena"], "acceptable": ["answer"]},
+
+    {"id": "m21", "kind": "english_anchor", "group": "analytics_empty", "query": "Why is there no data in analytics?", "expected_docs": ["analytics", "empty-states", "common-problems"], "acceptable": ["answer", "tool"]},
+    {"id": "m22", "kind": "hinglish", "group": "analytics_empty", "query": "analytics me data kyu nhi aa rha", "expected_docs": ["analytics", "empty-states", "common-problems"], "acceptable": ["answer", "tool"]},
+    {"id": "m23", "kind": "informal_en", "group": "analytics_empty", "query": "analytics page empty why", "expected_docs": ["analytics", "empty-states", "common-problems"], "acceptable": ["answer", "tool"]},
+
+    {"id": "m24", "kind": "english_anchor", "group": "classroom", "query": "How do I connect Google Classroom?", "expected_docs": ["google-classroom"], "acceptable": ["answer"]},
+    {"id": "m25", "kind": "hinglish", "group": "classroom", "query": "Google Classroom kaise connect kru", "expected_docs": ["google-classroom"], "acceptable": ["answer"]},
+    {"id": "m26", "kind": "typo", "group": "classroom", "query": "googel clasroom connect kese kare", "expected_docs": ["google-classroom"], "acceptable": ["answer"]},
+
+    {"id": "m27", "kind": "english_anchor", "group": "create_exam", "query": "How do I create a quiz?", "expected_docs": ["creating-exams"], "acceptable": ["answer"]},
+    {"id": "m28", "kind": "hinglish", "group": "create_exam", "query": "naya quiz kaise banaye", "expected_docs": ["creating-exams"], "acceptable": ["answer"]},
+    {"id": "m29", "kind": "shorthand", "group": "create_exam", "query": "quiz bnana h pdf se", "expected_docs": ["creating-exams"], "acceptable": ["answer"]},
+
+    {"id": "m30", "kind": "english_anchor", "group": "export_results", "query": "How do I export results to a spreadsheet?", "expected_docs": ["results-exports"], "acceptable": ["answer"]},
+    {"id": "m31", "kind": "hinglish", "group": "export_results", "query": "results excel me download kaise kare", "expected_docs": ["results-exports"], "acceptable": ["answer"]},
+
+    {"id": "m32", "kind": "english_anchor", "group": "add_students", "query": "How do I add students to my class?", "expected_docs": ["students-workspace", "google-classroom"], "acceptable": ["answer"]},
+    {"id": "m33", "kind": "hinglish", "group": "add_students", "query": "students ko class me kaise add kru", "expected_docs": ["students-workspace", "google-classroom"], "acceptable": ["answer"]},
+
+    {"id": "m34", "kind": "followup", "group": "followup_share", "query": "aur uske baad students ko link kaise bheju", "history": [{"role": "user", "content": "How do I publish my exam?"}, {"role": "assistant", "content": "Make sure every question is approved, then open the exam and click Publish."}], "expected_docs": ["publishing", "taking-exams"], "acceptable": ["answer"]},
+    {"id": "m35", "kind": "followup", "group": "followup_share", "query": "and then how do I send it to students", "history": [{"role": "user", "content": "How do I publish my exam?"}, {"role": "assistant", "content": "Make sure every question is approved, then open the exam and click Publish."}], "expected_docs": ["publishing", "taking-exams"], "acceptable": ["answer"]},
+    {"id": "m36", "kind": "followup", "group": "followup_monitor", "query": "uska result kaha dikhega", "history": [{"role": "user", "content": "monitoring kaha milega"}, {"role": "assistant", "content": "Open the exam card, then the Monitoring tab."}], "expected_docs": ["results-exports", "live-monitoring"], "acceptable": ["answer", "clarify"]},
+
+    {"id": "m37", "kind": "unsupported", "group": "unsupported_a", "query": "mere baccho ko ghar pe padhai kaise karwau", "expected_docs": [], "acceptable": ["refuse", "no_answer"]},
+    {"id": "m38", "kind": "unsupported", "group": "unsupported_b", "query": "aaj ka mausam kaisa hai", "expected_docs": [], "acceptable": ["refuse"]},
+    {"id": "m39", "kind": "unsupported", "group": "unsupported_c", "query": "can you edit the questions order by drag and drop in whatsapp", "expected_docs": [], "acceptable": ["no_answer", "refuse"]},
+
+    {"id": "m40", "kind": "ambiguous", "group": "vague_it", "query": "ye kaam nahi kar raha", "expected_docs": [], "acceptable": ["clarify"], "interpretations": ["any feature"], "forbidden": ["invented product feature"]},
+    {"id": "m41", "kind": "ambiguous", "group": "vague_it", "query": "it is not working", "expected_docs": [], "acceptable": ["clarify"], "interpretations": ["any feature"], "forbidden": ["invented product feature"]}
+  ]
+}
