@@ -64,6 +64,9 @@ Quizzer uses separate Google credentials for Classroom than for
 Google Sign-In. Connecting Classroom does NOT sign you into Quizzer
 with Google, and signing in with Google does NOT connect Classroom.
 
+Classroom uses its own Google OAuth connection, separate from Google
+Sign-In. Connect it from the Integrations page, not through your login.
+
 ## Available Features
 
 Import courses: pull your Google Classroom course list into Quizzer.
@@ -109,6 +112,10 @@ A student appearing in an imported roster will only show scores,
 readiness labels, and other metrics in the Students workspace after
 they actually take and submit a Quizzer exam.
 
+Roster import brings in names from Classroom enrollment. Students must
+actually open the exam link and take the exam for attempt data and
+scores to appear.
+
 ## Disconnecting
 
 You can disconnect Google Classroom from the Integrations page. This
@@ -120,39 +127,6 @@ any exam results or attempt history already recorded in Quizzer.
 Explorer tier: Classroom integration is locked. Available on
 Professional and Elite tiers. During the public beta, this restriction
 may be relaxed.
-
-## Common Questions
-
-How do I connect Google Classroom?
-Go to Integrations in the sidebar, find Google Classroom, and click
-Connect. Complete the Google OAuth authorization.
-
-How do I import my class roster?
-After connecting, go to the Classroom section in Integrations, import
-your courses, then import the roster for a specific course.
-
-How do I assign an exam to my Classroom students?
-Publish your exam first, then use the Classroom section to create a
-coursework entry linking to your exam. Students see it in their
-Google Classroom.
-
-Are grades synced automatically?
-Yes. After a student submits and grading completes, scores are
-automatically pushed to Classroom. You can also trigger a manual push.
-
-Does importing the roster mean students have taken the exam?
-No. Roster import brings in names from Google Classroom enrollment.
-Students must actually open the exam link and take the exam for
-attempt data and scores to appear.
-
-Can I use Classroom sign-in to connect?
-No. Classroom uses a separate OAuth connection from Google Sign-In.
-You connect Classroom through the Integrations page, not through
-your login.
-
-What happens if I disconnect Classroom?
-Quizzer loses access to your Classroom data. Existing exam results
-and attempt history in Quizzer are not affected.
 
 ## Related Features
 
