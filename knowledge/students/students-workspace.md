@@ -63,6 +63,9 @@ Step 7 — Export data:
 Look for the Export CSV button (usually in the top-right area). Click
 it to download a spreadsheet with all student data.
 
+Use the CSV export option to download a spreadsheet with names, scores,
+violations, readiness, and trends.
+
 ## Scope Controls
 
 The Students workspace has a scope bar at the top that controls which
@@ -127,6 +130,10 @@ Needs check-in: inactive for a while or declining performance.
 These labels help teachers quickly identify who needs attention without
 reviewing every score manually.
 
+Labels are auto-generated: Live now (active attempt), Strong learner
+(high scores), Needs coaching (low scores), Needs check-in (inactive or
+declining).
+
 ## Support Queue
 
 The support queue highlights students who might need help — those with
@@ -187,6 +194,10 @@ Importing a Classroom roster does NOT populate the Students workspace
 with attempt data. Students must actually take and submit exams to
 appear with scores and readiness labels.
 
+Roster import brings in student names and enrollment from Google
+Classroom but does not create exam attempt data. Students must take
+exams to appear with scores and readiness labels.
+
 ## What Makes Students Empty
 
 The Students workspace requires exam attempts. The dependency chain:
@@ -201,6 +212,10 @@ If empty:
 - Students started but have not submitted (may still appear as Live now)
 - Classroom roster imported but no exam attempts from those students
 
+Check the scope bar first, then verify that students have actually
+started exams. Publishing alone is not enough, and neither is a
+Classroom roster import.
+
 ## Students Workspace vs Student Accounts
 
 The Students sidebar item is a teacher tool showing learner data from
@@ -213,36 +228,9 @@ These are different things. The Students workspace shows anyone who
 took your exams (they do not need Quizzer accounts), while a student
 account is a specific type of Quizzer login.
 
-## Common Questions
-
-How do I see my students?
-Click Students in the sidebar. Use the scope bar to select which exams
-or clusters to include.
-
-Why is the Students workspace empty?
-Check the scope bar first. Then verify that students have actually
-started exams. Publishing alone is not enough — students need to take
-the exam. Classroom roster import is also not enough.
-
-What do the readiness labels mean?
-They are auto-generated assessments: Live now (active attempt), Strong
-learner (high scores), Needs coaching (low scores), Needs check-in
-(inactive or declining). They help you quickly identify who needs
-attention.
-
-Can I export student data?
-Yes. Use the CSV export option to download a spreadsheet with names,
-scores, violations, readiness, and trends.
-
-What is the difference between the Students workspace and Analytics?
-Students is a people-centric view (who are your learners, how are they
-doing individually). Analytics is a data-centric view (aggregate trends
-across exams). Both need exam attempts to show data.
-
-Does importing a Classroom roster fill the Students workspace?
-No. Classroom roster import brings in student names and enrollment from
-Google Classroom, but it does not create exam attempt data. Students
-must actually take exams to appear with scores and readiness labels.
+Students is a people-centric view (how each learner is doing
+individually); Analytics is a data-centric view of aggregate trends
+across exams. Both need exam attempts to show data.
 
 ## Related Features
 
