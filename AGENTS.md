@@ -12,6 +12,12 @@
   Runtime mode (`app/orchestration/runtime_mode.py`): most live asks are a **workflow**
   (one tool). Multi-intent asks enter a **bounded agent loop** (`agent_loop.py`) with
   step/call/time/char limits — not LLM ReAct. Partial answers on limit, never a hang.
+  Guidance-shaped asks (how/where/what-does, `is_guidance_ask`) never run a tool, whatever
+  feature they name. A failed tool on a live ask answers deterministically (`direct_reply`,
+  no LLM, no docs standing in for live data); on a non-live ask it recovers via KB retrieval.
+  `QueGraphState` must declare every input key (LangGraph drops undeclared ones — `ui_context`
+  was silently lost). Evals: `app/obs/evidence.py` + `evals/provenance.py` capture the route and
+  the evidence the generator actually received; score faithfulness against that, never a rerun.
 - Insight tools (Phase 4): deterministic selector in `app/tools/` (not ReAct). Calls Quizzer
   `POST /internal/que/v1/tools/invoke` with `X-Que-Service-Key` + `X-Que-User-Id`.
   Kill switch: `QUE_TOOLS_ENABLED` (default false) + `QUIZZER_INTERNAL_BASE_URL`.
@@ -39,6 +45,13 @@
   Routed efficiency (Phase 16): execution_class + workflow cards for stable how-tos
   (0 LLM), CORE not retrieved, reasoning off on non-agent turns — see
   `docs/phases/phase-16-routed-efficiency.md`.
+- Embedding pool: `EMBEDDING_PROVIDER=nvidia_pool` uses Nemotron embed (2048 dims) via
+ NVIDIA (`NVIDIA_EMB_DIPANSHU`) + OpenRouter (`OPENROUTER_EMB_DIPANSHU`), round robin; a
+ failing provider is skipped at once and parked `QUE_EMBED_COOLDOWN_SECONDS`. Both embed in
+ query mode so they share one vector space. Switching model needs an index rebuild.
+ `app/knowledge/embeddings.py`. Tests pin `existing_api` in `tests/conftest.py`.
+- Hinglish/no-match: `QUE_NOANSWER_DETERMINISTIC` (fixed no-answer reply, no LLM) and
+ `QUE_INTERPRET_ON_MISS` (one rewrite + retry on a retrieval miss). See `evals/MULTILINGUAL.md`.
 - Reliability (Phase 13): do **not** retry LLM 401/403/400. LLM circuit
   `QUE_LLM_CIRCUIT_*` (tools already have a breaker). Matrix: `docs/FAILURE_MATRIX.md`.
 - Write tools (Phase 14): `publish_exam` / `notify_students` / `delete_draft_exam` are
