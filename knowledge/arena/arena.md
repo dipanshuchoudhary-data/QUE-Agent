@@ -100,6 +100,13 @@ Arena packs do not appear in the regular exam Results or Monitoring
 tabs. Arena analytics appear in a separate section of the Analytics
 workspace.
 
+Arena is live and synchronous (everyone plays at the same time with
+speed-based scoring). Regular exams are asynchronous: students take them
+on their own time with individual timers and proctoring. Arena games are
+live events, not stored exams, so each game is a one-time session; to
+play again, host a new game with the same pack. Arena scores do not show
+in the regular exam Results tab.
+
 ## Roles in Arena
 
 Host: the teacher who creates and runs the room. Controls game flow
@@ -112,6 +119,10 @@ required. Answers questions in real time for points.
 Spectator: read-only viewer with a spectator ticket. Can see the live
 question, timer, and leaderboard but cannot answer or control the game.
 Useful for projecting the game on a screen.
+
+Players need only the room code and a nickname, not a Quizzer account.
+Spectators are read-only: they see the game but cannot submit answers or
+control it.
 
 ## Creating an Arena Quiz Pack
 
@@ -157,6 +168,10 @@ The host can also kick players from the lobby (banned for the rest of
 that room's lifetime).
 
 Only one active room per host is allowed at a time.
+
+To host: go to Arena in the sidebar, select or create a quiz pack,
+configure settings, create the room, share the code, and start when
+players have joined.
 
 ## Joining a Game (Players)
 
@@ -324,52 +339,6 @@ Elite: unlimited packs, 50 questions, 20 images.
 Image size limit: 2 MB per image. Images are converted to WebP.
 
 These numbers may change when beta ends.
-
-## Common Questions
-
-What is Arena?
-A live quiz battle mode where a teacher hosts a room, shares a code,
-and players answer questions in real time for points. Like Kahoot but
-built into Quizzer.
-
-How is Arena different from a regular exam?
-Arena is live and synchronous (everyone plays at the same time with
-speed-based scoring). Regular exams are asynchronous (students take
-them on their own time with individual timers and proctoring).
-
-How do I host an Arena game?
-Go to Arena in the sidebar, select or create a quiz pack, configure
-settings, create the room, share the code, and start when players
-have joined.
-
-Do players need a Quizzer account?
-No. Players just need the room code and a nickname.
-
-Can students retake an Arena game?
-Arena games are live events, not stored exams. Each game is a one-time
-session. You can host a new game with the same pack.
-
-Where do Arena scores show up?
-In Arena game history and the Arena section of Analytics. NOT in the
-regular exam Results tab.
-
-How does scoring work?
-1000 base points for a correct answer, plus up to 1000 speed bonus
-for faster answers, multiplied by a streak bonus (up to 1.5x for 5
-in a row). Wrong answers score 0 (or -250 with negative marking).
-
-Can I have teams?
-Yes. Enable team mode in the battle settings. Players are automatically
-assigned to teams (Red, Blue, Green, Gold). Team score is the sum of
-member scores.
-
-What happens if I lose connection as the host?
-Players see a warning. You have about 5 minutes to reconnect before
-the game auto-ends.
-
-Can spectators answer questions?
-No. Spectators are read-only. They see the game but cannot submit
-answers or control it.
 
 ## Related Features
 
