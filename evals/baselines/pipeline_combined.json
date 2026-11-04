@@ -1,0 +1,760 @@
+{
+  "summary": {
+    "rows": 20,
+    "threshold": 0.7,
+    "means": {
+      "recall": 0.523,
+      "precision": 0.9,
+      "relevancy": 0.93,
+      "faithfulness": 0.641,
+      "answer_relevancy": 0.98,
+      "correctness": 0.537
+    },
+    "below_threshold": {
+      "recall": [
+        "r12",
+        "r16",
+        "p05",
+        "r02",
+        "a06",
+        "p06",
+        "r22",
+        "s11",
+        "r21",
+        "t06",
+        "s17"
+      ],
+      "precision": [
+        "p05",
+        "r21"
+      ],
+      "relevancy": [
+        "p05"
+      ],
+      "faithfulness": [
+        "r16",
+        "s03",
+        "p05",
+        "r02",
+        "s11",
+        "r21",
+        "s17",
+        "s06"
+      ],
+      "answer_relevancy": [],
+      "correctness": [
+        "r16",
+        "s03",
+        "p05",
+        "r02",
+        "a06",
+        "p06",
+        "r22",
+        "s11",
+        "r21",
+        "t06",
+        "s17",
+        "s06"
+      ]
+    },
+    "errors": 0,
+    "judge_models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "provisional": true,
+    "mode": "combined",
+    "judge_calls_per_row": 1,
+    "vs_deepeval": {
+      "recall": {
+        "rows": 20,
+        "mean_combined": 0.523,
+        "mean_deepeval": 0.702,
+        "mean_abs_diff": 0.248,
+        "within_0.2": 15,
+        "same_pass_fail": 14
+      },
+      "precision": {
+        "rows": 20,
+        "mean_combined": 0.9,
+        "mean_deepeval": 0.85,
+        "mean_abs_diff": 0.05,
+        "within_0.2": 19,
+        "same_pass_fail": 19
+      },
+      "relevancy": {
+        "rows": 20,
+        "mean_combined": 0.93,
+        "mean_deepeval": 0.784,
+        "mean_abs_diff": 0.216,
+        "within_0.2": 12,
+        "same_pass_fail": 12
+      },
+      "faithfulness": {
+        "rows": 20,
+        "mean_combined": 0.641,
+        "mean_deepeval": 0.925,
+        "mean_abs_diff": 0.283,
+        "within_0.2": 13,
+        "same_pass_fail": 14
+      },
+      "answer_relevancy": {
+        "rows": 20,
+        "mean_combined": 0.98,
+        "mean_deepeval": 0.961,
+        "mean_abs_diff": 0.039,
+        "within_0.2": 18,
+        "same_pass_fail": 18
+      },
+      "correctness": {
+        "rows": 20,
+        "mean_combined": 0.537,
+        "mean_deepeval": 0.55,
+        "mean_abs_diff": 0.143,
+        "within_0.2": 15,
+        "same_pass_fail": 16
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "r12",
+      "query": "Question types MCQ and true false",
+      "answer": "**MCQ** (Multiple Choice): presents a set of answer options where exactly one is correct. The student selects one answer; grading compares to the correct option.\n\n**True/False**: a binary choice. The student selects **True** or **False**; grading compares to the correct answer.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.67,
+          "reason": "The chunks contain the facts for MCQ and True/False definitions, but omit the badge detail."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is retrieved at rank 1."
+        },
+        "relevancy": {
+          "score": 0.8,
+          "reason": "Most of the retrieved text covers question types, with minor truncation at the end."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are fully supported by the retrieved chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses the question about MCQ and True/False question types."
+        },
+        "correctness": {
+          "score": 0.8,
+          "reason": "The answer provides accurate definitions for MCQ and True/False from the reference, though it misses the badge detail."
+        }
+      }
+    },
+    {
+      "id": "s07",
+      "query": "Why is my teacher dashboard completely empty right now?",
+      "answer": "Your teacher dashboard is likely empty because no exams have been created, published, or taken by students yet. Check if you’ve created any exams and published them—without live activity, the dashboard will show minimal or no data. Start by creating an exam, approving questions, and publishing it to begin seeing activity.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunks contain all the facts present in the reference answer."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The only retrieved chunk directly holds all the necessary facts and is ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely about why the dashboard is empty without noise."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are supported by the retrieved chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "All statements in the answer directly address why the teacher dashboard is empty."
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The answer accurately captures all the reasons provided in the reference answer."
+        }
+      }
+    },
+    {
+      "id": "r16",
+      "query": "Students workspace cohort health",
+      "answer": "Cohort health is a visualization that shows the distribution of readiness across your student population, giving a snapshot of how the class is performing overall. If you don’t see it, check that the exam is published, students have started attempts, and grading is complete upstream.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.5,
+          "reason": "The chunks contain the cohort health visualization details but miss the instructions to open the Students workspace and check the cohort count."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is retrieved first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved chunk is entirely about cohort health."
+        },
+        "faithfulness": {
+          "score": 0.5,
+          "reason": "The claim about checking if exams are published and grading is complete is not supported by the chunks."
+        },
+        "answer_relevancy": {
+          "score": 0.8,
+          "reason": "Most statements address cohort health, though troubleshooting steps are outside the retrieved text."
+        },
+        "correctness": {
+          "score": 0.5,
+          "reason": "It mentions the visualization correctly but misses navigation steps and adds unsupported troubleshooting details."
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "query": "How can I export my game history to a CSV file?",
+      "answer": "To export your game history to a CSV file:\n\n1. Go to the **Arena** workspace.\n2. Open the **Game History** section.\n3. Click the **Export** button.\n4. Select **CSV** as the format.\n5. Confirm the export to download the file.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunks contain all the facts needed to answer the question."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is retrieved at rank 1."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely about the game history and export options."
+        },
+        "faithfulness": {
+          "score": 0.4,
+          "reason": "The chunks mention exporting to CSV from the Arena workspace, but do not support the specific UI steps for clicking an Export button or confirming."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to export game history to a CSV file."
+        },
+        "correctness": {
+          "score": 0.5,
+          "reason": "The answer mentions the correct workspace but includes unsupported steps not found in the reference or chunks."
+        }
+      }
+    },
+    {
+      "id": "p05",
+      "query": "how are written answers scored",
+      "answer": "Written answers are scored using a layered grading pipeline. First, the system checks for an exact match after normalizing the answer (lowercasing, trimming, removing punctuation). If no exact match is found, it proceeds to a fuzzy match step, which allows for minor typos or spelling variations, especially useful for short answers. If the answer still doesn’t match, further layers may apply, but the system prioritizes resolving the answer at the earliest, least expensive step possible. Full marks are awarded only if the answer matches at any stage of this pipeline.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The retrieved chunks do not contain the facts from the reference answer about the grading pipeline."
+        },
+        "precision": {
+          "score": 0.0,
+          "reason": "The chunks do not contain the facts needed to answer the question."
+        },
+        "relevancy": {
+          "score": 0.3,
+          "reason": "The retrieved text discusses exam settings and scoring styles rather than how written answers are scored."
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "The generated claims are not supported by the retrieved chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how written answers are scored."
+        },
+        "correctness": {
+          "score": 0.4,
+          "reason": "The answer matches some steps in the reference, but misses later pipeline steps and includes unverified details not present in the chunks."
+        }
+      }
+    },
+    {
+      "id": "r32",
+      "query": "Join Arena as a player with code",
+      "answer": "To join an Arena game using a room code:\n\n1. Open the Arena join page (or click the host‑provided join link).  \n2. Enter the **room code** in the field provided.  \n3. Choose a **nickname** (2–20 characters; alphanumeric, spaces, underscores, hyphens; must be unique in the room).  \n4. Click **Join**.\n\nIf the host linked a Google Classroom course, you may select your name from the class roster instead of typing a nickname. You can join during the lobby phase; if the game has already started, you",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.8,
+          "reason": "The chunks contain most of the facts from the reference answer except for the lack of account requirement."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The single retrieved chunk contains all the necessary facts at the top."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely focused on how players join an Arena game."
+        },
+        "faithfulness": {
+          "score": 0.8,
+          "reason": "Most claims are supported by the chunks, though clicking 'Join' is a minor extrapolation not explicitly stated."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "All statements directly address the question of how to join Arena with a code."
+        },
+        "correctness": {
+          "score": 0.9,
+          "reason": "The answer provides accurate steps matching the reference, though it gets cut off at the end."
+        }
+      }
+    },
+    {
+      "id": "r02",
+      "query": "Where is Monitoring in the sidebar?",
+      "answer": "Monitoring is located in the left sidebar under the **Monitoring** section.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The retrieved chunks contain the facts that Monitoring is not in the sidebar, but the answer misses them completely."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant information is present in the retrieved chunks."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text focuses on where Monitoring is located."
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "The answer claims Monitoring is in the sidebar, which is directly contradicted by the chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses where Monitoring is located."
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The answer contradicts both the reference answer and the chunks by stating Monitoring is in the sidebar."
+        }
+      }
+    },
+    {
+      "id": "p07",
+      "query": "play a live quiz game with my class",
+      "answer": "**To play a live quiz game with your class:**\n\n1. Go to **Arena** in the sidebar.\n2. Create or select a quiz pack with **Approved** questions.\n3. Configure battle settings (timer, scoring, team mode, etc.).\n4. Create the room and copy the **room code**.\n5. Share the code with your class (projector, chat, etc.).\n6. Wait in the lobby for players to join.\n7. Click **Start** when enough players have joined.\n8. Control the game: reveal answers, advance questions, skip, or pause as needed.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunks contain all the facts present in the reference answer."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is ranked first without any preceding noise."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely focused on hosting a live arena battle."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are fully supported by the retrieved chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "Every statement directly addresses how to play a live quiz game with a class."
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The answer provides the exact same steps and facts as the reference answer."
+        }
+      }
+    },
+    {
+      "id": "m06",
+      "query": "How do I bring in my Classroom roster and push grades back after grading?",
+      "answer": "To bring in your Classroom roster and push grades back after grading:\n\n1. Go to the **Integrations** section in the Teacher sidebar and connect your Google Classroom account.\n2. Click on an imported course, then select **Import Roster** to pull student names and enrollment into Quizzer’s **Students** workspace.\n3. After publishing an exam, open the exam’s **Links** tab, click **Assign to Classroom**, choose the course, and confirm to assign it as coursework.\n4. Once students complete the exam and grading is finished, scores sync automatically back to the corresponding Classroom coursework entry.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.8,
+          "reason": "The chunks contain most facts from the reference answer regarding importing rosters and syncing grades."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The retrieved chunks are relevant and ranked appropriately."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely about Google Classroom integration."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are supported by the retrieved chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "All statements directly address the user's question about rosters and grade pushing."
+        },
+        "correctness": {
+          "score": 0.9,
+          "reason": "The answer gives the correct steps and facts matching the reference, omitting only the manual grade push option."
+        }
+      }
+    },
+    {
+      "id": "a06",
+      "query": "How do I start?",
+      "answer": "Click **Create Exam** from the Dashboard quick actions panel (emerald-green card), the Exams workspace, or use the command palette (**Ctrl+K / Cmd+K**, type \"Create Exam\"). If you have a draft, choose **Restore** or **Start Fresh**.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The retrieved chunks do not contain any of the facts needed for the reference answer about signing up and onboarding."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The single retrieved chunk is relevant and ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely about how to start creating an exam."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are fully supported by the retrieved chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to start based on the available documentation."
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The answer misses all key steps and facts from the reference answer regarding account creation and onboarding."
+        }
+      }
+    },
+    {
+      "id": "p06",
+      "query": "stop students from switching tabs during the test",
+      "answer": "To stop students from switching tabs during a test, enable the **Block Tab Switching** setting in the exam’s Proctoring and Integrity options. This setting detects and reports any tab or window switches as violations. You can find it under **Exam Settings** → **Proctoring and Integrity** when creating or editing an exam. It is enabled by default, but ensure it is turned on for your exam.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.2,
+          "reason": "The chunks contain information about the Block Tab Switching setting but lack the navigation steps."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is ranked first."
+        },
+        "relevancy": {
+          "score": 0.8,
+          "reason": "Most of the retrieved text is about exam integrity settings and tab switching."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are supported by the provided chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to stop students from switching tabs."
+        },
+        "correctness": {
+          "score": 0.4,
+          "reason": "The answer misses the specific navigation steps found in the reference answer."
+        }
+      }
+    },
+    {
+      "id": "r22",
+      "query": "Notification preferences and email",
+      "answer": "In Account Settings → **Notifications** tab, you can toggle:\n\n- **Attempt notifications** – milestone attempt counts\n- **Integrity alerts** – violation limit exceeded\n- **Generation complete** – AI generation finished\n- **Export complete** – export ready for download\n\nAlways visible (cannot be turned off): exam published, system announcements.\n\nThese toggles filter the in-app inbox only; they do not control email delivery for these events.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.5,
+          "reason": "The chunks contain notification toggle facts but miss email usage details."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The single retrieved chunk is entirely relevant and ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved chunk is exclusively about notification preferences."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are directly supported by the retrieved chunk."
+        },
+        "answer_relevancy": {
+          "score": 0.8,
+          "reason": "The answer addresses notification preferences but omits email-related details from the question."
+        },
+        "correctness": {
+          "score": 0.6,
+          "reason": "The answer covers notification settings accurately but misses the facts about email usage."
+        }
+      }
+    },
+    {
+      "id": "s11",
+      "query": "How do I schedule an exam in Quizzer using Google Calendar?",
+      "answer": "1. Go to the **Integrations** section in the Teacher sidebar.  \n2. Find and select **Google Calendar** from the list of available integrations.  \n3. Click **Connect** or **Authorize** to link your Google account to Quizzer.  \n4. Once connected, open the exam you want to schedule and navigate to its **Settings** tab.  \n5. Look for the **Schedule with Google Calendar** option and click it.  \n6. Choose the date and time for your exam, then confirm to create the calendar event.  \n7. The exam will now appear as an",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The chunks do not contain the specific 'Schedule exam' feature details mentioned in the reference."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The only retrieved chunk is relevant to the question."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "All retrieved text is about the Quizzer and Google Calendar integration."
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "The answer includes integration steps not supported by the provided chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to schedule an exam using Google Calendar."
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The answer provides steps not found in the reference answer or chunks."
+        }
+      }
+    },
+    {
+      "id": "r21",
+      "query": "How do I send feedback about Quizzer?",
+      "answer": "To send feedback in Quizzer:\n\n1. Open the **Teacher sidebar** (click the menu icon or your profile).\n2. Click **Ask QUE**.\n3. Type your feedback or bug report and submit.\n\nThe submission goes to the Quizzer support inbox.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The retrieved chunks do not contain any of the steps or facts from the reference answer."
+        },
+        "precision": {
+          "score": 0.0,
+          "reason": "No chunks contain the facts needed to answer the question."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely about Quizzer feedback."
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "The answer mentions steps involving the 'Teacher sidebar' and 'Ask QUE' that are not supported by the retrieved chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to send feedback."
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The answer provides completely different steps than the reference answer."
+        }
+      }
+    },
+    {
+      "id": "m04",
+      "query": "How is negative marking applied and where do I switch it on?",
+      "answer": "Negative marking is applied by deducting a configured penalty for each wrong answer, while correct answers earn full marks and unanswered questions receive no marks or penalty. To switch it on, go to the **Settings** tab of your exam and enable the **Penalty for Wrong Answer** option, where you can also set the penalty amount.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.8,
+          "reason": "The chunks cover how negative marking is applied and that it is set in exam settings, but omit navigating from the Exams workspace."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The only retrieved chunk is directly relevant and placed first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved chunk exclusively contains information about negative marking."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are supported by the retrieved chunk and reference."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses both how negative marking is applied and where to switch it on."
+        },
+        "correctness": {
+          "score": 0.8,
+          "reason": "The answer explains how it is applied and where to enable it, though it misses the specific workspace navigation step from the reference."
+        }
+      }
+    },
+    {
+      "id": "c03",
+      "query": "What is the difference between an Exam and an Arena game?",
+      "answer": "**Exam**\n- Asynchronous: students take it on their own schedule\n- Individually timed per student\n- Detailed proctoring and grading\n- Results appear in the **Results** tab\n\n**Arena game**\n- Synchronous: everyone plays at the same time\n- Host controls the pace\n- Speed-based scoring with streaks\n- No detailed proctoring\n- Results go to **game history**, not the Exam Results tab\n- Analytics appear in a separate **Analytics** workspace section",
+      "chunks": 2,
+      "scores": {
+        "recall": {
+          "score": 0.9,
+          "reason": "The chunks contain almost all facts from the reference answer except for email and monitoring tab specifics."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk explaining the differences is ranked first."
+        },
+        "relevancy": {
+          "score": 0.8,
+          "reason": "Most of the retrieved text is about the question, with minor unrelated information about notifications and drafts."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are fully supported by the retrieved chunks without contradiction."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "Every statement directly addresses the difference between an Exam and an Arena game."
+        },
+        "correctness": {
+          "score": 0.95,
+          "reason": "The answer accurately captures all the key steps and facts provided in the reference answer."
+        }
+      }
+    },
+    {
+      "id": "t06",
+      "query": "arena room code",
+      "answer": "To get an arena room code in Quizzer:\n\n1. Go to the **Arena** section from the teacher sidebar.\n2. Select an approved quiz pack to host a live battle.\n3. Click **Start Arena** or **Create Room**.\n4. The system will generate a six-character room code.\n5. Share this code with players so they can join the live quiz battle.\n\nThe room code is displayed prominently on the host screen after creating the arena session. Let me know if you need help finding where to start an arena session.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.3,
+          "reason": "The chunks contain facts about the six-character room code and room creation, but miss join URL and student steps."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The only retrieved chunk is directly relevant and placed first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "All of the retrieved text is about Arena and its overview."
+        },
+        "faithfulness": {
+          "score": 0.8,
+          "reason": "Most claims are supported by the chunks, though specific UI buttons like 'Start Arena' are assumed."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "Every statement directly addresses finding and using the arena room code."
+        },
+        "correctness": {
+          "score": 0.5,
+          "reason": "The answer provides logical steps for getting the code, but misses several details from the reference like the join URL and QR code."
+        }
+      }
+    },
+    {
+      "id": "t04",
+      "query": "exam link not working for student",
+      "answer": "**Likely causes first, then UI checks:**\n\n1. **Exam not published** — Unpublished or archived exams cannot be accessed. Confirm the exam status is **Published** in the Exams workspace.\n\n2. **Link window expired** — Check the **available_until** date on the **Links** tab. If the window has passed, students will be blocked.\n\n3. **Verification form required** — If the exam has a verification schema, students must complete all required fields before starting. Review **Verification schema** settings.\n\n4. **Max attempts exhausted** — If **max attempts** is set and the student has used all allowed attempts, they cannot start again.\n\n**UI checks (in order):**\n\n- Open the **Exams** workspace → select the exam → verify the **Publish** action is active and all questions are approved on the **Questions** tab.\n- Go to the **Links** tab and confirm the link is active and the **available_until** date has not passed.\n- If verification is enabled, open the **Verification** tab and ensure the schema does not block entry.\n- Check **Attempts** settings under the exam configuration to see if the student has reached the limit.\n\nIf none of these resolve the issue, contact support with the exam ID and student details.",
+      "chunks": 2,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunks contain all the facts present in the reference answer."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The first retrieved chunk contains all the reference facts and is ranked above the second chunk."
+        },
+        "relevancy": {
+          "score": 0.9,
+          "reason": "Almost all of the retrieved text is about student access problems and exam links."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are supported by the retrieved chunks without contradiction."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The entire answer directly addresses the problem of an exam link not working for a student."
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The answer successfully provides the same core steps and facts as the reference answer while adding helpful context."
+        }
+      }
+    },
+    {
+      "id": "s17",
+      "query": "Where is the Monitoring tab?",
+      "answer": "The **Monitoring** tab is located in the top navigation bar of the Quizzer dashboard. Click **Monitoring** to view real-time exam progress, participant activity, and performance metrics. If live data is temporarily unavailable, please try refreshing the page or check back shortly.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The retrieved chunks do not contain the reference answer facts."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is correctly ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely about the monitoring tab."
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "The answer claims the tab is in the top navigation bar, which contradicts the chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses where the tab is located."
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The answer misses the correct steps and provides contradictory information compared to the reference."
+        }
+      }
+    },
+    {
+      "id": "s06",
+      "query": "How do I get better AI-generated questions in Quizzer?",
+      "answer": "To improve AI-generated questions in Quizzer:\n\n1. **Use Guided mode** — specify the exact number of questions, types (Multiple Choice, True/False, Short Answer, etc.), and structure you want.\n2. **Provide high-quality source material** — paste text, upload a document (PDF, DOCX, PPTX, TXT), or share a YouTube/web page URL. The AI extracts questions from this content.\n3. **Review and approve** — AI questions start as drafts. Use the **Review and approve** step to edit or discard any that don't meet your standards before publishing.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunk contains all facts from the reference answer."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "All retrieved text is relevant to the question."
+        },
+        "faithfulness": {
+          "score": 0.33,
+          "reason": "Parts of the answer mention features like review and approve or document uploads not found in the chunks."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "All statements in the answer directly address how to get better AI-generated questions."
+        },
+        "correctness": {
+          "score": 0.5,
+          "reason": "It includes the reference point on source material but adds extra steps not present in the reference answer."
+        }
+      }
+    }
+  ]
+}
