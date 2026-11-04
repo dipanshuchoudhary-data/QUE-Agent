@@ -192,6 +192,8 @@ def _retrieval_mode_tag(settings: Settings) -> str:
         f":hybrid={int(settings.que_rag_hybrid)}"
         f":k={settings.que_rag_top_k}"
         f":min={settings.que_rag_min_score}"
+        f":embed={settings.resolved_embedding_provider}:{settings.active_embedding_model}"
+        f":rerank={int(settings.que_rag_rerank_enabled)}:{settings.resolved_reranker_provider}:{settings.active_rerank_model}"
     )
 
 
