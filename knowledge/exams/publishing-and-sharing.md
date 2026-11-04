@@ -101,6 +101,10 @@ In-progress attempts already exist (republish scenario): the system
 asks for confirmation because existing in-progress attempts may be
 affected by republishing.
 
+The most common reason an exam cannot be published is unapproved
+questions: open the Questions tab and approve all remaining Draft
+questions. Also check for archived status and in-progress generation.
+
 ## How to Publish
 
 Open your exam from the Exams workspace, then use the Publish action.
@@ -132,6 +136,9 @@ You can find and copy the link from:
 - The Exams workspace after publishing (quick copy action)
 - The post-publish success screen
 
+The link only works after publishing; students cannot see the exam
+before then.
+
 ## Link Window
 
 The link window (available_until) controls how long the published link
@@ -158,6 +165,9 @@ Link window and duration are different things:
 
 Users may call this: deadline, expiry, availability, when does the
 link close, how long is the link active, available until.
+
+Example: a 60-minute exam with a 24-hour link window gives students 24
+hours to start and 60 minutes once they begin.
 
 ## Renewing or Extending the Link Window
 
@@ -197,6 +207,13 @@ exam as a calendar event. The event includes the exam link and timing.
 QR code: the Links tab can generate a QR code for the exam link.
 Students scan it with their phone camera to open the exam. Useful for
 in-person distribution (project on screen, print on handout).
+
+If students say the link does not work, check that the exam is still
+published (not unpublished or archived), that the link window has not
+expired (renew it from the Links tab), and that students are using the
+correct link. To limit who can start, use access codes (Settings,
+Require Access Code): generate unique codes and give them only to
+intended students.
 
 ## Draft vs Published vs Archived
 
@@ -252,6 +269,10 @@ to lose.
 Re-publish after unpublish: results from previous publish cycles
 remain. New attempts are added alongside existing results.
 
+Unpublishing blocks new attempts, but existing results remain visible,
+exportable, and included in Analytics. Archiving retires the exam and
+preserves all results; you can unarchive and republish later.
+
 ## What Happens to In-Progress Attempts
 
 When you unpublish while students are mid-attempt:
@@ -286,53 +307,6 @@ Schedule on Calendar: create a Google Calendar event.
 
 These actions are shown on the post-publish success screen and are
 always available from the Links tab.
-
-## Common Questions
-
-How do I publish my exam?
-Make sure all questions are approved on the Questions tab, then click
-the Publish action from the Exams workspace or the exam card.
-
-Why can I not publish?
-Check for unapproved questions (the most common cause). Open the
-Questions tab and approve all remaining Draft questions. Also check
-for archived status or in-progress generation.
-
-How do I share the exam with students?
-After publishing, copy the link from the Links tab and share it. You
-can also share by email (up to 50 recipients), assign via Google
-Classroom, or schedule via Google Calendar.
-
-Students say the link does not work. What should I check?
-First: is the exam still published (not unpublished or archived)?
-Second: has the link window expired? If so, renew it from the Links
-tab. Third: is the correct link being used?
-
-What is the difference between the link window and the exam duration?
-The link window is how long the published link accepts new starts
-(hours or days). The duration is how long each student has once they
-start (minutes). A 60-minute exam with a 24-hour link window means
-students have 24 hours to start, and 60 minutes once they begin.
-
-Does unpublishing delete my results?
-No. Unpublishing blocks new attempts but all existing results remain
-visible, exportable, and included in Analytics.
-
-Can students see the exam before I publish?
-No. The exam link only works after publishing.
-
-How do I extend the link window?
-Go to the Links tab and use the Renew/Extend option. You can add
-preset durations or set a specific end date (tier-dependent).
-
-Can I share the exam with specific students only?
-Use access codes (Settings → Require Access Code) to control who can
-start. Generate unique codes and distribute them only to intended
-students.
-
-Does archiving delete the exam?
-No. Archiving retires the exam and preserves all results. You can
-unarchive and republish later.
 
 ## Related Features
 
