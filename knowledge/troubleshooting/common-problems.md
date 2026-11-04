@@ -216,16 +216,10 @@ errors with **Send feedback** (sidebar ACCOUNT section).
 
 Do not open the avatar menu for Feedback — that menu is only Log out.
 
-## Common Questions
-
-Where do I get help?
-Open **Help & Support** in the sidebar ACCOUNT section for tours and
-guides. To contact the team about a bug or idea, use **Send feedback**.
-
-My problem is not listed here:
-Try checking the specific feature guide for the area you are having
-trouble with (e.g., Exam Settings, Publishing, Arena). If still stuck,
-use **Send feedback** in the sidebar.
+For help, open Help & Support in the sidebar ACCOUNT section for tours
+and guides. If your problem is not listed here, check the specific
+feature guide for that area (for example Exam Settings, Publishing, or
+Arena); if you are still stuck, use Send feedback in the sidebar.
 
 ## Related Features
 
