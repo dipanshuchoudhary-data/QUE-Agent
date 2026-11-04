@@ -34,13 +34,13 @@ Select your Google account. No email verification needed.
 Option C — Microsoft: click the Continue with Microsoft button. Sign
 in with your Microsoft account.
 
-Step 3 — Welcome step (Step 1 of onboarding):
+Step 3 — Welcome screen (onboarding screen 1 of 4):
 After signing in, the onboarding flow starts. You see a split-screen
 layout with a large illustration on the left and a setup card on the
 right. Type your display name in the name field. Click Continue
 (emerald-green button).
 
-Step 4 — Choose your persona (Step 2):
+Step 4 — Choose your persona (onboarding screen 2 of 4):
 You see ten persona cards displayed as a grid. Each card has an icon,
 a title (like "K-12 Teacher", "University Professor", "Student"), and
 a short description. Click the card that best describes you.
@@ -48,16 +48,22 @@ a short description. Click the card that best describes you.
 Important: if you click Student, your account will have limited access
 (no exam creation). All other choices give you full teacher access.
 
-Step 5 — Fill in details (Step 3):
+Step 5 — Fill in details (onboarding screen 3 of 4):
 Based on your persona, you see 2-4 fields asking for details. For
 example, a teacher might see Institution, Subject Area, and Courses
 Taught. These fields are optional. Fill in what you want and click
 Continue.
 
-Step 6 — Workspace creation (Step 4):
+Step 6 — Workspace creation (onboarding screen 4 of 4):
 A celebration animation plays with cycling text while your workspace
 is set up. After a few seconds, you are automatically redirected to
 your Dashboard.
+
+Email+password signups must verify their email: Quizzer sends a
+verification email and you click the link. Google and Microsoft sign-ins
+do not require separate verification. If you close the browser during
+onboarding, you restart at screen 1 on your next visit, but previously
+saved answers are restored from your profile.
 
 ## Sign-Up Options
 
@@ -70,26 +76,26 @@ needed.
 
 Microsoft Sign-In: sign in with your Microsoft account via Azure OAuth.
 
-## The Four Onboarding Steps
+## The Four Onboarding Screens (inside Steps 3-6 above)
 
-Step 1 — Welcome: enter your display name. This is the name shown
+Screen 1 — Welcome: enter your display name. This is the name shown
 across your workspace.
 
-Step 2 — Persona: choose from ten persona cards that describe how you
+Screen 2 — Persona: choose from ten persona cards that describe how you
 will use Quizzer. Your persona personalizes the onboarding questions
 and workspace greeting, but does NOT affect permissions. Only the
 Student persona sets the Student role. All other personas set the
 Teacher role.
 
-Step 3 — Details: answer dynamic questions based on your persona. For
+Screen 3 — Details: answer dynamic questions based on your persona. For
 example, a teacher might see institution, subject area, and courses
 taught. A corporate trainer might see company name and team size. These
 fields are optional and help personalize the experience.
 
-Step 4 — Creating workspace: a brief celebration animation while your
+Screen 4 — Creating workspace: a brief celebration animation while your
 workspace is set up, then you are redirected to your dashboard.
 
-If you refresh the browser during onboarding, you restart at Step 1
+If you refresh the browser during onboarding, you restart at screen 1
 but any previously saved answers are restored from your profile.
 
 ## The Ten Personas
@@ -126,6 +132,11 @@ afterward. If you chose the wrong persona and got the wrong role (for
 example, chose Student but wanted Teacher access), you would need to
 contact support.
 
+The persona label is stored but cannot be changed through the UI after
+onboarding; it only affects copy and greeting, not permissions. If you
+chose Student but want to create exams, you need support to change your
+role, or you can create a new account with a different persona.
+
 ## After Onboarding
 
 After completing onboarding, you are taken to your dashboard:
@@ -134,29 +145,6 @@ Teacher role: full workspace with Dashboard, Exams, Arena, Students,
 Analytics, and Integrations.
 
 Student role: limited workspace with Dashboard and Help only.
-
-## Common Questions
-
-How do I sign up?
-Go to the signup page and enter your email and password, or use Google
-or Microsoft Sign-In. Then complete the four-step onboarding.
-
-Do I need to verify my email?
-Yes, for email+password signups. Quizzer sends a verification email.
-Click the link to verify. Google and Microsoft sign-ins do not require
-separate verification.
-
-Can I change my persona after onboarding?
-The persona label is stored but cannot be changed through the UI after
-onboarding. It only affects copy and greeting, not permissions.
-
-I chose Student but I want to create exams. What do I do?
-The Student persona sets a limited role. You would need support to
-change your role, or create a new account with a different persona.
-
-What happens if I close the browser during onboarding?
-You restart at Step 1 on your next visit, but previously saved answers
-are restored from your profile.
 
 ## Related Features
 
