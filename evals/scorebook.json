@@ -1,0 +1,3102 @@
+{
+  "r01": {
+    "query": "How do I create a quiz?",
+    "metrics": {
+      "recall": {
+        "score": 0.6,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r02": {
+    "query": "Where is Monitoring in the sidebar?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.75,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.75,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r03": {
+    "query": "How do I publish my exam?",
+    "metrics": {
+      "recall": {
+        "score": 0.67,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r04": {
+    "query": "What is verification schema before an exam?",
+    "metrics": {
+      "recall": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r05": {
+    "query": "How do I host an Arena battle with a room code?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.75,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r06": {
+    "query": "Connect Google Classroom and push grades",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.75,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r07": {
+    "query": "Why is Analytics empty with no data?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r08": {
+    "query": "How does grading work for short answers?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.75,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.333,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r09": {
+    "query": "Export results to CSV or Excel",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r10": {
+    "query": "What exam settings control time limits?",
+    "metrics": {
+      "recall": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.5,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r11": {
+    "query": "How do students take an exam from a link?",
+    "metrics": {
+      "recall": {
+        "score": 0.2,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r12": {
+    "query": "Question types MCQ and true false",
+    "metrics": {
+      "recall": {
+        "score": 0.67,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.8,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r13": {
+    "query": "What is Quizzer and who is it for?",
+    "metrics": {
+      "recall": {
+        "score": 0.85,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r14": {
+    "query": "Difference between Monitoring and Analytics",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r15": {
+    "query": "Teacher vs student role permissions",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r16": {
+    "query": "Students workspace cohort health",
+    "metrics": {
+      "recall": {
+        "score": 0.67,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.667,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r17": {
+    "query": "Schedule exam on Google Calendar",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.83,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r18": {
+    "query": "Import source files from Google Drive",
+    "metrics": {
+      "recall": {
+        "score": 0.86,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.8,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r19": {
+    "query": "How does onboarding work after signup?",
+    "metrics": {
+      "recall": {
+        "score": 0.75,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.7,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r20": {
+    "query": "Change account settings and profile",
+    "metrics": {
+      "recall": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.6,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r21": {
+    "query": "How do I send feedback about Quizzer?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.5,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r22": {
+    "query": "Notification preferences and email",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.667,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r23": {
+    "query": "What shows on the teacher dashboard?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r24": {
+    "query": "Exam lifecycle draft published archived",
+    "metrics": {
+      "recall": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.286,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r25": {
+    "query": "Common workflow create exam then share link",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r26": {
+    "query": "Generation failed or daily AI quota",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r27": {
+    "query": "Integrity events and live proctoring",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.75,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r28": {
+    "query": "Approve draft questions before publish",
+    "metrics": {
+      "recall": {
+        "score": 0.83,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r29": {
+    "query": "Negative marking settings",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.7,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.75,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r30": {
+    "query": "Command palette and sidebar navigation",
+    "metrics": {
+      "recall": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.75,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r31": {
+    "query": "Link window vs exam duration meaning",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "r32": {
+    "query": "Join Arena as a player with code",
+    "metrics": {
+      "recall": {
+        "score": 0.33,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.6,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r33": {
+    "query": "Results tab integrity review",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "r34": {
+    "query": "Cannot publish questions stuck in draft",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "p01": {
+    "query": "I want to make a test for my class from my PDF notes",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "p02": {
+    "query": "how do I put my quiz online so students can attempt it",
+    "metrics": {
+      "recall": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "p03": {
+    "query": "give students the link to the exam",
+    "metrics": {
+      "recall": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "p04": {
+    "query": "download my students' marks sheet",
+    "metrics": {
+      "recall": {
+        "score": 0.85,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.85,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "p05": {
+    "query": "how are written answers scored",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "p06": {
+    "query": "stop students from switching tabs during the test",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.9,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "p07": {
+    "query": "play a live quiz game with my class",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "p08": {
+    "query": "sync my scores to Google Classroom",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.8,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "p09": {
+    "query": "put the exam date in my calendar",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.4,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "p10": {
+    "query": "can students retake the exam",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "p11": {
+    "query": "what happens to my exam when I archive it",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "p12": {
+    "query": "see who is cheating right now",
+    "metrics": {
+      "recall": {
+        "score": 0.85,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.6,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "t01": {
+    "query": "publsh exam",
+    "metrics": {
+      "recall": {
+        "score": 0.67,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "t02": {
+    "query": "quiz kaise banaye",
+    "metrics": {
+      "recall": {
+        "score": 0.2,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.25,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "t03": {
+    "query": "results?",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "t04": {
+    "query": "exam link not working for student",
+    "metrics": {
+      "recall": {
+        "score": 0.67,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "t05": {
+    "query": "negetive marking",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.75,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "t06": {
+    "query": "arena room code",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.4,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "t07": {
+    "query": "analytcs empty",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "t08": {
+    "query": "student ko exam link kaise bheje",
+    "metrics": {
+      "recall": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.8,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "a01": {
+    "query": "Where are my results?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "a02": {
+    "query": "It's not working",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.75,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "a03": {
+    "query": "How do I add students?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "relevancy": {
+        "score": 0.67,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "a04": {
+    "query": "How do I share this?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "relevancy": {
+        "score": 0.67,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "a06": {
+    "query": "How do I start?",
+    "metrics": {
+      "recall": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m01": {
+    "query": "If I archive an exam can students still see their results, and can I still export them?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m02": {
+    "query": "How do I build an exam from a Drive file and then publish it?",
+    "metrics": {
+      "recall": {
+        "score": 0.85,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m03": {
+    "query": "Schedule my published exam on Google Calendar and watch who is attempting it live",
+    "metrics": {
+      "recall": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.667,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m04": {
+    "query": "How is negative marking applied and where do I switch it on?",
+    "metrics": {
+      "recall": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.714,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m05": {
+    "query": "A student's attempt was flagged. How do I review it and does it change their score?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "precision": {
+        "score": 0.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m06": {
+    "query": "How do I bring in my Classroom roster and push grades back after grading?",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.8,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.6,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m07": {
+    "query": "What should I set up before publishing an exam where I need to know who each student is?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.75,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m08": {
+    "query": "AI generation failed. How do I recover, then approve questions so I can publish?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m09": {
+    "query": "What does a student see compared with a teacher on the dashboard?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "relevancy": {
+        "score": 0.67,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "m10": {
+    "query": "My Analytics page is empty. Is that a bug or do I need exams first?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "c01": {
+    "query": "Monitoring vs Results, which one do I open during an exam?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "c02": {
+    "query": "Draft vs published vs archived exam",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "c03": {
+    "query": "What is the difference between an Exam and an Arena game?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "c04": {
+    "query": "Does Results show the same thing as Analytics?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "c05": {
+    "query": "Is the LIVE badge the same as Monitoring?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 0.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "c06": {
+    "query": "Is the verification form the same as logging in?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_judged_k3_c5_large_rerank",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s02": {
+    "query": "How do I check my analytics in Quizzer?",
+    "metrics": {
+      "recall": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "s03": {
+    "query": "How can I export my game history to a CSV file?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s05": {
+    "query": "How do I set up webcam monitoring and auto-submit for a proctored exam?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "s06": {
+    "query": "How do I get better AI-generated questions in Quizzer?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s07": {
+    "query": "Why is my teacher dashboard completely empty right now?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.667,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s08": {
+    "query": "Where can I find the analytics for my exam?",
+    "metrics": {
+      "recall": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "s09": {
+    "query": "How do I change my exam settings after it's already been published?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.625,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s11": {
+    "query": "How do I schedule an exam in Quizzer using Google Calendar?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s14": {
+    "query": "How do I change how short answer questions are graded in my exam settings?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.4,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s15": {
+    "query": "How do I unpublish an exam in Quizzer without losing my results?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "s16": {
+    "query": "How can I see active attempts across all exams in the live panel?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s17": {
+    "query": "Where is the Monitoring tab?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s19": {
+    "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.75,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.857,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.3,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s21": {
+    "query": "How do I publish an exam in Quizzer?",
+    "metrics": {
+      "recall": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      }
+    }
+  },
+  "s22": {
+    "query": "How do I set the correct answer for a True/False question?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 0.5,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      },
+      "correctness": {
+        "score": 0.5,
+        "run": "deepeval_pipeline:deepeval_pipeline_provenance",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "s23": {
+    "query": "Where can I find the exam results to download them?",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "precision": {
+        "score": 0.5,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "retriever:retriever_final_nemotron",
+        "at": "2026-11-01 18:49"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "faithfulness_all:faithfulness_all",
+        "at": "2026-10-15 05:40"
+      }
+    }
+  },
+  "ml-m01": {
+    "query": "How can I help students improve their marks?",
+    "metrics": {
+      "routing_ok": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m02": {
+    "query": "Students ki performance kaise improve kru?",
+    "metrics": {
+      "routing_ok": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m03": {
+    "query": "Baccho ke marks improve kaise kare?",
+    "metrics": {
+      "routing_ok": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m04": {
+    "query": "How do I change already awarded exam marks?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m05": {
+    "query": "Student ke existing marks kaise edit kru?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "cross_language": {
+        "score": 0.5,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m06": {
+    "query": "Exam check hone ke baad marks change kr sakte hain?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "cross_language": {
+        "score": 0.333,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m07": {
+    "query": "mujhe bato apne baccho ke marks kese badye",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "ambiguity_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m08": {
+    "query": "marks badhane hain",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "ambiguity_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m09": {
+    "query": "baccho ka result improve krna h",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "ambiguity_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m10": {
+    "query": "How do I publish my exam?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m11": {
+    "query": "exam publish kese kru",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m12": {
+    "query": "how to pubish my exm",
+    "metrics": {
+      "routing_ok": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m13": {
+    "query": "exam publish krna h kaise",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m14": {
+    "query": "How do students take the exam from a link?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m15": {
+    "query": "students exam link se kaise denge",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m16": {
+    "query": "Where can I find monitoring?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m17": {
+    "query": "monitoring kaha milega",
+    "metrics": {
+      "routing_ok": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "cross_language": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m18": {
+    "query": "wheres the live monitor thing",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "cross_language": {
+        "score": 0.5,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m19": {
+    "query": "Where is the arena room code?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m20": {
+    "query": "arena room code kaha hai",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "cross_language": {
+        "score": 0.5,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m21": {
+    "query": "Why is there no data in analytics?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m22": {
+    "query": "analytics me data kyu nhi aa rha",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m23": {
+    "query": "analytics page empty why",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m24": {
+    "query": "How do I connect Google Classroom?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m25": {
+    "query": "Google Classroom kaise connect kru",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "cross_language": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m26": {
+    "query": "googel clasroom connect kese kare",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "cross_language": {
+        "score": 0.5,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m27": {
+    "query": "How do I create a quiz?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m28": {
+    "query": "naya quiz kaise banaye",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m29": {
+    "query": "quiz bnana h pdf se",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m30": {
+    "query": "How do I export results to a spreadsheet?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m31": {
+    "query": "results excel me download kaise kare",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m32": {
+    "query": "How do I add students to my class?",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m33": {
+    "query": "students ko class me kaise add kru",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "cross_language": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m34": {
+    "query": "aur uske baad students ko link kaise bheju",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m35": {
+    "query": "and then how do I send it to students",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m36": {
+    "query": "uska result kaha dikhega",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "evidence_hit": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m37": {
+    "query": "mere baccho ko ghar pe padhai kaise karwau",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m38": {
+    "query": "aaj ka mausam kaisa hai",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m39": {
+    "query": "can you edit the questions order by drag and drop in whatsapp",
+    "metrics": {
+      "routing_ok": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m40": {
+    "query": "ye kaam nahi kar raha",
+    "metrics": {
+      "routing_ok": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "ambiguity_ok": {
+        "score": 0.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "ml-m41": {
+    "query": "it is not working",
+    "metrics": {
+      "routing_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "ambiguity_ok": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "grounded": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      },
+      "intent_preserved": {
+        "score": 1.0,
+        "run": "multilingual:stageA_local_after+e1e2",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "adhoc-google": {
+    "query": "mujhe bato google integration ko kese add kar sakta hu",
+    "metrics": {
+      "recall": {
+        "score": 0.8,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "relevancy": {
+        "score": 1.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "faithfulness": {
+        "score": 1.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "correctness": {
+        "score": 0.9,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  },
+  "adhoc-theme": {
+    "query": "theme ko kese badlu",
+    "metrics": {
+      "recall": {
+        "score": 1.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "precision": {
+        "score": 1.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "relevancy": {
+        "score": 0.8,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "faithfulness": {
+        "score": 0.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "answer_relevancy": {
+        "score": 0.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      },
+      "correctness": {
+        "score": 0.0,
+        "run": "adhoc:2026-10-22",
+        "at": "2026-10-25 21:19"
+      }
+    }
+  }
+}
