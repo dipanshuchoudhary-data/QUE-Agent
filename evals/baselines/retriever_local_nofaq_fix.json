@@ -1,0 +1,305 @@
+{
+  "summary": {
+    "config": {
+      "top_k": 2,
+      "candidate_k": 4,
+      "rrf_k": 60,
+      "min_score": 0.28,
+      "hybrid": true,
+      "app_env": "local",
+      "embedding_provider": "local",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_dim": 384,
+      "reranker_provider": "local",
+      "rerank": true,
+      "rerank_model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "index": "data/chroma_local",
+      "judge_model": "nvidia/nemotron-3.5-lightning:free"
+    },
+    "mode": "raw",
+    "rerank_status": {
+      "ok": 6
+    },
+    "rerank_fail_open_rate": 0.0,
+    "not_judged_buckets": {},
+    "rows_in_gate": 6,
+    "rows_human_verified": 0,
+    "provisional": true,
+    "judge_calls_per_answered_row": 1,
+    "judge_models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "contextual_recall_mean": 0.3,
+    "contextual_precision_mean": 0.25,
+    "contextual_relevancy_mean": 0.5833,
+    "metrics_average": 0.3778,
+    "recall_cases_below_0_5": [
+      "r15",
+      "t02",
+      "t08",
+      "a05"
+    ],
+    "abstention": "0/0",
+    "injected_chars_mean": 1666.7,
+    "latency_ms_p50": 313.9,
+    "latency_ms_p95": 13484.4
+  },
+  "cases": [
+    {
+      "id": "r15",
+      "query": "Teacher vs student role permissions",
+      "rerank": "ok",
+      "execution_class": null,
+      "final_docs": [
+        "roles",
+        "roles"
+      ],
+      "injected_chars": 1594,
+      "latency_ms": 13484.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "roles"
+        ],
+        "retrieved": [
+          "roles"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.2,
+        "reason": "The retrieved chunks mention the two main roles and the student limited interface, but cut off before listing the specific workspace permissions for teachers."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "The second chunk directly discusses user roles and permissions, but it cuts off prematurely right where the detailed teacher permissions begin."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to onboarding personas, user roles, and permissions."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r27",
+      "query": "Integrity events and live proctoring",
+      "rerank": "ok",
+      "execution_class": null,
+      "final_docs": [
+        "live-monitoring",
+        "live-monitoring"
+      ],
+      "injected_chars": 1670,
+      "latency_ms": 853.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "live-monitoring"
+        ],
+        "retrieved": [
+          "live-monitoring"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunks explain what integrity events exist and where they are found in the Monitoring tab, but miss the specific UI instruction to click 'Exams' in the left sidebar and select the exam card with the LIVE badge."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "While chunk [1] and chunk [2] contain relevant monitoring details, chunk [2] contains troubleshooting information about why LIVE might not appear that is less directly relevant than the actual event descriptions."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.9,
+        "reason": "Almost all retrieved text is directly related to live monitoring, integrity events, and how attempts are displayed in the Monitoring tab."
+      },
+      "weak_metrics": [
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "p04",
+      "query": "download my students' marks sheet",
+      "rerank": "ok",
+      "execution_class": null,
+      "final_docs": [
+        "students-workspace",
+        "results-exports"
+      ],
+      "injected_chars": 1870,
+      "latency_ms": 313.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "results-exports"
+        ],
+        "retrieved": [
+          "students-workspace",
+          "results-exports"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunks provide information on how to export results and notify the user, though they miss the exact navigation steps via the Exams sidebar."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "Chunk 2 contains the relevant information about exporting results and background notifications, but it is ranked second behind the student workspace chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.6,
+        "reason": "Both chunks contain some relevant student and export data, but also include extraneous details about student profiles, scope controls, and integrity reviews."
+      },
+      "weak_metrics": [
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "t02",
+      "query": "quiz kaise banaye",
+      "rerank": "ok",
+      "execution_class": null,
+      "final_docs": [
+        "product-overview",
+        "creating-exams"
+      ],
+      "injected_chars": 1511,
+      "latency_ms": 289.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "creating-exams"
+        ],
+        "retrieved": [
+          "product-overview",
+          "creating-exams"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "The retrieved chunks mention that exam creation involves adding source content and AI generation, but they completely omit the actual steps, wizard details, and UI guide needed to answer how to make a quiz."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "Neither of the retrieved chunks contains the necessary facts to answer the question about how to create a quiz."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "Chunk [2] is relevant to creating exams, but Chunk [1] discusses beta status, pricing, and data privacy, which are unrelated to the creation process."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "t08",
+      "query": "student ko exam link kaise bheje",
+      "rerank": "ok",
+      "execution_class": null,
+      "final_docs": [
+        "taking-exams",
+        "taking-exams"
+      ],
+      "injected_chars": 1672,
+      "latency_ms": 587.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "publishing"
+        ],
+        "retrieved": [
+          "taking-exams"
+        ],
+        "missing": [
+          "publishing"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "The retrieved chunks describe how students open the link, but contain none of the expected facts on how a teacher can generate and send the exam link."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "The retrieved chunks focus entirely on the student's exam-taking experience rather than explaining how to send the link to students."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "The retrieved text mentions exam links, but is mostly about the student UI guide and access requirements rather than instructions on how to send the link."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "a05",
+      "query": "Can I change it after?",
+      "rerank": "ok",
+      "execution_class": null,
+      "final_docs": [
+        "account-settings",
+        "taking-exams"
+      ],
+      "injected_chars": 1683,
+      "latency_ms": 283.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings",
+          "publishing"
+        ],
+        "retrieved": [
+          "account-settings",
+          "taking-exams"
+        ],
+        "missing": [
+          "exam-settings",
+          "publishing"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "None of the facts regarding changing exam settings after publishing are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "Neither of the retrieved chunks contains the expected answer facts, so no relevant chunks are ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.0,
+        "reason": "The retrieved text discusses changing account settings like theme and password, default workspace settings, and student exam interfaces, which do not address the question."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    }
+  ]
+}
