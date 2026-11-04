@@ -1,0 +1,2686 @@
+{
+  "summary": {
+    "config": {
+      "top_k": 2,
+      "candidate_k": 4,
+      "rrf_k": 60,
+      "min_score": 0.28,
+      "hybrid": true,
+      "embedding_model": "openai/text-embedding-3-large",
+      "rerank": true,
+      "rerank_model": "nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+      "judge_model": "nvidia/nemotron-3.5-lightning:free"
+    },
+    "mode": "production",
+    "rerank_status": {
+      "ok": 65,
+      "skipped": 2
+    },
+    "rerank_fail_open_rate": 0.0,
+    "not_judged_buckets": {
+      "workflow_card": {
+        "count": 8,
+        "ids": [
+          "r01",
+          "r03",
+          "r09",
+          "p02",
+          "p03",
+          "t03",
+          "a01",
+          "s21"
+        ]
+      },
+      "tool": {
+        "count": 7,
+        "ids": [
+          "r07",
+          "r25",
+          "r28",
+          "r34",
+          "p11",
+          "t07",
+          "m10"
+        ]
+      },
+      "conversational": {
+        "count": 1,
+        "ids": [
+          "r13"
+        ]
+      },
+      "refuse": {
+        "count": 14,
+        "ids": [
+          "r26",
+          "r30",
+          "r35",
+          "p01",
+          "p12",
+          "t05",
+          "a02",
+          "o01",
+          "o02",
+          "o03",
+          "o06",
+          "o07",
+          "o08",
+          "o11"
+        ]
+      },
+      "needs_human_review": {
+        "count": 7,
+        "ids": [
+          "a03",
+          "a04",
+          "m05",
+          "m08",
+          "m09",
+          "c01",
+          "c06"
+        ]
+      }
+    },
+    "rows_in_gate": 104,
+    "rows_human_verified": 0,
+    "provisional": true,
+    "judge_calls_per_answered_row": 1,
+    "judge_models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "contextual_recall_mean": 0.7598,
+    "contextual_precision_mean": 0.8492,
+    "contextual_relevancy_mean": 0.8838,
+    "metrics_average": 0.8309,
+    "recall_cases_below_0_5": [
+      "r08",
+      "r11",
+      "r21",
+      "p05",
+      "t02",
+      "t06",
+      "a06",
+      "s02",
+      "s08"
+    ],
+    "abstention": "1/4",
+    "injected_chars_mean": 1168.3,
+    "latency_ms_p50": 2020.6,
+    "latency_ms_p95": 2866.2
+  },
+  "cases": [
+    {
+      "id": "r02",
+      "query": "Where is Monitoring in the sidebar?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "live-monitoring",
+        "terminology"
+      ],
+      "injected_chars": 906,
+      "latency_ms": 3914.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "live-monitoring",
+          "navigation"
+        ],
+        "retrieved": [
+          "live-monitoring",
+          "terminology"
+        ],
+        "missing": [
+          "navigation"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "Every fact in the expected answer is fully present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk contains the exact answer and correctly comes before the secondary chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text directly pertains to where Monitoring is located and how to access it."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r04",
+      "query": "What is verification schema before an exam?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "verification",
+        "terminology"
+      ],
+      "injected_chars": 1273,
+      "latency_ms": 1931.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "verification"
+        ],
+        "retrieved": [
+          "verification",
+          "terminology"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunks contain almost all facts from the expected answer except for the specific UI steps for teachers to configure it."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are highly relevant and directly address the definition of the verification schema."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly about the verification schema without any noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r05",
+      "query": "How do I host an Arena battle with a room code?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "arena",
+        "common-workflows"
+      ],
+      "injected_chars": 1666,
+      "latency_ms": 2010.8,
+      "guide_id_diagnostic": {
+        "expected": [
+          "arena"
+        ],
+        "retrieved": [
+          "arena",
+          "common-workflows"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All necessary facts from the expected answer regarding hosting an Arena battle and generating a room code are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are highly relevant and properly prioritized, containing the step-by-Step instructions needed to host an Arena battle."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "The retrieved text is entirely focused on hosting live Arena battles and managing game rooms without extraneous noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r06",
+      "query": "Connect Google Classroom and push grades",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "google-classroom",
+        "common-workflows"
+      ],
+      "injected_chars": 1387,
+      "latency_ms": 1897.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-classroom"
+        ],
+        "retrieved": [
+          "google-classroom",
+          "common-workflows"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts required in the expected answer regarding automatic score syncing and manual grade pushing are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly contains all the necessary facts to answer the question about pushing grades."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.83,
+        "reason": "Most of the retrieved text is directly relevant to connecting Google Classroom and pushing grades, with only minor auxiliary steps included."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r08",
+      "query": "How does grading work for short answers?",
+      "rerank": "skipped",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "grading"
+      ],
+      "injected_chars": 148,
+      "latency_ms": 2089.0,
+      "guide_id_diagnostic": {
+        "expected": [
+          "grading"
+        ],
+        "retrieved": [
+          "grading"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "The retrieved chunk does not contain any of the specific facts about the smart grading pipeline or manual review process described in the expected answer."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "The top and only retrieved chunk fails to contain the necessary facts needed to answer the question."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "The retrieved text is entirely relevant to the topic of short answer grading."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r10",
+      "query": "What exam settings control time limits?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "product-overview",
+        "exam-settings"
+      ],
+      "injected_chars": 1514,
+      "latency_ms": 1959.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings"
+        ],
+        "retrieved": [
+          "product-overview",
+          "exam-settings"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks mention that exam settings control time limits and where to find the Settings tab, but they omit the specific details about the Duration field and default/minimum times."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "The second chunk provides the direct navigation instructions to the Settings tab, but it is ranked second behind a general product overview."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.6,
+        "reason": "Both chunks contain relevant information about exam settings and timing, though chunk 1 includes some extraneous product features like proctoring and monitoring."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r11",
+      "query": "How do students take an exam from a link?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "taking-exams",
+        "product-overview"
+      ],
+      "injected_chars": 1597,
+      "latency_ms": 2022.5,
+      "guide_id_diagnostic": {
+        "expected": [
+          "taking-exams"
+        ],
+        "retrieved": [
+          "taking-exams",
+          "product-overview"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.3,
+        "reason": "The chunks mention opening the link in a browser, but miss details about filling out the verification form, granting permissions, and submitting the exam."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The first chunk is directly relevant to how students access the exam via a link."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "The first chunk is directly relevant to the question, while the second chunk contains mostly unrelated general product information."
+      },
+      "weak_metrics": [
+        "recall",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r12",
+      "query": "Question types MCQ and true false",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "questions",
+        "terminology"
+      ],
+      "injected_chars": 1378,
+      "latency_ms": 2252.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "questions"
+        ],
+        "retrieved": [
+          "questions",
+          "terminology"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunks contain the details for MCQ and True/False questions, but omit the specific mention of the question type badge on the Questions tab in the exam workspace."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk contains detailed, highly relevant information about MCQ and True/False questions, placing the most complete information first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.9,
+        "reason": "Almost all of the retrieved text directly discusses question types such as MCQ and True/False, with only minimal extra information about other question types."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r14",
+      "query": "Difference between Monitoring and Analytics",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "live-monitoring",
+        "students-workspace"
+      ],
+      "injected_chars": 1094,
+      "latency_ms": 1971.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "terminology"
+        ],
+        "retrieved": [
+          "live-monitoring",
+          "students-workspace"
+        ],
+        "missing": [
+          "terminology"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "Chunk 1 successfully captures all the necessary facts regarding the differences between Monitoring and Analytics."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The relevant chunk containing the required comparison facts is correctly ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.75,
+        "reason": "While the first chunk is entirely relevant, the second chunk discusses the Students workspace rather than Monitoring."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r15",
+      "query": "Teacher vs student role permissions",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "roles",
+        "students-workspace"
+      ],
+      "injected_chars": 1345,
+      "latency_ms": 2017.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "roles"
+        ],
+        "retrieved": [
+          "roles",
+          "students-workspace"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks cover teacher access and student accounts, but miss details about student exam links and token-based exam takers."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The retrieved chunks are directly relevant to teacher and student roles, with the most relevant teacher role information ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text strictly pertains to teacher and student roles and workspaces without any unrelated noise."
+      },
+      "weak_metrics": [
+        "recall"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r16",
+      "query": "Students workspace cohort health",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "students-workspace",
+        "terminology"
+      ],
+      "injected_chars": 387,
+      "latency_ms": 2014.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "students-workspace"
+        ],
+        "retrieved": [
+          "students-workspace",
+          "terminology"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.67,
+        "reason": "The chunks cover the cohort health visualization and cohort definition, but miss the specific instruction to click Students in the left sidebar and the metrics strip cohort count card."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The retrieved chunks are directly relevant to the question and contain the available facts without irrelevant noise at the top."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are entirely about students, cohorts, and cohort health as requested by the question."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r17",
+      "query": "Schedule exam on Google Calendar",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "common-workflows",
+        "google-calendar"
+      ],
+      "injected_chars": 821,
+      "latency_ms": 1930.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-calendar"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "google-calendar"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.6,
+        "reason": "The chunks mention connecting Google Calendar, publishing the exam, and scheduling it, but lack specific UI details like clicking 'Integrations' in the sidebar or verifying the green 'Published' badge."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly addresses the workflow for scheduling an exam on Google Calendar, placing the most relevant overview first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to the process of scheduling an exam on Google Calendar."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r18",
+      "query": "Import source files from Google Drive",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "google-drive",
+        "creating-exams"
+      ],
+      "injected_chars": 1519,
+      "latency_ms": 1870.0,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-drive"
+        ],
+        "retrieved": [
+          "google-drive",
+          "creating-exams"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks explain how to use the Google Drive import feature, but they omit the steps for initially connecting Google Drive and starting the exam creation process."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are directly relevant to importing source files from Google Drive and correctly address the core of the question."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is strictly focused on the Google Drive integration and file import process without containing irrelevant noise."
+      },
+      "weak_metrics": [
+        "recall"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r19",
+      "query": "How does onboarding work after signup?",
+      "rerank": "skipped",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "onboarding"
+      ],
+      "injected_chars": 368,
+      "latency_ms": 1841.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "onboarding"
+        ],
+        "retrieved": [
+          "onboarding"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The retrieved chunk mentions the four-step onboarding flow, collecting names, choosing personas, and filling in details, but lacks specific details about the ten persona options, optional institution fields, the celebration animation, and the automatic dashboard redirection."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The only retrieved chunk is relevant to the question and contains the core facts about the onboarding process."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "The retrieved text is entirely focused on explaining the onboarding overview and signup process without containing irrelevant noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r20",
+      "query": "Change account settings and profile",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "account-settings",
+        "roles"
+      ],
+      "injected_chars": 1138,
+      "latency_ms": 1887.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "account-settings"
+        ],
+        "retrieved": [
+          "account-settings",
+          "roles"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunks provide information on how to access account settings and list the tabbed sections, but miss specific profile fields like phone number and courses taught."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The relevant information is well-distributed and present in the retrieved chunks without irrelevant noise ranked above."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly relevant to account settings and profile management."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r21",
+      "query": "How do I send feedback about Quizzer?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "feedback",
+        "product-overview"
+      ],
+      "injected_chars": 1178,
+      "latency_ms": 2346.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "feedback"
+        ],
+        "retrieved": [
+          "feedback",
+          "product-overview"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "None of the facts explaining how to send feedback on desktop or mobile appear in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "The retrieved chunks do not contain the necessary facts to answer the question about how to send feedback."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "Chunk 1 is relevant to feedback, but chunk 2 is completely unrelated to the question."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r22",
+      "query": "Notification preferences and email",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "notifications",
+        "account-settings"
+      ],
+      "injected_chars": 1160,
+      "latency_ms": 2160.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "notifications"
+        ],
+        "retrieved": [
+          "notifications",
+          "account-settings"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts regarding notification preferences, toggle options, and email usage from the expected answer are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks contain the necessary facts, with the most direct information appearing in the top ranks."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly relevant to notification preferences and email usage without containing extraneous noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r23",
+      "query": "What shows on the teacher dashboard?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "dashboard",
+        "navigation"
+      ],
+      "injected_chars": 1751,
+      "latency_ms": 1947.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "dashboard"
+        ],
+        "retrieved": [
+          "dashboard",
+          "navigation"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts from the expected answer regarding the summary metric cards, live exams panel, quick actions, and activation checklist are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly and fully answers the question with all necessary details, while the second chunk provides supplementary navigation context below."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.9,
+        "reason": "Almost all retrieved text is directly related to the teacher dashboard, with only minor auxiliary sidebar details about other workspaces."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r24",
+      "query": "Exam lifecycle draft published archived",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "lifecycle",
+        "publishing"
+      ],
+      "injected_chars": 1334,
+      "latency_ms": 1924.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "lifecycle"
+        ],
+        "retrieved": [
+          "lifecycle",
+          "publishing"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.67,
+        "reason": "The chunks provide details about the Draft, Published, and Archived lifecycle states, but omit the specific canonical click path `exam.publish` and the exact instruction for archiving from the Exams workspace."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are directly relevant to the exam lifecycle states and are placed at the top."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text directly discusses the exam lifecycle states (Draft, Published, and Archived) without any extraneous noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r27",
+      "query": "Integrity events and live proctoring",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "live-monitoring",
+        "terminology"
+      ],
+      "injected_chars": 1373,
+      "latency_ms": 1925.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "live-monitoring"
+        ],
+        "retrieved": [
+          "live-monitoring",
+          "terminology"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks explain what integrity events are and list examples, but completely omit the navigation steps to view them."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "The first chunk contains relevant details about integrity events, but the second chunk only provides general terminology definitions."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to proctoring and integrity events."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "r29",
+      "query": "Negative marking settings",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "grading",
+        "exam-settings"
+      ],
+      "injected_chars": 1119,
+      "latency_ms": 2187.5,
+      "guide_id_diagnostic": {
+        "expected": [
+          "grading",
+          "exam-settings"
+        ],
+        "retrieved": [
+          "grading",
+          "exam-settings"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts required in the expected answer are fully present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk contains all the necessary facts to answer the question about negative marking settings."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are entirely focused on exam scoring and negative marking settings without any irrelevant noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r31",
+      "query": "Link window vs exam duration meaning",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "terminology",
+        "publishing"
+      ],
+      "injected_chars": 762,
+      "latency_ms": 2007.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "terminology",
+          "exam-settings"
+        ],
+        "retrieved": [
+          "terminology",
+          "publishing"
+        ],
+        "missing": [
+          "exam-settings"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts required in the expected answer are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk contains all the necessary facts to answer the question completely."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to explaining the difference between the link window and exam duration."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r32",
+      "query": "Join Arena as a player with code",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "arena",
+        "terminology"
+      ],
+      "injected_chars": 1295,
+      "latency_ms": 1957.8,
+      "guide_id_diagnostic": {
+        "expected": [
+          "arena"
+        ],
+        "retrieved": [
+          "arena",
+          "terminology"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.83,
+        "reason": "Most facts from the expected answer are present, except for the detail that no Quizzer account is required."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly contains all the necessary instructions for joining Arena as a player."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved chunks are directly relevant to joining and participating in an Arena game."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "r33",
+      "query": "Results tab integrity review",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "results-exports",
+        "lifecycle"
+      ],
+      "injected_chars": 974,
+      "latency_ms": 2143.7,
+      "guide_id_diagnostic": {
+        "expected": [
+          "results-exports"
+        ],
+        "retrieved": [
+          "results-exports",
+          "lifecycle"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the question are present across the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The most relevant chunk containing the specific integrity review details is correctly ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.9,
+        "reason": "Both retrieved chunks are highly relevant to the exam results and integrity review process with very little noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "p04",
+      "query": "download my students' marks sheet",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "results-exports",
+        "common-workflows"
+      ],
+      "injected_chars": 1188,
+      "latency_ms": 2009.7,
+      "guide_id_diagnostic": {
+        "expected": [
+          "results-exports"
+        ],
+        "retrieved": [
+          "results-exports",
+          "common-workflows"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunks provide details on exporting results in various formats and the notification process, but omit the initial step of clicking 'Exams' in the left sidebar."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are highly relevant and directly address downloading exam marks, with the workflow steps appearing effectively."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to exporting student marks and contains no extraneous noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "p05",
+      "query": "how are written answers scored",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "grading",
+        "results-exports"
+      ],
+      "injected_chars": 385,
+      "latency_ms": 1952.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "grading"
+        ],
+        "retrieved": [
+          "grading",
+          "results-exports"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "None of the specific grading steps or pipeline details from the expected answer appear in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "The retrieved chunks do not contain the facts needed to answer the question, so no relevant chunks are ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "The first chunk is relevant to how written questions are graded, but the second chunk is about filtering results rather than scoring answers."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "p06",
+      "query": "stop students from switching tabs during the test",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "exam-settings",
+        "taking-exams"
+      ],
+      "injected_chars": 1638,
+      "latency_ms": 2052.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings",
+          "live-monitoring"
+        ],
+        "retrieved": [
+          "exam-settings",
+          "taking-exams"
+        ],
+        "missing": [
+          "live-monitoring"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks mention the 'Block Tab Switching' setting and its default state, but lack the navigational steps to find and configure it in the exam workspace."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The retrieved chunks directly discuss proctoring integrity and tab switching, placing the most relevant configuration details in the top rank."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is strictly focused on proctoring settings, integrity monitoring, and tab-switch detection related to the question."
+      },
+      "weak_metrics": [
+        "recall"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "p07",
+      "query": "play a live quiz game with my class",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "common-workflows",
+        "arena"
+      ],
+      "injected_chars": 1354,
+      "latency_ms": 1817.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "arena"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "arena"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All necessary facts to answer how to play a live quiz game with a class are present across the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The most relevant chunk containing the step-by-step workflow is ranked first, followed by the overview chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are directly focused on hosting and running a live Arena quiz battle."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "p08",
+      "query": "sync my scores to Google Classroom",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "common-workflows",
+        "google-classroom"
+      ],
+      "injected_chars": 960,
+      "latency_ms": 2051.7,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-classroom"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "google-classroom"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks mention automatic score syncing after grading, but miss the detail about teachers being able to trigger a manual grade push."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The most relevant chunk containing the syncing information is ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text directly relates to Google Classroom integration and score syncing."
+      },
+      "weak_metrics": [
+        "recall"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "p09",
+      "query": "put the exam date in my calendar",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "google-calendar",
+        "common-workflows"
+      ],
+      "injected_chars": 821,
+      "latency_ms": 2291.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-calendar"
+        ],
+        "retrieved": [
+          "google-calendar",
+          "common-workflows"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All the necessary facts required to answer the question are present across the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "The first chunk starts with later steps (Step 4), while the chunk containing the full workflow and prerequisites is ranked second."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly relevant to scheduling an exam on Google Calendar."
+      },
+      "weak_metrics": [
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "p10",
+      "query": "can students retake the exam",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "taking-exams",
+        "exam-settings"
+      ],
+      "injected_chars": 1775,
+      "latency_ms": 2111.7,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings",
+          "taking-exams"
+        ],
+        "retrieved": [
+          "taking-exams",
+          "exam-settings"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The retrieved chunks provide almost all facts needed for the expected answer, though details on how students initiate another attempt are slightly less explicit than the expected answer."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The highest-ranked chunk directly answers the question about retaking exams, and the second chunk provides relevant supporting details."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.9,
+        "reason": "Almost all retrieved text is directly related to exam attempts and retaking policies, with very little noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "t01",
+      "query": "publsh exam",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "publishing",
+        "terminology"
+      ],
+      "injected_chars": 959,
+      "latency_ms": 3104.7,
+      "guide_id_diagnostic": {
+        "expected": [
+          "publishing"
+        ],
+        "retrieved": [
+          "publishing",
+          "terminology"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.8,
+        "reason": "The chunks provide details on checking approved questions and the location of the Publish button, but omit the specific mention of the success screen and unique shareable link generation details."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are highly relevant to publishing an exam and correctly prioritize the actionable instructions first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text directly addresses the process and definition of publishing an exam without any extraneous noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "t02",
+      "query": "quiz kaise banaye",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "arena",
+        "product-overview"
+      ],
+      "injected_chars": 1613,
+      "latency_ms": 1990.0,
+      "guide_id_diagnostic": {
+        "expected": [
+          "creating-exams"
+        ],
+        "retrieved": [
+          "arena",
+          "product-overview"
+        ],
+        "missing": [
+          "creating-exams"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "None of the facts required to answer how to create a regular quiz in Quizzer appear in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "Neither of the retrieved chunks contains the steps to create a standard exam or quiz as outlined in the expected answer."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "The first chunk discusses creating an Arena quiz pack which is partially related to quizzes, while the second chunk is an overview of who Quizzer is for."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "t04",
+      "query": "exam link not working for student",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "common-problems",
+        "taking-exams"
+      ],
+      "injected_chars": 1622,
+      "latency_ms": 1961.5,
+      "guide_id_diagnostic": {
+        "expected": [
+          "common-problems",
+          "publishing"
+        ],
+        "retrieved": [
+          "common-problems",
+          "taking-exams"
+        ],
+        "missing": [
+          "publishing"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the expected answer are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly contains all the necessary troubleshooting steps for the non-working exam link."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.85,
+        "reason": "Most of the retrieved text is directly relevant to students accessing exams and troubleshooting link issues, with only minor extra details."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "t06",
+      "query": "arena room code",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "arena",
+        "common-problems"
+      ],
+      "injected_chars": 1235,
+      "latency_ms": 1604.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "arena"
+        ],
+        "retrieved": [
+          "arena",
+          "common-problems"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.2,
+        "reason": "The chunks mention that a six-character room code is generated and shared, but omit details about the join URL, QR code, projection instructions, and manual entry process."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "Chunk 1 contains relevant information about the six-character room code, but it appears before Chunk 2 which also discusses room codes and troubleshooting."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are entirely about Arena rooms and their codes, containing no irrelevant noise."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "t08",
+      "query": "student ko exam link kaise bheje",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "common-workflows",
+        "taking-exams"
+      ],
+      "injected_chars": 1480,
+      "latency_ms": 2213.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "publishing"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "taking-exams"
+        ],
+        "missing": [
+          "publishing"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer how to send the exam link to students are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk contains the exact steps for publishing and sharing the exam link, placing the most relevant information first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text directly pertains to publishing exams and sharing links with students without containing extraneous noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "a05",
+      "query": "Can I change it after?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "exam-settings",
+        "grading"
+      ],
+      "injected_chars": 582,
+      "latency_ms": 2115.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings",
+          "publishing"
+        ],
+        "retrieved": [
+          "exam-settings",
+          "grading"
+        ],
+        "missing": [
+          "publishing"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts from the expected answer are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The most relevant chunk answering the question is ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.8,
+        "reason": "Most of the retrieved text is directly about changing exam settings, with only a minor amount of noise regarding other features."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "a06",
+      "query": "How do I start?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "creating-exams",
+        "empty-states"
+      ],
+      "injected_chars": 746,
+      "latency_ms": 2050.0,
+      "guide_id_diagnostic": {
+        "expected": [
+          "onboarding",
+          "common-workflows"
+        ],
+        "retrieved": [
+          "creating-exams",
+          "empty-states"
+        ],
+        "missing": [
+          "onboarding",
+          "common-workflows"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "None of the facts about opening the app, clicking Sign Up, or the onboarding flow appear in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "Neither of the retrieved chunks contains the necessary facts to answer the question about how to start using the app."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "While the first chunk is about getting started with creating exams, the second chunk is general dashboard guidance, resulting in some noise."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "m01",
+      "query": "If I archive an exam can students still see their results, and can I still export them?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "results-exports",
+        "lifecycle"
+      ],
+      "injected_chars": 1296,
+      "latency_ms": 2448.5,
+      "guide_id_diagnostic": {
+        "expected": [
+          "lifecycle",
+          "results-exports"
+        ],
+        "retrieved": [
+          "results-exports",
+          "lifecycle"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer whether students can see results and whether they can be exported after archiving are present in the chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly and comprehensively addresses the results persistence and exportability for archived exams."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are entirely focused on exam states, archiving, results persistence, and exports related to the question."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "m02",
+      "query": "How do I build an exam from a Drive file and then publish it?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "common-workflows",
+        "publishing"
+      ],
+      "injected_chars": 1555,
+      "latency_ms": 2438.8,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-drive",
+          "creating-exams",
+          "publishing"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "publishing"
+        ],
+        "missing": [
+          "google-drive",
+          "creating-exams"
+        ],
+        "recall": 0.3333333333333333
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer how to build an exam from a Drive file and publish it are present across the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The relevant chunks containing the creation steps and publishing steps are properly ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to creating and publishing an exam."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "m03",
+      "query": "Schedule my published exam on Google Calendar and watch who is attempting it live",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "google-calendar",
+        "common-workflows"
+      ],
+      "injected_chars": 1396,
+      "latency_ms": 2349.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-calendar",
+          "live-monitoring"
+        ],
+        "retrieved": [
+          "google-calendar",
+          "common-workflows"
+        ],
+        "missing": [
+          "live-monitoring"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The retrieved chunks provide instructions for scheduling the exam on Google Calendar, but completely omit instructions on how to watch who is attempting it live."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The retrieved chunks contain relevant information about scheduling the exam and are ranked appropriately with no irrelevant noise at the top."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All of the retrieved text is directly related to scheduling an exam on Google Calendar."
+      },
+      "weak_metrics": [
+        "recall"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "m04",
+      "query": "How is negative marking applied and where do I switch it on?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "grading",
+        "terminology"
+      ],
+      "injected_chars": 743,
+      "latency_ms": 3670.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "grading",
+          "exam-settings"
+        ],
+        "retrieved": [
+          "grading",
+          "terminology"
+        ],
+        "missing": [
+          "exam-settings"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.5,
+        "reason": "The chunks explain how negative marking works and how penalties are applied, but they miss the specific instructions on where to switch it on in the workspace."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are directly relevant to negative marking and contain all the facts that are present in the chunks."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is exclusively about negative marking and its scoring rules."
+      },
+      "weak_metrics": [
+        "recall"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "m06",
+      "query": "How do I bring in my Classroom roster and push grades back after grading?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "google-classroom",
+        "common-workflows"
+      ],
+      "injected_chars": 1387,
+      "latency_ms": 2356.1,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-classroom",
+          "grading"
+        ],
+        "retrieved": [
+          "google-classroom",
+          "common-workflows"
+        ],
+        "missing": [
+          "grading"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the question about importing rosters and pushing grades are present across the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk contains the specific steps for importing rosters and pushing grades, followed by a relevant workflow chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to Google Classroom integration, importing rosters, and pushing grades."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "m07",
+      "query": "What should I set up before publishing an exam where I need to know who each student is?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "verification",
+        "exam-settings"
+      ],
+      "injected_chars": 1142,
+      "latency_ms": 1980.0,
+      "guide_id_diagnostic": {
+        "expected": [
+          "verification",
+          "exam-settings",
+          "publishing"
+        ],
+        "retrieved": [
+          "verification",
+          "exam-settings"
+        ],
+        "missing": [
+          "publishing"
+        ],
+        "recall": 0.6666666666666666
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer how to set up the verification schema for student identification are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The chunk containing the necessary configuration steps is ranked first, above the less relevant post-publishing settings chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.8,
+        "reason": "Most of the retrieved text directly addresses exam verification and settings, with only a small portion dedicated to general post-publishing best practices."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "c02",
+      "query": "Draft vs published vs archived exam",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "publishing",
+        "lifecycle"
+      ],
+      "injected_chars": 855,
+      "latency_ms": 2087.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "lifecycle"
+        ],
+        "retrieved": [
+          "publishing",
+          "lifecycle"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts regarding the Draft, Published, and Archived states from the expected answer are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly contains all the necessary information to answer the question about the three exam states."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to the states of exams in Quizzer without containing extraneous noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "c03",
+      "query": "What is the difference between an Exam and an Arena game?",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "arena",
+        "terminology"
+      ],
+      "injected_chars": 1146,
+      "latency_ms": 1963.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "arena",
+          "product-overview"
+        ],
+        "retrieved": [
+          "arena",
+          "terminology"
+        ],
+        "missing": [
+          "product-overview"
+        ],
+        "recall": 0.5
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "Every fact required in the expected answer is present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly and fully answers the question with all necessary details, while the second chunk provides supplementary terminology without introducing noise above the relevant chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly relevant to explaining the differences between Exams and Arena games."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "c04",
+      "query": "Does Results show the same thing as Analytics?",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "results-exports",
+        "analytics"
+      ],
+      "injected_chars": 915,
+      "latency_ms": 1647.9,
+      "guide_id_diagnostic": {
+        "expected": [
+          "terminology",
+          "analytics",
+          "results-exports"
+        ],
+        "retrieved": [
+          "results-exports",
+          "analytics"
+        ],
+        "missing": [
+          "terminology"
+        ],
+        "recall": 0.6666666666666666
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to explain the differences between Results and Analytics are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly and accurately addresses the comparison between Results and Analytics."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are entirely focused on explaining the differences between Results and Analytics without any noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "c05",
+      "query": "Is the LIVE badge the same as Monitoring?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "terminology",
+        "live-monitoring"
+      ],
+      "injected_chars": 1590,
+      "latency_ms": 2031.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "terminology",
+          "live-monitoring"
+        ],
+        "retrieved": [
+          "terminology",
+          "live-monitoring"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the question are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly and comprehensively answers the question about the difference between the LIVE badge and Monitoring."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are directly relevant to the concepts mentioned in the question without containing irrelevant noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s02",
+      "query": "How do I check my analytics in Quizzer?",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "analytics",
+        "terminology"
+      ],
+      "injected_chars": 1080,
+      "latency_ms": 2111.7,
+      "guide_id_diagnostic": {
+        "expected": [
+          "analytics"
+        ],
+        "retrieved": [
+          "analytics",
+          "terminology"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "None of the chunks mention clicking Analytics in the left sidebar to open the workspace."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "The expected answer facts are missing from all retrieved chunks."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to Quizzer analytics and how to use them."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s03",
+      "query": "How can I export my game history to a CSV file?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "arena",
+        "google-drive"
+      ],
+      "injected_chars": 965,
+      "latency_ms": 2170.8,
+      "guide_id_diagnostic": {
+        "expected": [
+          "arena"
+        ],
+        "retrieved": [
+          "arena",
+          "google-drive"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer how to export game history to a CSV file are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The chunk containing the exact answer is ranked first above the less directly related chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.85,
+        "reason": "Most of the retrieved text directly discusses game history and exporting, with only minor peripheral details."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s05",
+      "query": "How do I set up webcam monitoring and auto-submit for a proctored exam?",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "common-workflows",
+        "taking-exams"
+      ],
+      "injected_chars": 1850,
+      "latency_ms": 1987.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "common-workflows"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "taking-exams"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the question about setting up webcam monitoring and auto-submit are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk contains the exact step-by-step setup instructions needed to answer the question."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are directly about proctored exam setup, webcam monitoring, and auto-submit with no irrelevant noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s06",
+      "query": "How do I get better AI-generated questions in Quizzer?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "creating-exams",
+        "questions"
+      ],
+      "injected_chars": 1563,
+      "latency_ms": 2096.1,
+      "guide_id_diagnostic": {
+        "expected": [
+          "creating-exams"
+        ],
+        "retrieved": [
+          "creating-exams",
+          "questions"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts from the expected answer regarding clear, well-structured source content are present in the first chunk."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The chunk containing the exact answer is ranked first, while the irrelevant chunk is correctly ranked below it."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "The first chunk is directly relevant, but the second chunk discusses unrelated topics such as question types and exam publishing."
+      },
+      "weak_metrics": [
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s07",
+      "query": "Why is my teacher dashboard completely empty right now?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "dashboard",
+        "empty-states"
+      ],
+      "injected_chars": 695,
+      "latency_ms": 2034.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "dashboard"
+        ],
+        "retrieved": [
+          "dashboard",
+          "empty-states"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts from the expected answer regarding the brand new account, lack of created exams, and lack of live activity are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly and fully answers the question with all necessary facts, while the second chunk provides supplementary relevant context."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly related to explaining why the teacher dashboard is empty."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s08",
+      "query": "Where can I find the analytics for my exam?",
+      "rerank": "ok",
+      "execution_class": "complex_knowledge",
+      "final_docs": [
+        "analytics",
+        "navigation"
+      ],
+      "injected_chars": 978,
+      "latency_ms": 1992.7,
+      "guide_id_diagnostic": {
+        "expected": [
+          "empty-states"
+        ],
+        "retrieved": [
+          "analytics",
+          "navigation"
+        ],
+        "missing": [
+          "empty-states"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 0.0,
+        "reason": "None of the facts explaining when analytics show data appear in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.0,
+        "reason": "The relevant facts from the expected answer are missing entirely from the retrieved chunks."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "Chunk 1 is directly relevant to finding analytics, while Chunk 2 contains general navigation questions that are mostly noise regarding this specific question."
+      },
+      "weak_metrics": [
+        "recall",
+        "precision",
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s09",
+      "query": "How do I change my exam settings after it's already been published?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "lifecycle",
+        "exam-settings"
+      ],
+      "injected_chars": 867,
+      "latency_ms": 1981.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "exam-settings"
+        ],
+        "retrieved": [
+          "lifecycle",
+          "exam-settings"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts from the expected answer regarding changing settings on a published exam and their impact on future versus in-progress attempts are present in the chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The most detailed and directly relevant chunk containing the necessary facts is ranked first, followed by a supporting summary chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly relevant to changing exam settings after publication without any extraneous noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s11",
+      "query": "How do I schedule an exam in Quizzer using Google Calendar?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "google-calendar",
+        "common-workflows"
+      ],
+      "injected_chars": 855,
+      "latency_ms": 1915.4,
+      "guide_id_diagnostic": {
+        "expected": [
+          "google-calendar"
+        ],
+        "retrieved": [
+          "google-calendar",
+          "common-workflows"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the question about scheduling an exam using Google Calendar are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The relevant chunks containing the necessary information are ranked appropriately at the top."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly relevant to scheduling an exam with Google Calendar using Quizzer without any noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s14",
+      "query": "How do I change how short answer questions are graded in my exam settings?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "exam-settings",
+        "grading"
+      ],
+      "injected_chars": 1654,
+      "latency_ms": 2020.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "grading"
+        ],
+        "retrieved": [
+          "exam-settings",
+          "grading"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "The chunks contain all the necessary information about using the Answer Grading Style setting on the exam's Settings tab."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 0.5,
+        "reason": "The relevant chunk is ranked second while the first chunk is only partially related FAQ content."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.6,
+        "reason": "While both chunks are about exam settings and grading, chunk 1 includes unrelated FAQ items about access codes, default settings, and webcams."
+      },
+      "weak_metrics": [
+        "precision"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s15",
+      "query": "How do I unpublish an exam in Quizzer without losing my results?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "lifecycle",
+        "publishing"
+      ],
+      "injected_chars": 1246,
+      "latency_ms": 2866.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "lifecycle"
+        ],
+        "retrieved": [
+          "lifecycle",
+          "publishing"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts required to answer the question are fully present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk directly and concisely contains the necessary facts to answer the question."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "All retrieved text is directly relevant to unpublishing an exam and what happens to the results."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s16",
+      "query": "How can I see active attempts across all exams in the live panel?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "live-monitoring",
+        "students-workspace"
+      ],
+      "injected_chars": 893,
+      "latency_ms": 1986.1,
+      "guide_id_diagnostic": {
+        "expected": [
+          "live-monitoring"
+        ],
+        "retrieved": [
+          "live-monitoring",
+          "students-workspace"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts required to answer the question are successfully found in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The chunk containing the necessary facts is ranked first, above the irrelevant chunk."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "The first chunk is relevant to the live panel, but the second chunk discusses recent attempts in the student workspace and adds noise."
+      },
+      "weak_metrics": [
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s17",
+      "query": "Where is the Monitoring tab?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "terminology",
+        "live-monitoring"
+      ],
+      "injected_chars": 906,
+      "latency_ms": 2054.2,
+      "guide_id_diagnostic": {
+        "expected": [
+          "navigation"
+        ],
+        "retrieved": [
+          "terminology",
+          "live-monitoring"
+        ],
+        "missing": [
+          "navigation"
+        ],
+        "recall": 0.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the question are fully present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The top-ranked chunk contains the exact navigation path to the Monitoring tab, while the second chunk also provides relevant location details."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are entirely focused on explaining where to find and access the Monitoring tab without any irrelevant noise."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    },
+    {
+      "id": "s19",
+      "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "onboarding",
+        "account-settings"
+      ],
+      "injected_chars": 1667,
+      "latency_ms": 2158.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "onboarding"
+        ],
+        "retrieved": [
+          "onboarding",
+          "account-settings"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All facts needed to answer the question are present in the first retrieved chunk."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The relevant chunk containing the required information is correctly ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "The first chunk is directly relevant to the question, but the second chunk is completely about unrelated workspace account settings."
+      },
+      "weak_metrics": [
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s22",
+      "query": "How do I set the correct answer for a True/False question?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "questions",
+        "taking-exams"
+      ],
+      "injected_chars": 1821,
+      "latency_ms": 2126.6,
+      "guide_id_diagnostic": {
+        "expected": [
+          "questions"
+        ],
+        "retrieved": [
+          "questions",
+          "taking-exams"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "The expected answer fact that one of True or False must be marked as correct is present in the first chunk."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The chunk containing the correct answer facts is ranked first, while the irrelevant chunk is placed second."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 0.5,
+        "reason": "The first retrieved chunk is directly relevant to setting correct answers, but the second chunk is about student exam-taking behavior rather than authoring questions."
+      },
+      "weak_metrics": [
+        "relevancy"
+      ],
+      "weak_group": "at_or_below_0.5"
+    },
+    {
+      "id": "s23",
+      "query": "Where can I find the exam results to download them?",
+      "rerank": "ok",
+      "execution_class": "simple_knowledge",
+      "final_docs": [
+        "common-workflows",
+        "results-exports"
+      ],
+      "injected_chars": 696,
+      "latency_ms": 2045.3,
+      "guide_id_diagnostic": {
+        "expected": [
+          "results-exports"
+        ],
+        "retrieved": [
+          "common-workflows",
+          "results-exports"
+        ],
+        "missing": [],
+        "recall": 1.0
+      },
+      "no_answer": false,
+      "judge_calls": 1,
+      "ContextualRecallMetric": {
+        "score": 1.0,
+        "reason": "All necessary facts to answer the question are present in the retrieved chunks."
+      },
+      "ContextualPrecisionMetric": {
+        "score": 1.0,
+        "reason": "The chunk containing the exact steps and location for downloading the results is ranked first."
+      },
+      "ContextualRelevancyMetric": {
+        "score": 1.0,
+        "reason": "Both retrieved chunks are directly related to accessing and exporting exam results."
+      },
+      "weak_metrics": [],
+      "weak_group": ""
+    }
+  ]
+}
