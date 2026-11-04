@@ -1,0 +1,216 @@
+{
+  "summary": {
+    "all": {
+      "n": 5,
+      "routing_ok": 0.6,
+      "evidence_hit": 0.0,
+      "cross_language": null,
+      "ambiguity_ok": 1.0,
+      "grounded": 1.0,
+      "intent_preserved": 1.0,
+      "latency_ms_mean": 1476.033,
+      "tokens_mean": 418.333,
+      "llm_calls": 2
+    },
+    "by_kind": {
+      "ambiguous": {
+        "n": 2,
+        "routing_ok": 1.0,
+        "evidence_hit": null,
+        "cross_language": null,
+        "ambiguity_ok": 1.0,
+        "grounded": 1.0,
+        "intent_preserved": 1.0,
+        "latency_ms_mean": 1814.7,
+        "tokens_mean": 446,
+        "llm_calls": 1
+      },
+      "hinglish": {
+        "n": 1,
+        "routing_ok": 0.0,
+        "evidence_hit": 0.0,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "shorthand": {
+        "n": 1,
+        "routing_ok": 1.0,
+        "evidence_hit": 0.0,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": 1.0,
+        "intent_preserved": 1.0,
+        "latency_ms_mean": 1500.9,
+        "tokens_mean": 809,
+        "llm_calls": 1
+      },
+      "typo": {
+        "n": 1,
+        "routing_ok": 0.0,
+        "evidence_hit": 0.0,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": 1.0,
+        "intent_preserved": 1.0,
+        "latency_ms_mean": 1112.5,
+        "tokens_mean": 0,
+        "llm_calls": 0
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "m07",
+      "kind": "ambiguous",
+      "group": "vague_marks",
+      "query": "mujhe bato apne baccho ke marks kese badye",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 13574.3,
+      "cross_language": null,
+      "generate_error": "LLMError: Error code: 404 - {'error': {'message': 'Provider returned error', 'code': 404, 'metadata': {'raw': '{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'ac74040f-9fc9-4c5e-ac74-279ba5161d"
+    },
+    {
+      "id": "m09",
+      "kind": "ambiguous",
+      "group": "vague_marks",
+      "query": "baccho ka result improve krna h",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 455.9,
+      "cross_language": null,
+      "latency_ms": 1814.7,
+      "llm_called": false,
+      "prompt_tokens": 446,
+      "completion_tokens": 0,
+      "interpret": {
+        "cached": false,
+        "tokens": 446,
+        "ms": 1253.3,
+        "outcome": "clarify"
+      },
+      "model": "interpret:clarify",
+      "answer": "Is the goal to improve student performance on exams or to improve the grading/result display for teachers?",
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "tools_disabled",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "generator_docs": 0,
+      "grounded": 1.0,
+      "intent_preserved": 1.0,
+      "judge_reason": "The user's query 'baccho ka result improve krna h' (I want to improve children's results) is ambiguous regarding whether it pertains to student learning/exam scores or the administrative result display/grading process. The assistant correctly asks a clarifying question without making any unsupported"
+    },
+    {
+      "id": "m12",
+      "kind": "typo",
+      "group": "publish",
+      "query": "how to pubish my exm",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": false,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 472.8,
+      "cross_language": null,
+      "latency_ms": 1112.5,
+      "llm_called": false,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "interpret": {
+        "cached": false,
+        "tokens": 0,
+        "ms": 484.4,
+        "error": true,
+        "outcome": "none"
+      },
+      "model": "deterministic:no_answer",
+      "answer": "That is not something I can confirm from the Quizzer guides. Tell me what you are trying to do in Quizzer, such as an exam, a result, or a student list, and I will point you to the right steps.",
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "tools_disabled",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "generator_docs": 0,
+      "grounded": 1.0,
+      "intent_preserved": 1.0,
+      "judge_reason": "The evidence was empty, and the assistant appropriately stated it could not confirm the information from the guides while asking the user for clarification to help them further."
+    },
+    {
+      "id": "m17",
+      "kind": "hinglish",
+      "group": "monitoring",
+      "query": "monitoring kaha milega",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": false,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 483.7,
+      "cross_language": null,
+      "generate_error": "LLMError: Error code: 404 - {'error': {'message': 'Provider returned error', 'code': 404, 'metadata': {'raw': '{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'ac74040f-9fc9-4c5e-ac74-279ba5161d"
+    },
+    {
+      "id": "m29",
+      "kind": "shorthand",
+      "group": "create_exam",
+      "query": "quiz bnana h pdf se",
+      "outcome": "answer",
+      "docs": [
+        "product-overview",
+        "terminology"
+      ],
+      "scores": {
+        "product-overview::what-you-can-do::0::7b0020c6c65e": -8.679,
+        "terminology::section::0::1ea9b5497f50": -10.457
+      },
+      "routing_ok": true,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 444.3,
+      "cross_language": null,
+      "latency_ms": 1500.9,
+      "llm_called": true,
+      "prompt_tokens": 714,
+      "completion_tokens": 95,
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "answer": "To create a quiz from a PDF:\n\n1. Open Quizzer and select **Create Exam**.\n2. Upload your PDF file (or paste text, provide a URL, or import from Google Drive).\n3. Choose **AI question generation** and pick a mode (Source-first, Guided, or Custom).\n4. Review the AI-generated questions — approve, reject, edit, or regenerate as needed.\n5. Once all questions are approved, publish the exam.",
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "tools_disabled",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "generator_docs": 2,
+      "grounded": 1.0,
+      "intent_preserved": 1.0,
+      "judge_reason": "The assistant accurately answers the user's query about creating a quiz from a PDF using features directly supported by the evidence (uploading a PDF, AI question generation modes, review workflow, and publishing)."
+    }
+  ]
+}
