@@ -19,6 +19,14 @@ taking a quiz, student experience, taker flow.
 
 ## Step-by-Step UI Guide: What Students See When Taking an Exam
 
+Short answer: the student opens the exam link shared by the teacher,
+reads the start page, fills the verification form (and access code if
+required), clicks Start Exam, answers the questions, clicks Submit and
+then Confirm Submit, and sees the "Exam Submitted Successfully" page.
+No Quizzer account is needed. The numbered steps below are the one
+canonical order; the "Details Behind Each Step" section later explains
+each stage in more depth.
+
 This is the exact flow a student experiences from start to finish:
 
 Step 1 — Open the link:
@@ -91,11 +99,16 @@ After submission, a confirmation page appears showing "Exam Submitted
 Successfully" with a timestamp. The student cannot go back or change
 answers.
 
+When time runs out, the exam is submitted automatically with the answers
+saved so far. The submission confirmation page does not show the score;
+the teacher decides whether and how to share scores.
+
 ## How Students Access an Exam
 
 The teacher publishes the exam and shares the link (via copy/paste,
 email, Google Classroom, or QR code). Students open the link in a web
-browser.
+browser. Students need no Quizzer account: they identify themselves
+through the verification form and start.
 
 Requirements for the link to work:
 - The exam must be published (not unpublished or archived)
@@ -108,9 +121,12 @@ a dashboard listing. They ONLY access exams through links shared by
 the teacher. Even students with Quizzer accounts cannot discover exams
 on their own.
 
-## What Students See: Step by Step
+## Details Behind Each Step
 
-### Step 1: Start Page
+These sections add detail to the numbered flow above (Steps 1-9 in
+"Step-by-Step UI Guide"). They are not a second set of steps.
+
+### Start Page (Step 1-2)
 
 When a student opens the exam link, they see a start page with:
 
@@ -129,7 +145,7 @@ proctoring measures are active before committing to start.
 If the link window has expired, the student sees a message that the
 exam is no longer available.
 
-### Step 2: Verification Form
+### Verification Form (Step 3)
 
 Before starting the attempt, the student fills out the verification
 form. This form collects identity fields configured by the teacher:
@@ -154,7 +170,7 @@ whether a student has used their allowed attempts.
 Users may call this: identity form, registration, sign-in form,
 entering details, student info form.
 
-### Step 3: Starting the Attempt
+### Starting the Attempt (Step 4-5)
 
 After completing the verification form, the student clicks Start. At
 this point:
@@ -174,7 +190,7 @@ this point:
 - A heartbeat begins sending periodic signals to the server (this is
   what makes the LIVE badge appear for the teacher)
 
-### Step 4: The Exam Interface
+### The Exam Interface (Step 6)
 
 Students see a focused, distraction-free exam layout:
 
@@ -205,7 +221,7 @@ navigator.
 Progress indicator: shows how many questions are answered out of the
 total.
 
-### Step 5: Answering Questions
+### Answering Questions (Step 6)
 
 For Multiple Choice (MCQ): tap or click one option. The selection is
 highlighted. Tap a different option to change.
@@ -228,7 +244,7 @@ Unanswered questions: students can skip questions and come back later.
 Unanswered questions at submission time score zero (no negative marking
 penalty for unanswered, even if negative marking is enabled).
 
-### Step 6: Proctoring During the Exam
+### Proctoring During the Exam (Step 7)
 
 Depending on exam settings, the following may be actively monitoring:
 
@@ -267,7 +283,11 @@ violations. Grading begins.
 If auto-submit is off (the default), violations are recorded but the
 student can continue the exam.
 
-### Step 7: Submitting the Exam
+If webcam monitoring is on and the camera disconnects or is covered, it
+may trigger face monitoring violations (when face monitoring is on).
+Students should make sure their camera works before starting.
+
+### Submitting the Exam (Step 8)
 
 Students can submit at any time by clicking the Submit button. Before
 final submission, a confirmation dialog appears showing:
@@ -281,7 +301,7 @@ The exam is also submitted automatically when:
 
 After submission, answers cannot be changed. The attempt is locked.
 
-### Step 8: After Submission
+### After Submission (Step 9)
 
 Students see a submission confirmation page with:
 - Confirmation that the exam was submitted successfully
@@ -339,6 +359,9 @@ If the teacher set Maximum Attempts to more than 1:
 Multiple attempts are tracked separately in the teacher's Results tab.
 Each attempt has its own row.
 
+Students can retake the exam only if the teacher set Maximum Attempts
+above 1. Each retake is a completely fresh attempt.
+
 ## Browser Requirements
 
 The exam interface works on modern browsers: Chrome, Firefox, Edge,
@@ -366,53 +389,6 @@ Students taking an exam CANNOT:
 - Submit after the timer expires (auto-submission happens)
 - Take more attempts than allowed
 - Reuse an access code
-
-## Common Questions
-
-How do students take the exam?
-The teacher shares a published link. Students open it, fill the
-verification form with their identity, and start. No account needed.
-
-Do students need a Quizzer account?
-No. Students access the exam via the shared link and identify
-themselves through the verification form.
-
-Can students go back to previous questions?
-Yes. Students can navigate freely between all questions during the
-exam using the question navigator.
-
-What happens if a student closes their browser?
-If Allow Resume is on, they can reopen the link and continue (timer
-does not pause). If off, the attempt may be interrupted. Auto-saved
-answers are preserved either way.
-
-What happens when time runs out?
-The exam is submitted automatically with whatever answers have been
-saved up to that point.
-
-Can students retake the exam?
-Only if the teacher set Maximum Attempts to more than 1. Each retake
-is a completely fresh attempt.
-
-What happens if the student gets too many violations?
-If auto-submit is enabled, the exam is submitted automatically when
-the violation limit is reached. If auto-submit is off, violations are
-recorded but the student can continue.
-
-Can students see their score after submitting?
-The submission confirmation page does not show the score. Students see
-confirmation that the exam was submitted. The teacher decides whether
-and how to share scores.
-
-What happens if the webcam stops working?
-If webcam monitoring is enabled and the camera disconnects or is
-covered, it may trigger face monitoring violations (if face monitoring
-is on). The student should ensure their camera is working before
-starting.
-
-Can students use their phone to take the exam?
-Yes, the exam link works on mobile browsers. However, webcam proctoring
-and fullscreen enforcement may have limitations on mobile devices.
 
 ## Related Features
 
