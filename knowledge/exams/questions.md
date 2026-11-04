@@ -272,6 +272,9 @@ Editing does not reset the question status to Draft. If you approved
 a question and then edit it, it remains Approved. This gives you
 flexibility to make minor corrections without re-approving.
 
+Editing a question does not change its approval status; it stays
+Approved after edits.
+
 ## Question Regeneration
 
 If an AI-generated question is not satisfactory, you can regenerate it:
@@ -282,6 +285,9 @@ If an AI-generated question is not satisfactory, you can regenerate it:
 4. The new question starts with Draft status (needs re-approval).
 
 Regeneration does not count against your daily generation quota.
+
+Regenerate replaces the original question; the new question starts as
+Draft.
 
 ## Answer Key Freezing
 
@@ -305,53 +311,6 @@ True/False is always exactly 2 options (True and False).
 The Questions tab shows the total question count, broken down by
 status (Draft, Approved, Rejected) and by section. This helps you
 quickly see what still needs review.
-
-## Common Questions
-
-What question types does Quizzer support?
-Multiple Choice (MCQ), True/False, Short Answer, Long Answer, and
-Multi-Select for graded exams. Arena also has One Word Answer and
-Guess It.
-
-How do I approve questions?
-Open the exam, go to the Questions tab, and click Approve on each
-question. You can also use the bulk approve action to approve all
-remaining drafts at once.
-
-Can I edit AI-generated questions?
-Yes. You can change any part of an AI-generated question including the
-text, options, correct answer, type, and marks.
-
-Why can I not publish my exam?
-All questions must be in Approved status. Check the Questions tab for
-any remaining Draft or Rejected questions and approve them. At least
-one Approved question is required.
-
-How do I add a question manually?
-On the Questions tab, use the add question action. Select the type,
-fill in the content, set the correct answer, and save.
-
-Can I change marks per question?
-Yes. Each question has its own marks value. The default comes from the
-exam's Default Marks setting but can be overridden individually.
-
-What happens if a question has no correct answer?
-MCQ, True/False, and Multi-Select questions cannot be approved without
-a valid correct answer. The approve action will be disabled with a
-message explaining what is missing.
-
-Does editing a question after approval reset it to Draft?
-No. Editing does not change the approval status. The question remains
-Approved after edits.
-
-What does Regenerate do?
-It asks the AI to create a new version of the question from the same
-source material. The original is replaced, and the new question starts
-as Draft. Does not count against your daily quota.
-
-Can I move questions between sections?
-Yes. You can drag questions to different sections or use move actions
-to reorganize.
 
 ## Related Features
 
