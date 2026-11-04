@@ -1,0 +1,245 @@
+{
+ "_meta": "Reference labels drafted by the assistant by reading frozen chunks, atomic claims and answers. NOT independent human review. ref: S supported/P partial/U unsupported/C contradicted per atomic claim vs chunks. cov: C conveyed/P partial/M missing/X contradicted per atomic claim vs answer. rel: U useful/N not useful per chunk unit (flat). prec: 1/0 chunk holds evidence. arel: A addresses/O off topic per answer unit. faith: S supported/U unsupported/C contradicted/- not a factual claim, per answer unit.",
+ "rows": {
+  "r02": {
+   "ref": "SSSS",
+   "cov": "XMMM",
+   "rel": "NNUNUUU",
+   "prec": "1",
+   "arel": "A",
+   "faith": "C"
+  },
+  "s17": {
+   "ref": "SSS",
+   "cov": "MMP",
+   "rel": "UUUNN",
+   "prec": "1",
+   "arel": "AAO",
+   "faith": "CU-"
+  },
+  "r16": {
+   "ref": "UUUUUSS",
+   "cov": "MMMMMCC",
+   "rel": "UU",
+   "prec": "1",
+   "arel": "AA",
+   "faith": "SU"
+  },
+  "s11": {
+   "ref": "PSUPSP",
+   "cov": "PCMMMM",
+   "rel": "UUN",
+   "prec": "1",
+   "arel": "AAAAAAO",
+   "faith": "UUUUUU-"
+  },
+  "p06": {
+   "ref": "UUUUPSSU",
+   "cov": "MMPCCCCM",
+   "rel": "NNNNNUUUNNNN",
+   "prec": "1",
+   "arel": "AAAA",
+   "faith": "SSUS"
+  },
+  "s03": {
+   "ref": "SSS",
+   "cov": "CMM",
+   "rel": "NNNNUN",
+   "prec": "1",
+   "arel": "AAAAAA",
+   "faith": "SSUUUU"
+  },
+  "r12": {
+   "ref": "SSSSSSU",
+   "cov": "CCCCCCM",
+   "rel": "UUUUUUUNNN",
+   "prec": "1",
+   "arel": "AAAA",
+   "faith": "SSSS"
+  },
+  "s07": {
+   "ref": "SSSS",
+   "cov": "CMCC",
+   "rel": "UUUUU",
+   "prec": "1",
+   "arel": "AAA",
+   "faith": "SSU"
+  },
+  "p05": {
+   "ref": "UUUUUUUU",
+   "cov": "CCPCMMMM",
+   "rel": "UNNUUUUUNU",
+   "prec": "0",
+   "arel": "AAAAA",
+   "faith": "UUUUU"
+  },
+  "m06": {
+   "ref": "UUUUSSU",
+   "cov": "CCPMCCM",
+   "rel": "UUUUNNNNUU",
+   "prec": "1",
+   "arel": "AAAAA",
+   "faith": "-USSS"
+  },
+  "a06": {
+   "ref": "UUUUUUUUUUU",
+   "cov": "MMMMMMMMMMM",
+   "rel": "UUUUUNNN",
+   "prec": "0",
+   "arel": "AA",
+   "faith": "SS"
+  },
+  "t06": {
+   "ref": "SUUUUUUUUU",
+   "cov": "CMCPMMMMMM",
+   "rel": "NUNNN",
+   "prec": "1",
+   "arel": "AAAAAAAO",
+   "faith": "-USUSSU-"
+  },
+  "r06": {
+   "ref": "USU",
+   "cov": "PCM",
+   "rel": "NNNNNNNNUU",
+   "prec": "1",
+   "arel": "AAAAAAA",
+   "faith": "-UUUSSU"
+  },
+  "t01": {
+   "ref": "UUUSUUU",
+   "cov": "CCMPMMP",
+   "rel": "UUUUUUUUUUU",
+   "prec": "1",
+   "arel": "AAA",
+   "faith": "SSU"
+  },
+  "p07": {
+   "ref": "SSSSUSSPSPSPPPPUS",
+   "cov": "CCCCPCMPCPCCCCCMM",
+   "rel": "UUUUUUUUUU",
+   "prec": "1",
+   "arel": "AAAAAAAAA",
+   "faith": "-SSSSSSSS"
+  },
+  "c03": {
+   "ref": "SSSSUSSSSSSS",
+   "cov": "CCCCMCCCCCCC",
+   "rel": "UUNNNNNNUUUUUUUUUU",
+   "prec": "11",
+   "arel": "AAAAAAAAAAAA",
+   "faith": "-SSSS-SSSSSS"
+  },
+  "m04": {
+   "ref": "UPUPPS",
+   "cov": "MCMPPC",
+   "rel": "UUUUUUN",
+   "prec": "1",
+   "arel": "AA",
+   "faith": "SS"
+  },
+  "r15": {
+   "ref": "SSSPUUUUPPSSSSUUU",
+   "cov": "MMMMMMMMMMMMMMMMM",
+   "rel": "UNUUUUUUUNU",
+   "prec": "11",
+   "arel": "OO",
+   "faith": "--"
+  },
+  "t02": {
+   "ref": "UUUUUUUUU",
+   "cov": "PPCMMMMMM",
+   "rel": "UUUUUUUNNNN",
+   "prec": "0",
+   "arel": "AAAAAAA",
+   "faith": "-UUUUUU"
+  },
+  "p10": {
+   "ref": "UUUUUUS",
+   "cov": "PMMMMCM",
+   "rel": "NNNNNNNNNNNNNN",
+   "prec": "0",
+   "arel": "AAA",
+   "faith": "UU-"
+  },
+  "r31": {
+   "ref": "SSSSSSSS",
+   "cov": "MMMMMMMM",
+   "rel": "NUUUUUN",
+   "prec": "10",
+   "arel": "OO",
+   "faith": "--"
+  },
+  "r17": {
+   "ref": "SUUPUPPU",
+   "cov": "CMPPMPPM",
+   "rel": "UUUUUU",
+   "prec": "1",
+   "arel": "AAAAAA",
+   "faith": "-SSSSS"
+  },
+  "t04": {
+   "ref": "SSSSUS",
+   "cov": "CCCCMP",
+   "rel": "UUUUUUUNNNUUUUUNNN",
+   "prec": "11",
+   "arel": "AAAAAAAAAAAAAA",
+   "faith": "-SUSSSSS-USUUU"
+  },
+  "r18": {
+   "ref": "UUUUUSPP",
+   "cov": "MMMMMCPP",
+   "rel": "UNUUUUNN",
+   "prec": "1",
+   "arel": "AAAA",
+   "faith": "SSSS"
+  },
+  "r19": {
+   "ref": "SSSSUPUU",
+   "cov": "CCCCMPMC",
+   "rel": "UUN",
+   "prec": "1",
+   "arel": "AAAAA",
+   "faith": "SSSUU"
+  },
+  "r21": {
+   "ref": "UUSUUUP",
+   "cov": "MMMMMMM",
+   "rel": "UUN",
+   "prec": "1",
+   "arel": "AAAAA",
+   "faith": "-UUUS"
+  },
+  "r22": {
+   "ref": "PUSSSSSSSUUU",
+   "cov": "PMCCPPPPCMMM",
+   "rel": "UUUUUUU",
+   "prec": "1",
+   "arel": "AAAAAAA",
+   "faith": "SSSSSSS"
+  },
+  "r32": {
+   "ref": "SSSSSSSU",
+   "cov": "CCCCCCCM",
+   "rel": "UUUNNUUN",
+   "prec": "1",
+   "arel": "AAAAAAA",
+   "faith": "-SSSUSS"
+  },
+  "s05": {
+   "ref": "SSSSS",
+   "cov": "CCCCC",
+   "rel": "NUUNNUUUUUUNUNNNNN",
+   "prec": "10",
+   "arel": "OOOOOOOAAAAAAOOOOOOOOOOAAAAAAAOOO",
+   "faith": "-------SSSSSS----------SSSSSSS---"
+  },
+  "s06": {
+   "ref": "SSSS",
+   "cov": "CPMM",
+   "rel": "UUUUUUUU",
+   "prec": "1",
+   "arel": "AAAAAA",
+   "faith": "-SSSUU"
+  }
+ }
+}
