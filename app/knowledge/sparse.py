@@ -16,6 +16,7 @@ from pathlib import Path
 from rank_bm25 import BM25Okapi
 
 from app.core.config import Settings, get_settings
+from app.knowledge.chunking import contextual_text
 from app.knowledge.store import RetrievedChunk, chroma_path
 
 CORPUS_FILENAME = "bm25_corpus.json"
@@ -188,7 +189,7 @@ def _get_index(settings: Settings | None = None) -> _Bm25Index | None:
     entries = load_bm25_corpus(cfg)
     if not entries:
         return None
-    tokenized = [tokenize(e.text) for e in entries]
+    tokenized = [tokenize(contextual_text(e.title, e.section, e.text)) for e in entries]
     # BM25Okapi needs at least one non-empty doc; pad empty token lists.
     tokenized = [toks or ["_"] for toks in tokenized]
     index = _Bm25Index(
