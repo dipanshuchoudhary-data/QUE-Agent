@@ -89,8 +89,13 @@ Every document follows this format:
 - YAML frontmatter: source, status (verified/needs-confirmation/partial),
   last_verified date, confidence (high/medium/low).
 - Sections: Overview, Who Can Use It, How It Works, How to Use It,
-  Configuration/Options, Common Questions, Related Features,
-  Limitations, Troubleshooting. Not every section is required.
+  Configuration/Options, Related Features, Limitations,
+  Troubleshooting. Not every section is required.
+- No standalone Q&A or FAQ blocks (no "Common Questions" section, no
+  consecutive question lines). A bundled FAQ chunk matches many queries by
+  keywords but answers none of them. Put each answer, as a plain
+  statement, in the section named for that task or topic, one topic per
+  section. Use "Users may call this" lines for alternate phrasings.
 - User aliases: major concepts include "Users may call this" lines.
 - Self-contained: each document makes sense when retrieved independently.
 - Product terminology: uses exact UI labels (Exams, not quizzes).
