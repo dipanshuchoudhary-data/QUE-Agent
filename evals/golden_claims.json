@@ -1,0 +1,1499 @@
+{
+ "r02": {
+  "hash": "80cf93fa5c95",
+  "reference": "Monitoring is not located in the sidebar. To find it, click Exams in the left sidebar, open the specific exam card, and then select the Monitoring tab.",
+  "claims": [
+   "Monitoring is not located in the sidebar.",
+   "To find it, click Exams in the left sidebar",
+   "open the specific exam card",
+   "and then select the Monitoring tab."
+  ],
+  "claims_v1": [
+   "Monitoring is not located in the sidebar.",
+   "To find it, click Exams in the left sidebar,",
+   "open the specific exam card,",
+   "and then select the Monitoring tab."
+  ],
+  "atomic_hash": "80cf93fa5c95",
+  "atomic": [
+   {
+    "text": "Monitoring is not located in the sidebar.",
+    "parent_id": null
+   },
+   {
+    "text": "To find it, click Exams in the left sidebar",
+    "parent_id": null
+   },
+   {
+    "text": "open the specific exam card",
+    "parent_id": null
+   },
+   {
+    "text": "and then select the Monitoring tab.",
+    "parent_id": null
+   }
+  ]
+ },
+ "s17": {
+  "hash": "863e45208e66",
+  "reference": "Open Exams, open the specific exam, then select the Monitoring tab.",
+  "claims": [
+   "Open Exams",
+   "open the specific exam",
+   "select the Monitoring tab"
+  ],
+  "claims_v1": [
+   "Open Exams",
+   "open the specific exam",
+   "select the Monitoring tab"
+  ],
+  "atomic_hash": "863e45208e66",
+  "atomic": [
+   {
+    "text": "Open Exams",
+    "parent_id": null
+   },
+   {
+    "text": "open the specific exam",
+    "parent_id": null
+   },
+   {
+    "text": "select the Monitoring tab",
+    "parent_id": null
+   }
+  ]
+ },
+ "r16": {
+  "hash": "ba51c1d245f0",
+  "reference": "To access information about cohort health, open the Students workspace by clicking Students in the left sidebar. Below the scope bar, check the metrics strip, which includes a \"Cohort count\" card showing the number of distinct cohorts or groups. Additionally, a cohort health visualization displays the distribution of readiness across the student population to provide a snapshot of overall performance.",
+  "claims": [
+   "To access information about cohort health, open the Students workspace.",
+   "Open the Students workspace by clicking Students in the left sidebar.",
+   "Below the scope bar, check the metrics strip",
+   "The metrics strip includes a \"Cohort count\" card.",
+   "The \"Cohort count\" card shows the number of distinct cohorts or groups.",
+   "Additionally, a cohort health visualization displays the distribution of readiness across the student population",
+   "to provide a snapshot of overall performance"
+  ],
+  "claims_v1": [
+   "To access information about cohort health, open the Students workspace by clicking Students in the left sidebar.",
+   "Below the scope bar, check the metrics strip, which includes a \"Cohort count\" card showing the number of distinct cohorts or groups.",
+   "Additionally, a cohort health visualization displays the distribution of readiness across the student population to provide a snapshot of overall performance."
+  ],
+  "atomic_hash": "ba51c1d245f0",
+  "atomic": [
+   {
+    "text": "To access information about cohort health, open the Students workspace.",
+    "parent_id": 0
+   },
+   {
+    "text": "Open the Students workspace by clicking Students in the left sidebar.",
+    "parent_id": 0
+   },
+   {
+    "text": "Below the scope bar, check the metrics strip",
+    "parent_id": null
+   },
+   {
+    "text": "The metrics strip includes a \"Cohort count\" card.",
+    "parent_id": 2
+   },
+   {
+    "text": "The \"Cohort count\" card shows the number of distinct cohorts or groups.",
+    "parent_id": 2
+   },
+   {
+    "text": "Additionally, a cohort health visualization displays the distribution of readiness across the student population",
+    "parent_id": null
+   },
+   {
+    "text": "to provide a snapshot of overall performance",
+    "parent_id": null
+   }
+  ]
+ },
+ "s11": {
+  "hash": "b89b434c0cf2",
+  "reference": "To schedule an exam, use the 'Schedule exam' feature to create a Google Calendar event on your primary calendar, which includes the exam title, link, and timing information.",
+  "claims": [
+   "To schedule an exam, use the 'Schedule exam' feature",
+   "to create a Google Calendar event",
+   "on your primary calendar",
+   "which includes the exam title",
+   "link",
+   "and timing information"
+  ],
+  "claims_v1": [
+   "To schedule an exam, use the 'Schedule exam' feature",
+   "create a Google Calendar event on your primary calendar",
+   "the event includes the exam title, link, and timing information"
+  ],
+  "atomic_hash": "b89b434c0cf2",
+  "atomic": [
+   {
+    "text": "To schedule an exam, use the 'Schedule exam' feature",
+    "parent_id": null
+   },
+   {
+    "text": "to create a Google Calendar event",
+    "parent_id": 1
+   },
+   {
+    "text": "on your primary calendar",
+    "parent_id": 1
+   },
+   {
+    "text": "which includes the exam title",
+    "parent_id": null
+   },
+   {
+    "text": "link",
+    "parent_id": null
+   },
+   {
+    "text": "and timing information",
+    "parent_id": null
+   }
+  ]
+ },
+ "p06": {
+  "hash": "73043f4f6ec0",
+  "reference": "To stop students from switching tabs during a test, open Exams from the left sidebar and click on your exam card to open the workspace. Click the Settings tab at the top of the workspace, and scroll down to the Proctoring and Integrity section. Ensure the \"Block Tab Switching\" toggle switch is turned on, as it is enabled by default to detect when students leave the exam tab. Settings auto-save as you make changes.",
+  "claims": [
+   "open Exams from the left sidebar",
+   "click on your exam card to open the workspace",
+   "Click the Settings tab at the top of the workspace",
+   "scroll down to the Proctoring and Integrity section",
+   "Ensure the \"Block Tab Switching\" toggle switch is turned on",
+   "it is enabled by default",
+   "it detects when students leave the exam tab",
+   "Settings auto-save as you make changes"
+  ],
+  "claims_v1": [
+   "To stop students from switching tabs during a test, open Exams from the left sidebar and click on your exam card to open the workspace.",
+   "Click the Settings tab at the top of the workspace, and scroll down to the Proctoring and Integrity section.",
+   "Ensure the \"Block Tab Switching\" toggle switch is turned on, as it is enabled by default to detect when students leave the exam tab.",
+   "Settings auto-save as you make changes."
+  ],
+  "atomic_hash": "73043f4f6ec0",
+  "atomic": [
+   {
+    "text": "open Exams from the left sidebar",
+    "parent_id": null
+   },
+   {
+    "text": "click on your exam card to open the workspace",
+    "parent_id": null
+   },
+   {
+    "text": "Click the Settings tab at the top of the workspace",
+    "parent_id": null
+   },
+   {
+    "text": "scroll down to the Proctoring and Integrity section",
+    "parent_id": null
+   },
+   {
+    "text": "Ensure the \"Block Tab Switching\" toggle switch is turned on",
+    "parent_id": null
+   },
+   {
+    "text": "it is enabled by default",
+    "parent_id": 5
+   },
+   {
+    "text": "it detects when students leave the exam tab",
+    "parent_id": 5
+   },
+   {
+    "text": "Settings auto-save as you make changes",
+    "parent_id": null
+   }
+  ]
+ },
+ "s03": {
+  "hash": "fc7e97d36f97",
+  "reference": "Game history can be exported to CSV, JSON, or Google Sheets from the Arena workspace.",
+  "claims": [
+   "Game history can be exported to CSV from the Arena workspace.",
+   "Game history can be exported to JSON from the Arena workspace.",
+   "Game history can be exported to Google Sheets from the Arena workspace."
+  ],
+  "claims_v1": [
+   "Game history can be exported to CSV, JSON, or Google Sheets from the Arena workspace."
+  ],
+  "atomic_hash": "fc7e97d36f97",
+  "atomic": [
+   {
+    "text": "Game history can be exported to CSV from the Arena workspace.",
+    "parent_id": null
+   },
+   {
+    "text": "Game history can be exported to JSON from the Arena workspace.",
+    "parent_id": null
+   },
+   {
+    "text": "Game history can be exported to Google Sheets from the Arena workspace.",
+    "parent_id": null
+   }
+  ]
+ },
+ "r12": {
+  "hash": "fc4e27dc561b",
+  "reference": "Multiple Choice (MCQ) presents a set of answer options where exactly one is correct and is graded instantly by comparing to the correct option. True/False is a binary choice question where the student selects True or False and is graded instantly by comparing to the correct answer. Both MCQ and True/False question cards show their question type as a small badge on the Questions tab in the exam workspace.",
+  "claims": [
+   "Multiple Choice (MCQ) presents a set of answer options",
+   "where exactly one is correct",
+   "and is graded instantly by comparing to the correct option",
+   "True/False is a binary choice question",
+   "where the student selects True or False",
+   "and is graded instantly by comparing to the correct answer",
+   "Both MCQ and True/False question cards show their question type as a small badge on the Questions tab in the exam workspace"
+  ],
+  "claims_v1": [
+   "Multiple Choice (MCQ) presents a set of answer options where exactly one is correct",
+   "Multiple Choice (MCQ) is graded instantly by comparing to the correct option",
+   "True/False is a binary choice question where the student selects True or False",
+   "True/False is graded instantly by comparing to the correct answer",
+   "Both MCQ and True/False question cards show their question type as a small badge on the Questions tab in the exam workspace"
+  ],
+  "atomic_hash": "fc4e27dc561b",
+  "atomic": [
+   {
+    "text": "Multiple Choice (MCQ) presents a set of answer options",
+    "parent_id": null
+   },
+   {
+    "text": "where exactly one is correct",
+    "parent_id": null
+   },
+   {
+    "text": "and is graded instantly by comparing to the correct option",
+    "parent_id": null
+   },
+   {
+    "text": "True/False is a binary choice question",
+    "parent_id": null
+   },
+   {
+    "text": "where the student selects True or False",
+    "parent_id": null
+   },
+   {
+    "text": "and is graded instantly by comparing to the correct answer",
+    "parent_id": null
+   },
+   {
+    "text": "Both MCQ and True/False question cards show their question type as a small badge on the Questions tab in the exam workspace",
+    "parent_id": null
+   }
+  ]
+ },
+ "s07": {
+  "hash": "2be411e3a9f0",
+  "reference": "Your teacher dashboard is empty because the account is brand new, no exams have been created yet, or no exams currently have LIVE activity.",
+  "claims": [
+   "Your teacher dashboard is empty",
+   "the account is brand new",
+   "no exams have been created yet",
+   "no exams currently have LIVE activity"
+  ],
+  "claims_v1": [
+   "Your teacher dashboard is empty because the account is brand new",
+   "no exams have been created yet",
+   "or no exams currently have LIVE activity."
+  ],
+  "atomic_hash": "2be411e3a9f0",
+  "atomic": [
+   {
+    "text": "Your teacher dashboard is empty",
+    "parent_id": 0
+   },
+   {
+    "text": "the account is brand new",
+    "parent_id": 0
+   },
+   {
+    "text": "no exams have been created yet",
+    "parent_id": null
+   },
+   {
+    "text": "no exams currently have LIVE activity",
+    "parent_id": null
+   }
+  ]
+ },
+ "p05": {
+  "hash": "03e3173a7b57",
+  "reference": "Written answers (Short Answer and Long Answer) go through a layered grading pipeline. \nStep 1 is exact match after normalization, awarding full marks immediately if correct. \nStep 2 uses fuzzy match for short strings to catch minor typos. \nStep 3 checks keyword overlap for essential concepts, and Step 4 applies embedding similarity for semantic comparison. \nStep 5 uses a batched AI model if previous steps cannot score it, and Step 6 marks it as \"Pending Professor Review\" for manual grading if AI confidence is too low.",
+  "claims": [
+   "Written answers (Short Answer and Long Answer) go through a layered grading pipeline.",
+   "Step 1 is exact match after normalization",
+   "Step 1 awards full marks immediately if correct.",
+   "Step 2 uses fuzzy match for short strings to catch minor typos.",
+   "Step 3 checks keyword overlap for essential concepts",
+   "Step 4 applies embedding similarity for semantic comparison.",
+   "Step 5 uses a batched AI model if previous steps cannot score it",
+   "Step 6 marks it as \"Pending Professor Review\" for manual grading if AI confidence is too low."
+  ],
+  "claims_v1": [
+   "Written answers (Short Answer and Long Answer) go through a layered grading pipeline.",
+   "Step 1 is exact match after normalization, awarding full marks immediately if correct.",
+   "Step 2 uses fuzzy match for short strings to catch minor typos.",
+   "Step 3 checks keyword overlap for essential concepts",
+   "Step 4 applies embedding similarity for semantic comparison.",
+   "Step 5 uses a batched AI model if previous steps cannot score it",
+   "Step 6 marks it as \"Pending Professor Review\" for manual grading if AI confidence is too low."
+  ],
+  "atomic_hash": "03e3173a7b57",
+  "atomic": [
+   {
+    "text": "Written answers (Short Answer and Long Answer) go through a layered grading pipeline.",
+    "parent_id": null
+   },
+   {
+    "text": "Step 1 is exact match after normalization",
+    "parent_id": null
+   },
+   {
+    "text": "Step 1 awards full marks immediately if correct.",
+    "parent_id": null
+   },
+   {
+    "text": "Step 2 uses fuzzy match for short strings to catch minor typos.",
+    "parent_id": null
+   },
+   {
+    "text": "Step 3 checks keyword overlap for essential concepts",
+    "parent_id": null
+   },
+   {
+    "text": "Step 4 applies embedding similarity for semantic comparison.",
+    "parent_id": null
+   },
+   {
+    "text": "Step 5 uses a batched AI model if previous steps cannot score it",
+    "parent_id": null
+   },
+   {
+    "text": "Step 6 marks it as \"Pending Professor Review\" for manual grading if AI confidence is too low.",
+    "parent_id": null
+   }
+  ]
+ },
+ "m06": {
+  "hash": "f99ac8e0eeae",
+  "reference": "To bring in your Google Classroom roster and push grades back, go to the Integrations page in the sidebar and click Connect on the Google Classroom card to complete the Google OAuth authorization. After connecting, go to the Classroom section in Integrations to import your courses, and then click Import Roster for a specific course to pull in student names and enrollment info. Once students take the exam and grading completes, scores are automatically synced back to the Classroom coursework entry, or you can trigger a manual grade push from the Classroom section in Integrations.",
+  "claims": [
+   "To bring in your Google Classroom roster and push grades back, go to the Integrations page in the sidebar",
+   "click Connect on the Google Classroom card",
+   "complete the Google OAuth authorization",
+   "After connecting, go to the Classroom section in Integrations to import your courses",
+   "click Import Roster for a specific course to pull in student names and enrollment info",
+   "Once students take the exam and grading completes, scores are automatically synced back to the Classroom coursework entry",
+   "you can trigger a manual grade push from the Classroom section in Integrations"
+  ],
+  "claims_v1": [
+   "go to the Integrations page in the sidebar",
+   "click Connect on the Google Classroom card",
+   "complete the Google OAuth authorization",
+   "go to the Classroom section in Integrations to import your courses",
+   "click Import Roster for a specific course to pull in student names and enrollment info",
+   "Once students take the exam and grading completes, scores are automatically synced back to the Classroom coursework entry",
+   "or you can trigger a manual grade push from the Classroom section in Integrations"
+  ],
+  "atomic_hash": "f99ac8e0eeae",
+  "atomic": [
+   {
+    "text": "To bring in your Google Classroom roster and push grades back, go to the Integrations page in the sidebar",
+    "parent_id": null
+   },
+   {
+    "text": "click Connect on the Google Classroom card",
+    "parent_id": null
+   },
+   {
+    "text": "complete the Google OAuth authorization",
+    "parent_id": null
+   },
+   {
+    "text": "After connecting, go to the Classroom section in Integrations to import your courses",
+    "parent_id": null
+   },
+   {
+    "text": "click Import Roster for a specific course to pull in student names and enrollment info",
+    "parent_id": null
+   },
+   {
+    "text": "Once students take the exam and grading completes, scores are automatically synced back to the Classroom coursework entry",
+    "parent_id": null
+   },
+   {
+    "text": "you can trigger a manual grade push from the Classroom section in Integrations",
+    "parent_id": null
+   }
+  ]
+ },
+ "a06": {
+  "hash": "7a9fe2ae73f8",
+  "reference": "To start using Quizzer, open the app in your browser and click the Sign Up link on the login page. You can create your account using your email and password, or choose Google or Microsoft Sign-In. After signing in, you will go through a four-step onboarding flow where you enter your display name, choose a persona, fill in optional details, and automatically create your workspace.",
+  "claims": [
+   "To start using Quizzer, open the app in your browser",
+   "click the Sign Up link on the login page",
+   "You can create your account using your email",
+   "You can create your account using your password",
+   "choose Google Sign-In",
+   "choose Microsoft Sign-In",
+   "After signing in, you will go through a four-step onboarding flow",
+   "you enter your display name",
+   "choose a persona",
+   "fill in optional details",
+   "and automatically create your workspace"
+  ],
+  "claims_v1": [
+   "To start using Quizzer, open the app in your browser",
+   "click the Sign Up link on the login page",
+   "You can create your account using your email and password",
+   "or choose Google or Microsoft Sign-In",
+   "After signing in, you will go through a four-step onboarding flow",
+   "where you enter your display name",
+   "choose a persona",
+   "fill in optional details",
+   "and automatically create your workspace"
+  ],
+  "atomic_hash": "7a9fe2ae73f8",
+  "atomic": [
+   {
+    "text": "To start using Quizzer, open the app in your browser",
+    "parent_id": null
+   },
+   {
+    "text": "click the Sign Up link on the login page",
+    "parent_id": null
+   },
+   {
+    "text": "You can create your account using your email",
+    "parent_id": 2
+   },
+   {
+    "text": "You can create your account using your password",
+    "parent_id": 2
+   },
+   {
+    "text": "choose Google Sign-In",
+    "parent_id": 3
+   },
+   {
+    "text": "choose Microsoft Sign-In",
+    "parent_id": 3
+   },
+   {
+    "text": "After signing in, you will go through a four-step onboarding flow",
+    "parent_id": null
+   },
+   {
+    "text": "you enter your display name",
+    "parent_id": null
+   },
+   {
+    "text": "choose a persona",
+    "parent_id": null
+   },
+   {
+    "text": "fill in optional details",
+    "parent_id": null
+   },
+   {
+    "text": "and automatically create your workspace",
+    "parent_id": null
+   }
+  ]
+ },
+ "t06": {
+  "hash": "15f245139550",
+  "reference": "When a teacher creates an Arena room, Quizzer generates a six-character room code and a join URL. The room screen prominently displays this code, which can be shared by clicking copy code, copying the link, or using the scannable QR code. Teachers should project this screen on a classroom display so students can see the code. Players then join the game by opening the join link or going to the Arena join page to enter the room code manually alongside a nickname.",
+  "claims": [
+   "When a teacher creates an Arena room, Quizzer generates a six-character room code",
+   "Quizzer generates a join URL",
+   "The room screen prominently displays this code",
+   "this code can be shared by clicking copy code",
+   "this code can be shared by copying the link",
+   "this code can be shared by using the scannable QR code",
+   "Teachers should project this screen on a classroom display",
+   "students can see the code",
+   "Players then join the game by opening the join link",
+   "or going to the Arena join page to enter the room code manually alongside a nickname"
+  ],
+  "claims_v1": [
+   "When a teacher creates an Arena room, Quizzer generates a six-character room code and a join URL.",
+   "The room screen prominently displays this code, which can be shared by clicking copy code, copying the link, or using the scannable QR code.",
+   "Teachers should project this screen on a classroom display so students can see the code.",
+   "Players then join the game by opening the join link or going to the Arena join page to enter the room code manually alongside a nickname."
+  ],
+  "atomic_hash": "15f245139550",
+  "atomic": [
+   {
+    "text": "When a teacher creates an Arena room, Quizzer generates a six-character room code",
+    "parent_id": null
+   },
+   {
+    "text": "Quizzer generates a join URL",
+    "parent_id": null
+   },
+   {
+    "text": "The room screen prominently displays this code",
+    "parent_id": null
+   },
+   {
+    "text": "this code can be shared by clicking copy code",
+    "parent_id": null
+   },
+   {
+    "text": "this code can be shared by copying the link",
+    "parent_id": null
+   },
+   {
+    "text": "this code can be shared by using the scannable QR code",
+    "parent_id": null
+   },
+   {
+    "text": "Teachers should project this screen on a classroom display",
+    "parent_id": null
+   },
+   {
+    "text": "students can see the code",
+    "parent_id": null
+   },
+   {
+    "text": "Players then join the game by opening the join link",
+    "parent_id": null
+   },
+   {
+    "text": "or going to the Arena join page to enter the room code manually alongside a nickname",
+    "parent_id": null
+   }
+  ]
+ },
+ "r06": {
+  "hash": "315d93e30e09",
+  "reference": "Scores are automatically pushed back to the Google Classroom coursework entry after a student submits and grading completes. Teachers can also trigger a manual grade push from the Classroom section in Integrations.",
+  "atomic_hash": "315d93e30e09",
+  "atomic": [
+   {
+    "text": "Scores are automatically pushed back to the Google Classroom coursework entry after a student submits",
+    "parent_id": 0
+   },
+   {
+    "text": "Scores are automatically pushed back to the Google Classroom coursework entry after grading completes",
+    "parent_id": 0
+   },
+   {
+    "text": "Teachers can also trigger a manual grade push from the Classroom section in Integrations",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "Scores are automatically pushed back to the Google Classroom coursework entry after a student submits",
+   "Scores are automatically pushed back to the Google Classroom coursework entry after grading completes",
+   "Teachers can also trigger a manual grade push from the Classroom section in Integrations"
+  ]
+ },
+ "t01": {
+  "hash": "14b7a7b76525",
+  "reference": "To publish an exam, first ensure that all questions are approved by checking the Questions tab in the exam workspace. Next, click the emerald-green Publish button located either on the exam card in the Exams workspace or at the top of the exam workspace view. Once published, a success screen will appear providing the unique shareable exam link.",
+  "atomic_hash": "14b7a7b76525",
+  "atomic": [
+   {
+    "text": "To publish an exam, first ensure that all questions are approved",
+    "parent_id": null
+   },
+   {
+    "text": "Ensure that all questions are approved",
+    "parent_id": 1
+   },
+   {
+    "text": "Check the Questions tab in the exam workspace",
+    "parent_id": 1
+   },
+   {
+    "text": "Next, click the emerald-green Publish button located either on the exam card in the Exams workspace or at the top of the exam workspace view",
+    "parent_id": null
+   },
+   {
+    "text": "Once published, a success screen will appear",
+    "parent_id": null
+   },
+   {
+    "text": "A success screen will appear",
+    "parent_id": 4
+   },
+   {
+    "text": "The success screen provides the unique shareable exam link",
+    "parent_id": 4
+   }
+  ],
+  "claims": [
+   "To publish an exam, first ensure that all questions are approved",
+   "Ensure that all questions are approved",
+   "Check the Questions tab in the exam workspace",
+   "Next, click the emerald-green Publish button located either on the exam card in the Exams workspace or at the top of the exam workspace view",
+   "Once published, a success screen will appear",
+   "A success screen will appear",
+   "The success screen provides the unique shareable exam link"
+  ]
+ },
+ "p07": {
+  "hash": "9db564d90cea",
+  "reference": "To play a live quiz game with your class, go to Arena in the left sidebar and select or create an approved quiz pack. Configure your battle settings, click Create Room to generate a six-character code and join URL, and project the room screen so students can see it. Share the code with your players so they can join the lobby with a nickname, and click Start when you are ready. You can then control the game flow using the Reveal, Next, Skip, Pause, and End buttons while students answer questions in real time.",
+  "atomic_hash": "9db564d90cea",
+  "atomic": [
+   {
+    "text": "To play a live quiz game with your class, go to Arena in the left sidebar",
+    "parent_id": null
+   },
+   {
+    "text": "select or create an approved quiz pack",
+    "parent_id": null
+   },
+   {
+    "text": "Configure your battle settings",
+    "parent_id": null
+   },
+   {
+    "text": "click Create Room",
+    "parent_id": 3
+   },
+   {
+    "text": "click Create Room generates a six-character code",
+    "parent_id": 3
+   },
+   {
+    "text": "click Create Room",
+    "parent_id": 4
+   },
+   {
+    "text": "click Create Room generates a join URL",
+    "parent_id": 4
+   },
+   {
+    "text": "project the room screen so students can see it",
+    "parent_id": null
+   },
+   {
+    "text": "Share the code with your players",
+    "parent_id": 6
+   },
+   {
+    "text": "players can join the lobby with a nickname",
+    "parent_id": 6
+   },
+   {
+    "text": "click Start when you are ready",
+    "parent_id": null
+   },
+   {
+    "text": "control the game flow using the Reveal button",
+    "parent_id": null
+   },
+   {
+    "text": "control the game flow using the Next button",
+    "parent_id": null
+   },
+   {
+    "text": "control the game flow using the Skip button",
+    "parent_id": null
+   },
+   {
+    "text": "control the game flow using the Pause button",
+    "parent_id": null
+   },
+   {
+    "text": "control the game flow using the End buttons",
+    "parent_id": null
+   },
+   {
+    "text": "students answer questions in real time",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "To play a live quiz game with your class, go to Arena in the left sidebar",
+   "select or create an approved quiz pack",
+   "Configure your battle settings",
+   "click Create Room",
+   "click Create Room generates a six-character code",
+   "click Create Room",
+   "click Create Room generates a join URL",
+   "project the room screen so students can see it",
+   "Share the code with your players",
+   "players can join the lobby with a nickname",
+   "click Start when you are ready",
+   "control the game flow using the Reveal button",
+   "control the game flow using the Next button",
+   "control the game flow using the Skip button",
+   "control the game flow using the Pause button",
+   "control the game flow using the End buttons",
+   "students answer questions in real time"
+  ]
+ },
+ "c03": {
+  "hash": "1bede7438a07",
+  "reference": "An Exam is asynchronous, individually timed, and includes detailed proctoring, with results sent to the Results tab and regular exam Monitoring tabs. In contrast, an Arena game is synchronous where everyone plays at the same time, uses speed-based scoring with streaks, is controlled by the host, and has its results saved to game history and a separate section in Analytics.",
+  "atomic_hash": "1bede7438a07",
+  "atomic": [
+   {
+    "text": "An Exam is asynchronous",
+    "parent_id": null
+   },
+   {
+    "text": "individually timed",
+    "parent_id": null
+   },
+   {
+    "text": "includes detailed proctoring",
+    "parent_id": null
+   },
+   {
+    "text": "results sent to the Results tab",
+    "parent_id": null
+   },
+   {
+    "text": "results sent to regular exam Monitoring tabs",
+    "parent_id": null
+   },
+   {
+    "text": "An Arena game is synchronous",
+    "parent_id": 5
+   },
+   {
+    "text": "everyone plays at the same time in an Arena game",
+    "parent_id": 5
+   },
+   {
+    "text": "An Arena game uses speed-based scoring",
+    "parent_id": 6
+   },
+   {
+    "text": "An Arena game uses streaks",
+    "parent_id": 6
+   },
+   {
+    "text": "is controlled by the host",
+    "parent_id": null
+   },
+   {
+    "text": "results saved to game history",
+    "parent_id": null
+   },
+   {
+    "text": "results saved to a separate section in Analytics",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "An Exam is asynchronous",
+   "individually timed",
+   "includes detailed proctoring",
+   "results sent to the Results tab",
+   "results sent to regular exam Monitoring tabs",
+   "An Arena game is synchronous",
+   "everyone plays at the same time in an Arena game",
+   "An Arena game uses speed-based scoring",
+   "An Arena game uses streaks",
+   "is controlled by the host",
+   "results saved to game history",
+   "results saved to a separate section in Analytics"
+  ]
+ },
+ "m04": {
+  "hash": "adac2e30f864",
+  "reference": "To switch on negative marking, open your exam from the Exams workspace, go to the Settings tab, scroll to the Scoring section, and toggle on Negative Marking. Once enabled, a Penalty field appears where you can set the specific deduction amount per wrong answer.",
+  "atomic_hash": "adac2e30f864",
+  "atomic": [
+   {
+    "text": "To switch on negative marking, open your exam from the Exams workspace",
+    "parent_id": null
+   },
+   {
+    "text": "go to the Settings tab",
+    "parent_id": null
+   },
+   {
+    "text": "scroll to the Scoring section",
+    "parent_id": null
+   },
+   {
+    "text": "and toggle on Negative Marking",
+    "parent_id": null
+   },
+   {
+    "text": "Once enabled, a Penalty field appears",
+    "parent_id": null
+   },
+   {
+    "text": "where you can set the specific deduction amount per wrong answer",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "To switch on negative marking, open your exam from the Exams workspace",
+   "go to the Settings tab",
+   "scroll to the Scoring section",
+   "and toggle on Negative Marking",
+   "Once enabled, a Penalty field appears",
+   "where you can set the specific deduction amount per wrong answer"
+  ]
+ },
+ "r15": {
+  "hash": "8d35111a5dfd",
+  "reference": "Teachers have full access to the sidebar workspaces (Dashboard, Exams, Arena, Students, Analytics, Integrations), exam workspace tabs, and account settings, allowing them to create and manage assessments. In contrast, students who select the Student persona during onboarding receive a deliberately limited interface and cannot access the Exams workspace, Arena hosting, Analytics, or teacher tools. Students enter exams exclusively through shared links, while exam takers without an account only interact with a separate, focused exam interface using a verification form and attempt token.",
+  "atomic_hash": "8d35111a5dfd",
+  "atomic": [
+   {
+    "text": "Teachers have full access to the Dashboard sidebar workspace",
+    "parent_id": 0
+   },
+   {
+    "text": "Teachers have full access to the Exams sidebar workspace",
+    "parent_id": 0
+   },
+   {
+    "text": "Teachers have full access to the Arena sidebar workspace",
+    "parent_id": 0
+   },
+   {
+    "text": "Teachers have full access to the Students sidebar workspace",
+    "parent_id": 0
+   },
+   {
+    "text": "Teachers have full access to the Analytics sidebar workspace",
+    "parent_id": 0
+   },
+   {
+    "text": "Teachers have full access to the Integrations sidebar workspace",
+    "parent_id": 0
+   },
+   {
+    "text": "Teachers have full access to exam workspace tabs",
+    "parent_id": null
+   },
+   {
+    "text": "Teachers have full access to account settings",
+    "parent_id": null
+   },
+   {
+    "text": "Teachers have full access allowing them to create and manage assessments",
+    "parent_id": null
+   },
+   {
+    "text": "Students who select the Student persona during onboarding receive a deliberately limited interface",
+    "parent_id": null
+   },
+   {
+    "text": "Students cannot access the Exams workspace",
+    "parent_id": null
+   },
+   {
+    "text": "Students cannot access Arena hosting",
+    "parent_id": null
+   },
+   {
+    "text": "Students cannot access Analytics",
+    "parent_id": null
+   },
+   {
+    "text": "Students cannot access teacher tools",
+    "parent_id": null
+   },
+   {
+    "text": "Students enter exams exclusively through shared links",
+    "parent_id": null
+   },
+   {
+    "text": "Exam takers without an account only interact with a separate, focused exam interface using a verification form",
+    "parent_id": null
+   },
+   {
+    "text": "Exam takers without an account only interact with a separate, focused exam interface using an attempt token",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "Teachers have full access to the Dashboard sidebar workspace",
+   "Teachers have full access to the Exams sidebar workspace",
+   "Teachers have full access to the Arena sidebar workspace",
+   "Teachers have full access to the Students sidebar workspace",
+   "Teachers have full access to the Analytics sidebar workspace",
+   "Teachers have full access to the Integrations sidebar workspace",
+   "Teachers have full access to exam workspace tabs",
+   "Teachers have full access to account settings",
+   "Teachers have full access allowing them to create and manage assessments",
+   "Students who select the Student persona during onboarding receive a deliberately limited interface",
+   "Students cannot access the Exams workspace",
+   "Students cannot access Arena hosting",
+   "Students cannot access Analytics",
+   "Students cannot access teacher tools",
+   "Students enter exams exclusively through shared links",
+   "Exam takers without an account only interact with a separate, focused exam interface using a verification form",
+   "Exam takers without an account only interact with a separate, focused exam interface using an attempt token"
+  ]
+ },
+ "t02": {
+  "hash": "cc491318ba2d",
+  "reference": "To create a quiz or exam in Quizzer, go to the Dashboard in the sidebar and click the Create Exam quick action card (or press Ctrl+K / Cmd+K and type \"Create Exam\") to open the creation wizard. Enter an exam title, add your source content by pasting text, uploading files, providing a URL, or importing from Google Drive, and then choose an AI generation mode (Source-first, Guided, or Custom). Finally, click the Generate button at the bottom to produce your questions.",
+  "atomic_hash": "cc491318ba2d",
+  "atomic": [
+   {
+    "text": "To create a quiz or exam in Quizzer, go to the Dashboard in the sidebar",
+    "parent_id": null
+   },
+   {
+    "text": "click the Create Exam quick action card (or press Ctrl+K / Cmd+K and type \"Create Exam\") to open the creation wizard",
+    "parent_id": null
+   },
+   {
+    "text": "Enter an exam title",
+    "parent_id": null
+   },
+   {
+    "text": "add your source content by pasting text",
+    "parent_id": null
+   },
+   {
+    "text": "add your source content by uploading files",
+    "parent_id": null
+   },
+   {
+    "text": "add your source content by providing a URL",
+    "parent_id": null
+   },
+   {
+    "text": "add your source content by importing from Google Drive",
+    "parent_id": null
+   },
+   {
+    "text": "choose an AI generation mode (Source-first, Guided, or Custom)",
+    "parent_id": null
+   },
+   {
+    "text": "Finally, click the Generate button at the bottom to produce your questions",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "To create a quiz or exam in Quizzer, go to the Dashboard in the sidebar",
+   "click the Create Exam quick action card (or press Ctrl+K / Cmd+K and type \"Create Exam\") to open the creation wizard",
+   "Enter an exam title",
+   "add your source content by pasting text",
+   "add your source content by uploading files",
+   "add your source content by providing a URL",
+   "add your source content by importing from Google Drive",
+   "choose an AI generation mode (Source-first, Guided, or Custom)",
+   "Finally, click the Generate button at the bottom to produce your questions"
+  ]
+ },
+ "p10": {
+  "hash": "3295a450fb27",
+  "reference": "Yes, students can retake the exam if the teacher sets the Maximum Attempts option to a number greater than 1 in the exam settings. Each retake is a fully independent attempt with its own timer, answers, and violation record. To take another attempt, the student opens the same shared exam link again and is identified by their verification fields.",
+  "atomic_hash": "3295a450fb27",
+  "atomic": [
+   {
+    "text": "Yes, students can retake the exam if the teacher sets the Maximum Attempts option to a number greater than 1 in the exam settings",
+    "parent_id": null
+   },
+   {
+    "text": "Each retake is a fully independent attempt.",
+    "parent_id": 1
+   },
+   {
+    "text": "Each retake has its own timer.",
+    "parent_id": 1
+   },
+   {
+    "text": "Each retake has its own answers.",
+    "parent_id": 1
+   },
+   {
+    "text": "Each retake has its own violation record.",
+    "parent_id": 1
+   },
+   {
+    "text": "To take another attempt, the student opens the same shared exam link again",
+    "parent_id": null
+   },
+   {
+    "text": "the student is identified by their verification fields",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "Yes, students can retake the exam if the teacher sets the Maximum Attempts option to a number greater than 1 in the exam settings",
+   "Each retake is a fully independent attempt.",
+   "Each retake has its own timer.",
+   "Each retake has its own answers.",
+   "Each retake has its own violation record.",
+   "To take another attempt, the student opens the same shared exam link again",
+   "the student is identified by their verification fields"
+  ]
+ },
+ "r31": {
+  "hash": "323967554b39",
+  "reference": "Link window controls when students can begin by defining how long the published link accepts new starts (measured in hours or days). Duration is the per-attempt timer that controls how long students can work once they begin (measured in minutes). For example, a 60-minute exam with a 24-hour link window means students have 24 hours to start and 60 minutes once they start.",
+  "atomic_hash": "323967554b39",
+  "atomic": [
+   {
+    "text": "Link window controls when students can begin.",
+    "parent_id": 0
+   },
+   {
+    "text": "Link window defines how long the published link accepts new starts.",
+    "parent_id": 0
+   },
+   {
+    "text": "Link window is measured in hours or days.",
+    "parent_id": 0
+   },
+   {
+    "text": "Duration is the per-attempt timer.",
+    "parent_id": 1
+   },
+   {
+    "text": "Duration controls how long students can work once they begin.",
+    "parent_id": 1
+   },
+   {
+    "text": "Duration is measured in minutes.",
+    "parent_id": 1
+   },
+   {
+    "text": "A 60-minute exam with a 24-hour link window means students have 24 hours to start.",
+    "parent_id": 2
+   },
+   {
+    "text": "A 60-minute exam with a 24-hour link window means students have 60 minutes once they start.",
+    "parent_id": 2
+   }
+  ],
+  "claims": [
+   "Link window controls when students can begin.",
+   "Link window defines how long the published link accepts new starts.",
+   "Link window is measured in hours or days.",
+   "Duration is the per-attempt timer.",
+   "Duration controls how long students can work once they begin.",
+   "Duration is measured in minutes.",
+   "A 60-minute exam with a 24-hour link window means students have 24 hours to start.",
+   "A 60-minute exam with a 24-hour link window means students have 60 minutes once they start."
+  ]
+ },
+ "r17": {
+  "hash": "10ea757fb887",
+  "reference": "To schedule an exam, first connect Google Calendar by clicking \"Integrations\" in the left sidebar, finding the Google Calendar card, and clicking \"Connect\" to authorize Quizzer. Next, ensure your exam is published by going to \"Exams\" and verifying the green \"Published\" badge. Finally, schedule the exam either from the post-publish success screen by clicking \"Schedule on Calendar,\" or from the \"Integrations\" page by clicking \"Schedule Exam\" and selecting the published exam from the dropdown.",
+  "atomic_hash": "10ea757fb887",
+  "atomic": [
+   {
+    "text": "To schedule an exam, first connect Google Calendar by clicking \"Integrations\" in the left sidebar",
+    "parent_id": null
+   },
+   {
+    "text": "finding the Google Calendar card",
+    "parent_id": null
+   },
+   {
+    "text": "clicking \"Connect\" to authorize Quizzer",
+    "parent_id": null
+   },
+   {
+    "text": "Next, ensure your exam is published by going to \"Exams\"",
+    "parent_id": null
+   },
+   {
+    "text": "verifying the green \"Published\" badge",
+    "parent_id": null
+   },
+   {
+    "text": "Finally, schedule the exam either from the post-publish success screen by clicking \"Schedule on Calendar\"",
+    "parent_id": null
+   },
+   {
+    "text": "or from the \"Integrations\" page by clicking \"Schedule Exam\"",
+    "parent_id": null
+   },
+   {
+    "text": "selecting the published exam from the dropdown",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "To schedule an exam, first connect Google Calendar by clicking \"Integrations\" in the left sidebar",
+   "finding the Google Calendar card",
+   "clicking \"Connect\" to authorize Quizzer",
+   "Next, ensure your exam is published by going to \"Exams\"",
+   "verifying the green \"Published\" badge",
+   "Finally, schedule the exam either from the post-publish success screen by clicking \"Schedule on Calendar\"",
+   "or from the \"Integrations\" page by clicking \"Schedule Exam\"",
+   "selecting the published exam from the dropdown"
+  ]
+ },
+ "t04": {
+  "hash": "dfcacc3f3300",
+  "reference": "To troubleshoot a non-working exam link for a student, perform the following checks: first, verify that the exam is published and not unpublished or archived. Second, check if the link window (`available_until` time) has expired, and if so, extend or renew it from the Links tab. Third, confirm that the students are using the correct link provided from the Links tab.",
+  "atomic_hash": "dfcacc3f3300",
+  "atomic": [
+   {
+    "text": "verify that the exam is published",
+    "parent_id": null
+   },
+   {
+    "text": "verify that the exam is not unpublished",
+    "parent_id": null
+   },
+   {
+    "text": "verify that the exam is not archived",
+    "parent_id": null
+   },
+   {
+    "text": "check if the link window (`available_until` time) has expired",
+    "parent_id": null
+   },
+   {
+    "text": "extend or renew it from the Links tab",
+    "parent_id": null
+   },
+   {
+    "text": "confirm that the students are using the correct link provided from the Links tab",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "verify that the exam is published",
+   "verify that the exam is not unpublished",
+   "verify that the exam is not archived",
+   "check if the link window (`available_until` time) has expired",
+   "extend or renew it from the Links tab",
+   "confirm that the students are using the correct link provided from the Links tab"
+  ]
+ },
+ "r18": {
+  "hash": "2a3685438cca",
+  "reference": "To import source files from Google Drive, first connect Drive by clicking **Integrations** in the left sidebar, finding the Google Drive card, and clicking **Connect**. Next, start creating an exam from the Dashboard quick actions or by pressing Ctrl+K and typing \"Create Exam.\" In the source content area's **Files tab**, click the **Import from Google Drive** button, browse or search for your file, and click **Select or Import**.",
+  "atomic_hash": "2a3685438cca",
+  "atomic": [
+   {
+    "text": "To import source files from Google Drive, first connect Drive by clicking **Integrations** in the left sidebar",
+    "parent_id": null
+   },
+   {
+    "text": "finding the Google Drive card",
+    "parent_id": null
+   },
+   {
+    "text": "clicking **Connect**",
+    "parent_id": null
+   },
+   {
+    "text": "Next, start creating an exam from the Dashboard quick actions",
+    "parent_id": null
+   },
+   {
+    "text": "or by pressing Ctrl+K and typing \"Create Exam.\"",
+    "parent_id": null
+   },
+   {
+    "text": "In the source content area's **Files tab**, click the **Import from Google Drive** button",
+    "parent_id": null
+   },
+   {
+    "text": "browse or search for your file",
+    "parent_id": null
+   },
+   {
+    "text": "and click **Select or Import**.",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "To import source files from Google Drive, first connect Drive by clicking **Integrations** in the left sidebar",
+   "finding the Google Drive card",
+   "clicking **Connect**",
+   "Next, start creating an exam from the Dashboard quick actions",
+   "or by pressing Ctrl+K and typing \"Create Exam.\"",
+   "In the source content area's **Files tab**, click the **Import from Google Drive** button",
+   "browse or search for your file",
+   "and click **Select or Import**."
+  ]
+ },
+ "r19": {
+  "hash": "486d7d4fc249",
+  "reference": "After signing up, you complete a four-step onboarding flow where you enter your display name, choose a persona from a grid of ten options, and optionally fill in details like your institution or subject area. Finally, a celebration animation plays while your workspace is set up, after which you are automatically redirected to your dashboard.",
+  "atomic_hash": "486d7d4fc249",
+  "atomic": [
+   {
+    "text": "After signing up, you complete an onboarding flow",
+    "parent_id": 0
+   },
+   {
+    "text": "The onboarding flow has four steps",
+    "parent_id": 0
+   },
+   {
+    "text": "you enter your display name",
+    "parent_id": null
+   },
+   {
+    "text": "you choose a persona",
+    "parent_id": 2
+   },
+   {
+    "text": "the persona is chosen from a grid of ten options",
+    "parent_id": 2
+   },
+   {
+    "text": "and optionally fill in details like your institution or subject area.",
+    "parent_id": null
+   },
+   {
+    "text": "Finally, a celebration animation plays while your workspace is set up",
+    "parent_id": null
+   },
+   {
+    "text": "after which you are automatically redirected to your dashboard.",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "After signing up, you complete an onboarding flow",
+   "The onboarding flow has four steps",
+   "you enter your display name",
+   "you choose a persona",
+   "the persona is chosen from a grid of ten options",
+   "and optionally fill in details like your institution or subject area.",
+   "Finally, a celebration animation plays while your workspace is set up",
+   "after which you are automatically redirected to your dashboard."
+  ]
+ },
+ "r21": {
+  "hash": "48a236426df0",
+  "reference": "On desktop, scroll to the **ACCOUNT** section in the left sidebar and click **Send feedback** to open the `/feedback` page. On mobile, open the account or more menu from the bottom navigation and tap **Send feedback**.",
+  "atomic_hash": "48a236426df0",
+  "atomic": [
+   {
+    "text": "On desktop, scroll to the ACCOUNT section",
+    "parent_id": 0
+   },
+   {
+    "text": "The ACCOUNT section is in the left sidebar",
+    "parent_id": 0
+   },
+   {
+    "text": "Click Send feedback",
+    "parent_id": 1
+   },
+   {
+    "text": "Clicking Send feedback opens the /feedback page",
+    "parent_id": 1
+   },
+   {
+    "text": "On mobile, open the account or more menu",
+    "parent_id": 2
+   },
+   {
+    "text": "The account or more menu is accessed from the bottom navigation",
+    "parent_id": 2
+   },
+   {
+    "text": "tap **Send feedback**",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "On desktop, scroll to the ACCOUNT section",
+   "The ACCOUNT section is in the left sidebar",
+   "Click Send feedback",
+   "Clicking Send feedback opens the /feedback page",
+   "On mobile, open the account or more menu",
+   "The account or more menu is accessed from the bottom navigation",
+   "tap **Send feedback**"
+  ]
+ },
+ "r22": {
+  "hash": "a05b7424e6c8",
+  "reference": "To change which notifications you receive, go to Account Settings via sidebar ACCOUNT, select **Settings**, and click the Notifications tab to toggle switches on or off. Quizzer does not send email notifications for events like exam generation, student attempts, integrity alerts, or export readiness, as these are in-app only. Email is used exclusively for signup email verification, password resets, and exam share invitations.",
+  "atomic_hash": "a05b7424e6c8",
+  "atomic": [
+   {
+    "text": "To change which notifications you receive, go to Account Settings via sidebar ACCOUNT",
+    "parent_id": null
+   },
+   {
+    "text": "select **Settings**",
+    "parent_id": null
+   },
+   {
+    "text": "click the Notifications tab",
+    "parent_id": null
+   },
+   {
+    "text": "toggle switches on or off",
+    "parent_id": null
+   },
+   {
+    "text": "Quizzer does not send email notifications for events like exam generation",
+    "parent_id": null
+   },
+   {
+    "text": "Quizzer does not send email notifications for events like student attempts",
+    "parent_id": null
+   },
+   {
+    "text": "Quizzer does not send email notifications for events like integrity alerts",
+    "parent_id": null
+   },
+   {
+    "text": "Quizzer does not send email notifications for events like export readiness",
+    "parent_id": null
+   },
+   {
+    "text": "these are in-app only",
+    "parent_id": null
+   },
+   {
+    "text": "Email is used exclusively for signup email verification",
+    "parent_id": null
+   },
+   {
+    "text": "Email is used exclusively for password resets",
+    "parent_id": null
+   },
+   {
+    "text": "Email is used exclusively for exam share invitations",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "To change which notifications you receive, go to Account Settings via sidebar ACCOUNT",
+   "select **Settings**",
+   "click the Notifications tab",
+   "toggle switches on or off",
+   "Quizzer does not send email notifications for events like exam generation",
+   "Quizzer does not send email notifications for events like student attempts",
+   "Quizzer does not send email notifications for events like integrity alerts",
+   "Quizzer does not send email notifications for events like export readiness",
+   "these are in-app only",
+   "Email is used exclusively for signup email verification",
+   "Email is used exclusively for password resets",
+   "Email is used exclusively for exam share invitations"
+  ]
+ },
+ "r32": {
+  "hash": "cbb9813d636f",
+  "reference": "Players open the join link or go to the Arena join page and enter the room code manually. They choose a unique nickname consisting of 2 to 20 characters (alphanumeric plus spaces, underscores, and hyphens). Alternatively, if the host linked a Google Classroom course, players can pick from the class roster instead of typing a nickname. No Quizzer account is required.",
+  "atomic_hash": "cbb9813d636f",
+  "atomic": [
+   {
+    "text": "Players open the join link or go to the Arena join page",
+    "parent_id": 0
+   },
+   {
+    "text": "Players enter the room code manually",
+    "parent_id": 0
+   },
+   {
+    "text": "They choose a unique nickname",
+    "parent_id": 1
+   },
+   {
+    "text": "The nickname consists of 2 to 20 characters",
+    "parent_id": 1
+   },
+   {
+    "text": "The nickname allows alphanumeric characters, spaces, underscores, and hyphens",
+    "parent_id": 1
+   },
+   {
+    "text": "The host can link a Google Classroom course",
+    "parent_id": 2
+   },
+   {
+    "text": "Players can pick from the class roster instead of typing a nickname",
+    "parent_id": 2
+   },
+   {
+    "text": "No Quizzer account is required.",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "Players open the join link or go to the Arena join page",
+   "Players enter the room code manually",
+   "They choose a unique nickname",
+   "The nickname consists of 2 to 20 characters",
+   "The nickname allows alphanumeric characters, spaces, underscores, and hyphens",
+   "The host can link a Google Classroom course",
+   "Players can pick from the class roster instead of typing a nickname",
+   "No Quizzer account is required."
+  ]
+ },
+ "s05": {
+  "hash": "23c544ba03a0",
+  "reference": "To set up webcam monitoring and auto-submit, go to the Settings tab in the exam workspace under the Proctoring section, toggle on Enable Webcam Monitoring (and configure Phone Detection or Face Monitoring as needed), set the Violation Limit, and toggle on Enable Auto-Submit.",
+  "atomic_hash": "23c544ba03a0",
+  "atomic": [
+   {
+    "text": "To set up webcam monitoring and auto-submit, go to the Settings tab in the exam workspace under the Proctoring section",
+    "parent_id": null
+   },
+   {
+    "text": "toggle on Enable Webcam Monitoring",
+    "parent_id": null
+   },
+   {
+    "text": "configure Phone Detection or Face Monitoring as needed",
+    "parent_id": null
+   },
+   {
+    "text": "set the Violation Limit",
+    "parent_id": null
+   },
+   {
+    "text": "toggle on Enable Auto-Submit",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "To set up webcam monitoring and auto-submit, go to the Settings tab in the exam workspace under the Proctoring section",
+   "toggle on Enable Webcam Monitoring",
+   "configure Phone Detection or Face Monitoring as needed",
+   "set the Violation Limit",
+   "toggle on Enable Auto-Submit"
+  ]
+ },
+ "s06": {
+  "hash": "e22d7f8aebba",
+  "reference": "Provide clear, well-structured source content with organized material, clear topics, and concepts.",
+  "atomic_hash": "e22d7f8aebba",
+  "atomic": [
+   {
+    "text": "Provide clear, well-structured source content",
+    "parent_id": 0
+   },
+   {
+    "text": "Provide organized material",
+    "parent_id": 0
+   },
+   {
+    "text": "Provide clear topics",
+    "parent_id": null
+   },
+   {
+    "text": "Provide concepts",
+    "parent_id": null
+   }
+  ],
+  "claims": [
+   "Provide clear, well-structured source content",
+   "Provide organized material",
+   "Provide clear topics",
+   "Provide concepts"
+  ]
+ }
+}
