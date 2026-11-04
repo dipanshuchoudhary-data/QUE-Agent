@@ -1,0 +1,712 @@
+{
+  "summary": {
+    "rows": 20,
+    "threshold": 0.7,
+    "means": {
+      "recall": 0.702,
+      "precision": 0.85,
+      "relevancy": 0.784,
+      "faithfulness": 0.925,
+      "answer_relevancy": 0.961,
+      "correctness": 0.55
+    },
+    "below_threshold": {
+      "recall": [
+        "r12",
+        "r16",
+        "p05",
+        "m06",
+        "a06",
+        "r22",
+        "r21",
+        "m04",
+        "t06"
+      ],
+      "precision": [
+        "p05",
+        "a06",
+        "r21"
+      ],
+      "relevancy": [
+        "s03",
+        "r02",
+        "m06",
+        "p06",
+        "m04",
+        "t06",
+        "t04"
+      ],
+      "faithfulness": [
+        "r02",
+        "s17"
+      ],
+      "answer_relevancy": [
+        "r22",
+        "s17"
+      ],
+      "correctness": [
+        "r12",
+        "r16",
+        "p05",
+        "r02",
+        "m06",
+        "a06",
+        "p06",
+        "r22",
+        "s11",
+        "r21",
+        "t06",
+        "s17"
+      ]
+    },
+    "errors": 0,
+    "judge_models_used": [
+      "gemini-3.1-flash-lite",
+      "gemini-3.5-flash-lite",
+      "gemini-flash-lite-latest"
+    ],
+    "provisional": true
+  },
+  "rows": [
+    {
+      "id": "r12",
+      "query": "Question types MCQ and true false",
+      "answer": "**MCQ** (Multiple Choice): presents a set of answer options where exactly one is correct. The student selects one answer; grading compares to the correct option.\n\n**True/False**: a binary choice. The student selects **True** or **False**; grading compares to the correct answer.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.667,
+          "reason": "The score is 0.67 because sentences 1 and 2 of the expected output are successfully attributed to the 1st node in the retrieval context, while sentence 3 cannot be attributed as the context lacks information regarding question cards, badges, or the Questions tab."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is directly relevant, stating that \"The context provides the definitions and grading methods for both 'Multiple Choice (MCQ)' and 'True/False' question types, which are directly used to form the expected output.\""
+        },
+        "relevancy": {
+          "score": 0.75,
+          "reason": "The score is 0.75 because while the context successfully provides relevant information regarding 'Multiple Choice (MCQ)' and 'True/False' question types, it also includes irrelevant details about 'Short Answer' responses."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions detected. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output is entirely relevant and directly addresses the input without including any extraneous information."
+        },
+        "correctness": {
+          "score": 0.6,
+          "reason": "The actual output covers the definitions and grading mechanism for both MCQ and True/False types based on the input, but it completely omits the crucial detail from the expected output regarding how both question types show their question type as a small badge on the Questions tab in the exam workspace."
+        }
+      }
+    },
+    {
+      "id": "s07",
+      "query": "Why is my teacher dashboard completely empty right now?",
+      "answer": "Your teacher dashboard is likely empty because no exams have been created, published, or taken by students yet. Check if you’ve created any exams and published them—without live activity, the dashboard will show minimal or no data. Start by creating an exam, approving questions, and publishing it to begin seeing activity.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all information in the expected output is fully supported by the 1st node in the retrieval context, successfully capturing every reason for an empty teacher dashboard!"
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node is directly relevant, explaining that \"The teacher dashboard may show an empty or minimal state when: - No exams have been created yet... - No exams have LIVE activity - The account is brand new\", making the retrieval perfectly accurate!"
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieved context perfectly addresses the input by explaining that \"The teacher dashboard may show an empty or minimal state when no exams have been created yet,\" making it spot-on!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and completely addresses the user's question with no irrelevant statements."
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The actual output successfully captures all key facts from the expected output, explaining that the dashboard is empty due to a lack of created exams or live student activity. It provides a helpful expansion on these points without introducing any contradictions."
+        }
+      }
+    },
+    {
+      "id": "r16",
+      "query": "Students workspace cohort health",
+      "answer": "Cohort health is a visualization that shows the distribution of readiness across your student population, giving a snapshot of how the class is performing overall. If you don’t see it, check that the exam is published, students have started attempts, and grading is complete upstream.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.333,
+          "reason": "The score is 0.33 because sentence 3 in the expected output is supported by the 1st node in retrieval context regarding the cohort health visualization, while sentences 1 and 2 lack any corresponding information in the retrieval context."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is directly relevant, explaining that \"A cohort health visualization shows the distribution of readiness across the student population\". Excellent retrieval!"
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieved context perfectly addresses the input by explaining that 'A cohort health visualization shows the distribution of readiness across the student population'."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly and accurately addresses the input without including any irrelevant statements. Excellent work keeping it spot-on!"
+        },
+        "correctness": {
+          "score": 0.4,
+          "reason": "The actual output mentions the cohort health visualization and troubleshooting steps, but it completely misses key instructions from the expected output such as accessing the Students workspace via the left sidebar and checking the metrics strip for the 'Cohort count' card."
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "query": "How can I export my game history to a CSV file?",
+      "answer": "To export your game history to a CSV file:\n\n1. Go to the **Arena** workspace.\n2. Open the **Game History** section.\n3. Click the **Export** button.\n4. Select **CSV** as the format.\n5. Confirm the export to download the file.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the entire expected output is perfectly captured by node(s) in the retrieval context, specifically matching the 1st node regarding game history export capabilities."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is directly relevant, noting that 'Game history is accessible from the Arena workspace and can be exported to CSV, JSON, or Google Sheets.' Awesome job nailing the top rank right away!"
+        },
+        "relevancy": {
+          "score": 0.333,
+          "reason": "The score is 0.33 because while the context mentions that 'Game history is accessible from the Arena workspace and can be exported to CSV, JSON, or Google Sheets,' it mostly contains irrelevant details, such as how 'a summary is saved to permanent storage: Winner and top rankings (top 20)' and where arena game history appears in the Analytics workspace, which do not explain how to perform the expo"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and completely addresses the input without containing any irrelevant information. Great job!"
+        },
+        "correctness": {
+          "score": 0.9,
+          "reason": "The actual output successfully addresses the user's input by providing specific, step-by-step instructions for exporting game history to a CSV file from the Arena workspace. While the expected output is a general statement rather than a detailed procedure, the actual output aligns well with the core fact that the export is possible from the Arena workspace and adds helpful, logical steps to achiev"
+        }
+      }
+    },
+    {
+      "id": "p05",
+      "query": "how are written answers scored",
+      "answer": "Written answers are scored using a layered grading pipeline. First, the system checks for an exact match after normalizing the answer (lowercasing, trimming, removing punctuation). If no exact match is found, it proceeds to a fuzzy match step, which allows for minor typos or spelling variations, especially useful for short answers. If the answer still doesn’t match, further layers may apply, but the system prioritizes resolving the answer at the earliest, least expensive step possible. Full marks are awarded only if the answer matches at any stage of this pipeline.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.2,
+          "reason": "The score is 0.20 because while the 1st node in the retrieval context supports the mention of written answers in sentence 1, it fails to provide information for the remaining sentences detailing the specific grading pipeline steps 1 through 6."
+        },
+        "precision": {
+          "score": 0.0,
+          "reason": "The score is 0.00 because the first node in the retrieval contexts discusses exam settings, Answer Grading Styles, and options like 'Balanced', 'Writing and Language', and 'Formulas and STEM', but it does not contain the step-by-step grading pipeline described in the expected output (exact match, fuzzy match, keyword overlap, embedding similarity, AI model, and Pending Professor Review)."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the context perfectly explains how written answers are scored, detailing the 'Answer Grading Style' options like 'Balanced', 'Writing and Language', and 'Formulas and STEM'."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions detected. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and completely addresses how written answers are scored without including any irrelevant information. Great job!"
+        },
+        "correctness": {
+          "score": 0.4,
+          "reason": "The actual output captures the initial grading steps (exact match and fuzzy match) and mentions the layered pipeline, but it misses several key steps defined in the expected output, specifically keyword overlap, embedding similarity, batched AI model scoring, and the final fallback to manual professor review. Due to these significant missing steps, the score is moderately low."
+        }
+      }
+    },
+    {
+      "id": "r32",
+      "query": "Join Arena as a player with code",
+      "answer": "To join an Arena game using a room code:\n\n1. Open the Arena join page (or click the host‑provided join link).  \n2. Enter the **room code** in the field provided.  \n3. Choose a **nickname** (2–20 characters; alphanumeric, spaces, underscores, hyphens; must be unique in the room).  \n4. Click **Join**.\n\nIf the host linked a Google Classroom course, you may select your name from the class roster instead of typing a nickname. You can join during the lobby phase; if the game has already started, you",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.75,
+          "reason": "The score is 0.75 because sentences 1, 2, and 3 of the expected output are successfully attributed to the 1st node in the retrieval context, while sentence 4 lacks support as the requirement regarding a Quizzer account is not mentioned in any node(s) in retrieval context."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first retrieval context node is directly relevant, perfectly explaining how to join Arena as a player using a code!"
+        },
+        "relevancy": {
+          "score": 0.8,
+          "reason": "The score is 0.80 because while the context includes relevant statements explaining how 'Players open the join link or go to the Arena join page and enter the room code manually', it also contains irrelevant information stating 'Maximum players per room: 100 (configurable by the server)' which does not relate to joining with a code."
+        },
+        "faithfulness": {
+          "score": 0.833,
+          "reason": "The score is 0.83 because the output incorrectly claims that players cannot join a game in progress, whereas the context explicitly states that players can join mid-game if the allow_late_join setting is on, which is enabled by default."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and completely addresses the input without including any irrelevant statements."
+        },
+        "correctness": {
+          "score": 0.8,
+          "reason": "The actual output covers almost all the key facts from the expected output, including opening the join page/link, entering the room code, choosing a unique nickname with the specified character rules, and selecting from a Google Classroom roster alternative. However, the actual output is cut off at the end ('if the game has already started, you') and misses the detail that no Quizzer account is re"
+        }
+      }
+    },
+    {
+      "id": "r02",
+      "query": "Where is Monitoring in the sidebar?",
+      "answer": "Monitoring is located in the left sidebar under the **Monitoring** section.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the 1st node in the retrieval context! Fantastic job retrieving the exact information needed."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is directly relevant, stating that 'There is no top-level Monitoring or LIVE item in the sidebar' and explaining how to find it by opening 'Exams from the sidebar, open a specific exam, then select the Monitoring tab.' Perfect retrieval!"
+        },
+        "relevancy": {
+          "score": 0.667,
+          "reason": "The score is 0.67 because while the context includes relevant statements explaining that the \"Monitoring tab is found by opening Exams from the sidebar,\" it also contains irrelevant information stating that \"LIVE badges appear on exam cards.\""
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "The score is 0.00 because the output incorrectly states there is a top-level Monitoring item in the sidebar, whereas the context clarifies that Monitoring is actually accessed by opening Exams, selecting a specific exam, and then choosing the Monitoring tab."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and accurately answers the question about the location of Monitoring in the sidebar without including any irrelevant information. Great job!"
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The actual output completely contradicts the expected output by claiming that Monitoring is in the left sidebar, whereas the expected output states it is not in the sidebar and requires navigating through Exams and a specific exam card."
+        }
+      }
+    },
+    {
+      "id": "p07",
+      "query": "play a live quiz game with my class",
+      "answer": "**To play a live quiz game with your class:**\n\n1. Go to **Arena** in the sidebar.\n2. Create or select a quiz pack with **Approved** questions.\n3. Configure battle settings (timer, scoring, team mode, etc.).\n4. Create the room and copy the **room code**.\n5. Share the code with your class (projector, chat, etc.).\n6. Wait in the lobby for players to join.\n7. Click **Start** when enough players have joined.\n8. Control the game: reveal answers, advance questions, skip, or pause as needed.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the 1st node in the retrieval context, successfully capturing every step to host a live Arena battle!"
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts successfully provides the complete, step-by-step workflow to 'Host a Live Arena Battle', which directly corresponds to how to 'play a live quiz game with my class' by detailing how to 'Go to Arena in the sidebar', 'Configure battle settings', 'Create the room', and 'Control the game', resulting in a perfect ranking!"
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieval context perfectly addresses the input with all statements directly relevant to how to 'Host a Live Arena Battle to run a live, real-time quiz competition with your class'."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly and accurately addresses the input without containing any irrelevant statements."
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The actual output successfully captures all key steps and facts outlined in the expected output, such as navigating to the Arena, selecting an approved quiz pack, configuring settings, creating a room, sharing the code, waiting in the lobby, and controlling the game flow. There are no missing steps or contradictions, resulting in strong alignment with the expected instructions."
+        }
+      }
+    },
+    {
+      "id": "m06",
+      "query": "How do I bring in my Classroom roster and push grades back after grading?",
+      "answer": "To bring in your Classroom roster and push grades back after grading:\n\n1. Go to the **Integrations** section in the Teacher sidebar and connect your Google Classroom account.\n2. Click on an imported course, then select **Import Roster** to pull student names and enrollment into Quizzer’s **Students** workspace.\n3. After publishing an exam, open the exam’s **Links** tab, click **Assign to Classroom**, choose the course, and confirm to assign it as coursework.\n4. Once students complete the exam and grading is finished, scores sync automatically back to the corresponding Classroom coursework entry.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.667,
+          "reason": "The score is 0.67 because while sentences 2 and 3 of the expected output are supported by the 1st node in the retrieval context, the first sentence regarding the initial Google Classroom connection steps lacks matching information in the nodes in the retrieval context."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is directly relevant, providing detailed step-by-step instructions on how to 'Import a roster' and 'Push grades', which perfectly answers the user's question with fantastic precision!"
+        },
+        "relevancy": {
+          "score": 0.667,
+          "reason": "The score is 0.67 because while the context includes relevant statements explaining how to 'Import a roster' and 'Push grades', it also contains irrelevant information about how to 'Assign an exam as coursework'."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly and accurately addresses the user's inquiry about importing classroom rosters and pushing grades without including any irrelevant statements."
+        },
+        "correctness": {
+          "score": 0.6,
+          "reason": "The Actual Output captures the primary goals of importing the roster and syncing grades, but it misses several key factual steps outlined in the Expected Output, such as completing the Google OAuth authorization via the Connect button, importing courses from the Integrations section before importing the roster, and the option for a manual grade push."
+        }
+      }
+    },
+    {
+      "id": "a06",
+      "query": "How do I start?",
+      "answer": "Click **Create Exam** from the Dashboard quick actions panel (emerald-green card), the Exams workspace, or use the command palette (**Ctrl+K / Cmd+K**, type \"Create Exam\"). If you have a draft, choose **Restore** or **Start Fresh**.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The score is 0.00 because the 1st node in the retrieval context fails to provide information for any part of the expected output, missing details regarding app access, account creation methods, and the four-step onboarding flow."
+        },
+        "precision": {
+          "score": 0.0,
+          "reason": "The score is 0.00 because the first node in the retrieval contexts is irrelevant, as it explains 'How to Start' by creating an exam rather than providing instructions on how to start using the app by signing up, creating an account, or going through the onboarding flow."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieval context perfectly addresses the input by providing clear, direct instructions on how to start creating an exam, such as clicking 'Create Exam from the Dashboard quick actions panel'."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and effectively addresses the input without containing any irrelevant statements."
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The Actual Output completely misses the key steps and facts required by the Expected Output, such as opening the app, signing up with email/Google/Microsoft, and completing the four-step onboarding flow. Instead, it provides instructions on creating an exam, which does not align with the expected onboarding process."
+        }
+      }
+    },
+    {
+      "id": "p06",
+      "query": "stop students from switching tabs during the test",
+      "answer": "To stop students from switching tabs during a test, enable the **Block Tab Switching** setting in the exam’s Proctoring and Integrity options. This setting detects and reports any tab or window switches as violations. You can find it under **Exam Settings** → **Proctoring and Integrity** when creating or editing an exam. It is enabled by default, but ensure it is turned on for your exam.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the 1st node in the retrieval context, successfully capturing all necessary details for stopping tab switching."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first retrieval context is spot-on, successfully providing detailed information about 'Block Tab Switching' under the '[exam-settings] Proctoring and Integrity' section, which explains how it 'detects and reports when a student leaves the exam tab' and forms the core instructions for the expected output. Fantastic job!"
+        },
+        "relevancy": {
+          "score": 0.4,
+          "reason": "The score is 0.40 because while the context includes relevant information like 'Block Tab Switching detects and reports when a student leaves the exam tab', it also contains significant irrelevant details such as 'Require Fullscreen forces the exam into fullscreen mode', 'Block Copy/Paste prevents copying or pasting text', and 'Violation Limit is the maximum number of integrity violations tolerate"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions detected. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and effectively addresses the input with no irrelevant information. Great job!"
+        },
+        "correctness": {
+          "score": 0.6,
+          "reason": "The actual output correctly identifies the main feature ('Block Tab Switching' under Proctoring and Integrity) needed to address the input, but it misses several specific navigational steps provided in the expected output, such as opening Exams from the left sidebar, clicking the exam card, accessing the Settings tab, and noting that settings auto-save."
+        }
+      }
+    },
+    {
+      "id": "r22",
+      "query": "Notification preferences and email",
+      "answer": "In Account Settings → **Notifications** tab, you can toggle:\n\n- **Attempt notifications** – milestone attempt counts\n- **Integrity alerts** – violation limit exceeded\n- **Generation complete** – AI generation finished\n- **Export complete** – export ready for download\n\nAlways visible (cannot be turned off): exam published, system announcements.\n\nThese toggles filter the in-app inbox only; they do not control email delivery for these events.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.667,
+          "reason": "The score is 0.67 because sentences 1 and 2 of the expected output are supported by node(s) in retrieval context 1, while sentence 3 lacks information regarding exclusive email uses in the context."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in retrieval contexts is highly relevant, as noted by 'The context provides the necessary details about '[notifications] Notification Preferences' and specifies what can be toggled and that these filter the in-app inbox rather than email delivery.' Fantastic job retrieving the exact information needed right away!"
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieved context perfectly addresses the input by detailing how to manage notification preferences in Account Settings, including what can be toggled and what remains visible!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 0.556,
+          "reason": "The score is 0.56 because while it partially addresses the input regarding notification preferences and email, it includes several irrelevant statements about milestone attempt counts, integrity alerts, AI generation status, and export completion status."
+        },
+        "correctness": {
+          "score": 0.4,
+          "reason": "The actual output covers the notification toggles and clarifies that they only apply to the in-app inbox, but it completely misses the specific instructions on how to navigate to the settings (sidebar ACCOUNT, select Settings) and fails to state the specific purposes for which email is used (signup verification, password resets, and exam share invitations) as outlined in the expected output."
+        }
+      }
+    },
+    {
+      "id": "s11",
+      "query": "How do I schedule an exam in Quizzer using Google Calendar?",
+      "answer": "1. Go to the **Integrations** section in the Teacher sidebar.  \n2. Find and select **Google Calendar** from the list of available integrations.  \n3. Click **Connect** or **Authorize** to link your Google account to Quizzer.  \n4. Once connected, open the exam you want to schedule and navigate to its **Settings** tab.  \n5. Look for the **Schedule with Google Calendar** option and click it.  \n6. Choose the date and time for your exam, then confirm to create the calendar event.  \n7. The exam will now appear as an",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all information regarding scheduling an exam as a Google Calendar event is fully supported by the 1st node in the retrieval context!"
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is directly relevant, explaining that \"Quizzer integrates with Google Calendar to let teachers schedule exams as calendar events\" with exam details and links, perfectly addressing the input without any irrelevant nodes to penalize the ranking!"
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the retrieved context perfectly addresses the input by explaining how Quizzer integrates with Google Calendar to schedule exams!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and completely addresses the input without including any irrelevant information. Great job providing a focused and helpful response!"
+        },
+        "correctness": {
+          "score": 0.2,
+          "reason": "The Actual Output is cut off at the end (\"The exam will now appear as an\"), and it describes a multi-step integration process via the Teacher sidebar that contradicts the Expected Output's description of using a direct 'Schedule exam' feature to create a Google Calendar event. Critical facts and steps from the Expected Output regarding the primary calendar event details (title, link, and timing) a"
+        }
+      }
+    },
+    {
+      "id": "r21",
+      "query": "How do I send feedback about Quizzer?",
+      "answer": "To send feedback in Quizzer:\n\n1. Open the **Teacher sidebar** (click the menu icon or your profile).\n2. Click **Ask QUE**.\n3. Type your feedback or bug report and submit.\n\nThe submission goes to the Quizzer support inbox.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The score is 0.00 because the entire expected output detailing desktop and mobile navigation steps for the ACCOUNT section cannot be attributed to anything in the 1st node in the retrieval context, which only provides a general feature overview without any instructions."
+        },
+        "precision": {
+          "score": 0.0,
+          "reason": "The score is 0.00 because the only retrieval context provided is irrelevant. Specifically, the first node in the retrieval contexts is deemed unhelpful as it lacks any instructions on how to actually access or send feedback on desktop or mobile, noting only that 'Submissions go to the Quizzer support inbox'."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the context perfectly addresses how to send feedback, noting that users can 'Use Send feedback to tell the Quizzer team about bugs, confusing UI, performance issues, or feature ideas'!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output is completely relevant and directly addresses the input without any irrelevant statements. Great job!"
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The Actual Output completely misses the steps and facts provided in the Expected Output. Instead of describing how to scroll to the ACCOUNT section in the left sidebar on desktop or using the bottom navigation on mobile to access the /feedback page, the Actual Output instructs the user to open the Teacher sidebar and click Ask QUE, which contradicts the expected instructions."
+        }
+      }
+    },
+    {
+      "id": "m04",
+      "query": "How is negative marking applied and where do I switch it on?",
+      "answer": "Negative marking is applied by deducting a configured penalty for each wrong answer, while correct answers earn full marks and unanswered questions receive no marks or penalty. To switch it on, go to the **Settings** tab of your exam and enable the **Penalty for Wrong Answer** option, where you can also set the penalty amount.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.5,
+          "reason": "The score is 0.50 because sentence 1 in the expected output cannot be attributed to any information in the 1st node in the retrieval context, whereas sentence 2 is successfully attributed to the same node."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is relevant, explaining that 'The penalty amount is set per exam via the Penalty for Wrong Answer setting,' successfully achieving the highest possible ranking with no irrelevant nodes present!"
+        },
+        "relevancy": {
+          "score": 0.667,
+          "reason": "The score is 0.67 because while it correctly explains how the penalty is set via the 'Penalty for Wrong Answer setting' and applied, it also includes irrelevant information regarding alternative terminology such as 'penalty for wrong answers, mark deduction, minus marking, negative scoring' which does not address how to switch it on."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the output directly and completely addresses both parts of the input regarding how negative marking is applied and how to enable it, with zero irrelevant statements."
+        },
+        "correctness": {
+          "score": 0.7,
+          "reason": "The actual output successfully explains how negative marking is applied and mentions going to the Settings tab to enable it. However, it misses several specific navigational details required by the expected output, such as opening the exam from the Exams workspace, scrolling to the Scoring section, and toggling the specific 'Negative Marking' switch."
+        }
+      }
+    },
+    {
+      "id": "c03",
+      "query": "What is the difference between an Exam and an Arena game?",
+      "answer": "**Exam**\n- Asynchronous: students take it on their own schedule\n- Individually timed per student\n- Detailed proctoring and grading\n- Results appear in the **Results** tab\n\n**Arena game**\n- Synchronous: everyone plays at the same time\n- Host controls the pace\n- Speed-based scoring with streaks\n- No detailed proctoring\n- Results go to **game history**, not the Exam Results tab\n- Analytics appear in a separate **Analytics** workspace section",
+      "chunks": 2,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the 1st and 2nd nodes in the retrieval context, ensuring a complete and accurate retrieval recall!"
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all relevant retrieval contexts are perfectly ranked at the top! Specifically, the first node correctly explains that \"Arena is a live, synchronous game with speed scoring\" and \"Exams are asynchronous, individually timed assessments with detailed grading,\" and the second node appropriately follows by providing detailed differences, stating \"Graded exams: asynchronous... i"
+        },
+        "relevancy": {
+          "score": 0.714,
+          "reason": "The score is 0.71 because while the context successfully explains that \"Arena is a live, synchronous game with speed scoring, while exams are asynchronous, individually timed assessments\", it also includes irrelevant details about \"Notifications vs Email\" and \"Draft (exam) vs Draft (question)\"."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly and accurately addresses the input without containing any irrelevant statements. Great job!"
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The actual output successfully captures all key facts and steps from the expected output, including the asynchronous nature, individual timing, and proctoring of exams, as well as the synchronous gameplay, host pacing, speed-based scoring, and distinct result/analytics locations for Arena games. There are no missing steps or contradictions."
+        }
+      }
+    },
+    {
+      "id": "t06",
+      "query": "arena room code",
+      "answer": "To get an arena room code in Quizzer:\n\n1. Go to the **Arena** section from the teacher sidebar.\n2. Select an approved quiz pack to host a live battle.\n3. Click **Start Arena** or **Create Room**.\n4. The system will generate a six-character room code.\n5. Share this code with players so they can join the live quiz battle.\n\nThe room code is displayed prominently on the host screen after creating the arena session. Let me know if you need help finding where to start an arena session.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 0.25,
+          "reason": "The score is 0.25 because only the 1st sentence of the expected output is supported by the 1st node in the retrieval context, while the remaining sentences regarding the room screen display, sharing options, classroom projection, and player join details lack corresponding information in the node(s) in retrieval context."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node in the retrieval contexts is directly relevant, noting that 'A teacher (host) creates a room from an approved quiz pack, shares a six-character room code', perfectly matching the input with no irrelevant nodes to penalize the ranking!"
+        },
+        "relevancy": {
+          "score": 0.25,
+          "reason": "The score is 0.25 because while the context mentions how a teacher 'shares a six-character room code', it is mostly filled with irrelevant details such as 'The host runs the game live while players answer questions for speed-based points' and descriptions of how 'Arena is completely separate from the graded exam flow'."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions found. Great job!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response perfectly addressed the input with no irrelevant information. Great job providing exactly what was needed!"
+        },
+        "correctness": {
+          "score": 0.6,
+          "reason": "The actual output correctly identifies the generation of a six-character room code and its purpose. However, it misses several key details provided in the expected output, specifically the mention of the join URL, the QR code, the copy code functionality, and the instruction for teachers to project the screen for students."
+        }
+      }
+    },
+    {
+      "id": "t04",
+      "query": "exam link not working for student",
+      "answer": "**Likely causes first, then UI checks:**\n\n1. **Exam not published** — Unpublished or archived exams cannot be accessed. Confirm the exam status is **Published** in the Exams workspace.\n\n2. **Link window expired** — Check the **available_until** date on the **Links** tab. If the window has passed, students will be blocked.\n\n3. **Verification form required** — If the exam has a verification schema, students must complete all required fields before starting. Review **Verification schema** settings.\n\n4. **Max attempts exhausted** — If **max attempts** is set and the student has used all allowed attempts, they cannot start again.\n\n**UI checks (in order):**\n\n- Open the **Exams** workspace → select the exam → verify the **Publish** action is active and all questions are approved on the **Questions** tab.\n- Go to the **Links** tab and confirm the link is active and the **available_until** date has not passed.\n- If verification is enabled, open the **Verification** tab and ensure the schema does not block entry.\n- Check **Attempts** settings under the exam configuration to see if the student has reached the limit.\n\nIf none of these resolve the issue, contact support with the exam ID and student details.",
+      "chunks": 2,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all instructions in the expected output are perfectly supported by the information provided in node 1 of the retrieval context. Great job!"
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because all retrieved nodes are highly relevant and perfectly ranked, providing comprehensive troubleshooting steps for the exam link issue!"
+        },
+        "relevancy": {
+          "score": 0.625,
+          "reason": "The score is 0.62 because while the context provides actionable troubleshooting steps like checking if the \"exam is published\" or if the \"link window expired,\" it also includes irrelevant information regarding \"auto-submitted\" exams and general platform navigation that does not address the specific issue of a broken link."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is perfectly aligned with the retrieval context—great job maintaining such high accuracy!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response was perfectly on-topic and addressed the issue directly. Great job providing such a clear and relevant answer!"
+        },
+        "correctness": {
+          "score": 0.7,
+          "reason": "The actual output covers the key troubleshooting steps mentioned in the expected output, such as verifying the exam status and checking the link expiration. However, it includes additional technical steps not requested in the expected output, and it misses the specific instruction to verify that the student is using the correct link provided from the Links tab."
+        }
+      }
+    },
+    {
+      "id": "s17",
+      "query": "Where is the Monitoring tab?",
+      "answer": "The **Monitoring** tab is located in the top navigation bar of the Quizzer dashboard. Click **Monitoring** to view real-time exam progress, participant activity, and performance metrics. If live data is temporarily unavailable, please try refreshing the page or check back shortly.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the 1st node in the retrieval context perfectly captures the steps to access the Monitoring tab, ensuring complete accuracy!"
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node perfectly addresses the input by providing the exact navigation path, ensuring the most relevant information is ranked at the very top!"
+        },
+        "relevancy": {
+          "score": 0.8,
+          "reason": "The score is 0.80 because the context provides clear instructions on how to 'Access the Monitoring tab by opening an exam from Exams', though it also includes less relevant information that 'lists alternative names for the tab' which does not address the location."
+        },
+        "faithfulness": {
+          "score": 0.667,
+          "reason": "The score is 0.67 because the actual output incorrectly places the Monitoring tab in the top navigation bar of the Quizzer dashboard, whereas the context specifies it is located within each individual exam workspace."
+        },
+        "answer_relevancy": {
+          "score": 0.667,
+          "reason": "The score is 0.67 because while the response addresses the location of the tab, it includes unnecessary troubleshooting advice that is irrelevant to the user's specific question."
+        },
+        "correctness": {
+          "score": 0.2,
+          "reason": "The actual output fails to provide the necessary navigation steps required by the expected output. It incorrectly suggests the tab is in the top navigation bar of the dashboard, whereas the expected output specifies that the user must first open Exams and select a specific exam before the Monitoring tab becomes accessible."
+        }
+      }
+    },
+    {
+      "id": "s06",
+      "query": "How do I get better AI-generated questions in Quizzer?",
+      "answer": "To improve AI-generated questions in Quizzer:\n\n1. **Use Guided mode** — specify the exact number of questions, types (Multiple Choice, True/False, Short Answer, etc.), and structure you want.\n2. **Provide high-quality source material** — paste text, upload a document (PDF, DOCX, PPTX, TXT), or share a YouTube/web page URL. The AI extracts questions from this content.\n3. **Review and approve** — AI questions start as drafts. Use the **Review and approve** step to edit or discard any that don't meet your standards before publishing.",
+      "chunks": 1,
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the expected output is perfectly captured by the 1st node in the retrieval context, which provides all the necessary information!"
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the first node perfectly addresses the input by stating, 'Provide clear, well-structured source content. The AI generates better questions from organized material with clear topics and concepts.' Excellent work!"
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the context provides excellent, actionable advice such as 'Provide clear, well-structured source content' and using 'Guided mode' to directly help the user improve their AI-generated questions!"
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the actual output is perfectly aligned with the retrieval context—fantastic work!"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response directly and accurately addressed the user's query with no irrelevant information. Great job providing a clear and focused answer!"
+        },
+        "correctness": {
+          "score": 0.9,
+          "reason": "The actual output provides a comprehensive guide that includes the expected advice regarding source content while adding necessary context about Quizzer's specific features like Guided mode and the review process. It covers the expected requirement while offering more actionable steps for the user."
+        }
+      }
+    }
+  ]
+}
