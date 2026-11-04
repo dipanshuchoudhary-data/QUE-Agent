@@ -1,0 +1,316 @@
+{
+  "goldens": [
+    {
+      "id": "s01",
+      "query": "How do I turn on dark mode in preferences?",
+      "expected_output": "To turn on dark mode, go to the Preferences Tab under Theme and choose Dark.",
+      "expected_doc_ids": [
+        "account-settings"
+      ],
+      "source_context": [
+        "Preferences Tab\n## Preferences Tab\nTheme: choose Light, Dark, or System (follows your device setting).\nDefault: System.\n\nDensity: Comfortable (more spacing) or Compact (denser layout).\nDefault: Comfortable.\n\nMotion: System (follows device accessibility setting), Reduce (minimal\nanimations), or Allow (full animations). Default: System.\n\nTime format: 12-hour or 24-hour clock. Default: 12-hour.\n\nLive data refresh: control whether live data (like LIVE badges and\nmonitoring) refreshes automatically. Default: on.\n\nSidebar collapsed: whether the sidebar starts collapsed. Default: off.\n\nStudents scope default: the default scope mode for the Students\nworkspace — All in cluster or Pick exams. Default: varies.\n\nHighlight integrity risks: whether to visually emphasize integrity-\nflagged items. Default: on.\n\nPreferences are saved locally in your browser (localStorage). They do\nnot sync across devices."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s02",
+      "query": "How do I check my analytics in Quizzer?",
+      "expected_output": "Click Analytics (chart icon) in the left sidebar to open the Analytics workspace.",
+      "expected_doc_ids": [
+        "analytics"
+      ],
+      "source_context": [
+        "Step-by-Step UI Guide: Using Analytics\n## Step-by-Step UI Guide: Using Analytics\nStep 1 — Open Analytics:\nIn the left sidebar, click Analytics (it has a chart icon). The\nAnalytics workspace loads showing your aggregate data.\n\nStep 2 — Check the date range:\nAt the top of the Analytics page, find the date range filter. It may\nbe set to a specific period (like \"Last 7 days\"). Click the date\npicker to widen or narrow the range. This is the most common reason\nAnalytics appears empty — the date range might not include your data.\n\nStep 3 — Read the summary metrics:\nAt the top, you will see metric cards showing: Total attempts,\nCompletion rate, Average score, Score spread, and Integrity flags.\nEach card shows the current value and a comparison to the previous\nperiod (an up or down arrow with a percentage change).\n\nStep 4 — Browse the charts:\nScroll down to see visualizations: score distribution chart, completion\ntrend over time, violations by quiz, and attempts mix. These help you\nspot patterns.\n\nStep 5 — Filter by quiz:\nUse the Quiz filter dropdown to focus on a specific exam, or select\nAll to see everything."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s03",
+      "query": "How can I export my game history to a CSV file?",
+      "expected_output": "Game history can be exported to CSV, JSON, or Google Sheets from the Arena workspace.",
+      "expected_doc_ids": [
+        "arena"
+      ],
+      "source_context": [
+        "Game History\n## Game History\nAfter a game ends, a summary is saved to permanent storage:\n\nWinner and top rankings (top 20).\nPer-question stats: accuracy (what percentage got it right), option\ndistribution, average response time.\nOverall stats: average score, hardest question, fastest player, team\nstandings.\n\nGame history is accessible from the Arena workspace and can be exported\nto CSV, JSON, or Google Sheets.\n\nArena game history also appears in the Analytics workspace under the\nArena section."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s04",
+      "query": "Why is Quizzer giving me errors and how do I fix them?",
+      "expected_output": "Find your specific symptom in the troubleshooting guide and follow the provided step-by-step resolution steps.",
+      "expected_doc_ids": [
+        "common-problems"
+      ],
+      "source_context": [
+        "Overview\n## Overview\nThis guide covers the most frequently encountered issues when using\nQuizzer, along with their root causes and step-by-step solutions. If\nyou are experiencing a problem, find the symptom below and follow the\nresolution steps.\n\nUsers may call this: help, troubleshooting, something is wrong, not\nworking, fix, error, issue, bug, problem."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s05",
+      "query": "How do I set up webcam monitoring and auto-submit for a proctored exam?",
+      "expected_output": "To set up webcam monitoring and auto-submit, go to the Settings tab in the exam workspace under the Proctoring section, toggle on Enable Webcam Monitoring (and configure Phone Detection or Face Monitoring as needed), set the Violation Limit, and toggle on Enable Auto-Submit.",
+      "expected_doc_ids": [
+        "common-workflows"
+      ],
+      "source_context": [
+        "Run a Proctored Exam\n1. Create an exam and generate questions (see workflow above).\n2. Click the Settings tab in the exam workspace. Scroll to the\n   Proctoring section.\n3. Verify these toggles are on (green): Require Fullscreen, Block Tab\n   Switching, Block Copy/Paste. They are on by default.\n4. Toggle on Enable Webcam Monitoring. Additional webcam settings\n   appear below: Phone Detection (on by default), Face Monitoring\n   (toggle on if you want face presence checks).\n5. Set the Violation Limit field (default 3) to your desired threshold.\n6. Toggle on Enable Auto-Submit if you want the exam to end\n   automatically when the limit is reached.\n7. Set Duration to the appropriate time for your exam.\n8. Expand Verification Schema and configure identity fields (name,\n   enrollment number, etc.) using a preset or custom fields.\n9. Click Publish (emerald-green button).\n10. Share the link. During the exam, click Exams in the sidebar, open\n    the exam, and click the Monitoring tab to watch integrity events\n    in real time.\n11. After students submit, click the Results tab. Look for the\n    integrity flag column and expand flagged rows to see violation\n    timelines."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s06",
+      "query": "How do I get better AI-generated questions in Quizzer?",
+      "expected_output": "Provide clear, well-structured source content with organized material, clear topics, and concepts.",
+      "expected_doc_ids": [
+        "creating-exams"
+      ],
+      "source_context": [
+        "Tips for Better AI Generation\n## Tips for Better AI Generation\nProvide clear, well-structured source content. The AI generates better\nquestions from organized material with clear topics and concepts.\n\nUse Guided mode when you need exact control. Source-first is convenient\nbut may not match your exact expectations for question count or type.\n\nFor best OCR results on scanned PDFs, ensure the scan is clean and\ntext is legible. Blurry or low-resolution scans produce poor text\nextraction.\n\nYouTube URLs work best when the video has good captions (manual or\nauto-generated). Videos with poor audio or no captions may not produce\nuseful text.\n\nSplitting very large documents across multiple exams can produce better\nresults than feeding everything into one generation."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s07",
+      "query": "Why is my teacher dashboard completely empty right now?",
+      "expected_output": "Your teacher dashboard is empty because the account is brand new, no exams have been created yet, or no exams currently have LIVE activity.",
+      "expected_doc_ids": [
+        "dashboard"
+      ],
+      "source_context": [
+        "What Makes the Dashboard Empty\n## What Makes the Dashboard Empty\nThe teacher dashboard may show an empty or minimal state when:\n- No exams have been created yet (the activation checklist guides you)\n- No exams have LIVE activity\n- The account is brand new\n\nThe Dashboard fills up as you create exams, publish them, and students\nstart taking them."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s08",
+      "query": "Where can I find the analytics for my exam?",
+      "expected_output": "Analytics will show data after students take and submit the exam, grading completes, and the correct date range filter is applied.",
+      "expected_doc_ids": [
+        "empty-states"
+      ],
+      "source_context": [
+        "Common Questions\n## Common Questions\nWhy is everything empty when I just signed up?\nYou need to create an exam first. Everything downstream depends on\nhaving exams with published content and student submissions.\n\nI published my exam but Analytics is still empty. Why?\nPublishing is step 1. Students need to take the exam and submit it.\nAfter grading completes, Analytics will show data. Also check your\ndate range filter.\n\nI imported my Classroom roster but Students workspace is empty:\nRoster import brings names, not attempt data. Students must actually\ntake exams for scores and readiness to appear."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s09",
+      "query": "How do I change my exam settings after it's already been published?",
+      "expected_output": "Most settings can be changed on a published exam, but they generally only affect future attempts and do not change in-progress ones. Finalize settings before publishing when possible, as changes only impact students who start a new attempt after the change.",
+      "expected_doc_ids": [
+        "exam-settings"
+      ],
+      "source_context": [
+        "Settings After Publishing\n## Settings After Publishing\nMost settings can be changed on a published exam. Key considerations:\n\nTimer changes: affect future attempts only, not in-progress ones.\nStudents who already started keep their original timer.\n\nProctoring changes: affect future attempts. In-progress attempts use\nthe proctoring settings from when they started.\n\nQuestion changes: correct answer edits do not affect frozen answer\nkeys in existing attempts. New questions appear in future attempts.\n\nAttempt limit changes: may allow or restrict additional attempts for\nstudents who have already taken the exam.\n\nShuffle changes: affect future attempts only.\n\nVerification schema changes: affect future attempts. Already-submitted\nverification data is not modified.\n\nBest practice: finalize settings before publishing. If changes are\nneeded on a live exam, be aware that they only affect students who\nstart a new attempt after the change."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s10",
+      "query": "Where can I send feedback or report a bug to Quizzer?",
+      "expected_output": "Use **Send feedback** to send bug reports, feature ideas, and support requests directly to the Quizzer support inbox.",
+      "expected_doc_ids": [
+        "feedback"
+      ],
+      "source_context": [
+        "Overview\n## Overview\nUse **Send feedback** to tell the Quizzer team about bugs, confusing UI,\nperformance issues, or feature ideas. Submissions go to the Quizzer\nsupport inbox.\n\nUsers may call this: report a bug, send feedback, contact support,\nsuggestion, feature request, something is broken, tell the team."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s11",
+      "query": "How do I schedule an exam in Quizzer using Google Calendar?",
+      "expected_output": "To schedule an exam, use the 'Schedule exam' feature to create a Google Calendar event on your primary calendar, which includes the exam title, link, and timing information.",
+      "expected_doc_ids": [
+        "google-calendar"
+      ],
+      "source_context": [
+        "Available Features\n## Available Features\nSchedule exam: create a Google Calendar event for a published exam.\nThe event includes the exam title, link, and timing information. The\nevent is created on your primary Google Calendar.\n\nManage events: view upcoming scheduled exam events, update event\ndetails, or cancel scheduled events.\n\nCalendar insights: view scheduling overview from the Calendar\nintegration dashboard section."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s12",
+      "query": "How do I connect Google Classroom to Quizzer?",
+      "expected_output": "Go to Integrations in the sidebar, find Google Classroom, click Connect, and complete the Google OAuth authorization.",
+      "expected_doc_ids": [
+        "google-classroom"
+      ],
+      "source_context": [
+        "Common Questions\n## Common Questions\nHow do I connect Google Classroom?\nGo to Integrations in the sidebar, find Google Classroom, and click\nConnect. Complete the Google OAuth authorization.\n\nHow do I import my class roster?\nAfter connecting, go to the Classroom section in Integrations, import\nyour courses, then import the roster for a specific course.\n\nHow do I assign an exam to my Classroom students?\nPublish your exam first, then use the Classroom section to create a\ncoursework entry linking to your exam. Students see it in their\nGoogle Classroom.\n\nAre grades synced automatically?\nYes. After a student submits and grading completes, scores are\nautomatically pushed to Classroom. You can also trigger a manual push.\n\nDoes importing the roster mean students have taken the exam?\nNo. Roster import brings in names from Google Classroom enrollment.\nStudents must actually open the exam link and take the exam for\nattempt data and scores to appear.\n\nCan I use Classroom sign-in to connect?\nNo. Classroom uses a separate OAuth connection from Google Sign-In.\nYou connect Classroom through the Integrations page, not through\nyour login."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s13",
+      "query": "How do I export my exam results to Google Sheets?",
+      "expected_output": "1. Go to the Results tab for the specific exam.\n2. Use the Google Sheets export option (available when Drive is connected) to create a new spreadsheet in your Google Drive.",
+      "expected_doc_ids": [
+        "google-drive"
+      ],
+      "source_context": [
+        "Exporting Results to Google Sheets\n## Exporting Results to Google Sheets\nTeachers can export exam results directly to a Google Sheets\nspreadsheet:\n\n1. Go to the Results tab for a specific exam.\n2. Use the Google Sheets export option (available when Drive is\n   connected).\n3. A new spreadsheet is created in your Google Drive with the exam\n   results data.\n\nThis is also available from the Arena game history for exporting Arena\nbattle results."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s14",
+      "query": "How do I change how short answer questions are graded in my exam settings?",
+      "expected_output": "Use the Answer Grading Style setting on the exam's Settings tab to control how written answers are evaluated.",
+      "expected_doc_ids": [
+        "grading"
+      ],
+      "source_context": [
+        "Grading Style\n## Grading Style\nThe Answer Grading Style setting on the exam's Settings tab controls\nhow written answers are evaluated. It only appears when the exam has\nShort Answer or Long Answer questions.\n\nBalanced: standard evaluation considering correctness, completeness,\nand clarity. Good for most subjects.\n\nWriting and Language: emphasizes grammar, structure, expression, and\nlanguage quality. Best for language arts, literature, and writing exams.\n\nFormulas and STEM: emphasizes mathematical notation, formulas, units,\nand scientific accuracy. Best for math, physics, chemistry, and\nengineering exams.\n\nIdeas and Concepts: emphasizes conceptual understanding and reasoning\nover exact wording. Best for social sciences, philosophy, and\ndiscussion-based exams.\n\nKey Terms: emphasizes the presence of specific technical terms and\nvocabulary. Best for exams where using correct terminology matters\n(medical, legal, technical fields).\n\nUsers may call this: scoring mode, marking style, evaluation method,\nhow to change grading."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s15",
+      "query": "How do I unpublish an exam in Quizzer without losing my results?",
+      "expected_output": "Simply unpublish the exam. Results stay and remain accessible in the Results tab.",
+      "expected_doc_ids": [
+        "lifecycle"
+      ],
+      "source_context": [
+        "What Happens to Results\n## What Happens to Results\nResults are never lost during state transitions:\n\nUnpublish: results stay. Accessible in the Results tab.\nArchive: results stay. Accessible in the Results tab.\nDelete (with attempts): archives instead, results stay.\nRe-publish after unpublish: results stay. New attempts can be added.\n\nThe only way to lose results is if an exam with zero attempts is\ndeleted (there are no results to lose in that case)."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s16",
+      "query": "How can I see active attempts across all exams in the live panel?",
+      "expected_output": "Go to the Dashboard by clicking Dashboard in the sidebar, and view the Live Exams panel to see all exams with currently active LIVE attempts.",
+      "expected_doc_ids": [
+        "live-monitoring"
+      ],
+      "source_context": [
+        "Step-by-Step UI Guide: Monitoring Live Exams\nStep 5 — Check the Dashboard live panel:\nFor a quick overview across all exams, go to the Dashboard (click\nDashboard in the sidebar). The Live Exams panel shows all exams with\ncurrently active LIVE attempts, so you do not need to check each exam\nindividually."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s17",
+      "query": "Where is the Monitoring tab?",
+      "expected_output": "Open Exams, open the specific exam, then select the Monitoring tab.",
+      "expected_doc_ids": [
+        "navigation"
+      ],
+      "source_context": [
+        "Common Questions\n## Common Questions\nWhere is Monitoring?\nNot in the sidebar. Open Exams, open the specific exam, then select\nthe Monitoring tab.\n\nWhere are my Results?\nNot in the sidebar. Open Exams, open the specific exam, then select\nthe Results tab. For cross-exam trends, use Analytics in the sidebar.\n\nHow do I find a specific exam?\nUse the Exams workspace in the sidebar. You can search, filter by\nstatus (Draft, Published, Archived), or browse the list.\n\nWhere do I change exam settings?\nOpen the exam from Exams, then select the Settings tab.\n\nWhere is the Create Exam button?\nIn the sidebar as a quick action button, or on the Dashboard quick\nactions panel.\n\nHow do I open the command palette?\nPress Ctrl+K (Windows) or Cmd+K (Mac) from any page.\n\nWhere are my notifications?\nClick the bell icon in the top navigation bar.\n\nWhy does /monitoring redirect to Exams?\nThere is no standalone Monitoring page. Monitoring lives inside each\nexam's workspace. Open the specific exam first, then select the\nMonitoring tab."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s18",
+      "query": "How do I check my unread notifications in Quizzer?",
+      "expected_output": "Look at the top-right corner of the screen at the bell icon, which shows a number badge for unread notifications.",
+      "expected_doc_ids": [
+        "notifications"
+      ],
+      "source_context": [
+        "Step-by-Step UI Guide: Using Notifications\n## Step-by-Step UI Guide: Using Notifications\nStep 1 — Check for new notifications:\nLook at the top-right corner of the screen. The bell icon shows a\nnumber badge if you have unread notifications (for example, a red\ncircle with \"3\").\n\nStep 2 — Open the inbox:\nClick the bell icon. A dropdown panel opens showing your recent\nnotifications in chronological order. Each notification shows a title,\na brief description, and a timestamp.\n\nStep 3 — Click a notification:\nClick on any notification to see its details and navigate to the\nrelevant page. For example, clicking \"Generation complete\" takes you\nto the exam. Clicking \"Export ready\" shows the download link.\n\nStep 4 — Mark as read:\nClick a notification to mark it as read (the unread indicator\ndisappears). You can also use the Mark All Read action at the top of\nthe inbox to clear all unread badges at once.\n\nStep 5 — Configure preferences:\nTo change which notifications you receive, go to Account Settings\n(sidebar ACCOUNT → **Settings**). Click\nthe Notifications tab. Toggle switches on or off for each notification\ncategory."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s19",
+      "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+      "expected_output": "Enter your optional details (such as Institution, Subject Area, and Courses Taught based on your persona) in the fields provided in Step 5, then click Continue.",
+      "expected_doc_ids": [
+        "onboarding"
+      ],
+      "source_context": [
+        "Step-by-Step UI Guide: Signing Up and Onboarding\nImportant: if you click Student, your account will have limited access\n(no exam creation). All other choices give you full teacher access.\n\nStep 5 — Fill in details (Step 3):\nBased on your persona, you see 2-4 fields asking for details. For\nexample, a teacher might see Institution, Subject Area, and Courses\nTaught. These fields are optional. Fill in what you want and click\nContinue.\n\nStep 6 — Workspace creation (Step 4):\nA celebration animation plays with cycling text while your workspace\nis set up. After a few seconds, you are automatically redirected to\nyour Dashboard."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s20",
+      "query": "How do I import my student rosters from Google Classroom?",
+      "expected_output": "Link Google Classroom to import rosters.",
+      "expected_doc_ids": [
+        "product-overview"
+      ],
+      "source_context": [
+        "What You Can Do\nManage learners: the Students workspace shows a directory of all\nexam takers with readiness labels (Strong learner, Needs coaching,\nNeeds check-in, Live now), a support queue, cohort health\nvisualization, and CSV export.\n\nRun live quiz battles: Arena mode lets you host real-time competitions\nwhere students join with a six-character room code and answer\nquestions for speed-based points with streak multipliers. Supports\nteam mode, spectator view, and game history export. Completely\nseparate from graded exams — different scoring, different history,\ndifferent analytics section.\n\nConnect integrations: link Google Classroom to import rosters, assign\nexams as coursework, and auto-push grades. Link Google Calendar to\nschedule exams as events. Link Google Drive to import source files\nduring creation and export results to Google Sheets."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s21",
+      "query": "How do I publish an exam in Quizzer?",
+      "expected_output": "Open your exam from the Exams workspace, then use the Publish action found on the exam card or inside the exam workspace.",
+      "expected_doc_ids": [
+        "publishing"
+      ],
+      "source_context": [
+        "How to Publish\n## How to Publish\nOpen your exam from the Exams workspace, then use the Publish action.\nThe Publish button is available:\n- On the exam card in the Exams workspace list\n- Inside the exam workspace (top-level action)\n\nOn publish, the system:\n- Validates all publish requirements\n- Generates a unique public link (UUID-based) if this is the first\n  publish\n- Sets a link window based on your subscription tier\n- Makes the exam accessible to students via the link\n- Sends a Publish confirmation notification\n\nAfter publishing, the exam's status changes from Draft to Published."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s22",
+      "query": "How do I set the correct answer for a True/False question?",
+      "expected_output": "Mark one of True or False as correct.",
+      "expected_doc_ids": [
+        "questions"
+      ],
+      "source_context": [
+        "Correct Answers\n## Correct Answers\nMCQ: exactly one option must be marked as correct. The question cannot\nbe approved without a valid correct answer.\n\nTrue/False: one of True or False must be marked as correct. Same\napproval requirement.\n\nShort Answer: one or more accepted answers can be set. The grading\npipeline uses smart matching, so minor variations (spelling differences,\nextra spaces, case changes) may still match even if not explicitly\nlisted as accepted answers.\n\nLong Answer: there is no single \"correct answer\" field. Grading uses\nAI evaluation against the question context, the source material, and\nthe grading style setting. Teachers may set reference answers or key\npoints to guide the AI evaluator.\n\nMulti-Select: one or more options must be marked as correct. All\ncorrect options must be identified. The student must select exactly\nthe correct set for full marks."
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s23",
+      "query": "Where can I find the exam results to download them?",
+      "expected_output": "To find the exam results to download, go to the Results tab at the top of the exam workspace and look for the Export button (usually in the top-right area or as a dropdown menu).",
+      "expected_doc_ids": [
+        "results-exports"
+      ],
+      "source_context": [
+        "Step-by-Step UI Guide: Viewing and Exporting Results\n## Step-by-Step UI Guide: Viewing and Exporting Results\nStep 1 — Open the exam:\nIn the left sidebar, click Exams. Click on the exam card whose results\nyou want to see.\n\nStep 2 — Go to the Results tab:\nAt the top of the exam workspace, click the Results tab (third tab:\nQuestions, Monitoring, Results, Links, Settings). The results table\nloads showing all submitted attempts.\n\nStep 3 — Read the results table:\nEach row shows one submitted attempt with columns: Student name,\nEnrollment number (if collected), Final score, Violation count,\nIntegrity flag, Status (Graded or Pending Professor Review), and\nSubmitted timestamp.\n\nStep 4 — View integrity details:\nClick on any result row to expand it. The Integrity Review Panel opens\nbelow, showing a violation timeline (chronological list of all\nintegrity events during that attempt) and violation buckets\n(categorized counts).\n\nStep 5 — Export results:\nLook for the Export button (usually in the top-right area of the\nResults tab, or as a dropdown menu). Click it and choose your format:"
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    },
+    {
+      "id": "s24",
+      "query": "How do I get the Teacher role during onboarding?",
+      "expected_output": "Sign up and select a non-student persona during onboarding to get the Teacher role.",
+      "expected_doc_ids": [
+        "roles"
+      ],
+      "source_context": [
+        "Teacher Role\n## Teacher Role\nAnyone who signs up and selects a non-student persona during onboarding\ngets the Teacher role. This includes actual teachers, trainers,\nfreelancers, HR professionals, developers, content creators, business\nteam leads, self-study users, and anyone else who wants to create\nassessments.\n\nWhat teachers can access:\n\nSidebar workspaces:\n- Dashboard: overview of exam activity, live exams, metrics, quick\n  actions, activation checklist\n- Exams: full exam library (draft, published, archived), create,\n  manage, publish, share, delete\n- Arena: host live quiz battles, create packs, view game history\n- Students: learner directory, readiness labels, support queue, cohort\n  health, CSV export\n- Analytics: cross-exam performance trends, charts, Arena analytics\n- Integrations: connect/manage Google Classroom, Calendar, Drive"
+      ],
+      "origin": "synthesizer",
+      "human_verified": false
+    }
+  ]
+}
