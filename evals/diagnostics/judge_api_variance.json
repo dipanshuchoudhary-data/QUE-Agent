@@ -1,0 +1,257 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "configs": {
+    "temp0_no_seed": {
+      "r16": {
+        "calls": 5,
+        "errors": 0,
+        "identical_replies": false,
+        "identical_scores": false,
+        "metrics": {
+          "recall": {
+            "values": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "precision": {
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "relevancy": {
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "faithfulness": {
+            "values": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "answer_relevancy": {
+            "values": [
+              0.5,
+              0.75,
+              0.8,
+              0.7,
+              0.75
+            ],
+            "range": 0.3,
+            "sd": 0.105
+          },
+          "correctness": {
+            "values": [
+              0.4,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "range": 0.1,
+            "sd": 0.04
+          }
+        }
+      },
+      "s03": {
+        "calls": 5,
+        "errors": 0,
+        "identical_replies": false,
+        "identical_scores": false,
+        "metrics": {
+          "recall": {
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "precision": {
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "relevancy": {
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "faithfulness": {
+            "values": [
+              0.4,
+              0.4,
+              0.5,
+              0.4,
+              0.2
+            ],
+            "range": 0.3,
+            "sd": 0.098
+          },
+          "answer_relevancy": {
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "correctness": {
+            "values": [
+              0.4,
+              0.5,
+              0.4,
+              0.5,
+              0.5
+            ],
+            "range": 0.1,
+            "sd": 0.049
+          }
+        }
+      },
+      "s17": {
+        "calls": 5,
+        "errors": 0,
+        "identical_replies": false,
+        "identical_scores": false,
+        "metrics": {
+          "recall": {
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "range": 1.0,
+            "sd": 0.4
+          },
+          "precision": {
+            "values": [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "range": 1.0,
+            "sd": 0.49
+          },
+          "relevancy": {
+            "values": [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "range": 1.0,
+            "sd": 0.4
+          },
+          "faithfulness": {
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "answer_relevancy": {
+            "values": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          },
+          "correctness": {
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "range": 0.0,
+            "sd": 0.0
+          }
+        }
+      }
+    },
+    "temp0_seed": {
+      "r16": {
+        "calls": 1,
+        "errors": 1,
+        "identical_replies": null,
+        "identical_scores": null,
+        "metrics": {}
+      },
+      "s03": {
+        "calls": 1,
+        "errors": 1,
+        "identical_replies": null,
+        "identical_scores": null,
+        "metrics": {}
+      },
+      "s17": {
+        "calls": 1,
+        "errors": 1,
+        "identical_replies": null,
+        "identical_scores": null,
+        "metrics": {}
+      }
+    }
+  },
+  "errors": [
+    "temp0_seed/r16: Error code: 400 - [{'error': {'code': 400, 'message': 'Invalid JSON payload received. Unknown name \"seed\": Cannot find field.', 'status': 'INVALID_ARGUMENT', 'd",
+    "temp0_seed/s03: Error code: 400 - [{'error': {'code': 400, 'message': 'Invalid JSON payload received. Unknown name \"seed\": Cannot find field.', 'status': 'INVALID_ARGUMENT', 'd",
+    "temp0_seed/s17: Error code: 400 - [{'error': {'code': 400, 'message': 'Invalid JSON payload received. Unknown name \"seed\": Cannot find field.', 'status': 'INVALID_ARGUMENT', 'd"
+  ]
+}
