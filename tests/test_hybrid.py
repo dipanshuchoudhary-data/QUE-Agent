@@ -9,7 +9,12 @@ from tests.conftest import requires_knowledge
 from tests.test_rag import FakeEmbeddings
 
 from app.core.config import Settings, get_settings
-from app.knowledge.hybrid import reciprocal_rank_fusion, select_hybrid
+from app.knowledge.hybrid import (
+    fuse_by_document,
+    pin_dense_leader,
+    reciprocal_rank_fusion,
+    select_hybrid,
+)
 from app.knowledge.ingest import build_index
 from app.knowledge.paths import MANIFEST_PATH
 from app.knowledge.retrieve import select_knowledge
@@ -45,6 +50,7 @@ def hybrid_settings(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Settings
         que_rag_candidate_k=10,
         que_rag_rrf_k=60,
         que_rag_fallback_keyword=True,
+        que_rag_rerank_enabled=False,
     )
     yield settings
     clear_sparse_cache()
@@ -89,6 +95,36 @@ def test_rrf_prefers_complementary_hits():
     assert "a" in ids
     # Chunk a appears in both lists → higher RRF than single-list peers at same rank.
     assert ids.index("a") < ids.index("b")
+
+
+def test_document_fusion_credits_split_chunks_of_the_same_guide():
+    """A guide ranked first by dense and second by BM25 on a different chunk
+    must outrank a guide that is merely present in both lists."""
+    dense = [
+        _chunk("pub-how", "publishing", "how to publish", score=0.72),
+        _chunk("prob", "common-problems", "publishing problems", score=0.70),
+    ]
+    sparse = [
+        _chunk("acct", "account-settings", "account faq", score=14.0),
+        _chunk("pub-faq", "publishing", "publish faq", score=12.0),
+        _chunk("prob", "common-problems", "publishing problems", score=11.0),
+    ]
+    fused = fuse_by_document([dense, sparse], rrf_k=60)
+    assert [hit.doc_id for hit in fused[:2]] == ["publishing", "common-problems"]
+    assert fused[0].chunk_id == "pub-how"
+
+
+def test_pin_dense_leader_restores_evicted_rank_one_guide():
+    dense = [
+        _chunk("create", "creating-exams", "create a quiz", score=0.8),
+        _chunk("arena", "arena", "arena pack", score=0.6),
+    ]
+    top = [
+        _chunk("arena", "arena", "arena pack", score=0.03),
+        _chunk("overview", "product-overview", "overview", score=0.02),
+    ]
+    pinned = pin_dense_leader(top, dense, min_score=0.28)
+    assert [hit.doc_id for hit in pinned] == ["arena", "creating-exams"]
 
 
 def test_unique_by_doc_id_keeps_first_chunk_skips_core():
@@ -203,6 +239,7 @@ def test_select_knowledge_hybrid_mode(hybrid_settings: Settings):
         que_embedding_model="fake/hash-emb",
         que_rag_top_k=5,
         que_rag_fallback_keyword=True,
+        que_rag_rerank_enabled=False,
     )
     # Without hybrid flag, select_knowledge uses dense (needs embeddings).
     # Call select_dense directly to assert dense path still works when hybrid off.
