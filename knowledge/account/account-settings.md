@@ -81,6 +81,9 @@ Professional title: your job title or role description.
 Avatar: upload a profile picture. Supported image formats. The avatar
 appears in the sidebar and account areas.
 
+Email changes go through a separate authentication flow, not through the
+Profile tab directly.
+
 ## Preferences Tab
 
 Theme: choose Light, Dark, or System (follows your device setting).
@@ -107,6 +110,9 @@ flagged items. Default: on.
 
 Preferences are saved locally in your browser (localStorage). They do
 not sync across devices.
+
+Preferences (theme, density, motion, and similar) are saved in your
+browser's local storage, so they do not sync across devices or browsers.
 
 ## Workspace Tab
 
@@ -146,6 +152,10 @@ backend yet. The toggle is read-only/disabled.
 Account deactivation: links to support contact for account deletion
 requests. Not a self-service action.
 
+Account deletion is handled by contacting support; it is not a self-
+service feature in Settings. The two-factor authentication (2FA) toggle
+is visible but not active yet; it is a planned feature.
+
 ## Notifications Tab
 
 Configure which in-app notifications you receive:
@@ -178,38 +188,6 @@ relaxed.
 
 Tier cannot be changed by the user directly — it is set by the system
 or admin. An Upgrade action is available in the sidebar.
-
-## Common Questions
-
-How do I change my password?
-Go to Account Settings, Security tab, and use the Change password
-option. You need your current password.
-
-How do I change the theme to dark mode?
-Go to Account Settings, Preferences tab, and set Theme to Dark.
-
-How do I set default settings for all my exams?
-Go to Account Settings, Workspace tab. Set default marks, default
-duration, and default verification schema there.
-
-Can I sign out of all devices?
-Yes. Go to Account Settings, Security tab, and use Sign out
-everywhere else.
-
-Are my preferences synced across devices?
-No. Preferences (theme, density, motion, etc.) are saved in your
-browser's local storage and do not sync across devices or browsers.
-
-How do I delete my account?
-Account deletion is handled through support contact. It is not a
-self-service feature in the Settings.
-
-How do I change my email?
-Email changes go through a separate authentication flow, not the
-Profile tab directly.
-
-Can I enable two-factor authentication?
-The 2FA toggle is visible but not active yet. It is a planned feature.
 
 ## Related Features
 

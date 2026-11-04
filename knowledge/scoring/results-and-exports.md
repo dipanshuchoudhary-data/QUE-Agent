@@ -80,6 +80,12 @@ clean).
 Status: Graded or Pending Professor Review.
 Submitted at: when the exam was submitted.
 
+The integrity flag shows whether the student had any integrity
+violations during the exam (such as tab switching, leaving fullscreen,
+or phone detection); flagged results have a violation count above zero.
+Results only appear after students submit and grading completes. If
+there are no results, check the Monitoring tab for in-progress attempts.
+
 ## Score Trend
 
 The Results tab may include a score trend visualization showing how
@@ -140,6 +146,9 @@ blocked.
 Even if you try to delete an exam that has attempts, the system
 archives it instead of deleting, preserving all result history.
 
+Unpublishing or archiving only blocks new attempts; results are never
+deleted.
+
 ## Pending Professor Review
 
 When written answers (Short Answer, Long Answer) cannot be confidently
@@ -166,38 +175,6 @@ Accessed from the sidebar.
 
 Use Results to check individual performance on one exam. Use Analytics
 for portfolio-level trends and comparisons.
-
-## Common Questions
-
-Where can I see exam results?
-Open Exams from the sidebar, open the specific exam, then select the
-Results tab. Results are per-exam.
-
-How do I export results?
-On the Results tab, use the export action and choose CSV, Excel, or
-Google Sheets (if Drive is connected).
-
-Why does it say Pending Professor Review?
-One or more written answers could not be automatically scored with
-confidence. Review the flagged answers manually to complete the grading.
-
-Why are there no results?
-Results only appear after students submit and grading completes. Check
-the Monitoring tab for in-progress attempts. If nobody has submitted
-yet, there are no results to show.
-
-Do results get deleted if I unpublish or archive?
-No. Results are permanent. Unpublishing or archiving only blocks new
-attempts. Existing results remain accessible and exportable.
-
-What is the integrity flag?
-It indicates whether the student had any integrity violations during
-the exam (like tab switching, leaving fullscreen, or phone detection).
-Flagged results have a violation count greater than zero.
-
-How do I see what violations happened during an attempt?
-Expand the result row to see the Integrity Review Panel with a
-violation timeline and categorized violation counts.
 
 ## Related Features
 

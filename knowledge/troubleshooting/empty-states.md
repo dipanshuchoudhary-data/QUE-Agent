@@ -161,20 +161,11 @@ If a workspace is empty, run through this checklist in order:
 6. Check integration status — for Drive/Classroom/Calendar features,
    is the service connected?
 
-## Common Questions
-
-Why is everything empty when I just signed up?
-You need to create an exam first. Everything downstream depends on
-having exams with published content and student submissions.
-
-I published my exam but Analytics is still empty. Why?
-Publishing is step 1. Students need to take the exam and submit it.
-After grading completes, Analytics will show data. Also check your
-date range filter.
-
-I imported my Classroom roster but Students workspace is empty:
-Roster import brings names, not attempt data. Students must actually
-take exams for scores and readiness to appear.
+A brand-new account is empty everywhere until you create an exam:
+everything downstream depends on exams with published content and
+student submissions. After publishing, students must take and submit the
+exam; once grading completes, Analytics shows data (also check the date
+range filter).
 
 ## Related Features
 

@@ -1,0 +1,101 @@
+{
+ "_meta": "Planted-defect probes. Each answer is a frozen row answer with one defect added, or unchanged for controls. expect: faithfulness_down (new unsupported claim must lower faithfulness), faithfulness_down_contradiction (a contradicted answer claim must appear), correctness_down (missing reference claims must lower correctness), no_change (scores must stay near the base answer).",
+ "probes": [
+  {
+   "id": "x01",
+   "base": "r12",
+   "kind": "invented_fact",
+   "answer": "**MCQ** (Multiple Choice): presents a set of answer options where exactly one is correct. The student selects one answer; grading compares to the correct option.\n\n**True/False**: a binary choice. The student selects **True** or **False**; grading compares to the correct answer.\n\nMCQ questions also award partial credit for each correct option the student selects.",
+   "expect": "faithfulness_down",
+   "note": "adds a claim no chunk states"
+  },
+  {
+   "id": "x02",
+   "base": "r22",
+   "kind": "contradiction",
+   "answer": "In Account Settings → **Notifications** tab, you can toggle:\n\n- **Attempt notifications** – milestone attempt counts\n- **Integrity alerts** – violation limit exceeded\n- **Generation complete** – AI generation finished\n- **Export complete** – export ready for download\n\nAlways visible (can be turned off by the teacher): exam published, system announcements.\n\nThese toggles filter the in-app inbox only; they do not control email delivery for these events.",
+   "expect": "faithfulness_down_contradiction",
+   "note": "flips a fact the chunk states"
+  },
+  {
+   "id": "x03",
+   "base": "r32",
+   "kind": "contradiction",
+   "answer": "To join an Arena game using a room code:\n\n1. Open the Arena join page (or click the host‑provided join link).  \n2. Enter the **room code** in the field provided.  \n3. Choose a **nickname** (5-30 characters; alphanumeric, spaces, underscores, hyphens; must be unique in the room).  \n4. Click **Join**.\n\nIf the host linked a Google Classroom course, you may select your name from the class roster instead of typing a nickname. You can join during the lobby phase; if the game has already started, you",
+   "expect": "faithfulness_down_contradiction",
+   "note": "wrong nickname length"
+  },
+  {
+   "id": "x04",
+   "base": "c03",
+   "kind": "omission",
+   "answer": "**Exam**\n- Asynchronous: students take it on their own schedule\n- Individually timed per student\n- Detailed proctoring and grading\n- Results appear in the **Results** tab",
+   "expect": "correctness_down",
+   "note": "drops every Arena fact"
+  },
+  {
+   "id": "x05",
+   "base": "s07",
+   "kind": "invented_fact",
+   "answer": "Your teacher dashboard is likely empty because no exams have been created, published, or taken by students yet. Check if you’ve created any exams and published them—without live activity, the dashboard will show minimal or no data. Start by creating an exam, approving questions, and publishing it to begin seeing activity.\n\nThe dashboard also resets itself every 24 hours.",
+   "expect": "faithfulness_down",
+   "note": "adds an invented behaviour"
+  },
+  {
+   "id": "x06",
+   "base": "t04",
+   "kind": "omission",
+   "answer": "**Likely causes first, then UI checks:**\n**Exam not published** — Unpublished or archived exams cannot be accessed.\nConfirm the exam status is **Published** in the Exams workspace.",
+   "expect": "correctness_down",
+   "note": "drops link window, verification and attempts checks"
+  },
+  {
+   "id": "x07",
+   "base": "m06",
+   "kind": "contradiction",
+   "answer": "To bring in your Classroom roster and push grades back after grading:\n\n1. Go to the **Integrations** section in the Teacher sidebar and connect your Google Classroom account.\n2. Click on an imported course, then select **Import Roster** to pull student names and enrollment into Quizzer’s **Students** workspace.\n3. After publishing an exam, open the exam’s **Links** tab, click **Assign to Classroom**, choose the course, and confirm to assign it as coursework.\n4. Once students complete the exam and grading is finished, scores must be exported to CSV and uploaded to Classroom by hand.",
+   "expect": "faithfulness_down_contradiction",
+   "note": "reverses auto sync"
+  },
+  {
+   "id": "x08",
+   "base": "p06",
+   "kind": "contradiction",
+   "answer": "To stop students from switching tabs during a test, enable the **Block Tab Switching** setting in the exam’s Proctoring and Integrity options. This setting detects and reports any tab or window switches as violations. You can find it under **Exam Settings** → **Proctoring and Integrity** when creating or editing an exam. It is disabled by default, so you must turn it on.",
+   "expect": "faithfulness_down_contradiction",
+   "note": "reverses the default"
+  },
+  {
+   "id": "x09",
+   "base": "r32",
+   "kind": "omission",
+   "answer": "To join an Arena game using a room code:\nOpen the Arena join page (or click the host‑provided join link).\nEnter the **room code** in the field provided.",
+   "expect": "correctness_down",
+   "note": "drops nickname rules, roster option and lobby/late-join facts (base changed from r17: its correctness was already near 0, so an omission could not lower it)"
+  },
+  {
+   "id": "x10",
+   "base": "r19",
+   "kind": "invented_fact",
+   "answer": "After signup, you go through a four-step onboarding flow:\n\n1. **Enter your name** and choose a persona (e.g., Teacher, Student).\n2. Fill in relevant details for that persona.\n3. The system creates your workspace and applies default settings.\n4. You’re taken to the **Dashboard**, where you can start creating exams or explore **Exams**, **Arena**, **Students**, and **Analytics**.\n\nThe whole onboarding takes about 30 seconds and ends with a short quiz.",
+   "expect": "faithfulness_down",
+   "note": "adds invented details"
+  },
+  {
+   "id": "x11",
+   "base": "r12",
+   "kind": "control",
+   "answer": "**MCQ** (Multiple Choice): presents a set of answer options where exactly one is correct. The student selects one answer; grading compares to the correct option.\n\n**True/False**: a binary choice. The student selects **True** or **False**; grading compares to the correct answer.",
+   "expect": "no_change",
+   "note": "unchanged answer, checks for false alarms"
+  },
+  {
+   "id": "x12",
+   "base": "r22",
+   "kind": "control",
+   "answer": "In Account Settings → **Notifications** tab, you can toggle:\n\n- **Attempt notifications** – milestone attempt counts\n- **Integrity alerts** – violation limit exceeded\n- **Generation complete** – AI generation finished\n- **Export complete** – export ready for download\n\nAlways visible (cannot be turned off): exam published, system announcements.\n\nThese toggles filter the in-app inbox only; they do not control email delivery for these events.",
+   "expect": "no_change",
+   "note": "unchanged answer, checks for false alarms"
+  }
+ ]
+}

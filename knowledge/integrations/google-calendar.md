@@ -65,6 +65,11 @@ details, or cancel scheduled events.
 Calendar insights: view scheduling overview from the Calendar
 integration dashboard section.
 
+Quizzer creates the event on your own primary calendar and does not
+automatically invite students; students see it only if you share your
+calendar or send the invite. You can cancel or update scheduled exam
+events from the Calendar section in Integrations.
+
 ## How Scheduling Works
 
 Scheduling is teacher-initiated, not automatic. Publishing an exam
@@ -79,6 +84,11 @@ When you schedule an exam:
 
 You can update or cancel the event later. Changes in Quizzer are
 reflected in your Google Calendar.
+
+Publishing does not automatically create a calendar event; scheduling is
+a separate action after publishing. The calendar event does not control
+access: the link window (available_until) controls when students can
+start.
 
 ## Plan Availability
 
@@ -99,31 +109,6 @@ inbox, based on upcoming scheduled events.
 Scheduling does not affect the exam's link window or availability.
 The calendar event is informational — it does not automatically
 open or close the exam link.
-
-## Common Questions
-
-How do I schedule an exam on Google Calendar?
-Connect Google Calendar from Integrations first. Then, after publishing
-an exam, use the Calendar section to schedule it. A calendar event will
-be created with the exam link.
-
-Does publishing automatically create a calendar event?
-No. Scheduling is a separate action. You must explicitly schedule it
-after publishing.
-
-Does the calendar event control when students can access the exam?
-No. The calendar event is informational. The link window
-(available_until) controls when students can start. These are
-independent.
-
-Can I cancel a scheduled event?
-Yes. From the Calendar section in Integrations, you can cancel or
-update scheduled exam events.
-
-Can students see the calendar event?
-If you share your Google Calendar or send the calendar invite, students
-can see the event. Quizzer creates the event on YOUR primary calendar —
-it does not automatically invite students.
 
 ## Related Features
 

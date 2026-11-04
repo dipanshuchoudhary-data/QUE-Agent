@@ -119,6 +119,12 @@ that specific combination. A different name with the same enrollment
 number might or might not match, depending on the exact field
 configuration.
 
+The verification schema is completely separate from grading. If a
+student enters a wrong enrollment number, the data is saved as entered;
+if it does not match a previous attempt's identity fields, the student
+may be treated as a different student. There is no correction mechanism
+after submission.
+
 ## Preset Contexts
 
 The verification schema offers preset starting configurations that
@@ -258,47 +264,6 @@ who already submitted are not asked to re-verify.
 Changing identity fields after attempts exist: may affect deduplication
 for future attempts. Existing attempt records keep their original
 verification data.
-
-## Common Questions
-
-What is Verification Schema?
-It is the identity form students fill before starting an exam. It
-collects information like name and enrollment number to identify
-students. It is not related to answer grading.
-
-Where do I configure it?
-Per-exam: Exams → open exam → Settings → Verification Schema.
-Account default: Account Settings → Workspace tab.
-
-Can I use the same fields for every exam?
-Yes. Set the default verification schema under Account Settings →
-Workspace tab. New exams inherit it automatically.
-
-What preset options are available?
-College, School, Coaching, and Minimal (name only). Each loads a
-starter set of fields that you can customize.
-
-Does the verification schema affect grading?
-No. Verification Schema collects student identity before the exam.
-Grading uses the correct answers on each question and the grading
-style setting. These are completely separate.
-
-How are students identified for attempt limits?
-Fields marked as identity fields determine uniqueness. If enrollment
-number is an identity field and Maximum Attempts is 1, a student who
-submitted with that enrollment number cannot start again.
-
-Can students change their verification info after starting?
-No. The verification data is locked once the attempt starts.
-
-What if a student enters the wrong enrollment number?
-The data is saved as entered. If it does not match a previous attempt's
-identity fields, it may be treated as a different student. There is
-no correction mechanism after submission.
-
-Can I add custom fields beyond the presets?
-Yes. Presets are starting points. You can add, remove, rename, and
-reconfigure any field.
 
 ## Related Features
 

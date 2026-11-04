@@ -1,0 +1,6003 @@
+[
+  {
+    "id": "r01",
+    "query": "How do I create a quiz?",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.67,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "creating-exams"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.create",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "product-overview::quick-start-your-first-exam-in-5-minutes::0::2af78e5df371",
+        "doc_id": "product-overview",
+        "section": "Quick Start: Your First Exam in 5 Minutes",
+        "score": 0.5941
+      },
+      {
+        "chunk_id": "product-overview::what-you-can-do::0::7b0020c6c65e",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.5911
+      },
+      {
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::0::1e2a4b681a68",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "score": 0.5789
+      },
+      {
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::1::8099303e0d0a",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "score": 0.5729
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::1::05051af6f6ce",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.5714
+      }
+    ],
+    "dense_docs_top20": [
+      "arena",
+      "common-workflows",
+      "creating-exams",
+      "product-overview",
+      "questions"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "analytics",
+      "arena",
+      "common-workflows",
+      "creating-exams",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-classroom",
+      "google-drive",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "product-overview",
+      "questions",
+      "roles"
+    ],
+    "fused_docs": [
+      "arena",
+      "product-overview",
+      "creating-exams",
+      "onboarding",
+      "common-workflows",
+      "empty-states",
+      "dashboard",
+      "account-settings"
+    ],
+    "final": [
+      {
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::0::1e2a4b681a68",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "score": 0.1371
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::1::05051af6f6ce",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.0313
+      },
+      {
+        "chunk_id": "arena::common-questions::0::e7d91fbb2b39",
+        "doc_id": "arena",
+        "section": "Common Questions",
+        "score": 0.024
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To create a quiz, go to the Dashboard in the sidebar and click the Create Exam quick action card or press Ctrl+K (or Cmd+K) and type \"Create Exam\" to open the creation wizard at the /quizzes/create page",
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::0::1e2a4b681a68",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "support": 0.94,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 3,
+        "in_final": true
+      },
+      {
+        "claim": "Next, enter your exam title, add your source content by pasting text, uploading files, or entering URLs, and choose your AI generation mode",
+        "chunk_id": "creating-exams::common-questions::0::f1bfc14829a0",
+        "doc_id": "creating-exams",
+        "section": "Common Questions",
+        "support": 0.62,
+        "in_expected_doc": true,
+        "dense_rank_top20": 16,
+        "bm25_rank_top20": 6,
+        "doc_rank_fused": 3,
+        "in_final": false
+      },
+      {
+        "claim": "Finally, click the Generate button at the bottom of the wizard to produce your questions",
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::1::05051af6f6ce",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "support": 0.71,
+        "in_expected_doc": false,
+        "dense_rank_top20": 5,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 5,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "r03",
+    "query": "How do I publish my exam?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.67,
+      "precision": 0.5,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "publishing"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.publish",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "publishing::how-to-publish::0::3078e936f33f",
+        "doc_id": "publishing",
+        "section": "How to Publish",
+        "score": 0.7074
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.6986
+      },
+      {
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::442aa8566a68",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "score": 0.6841
+      },
+      {
+        "chunk_id": "publishing::common-questions::0::2bf94a098528",
+        "doc_id": "publishing",
+        "section": "Common Questions",
+        "score": 0.6564
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::1::05051af6f6ce",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.6543
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "creating-exams",
+      "empty-states",
+      "lifecycle",
+      "publishing",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "common-problems",
+      "common-workflows",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-classroom",
+      "google-drive",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "roles",
+      "students-workspace"
+    ],
+    "fused_docs": [
+      "publishing",
+      "account-settings",
+      "common-workflows",
+      "google-classroom",
+      "navigation",
+      "onboarding"
+    ],
+    "final": [
+      {
+        "chunk_id": "publishing::how-to-publish::0::3078e936f33f",
+        "doc_id": "publishing",
+        "section": "How to Publish",
+        "score": 0.9711
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.4339
+      },
+      {
+        "chunk_id": "google-classroom::common-questions::0::72bacaa04832",
+        "doc_id": "google-classroom",
+        "section": "Common Questions",
+        "score": 0.1307
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To publish your exam, first ensure every question shows a green Approved badge on the Questions tab",
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::442aa8566a68",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "support": 0.91,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Next, click Exams in the left sidebar and open your exam workspace by clicking your exam card",
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::442aa8566a68",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "support": 0.75,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Finally, click the prominent emerald-green Publish button located on the exam card or at the top of the exam workspace view",
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::442aa8566a68",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "support": 0.83,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "r06",
+    "query": "Connect Google Classroom and push grades",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.5,
+      "relevancy": 0.8
+    },
+    "expected_docs": [
+      "google-classroom"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574",
+        "doc_id": "google-classroom",
+        "section": "Step-by-Step UI Guide: Connecting and Using Google Classroom",
+        "score": 0.6429
+      },
+      {
+        "chunk_id": "common-workflows::share-results-with-students-via-classroom::0::6ec05416e81f",
+        "doc_id": "common-workflows",
+        "section": "Share Results with Students via Classroom",
+        "score": 0.6324
+      },
+      {
+        "chunk_id": "google-classroom::overview::0::ddc9ba21311d",
+        "doc_id": "google-classroom",
+        "section": "Overview",
+        "score": 0.6188
+      },
+      {
+        "chunk_id": "google-classroom::available-features::1::14b8ae634f61",
+        "doc_id": "google-classroom",
+        "section": "Available Features",
+        "score": 0.6129
+      },
+      {
+        "chunk_id": "google-classroom::available-features::0::b913764e51c1",
+        "doc_id": "google-classroom",
+        "section": "Available Features",
+        "score": 0.576
+      }
+    ],
+    "dense_docs_top20": [
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "google-calendar",
+      "google-classroom",
+      "google-drive",
+      "grading",
+      "product-overview",
+      "students-workspace"
+    ],
+    "bm25_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "google-calendar",
+      "google-classroom",
+      "google-drive",
+      "navigation",
+      "product-overview",
+      "students-workspace"
+    ],
+    "fused_docs": [
+      "google-classroom",
+      "common-workflows",
+      "product-overview"
+    ],
+    "final": [
+      {
+        "chunk_id": "common-workflows::share-results-with-students-via-classroom::0::6ec05416e81f",
+        "doc_id": "common-workflows",
+        "section": "Share Results with Students via Classroom",
+        "score": 0.8457
+      },
+      {
+        "chunk_id": "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574",
+        "doc_id": "google-classroom",
+        "section": "Step-by-Step UI Guide: Connecting and Using Google Classroom",
+        "score": 0.6181
+      },
+      {
+        "chunk_id": "product-overview::what-you-can-do::3::79092419134d",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.1099
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Scores are automatically pushed back to the Google Classroom coursework entry after a student submits and grading completes",
+        "chunk_id": "google-classroom::common-questions::0::72bacaa04832",
+        "doc_id": "google-classroom",
+        "section": "Common Questions",
+        "support": 0.92,
+        "in_expected_doc": true,
+        "dense_rank_top20": 6,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Teachers can also trigger a manual grade push from the Classroom section in Integrations",
+        "chunk_id": "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574",
+        "doc_id": "google-classroom",
+        "section": "Step-by-Step UI Guide: Connecting and Using Google Classroom",
+        "support": 0.86,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 6,
+        "doc_rank_fused": 1,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "r08",
+    "query": "How does grading work for short answers?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.6,
+      "precision": 0.5,
+      "relevancy": 0.7
+    },
+    "expected_docs": [
+      "grading"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "grading::written-question-grading::0::21b019279a1c",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "score": 0.6464
+      },
+      {
+        "chunk_id": "grading::common-questions::0::81d04142076e",
+        "doc_id": "grading",
+        "section": "Common Questions",
+        "score": 0.6272
+      },
+      {
+        "chunk_id": "grading::step-by-step-ui-guide-how-grading-works-and-wher::1::af78d49a8891",
+        "doc_id": "grading",
+        "section": "Step-by-Step UI Guide: How Grading Works and Where to See It",
+        "score": 0.6238
+      },
+      {
+        "chunk_id": "grading::written-question-grading::1::f7516dee4bc8",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "score": 0.6133
+      },
+      {
+        "chunk_id": "exam-settings::scoring::1::7ebaa4e18138",
+        "doc_id": "exam-settings",
+        "section": "Scoring",
+        "score": 0.6055
+      }
+    ],
+    "dense_docs_top20": [
+      "exam-settings",
+      "grading",
+      "product-overview",
+      "questions",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "arena",
+      "exam-settings",
+      "grading",
+      "publishing",
+      "questions",
+      "results-exports",
+      "terminology",
+      "verification"
+    ],
+    "fused_docs": [
+      "grading",
+      "exam-settings"
+    ],
+    "final": [
+      {
+        "chunk_id": "grading::written-question-grading::0::21b019279a1c",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "score": 0.5099
+      },
+      {
+        "chunk_id": "exam-settings::scoring::1::7ebaa4e18138",
+        "doc_id": "exam-settings",
+        "section": "Scoring",
+        "score": 0.0854
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Short answer questions go through a layered smart grading pipeline that combines exact matching, fuzzy matching, keyword analysis, embedding similarity, and AI evaluation",
+        "chunk_id": "grading::overview::0::8845f3c13f58",
+        "doc_id": "grading",
+        "section": "Overview",
+        "support": 0.94,
+        "in_expected_doc": true,
+        "dense_rank_top20": 8,
+        "bm25_rank_top20": 3,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Each layer attempts to resolve the answer before escalating to the next step, and if confidence remains too low, it is marked as \"Pending Professor Review\" for manual scoring by the teacher",
+        "chunk_id": "grading::written-question-grading::1::f7516dee4bc8",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "support": 0.56,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 4,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "r09",
+    "query": "Export results to CSV or Excel",
+    "category": "basic",
+    "scores": {
+      "recall": 0.8,
+      "precision": 0.67,
+      "relevancy": 0.75
+    },
+    "expected_docs": [
+      "results-exports"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.export_results",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::1::bed5b32be3bd",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "score": 0.6057
+      },
+      {
+        "chunk_id": "common-workflows::export-results-for-record-keeping::0::75d610131f25",
+        "doc_id": "common-workflows",
+        "section": "Export Results for Record-Keeping",
+        "score": 0.5732
+      },
+      {
+        "chunk_id": "results-exports::export-options::0::0977d796dc00",
+        "doc_id": "results-exports",
+        "section": "Export Options",
+        "score": 0.5684
+      },
+      {
+        "chunk_id": "students-workspace::csv-export::0::67fc0492dea1",
+        "doc_id": "students-workspace",
+        "section": "CSV Export",
+        "score": 0.49
+      },
+      {
+        "chunk_id": "google-drive::step-by-step-ui-guide-using-google-drive-with-qu::1::2158c013a714",
+        "doc_id": "google-drive",
+        "section": "Step-by-Step UI Guide: Using Google Drive with Quizzer",
+        "score": 0.4592
+      }
+    ],
+    "dense_docs_top20": [
+      "analytics",
+      "common-workflows",
+      "google-drive",
+      "lifecycle",
+      "publishing",
+      "results-exports",
+      "students-workspace",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "arena",
+      "common-workflows",
+      "google-drive",
+      "lifecycle",
+      "navigation",
+      "notifications",
+      "product-overview",
+      "results-exports",
+      "students-workspace"
+    ],
+    "fused_docs": [
+      "results-exports",
+      "common-workflows",
+      "students-workspace",
+      "lifecycle",
+      "google-drive"
+    ],
+    "final": [
+      {
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::1::bed5b32be3bd",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "score": 0.9468
+      },
+      {
+        "chunk_id": "common-workflows::export-results-for-record-keeping::0::75d610131f25",
+        "doc_id": "common-workflows",
+        "section": "Export Results for Record-Keeping",
+        "score": 0.9078
+      },
+      {
+        "chunk_id": "students-workspace::csv-export::0::67fc0492dea1",
+        "doc_id": "students-workspace",
+        "section": "CSV Export",
+        "score": 0.1293
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "In the left sidebar, click Exams and select the exam card, then click the Results tab at the top of the workspace",
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::0::6cfc4122508a",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "support": 0.9,
+        "in_expected_doc": true,
+        "dense_rank_top20": 10,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Click the Export button (or dropdown menu) in the top-right area of the Results tab and choose your format, such as CSV or Excel",
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::1::bed5b32be3bd",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 4,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "A background job starts, and you will receive an in-app notification with a download link once it is ready",
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::1::bed5b32be3bd",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "support": 0.8,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 4,
+        "doc_rank_fused": 1,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "r10",
+    "query": "What exam settings control time limits?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.5,
+      "precision": 0.5,
+      "relevancy": 0.75
+    },
+    "expected_docs": [
+      "exam-settings"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.settings",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "exam-settings::overview::0::d791c07559e4",
+        "doc_id": "exam-settings",
+        "section": "Overview",
+        "score": 0.6729
+      },
+      {
+        "chunk_id": "exam-settings::timing::0::5feb3bba46e1",
+        "doc_id": "exam-settings",
+        "section": "Timing",
+        "score": 0.6471
+      },
+      {
+        "chunk_id": "exam-settings::common-questions::0::7932136cc143",
+        "doc_id": "exam-settings",
+        "section": "Common Questions",
+        "score": 0.6466
+      },
+      {
+        "chunk_id": "exam-settings::step-by-step-ui-guide-configuring-exam-settings::0::80c977524fef",
+        "doc_id": "exam-settings",
+        "section": "Step-by-Step UI Guide: Configuring Exam Settings",
+        "score": 0.6188
+      },
+      {
+        "chunk_id": "exam-settings::how-to-access::0::78a1da537ce0",
+        "doc_id": "exam-settings",
+        "section": "How to Access",
+        "score": 0.6106
+      }
+    ],
+    "dense_docs_top20": [
+      "account-settings",
+      "arena",
+      "exam-settings",
+      "lifecycle",
+      "navigation",
+      "product-overview",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "common-workflows",
+      "exam-settings",
+      "lifecycle",
+      "live-monitoring",
+      "navigation",
+      "product-overview",
+      "publishing",
+      "questions",
+      "terminology",
+      "verification"
+    ],
+    "fused_docs": [
+      "exam-settings",
+      "product-overview",
+      "lifecycle"
+    ],
+    "final": [
+      {
+        "chunk_id": "exam-settings::overview::0::d791c07559e4",
+        "doc_id": "exam-settings",
+        "section": "Overview",
+        "score": 0.7366
+      },
+      {
+        "chunk_id": "product-overview::what-you-can-do::1::574ef6012b4d",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.2852
+      },
+      {
+        "chunk_id": "lifecycle::lifecycle-states::0::ec98d36101e2",
+        "doc_id": "lifecycle",
+        "section": "Lifecycle States",
+        "score": 0.0016
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To set exam time limits, go to Exams (sidebar), open the exam, and select the Settings tab",
+        "chunk_id": "product-overview::what-you-can-do::1::574ef6012b4d",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "support": 0.78,
+        "in_expected_doc": false,
+        "dense_rank_top20": 10,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 2,
+        "in_final": true
+      },
+      {
+        "claim": "Near the top of the Settings page, find the Duration field to change how long each student has (default is 60 minutes, with a minimum of 5 minutes)",
+        "chunk_id": "exam-settings::step-by-step-ui-guide-configuring-exam-settings::0::80c977524fef",
+        "doc_id": "exam-settings",
+        "section": "Step-by-Step UI Guide: Configuring Exam Settings",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "r11",
+    "query": "How do students take an exam from a link?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.2,
+      "precision": 0.5,
+      "relevancy": 0.33
+    },
+    "expected_docs": [
+      "taking-exams"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.share",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "taking-exams::how-students-access-an-exam::0::1449c10991a1",
+        "doc_id": "taking-exams",
+        "section": "How Students Access an Exam",
+        "score": 0.6994
+      },
+      {
+        "chunk_id": "taking-exams::overview::0::e91642f8be9a",
+        "doc_id": "taking-exams",
+        "section": "Overview",
+        "score": 0.6711
+      },
+      {
+        "chunk_id": "taking-exams::step-by-step-ui-guide-what-students-see-when-tak::0::690e94619db4",
+        "doc_id": "taking-exams",
+        "section": "Step-by-Step UI Guide: What Students See When Taking an Exam",
+        "score": 0.6582
+      },
+      {
+        "chunk_id": "taking-exams::common-questions::0::20b3a2dec9c9",
+        "doc_id": "taking-exams",
+        "section": "Common Questions",
+        "score": 0.6521
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.6251
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "lifecycle",
+      "product-overview",
+      "publishing",
+      "roles",
+      "taking-exams"
+    ],
+    "bm25_docs_top20": [
+      "arena",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-calendar",
+      "google-classroom",
+      "product-overview",
+      "publishing",
+      "roles",
+      "taking-exams"
+    ],
+    "fused_docs": [
+      "google-classroom",
+      "taking-exams",
+      "common-workflows",
+      "product-overview",
+      "arena",
+      "publishing",
+      "dashboard"
+    ],
+    "final": [
+      {
+        "chunk_id": "taking-exams::how-students-access-an-exam::0::1449c10991a1",
+        "doc_id": "taking-exams",
+        "section": "How Students Access an Exam",
+        "score": 0.9713
+      },
+      {
+        "chunk_id": "product-overview::common-questions::0::acba0f8cabeb",
+        "doc_id": "product-overview",
+        "section": "Common Questions",
+        "score": 0.5468
+      },
+      {
+        "chunk_id": "arena::how-arena-differs-from-graded-exams::0::3c43e19a0908",
+        "doc_id": "arena",
+        "section": "How Arena Differs from Graded Exams",
+        "score": 0.1482
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Students click the published exam link shared by the teacher to open the start page in their web browser",
+        "chunk_id": "taking-exams::step-by-step-ui-guide-what-students-see-when-tak::0::690e94619db4",
+        "doc_id": "taking-exams",
+        "section": "Step-by-Step UI Guide: What Students See When Taking an Exam",
+        "support": 0.88,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "Next, they read the exam info, fill out the identity verification form (and enter an access code if required), and click the Start Exam button",
+        "chunk_id": "taking-exams::step-by-step-ui-guide-what-students-see-when-tak::0::690e94619db4",
+        "doc_id": "taking-exams",
+        "section": "Step-by-Step UI Guide: What Students See When Taking an Exam",
+        "support": 0.71,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "After granting any necessary browser permissions for fullscreen or webcam access, they answer the questions in the exam interface",
+        "chunk_id": "taking-exams::step-3-starting-the-attempt::0::2aeaa94f16c6",
+        "doc_id": "taking-exams",
+        "section": "Step 3: Starting the Attempt",
+        "support": 0.58,
+        "in_expected_doc": true,
+        "dense_rank_top20": 20,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "Finally, when ready, they click the Submit button and confirm to complete the exam",
+        "chunk_id": "taking-exams::step-by-step-ui-guide-what-students-see-when-tak::3::047cd8746a18",
+        "doc_id": "taking-exams",
+        "section": "Step-by-Step UI Guide: What Students See When Taking an Exam",
+        "support": 0.71,
+        "in_expected_doc": true,
+        "dense_rank_top20": 11,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 2,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "r15",
+    "query": "Teacher vs student role permissions",
+    "category": "basic",
+    "scores": {
+      "recall": 0.5,
+      "precision": 1.0,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "roles"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "complex_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "roles::teacher-role::0::e0ecda91254f",
+        "doc_id": "roles",
+        "section": "Teacher Role",
+        "score": 0.6239
+      },
+      {
+        "chunk_id": "roles::teacher-role::1::89438c902e6f",
+        "doc_id": "roles",
+        "section": "Teacher Role",
+        "score": 0.575
+      },
+      {
+        "chunk_id": "roles::student-role::0::d7acb8568535",
+        "doc_id": "roles",
+        "section": "Student Role",
+        "score": 0.5745
+      },
+      {
+        "chunk_id": "roles::permission-summary-table::0::23166eecd967",
+        "doc_id": "roles",
+        "section": "Permission Summary Table",
+        "score": 0.5683
+      },
+      {
+        "chunk_id": "roles::how-to-check-your-role::0::3a317fcdb95e",
+        "doc_id": "roles",
+        "section": "How to Check Your Role",
+        "score": 0.5658
+      }
+    ],
+    "dense_docs_top20": [
+      "analytics",
+      "creating-exams",
+      "navigation",
+      "onboarding",
+      "roles",
+      "students-workspace"
+    ],
+    "bm25_docs_top20": [
+      "analytics",
+      "creating-exams",
+      "dashboard",
+      "navigation",
+      "onboarding",
+      "roles",
+      "students-workspace",
+      "terminology"
+    ],
+    "fused_docs": [
+      "roles",
+      "students-workspace"
+    ],
+    "final": [
+      {
+        "chunk_id": "roles::teacher-role::0::e0ecda91254f",
+        "doc_id": "roles",
+        "section": "Teacher Role",
+        "score": 0.2149
+      },
+      {
+        "chunk_id": "students-workspace::students-workspace-vs-student-accounts::0::9f9fffc841fe",
+        "doc_id": "students-workspace",
+        "section": "Students Workspace vs Student Accounts",
+        "score": 0.0075
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Teachers have full access to the sidebar workspaces (Dashboard, Exams, Arena, Students, Analytics, Integrations), exam workspace tabs, and account settings, allowing them to create and manage assessments",
+        "chunk_id": "roles::permission-summary-table::0::23166eecd967",
+        "doc_id": "roles",
+        "section": "Permission Summary Table",
+        "support": 0.68,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "In contrast, students who select the Student persona during onboarding receive a deliberately limited interface and cannot access the Exams workspace, Arena hosting, Analytics, or teacher tools",
+        "chunk_id": "roles::student-role::0::d7acb8568535",
+        "doc_id": "roles",
+        "section": "Student Role",
+        "support": 0.82,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 3,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Students enter exams exclusively through shared links, while exam takers without an account only interact with a separate, focused exam interface using a verification form and attempt token",
+        "chunk_id": "product-overview::two-separate-experiences::0::31f920f6b56c",
+        "doc_id": "product-overview",
+        "section": "Two Separate Experiences",
+        "support": 0.65,
+        "in_expected_doc": false,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "r16",
+    "query": "Students workspace cohort health",
+    "category": "basic",
+    "scores": {
+      "recall": 0.67,
+      "precision": 0.67,
+      "relevancy": 0.8
+    },
+    "expected_docs": [
+      "students-workspace"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "students-workspace::cohort-health::0::6423e5f8e578",
+        "doc_id": "students-workspace",
+        "section": "Cohort Health",
+        "score": 0.6499
+      },
+      {
+        "chunk_id": "terminology::cohort::0::b6611c2c51bb",
+        "doc_id": "terminology",
+        "section": "Cohort",
+        "score": 0.5181
+      },
+      {
+        "chunk_id": "students-workspace::metrics-strip::0::39b0631c14af",
+        "doc_id": "students-workspace",
+        "section": "Metrics Strip",
+        "score": 0.4895
+      },
+      {
+        "chunk_id": "terminology::students-workspace::0::66a6d224c0c7",
+        "doc_id": "terminology",
+        "section": "Students (Workspace)",
+        "score": 0.4879
+      },
+      {
+        "chunk_id": "students-workspace::how-to-access::0::ee65f2b10033",
+        "doc_id": "students-workspace",
+        "section": "How to Access",
+        "score": 0.4877
+      }
+    ],
+    "dense_docs_top20": [
+      "account-settings",
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "google-classroom",
+      "navigation",
+      "students-workspace",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "common-problems",
+      "empty-states",
+      "navigation",
+      "product-overview",
+      "roles",
+      "students-workspace",
+      "terminology"
+    ],
+    "fused_docs": [
+      "students-workspace",
+      "terminology",
+      "navigation"
+    ],
+    "final": [
+      {
+        "chunk_id": "students-workspace::cohort-health::0::6423e5f8e578",
+        "doc_id": "students-workspace",
+        "section": "Cohort Health",
+        "score": 0.9961
+      },
+      {
+        "chunk_id": "navigation::teacher-sidebar::1::62bb02f7a276",
+        "doc_id": "navigation",
+        "section": "Teacher Sidebar",
+        "score": 0.0067
+      },
+      {
+        "chunk_id": "terminology::cohort::0::b6611c2c51bb",
+        "doc_id": "terminology",
+        "section": "Cohort",
+        "score": 0.0038
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To access information about cohort health, open the Students workspace by clicking Students in the left sidebar",
+        "chunk_id": "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::0::9524bafba6b5",
+        "doc_id": "google-classroom",
+        "section": "Step-by-Step UI Guide: Connecting and Using Google Classroom",
+        "support": 0.44,
+        "in_expected_doc": false,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      },
+      {
+        "claim": "Below the scope bar, check the metrics strip, which includes a \"Cohort count\" card showing the number of distinct cohorts or groups",
+        "chunk_id": "students-workspace::metrics-strip::0::39b0631c14af",
+        "doc_id": "students-workspace",
+        "section": "Metrics Strip",
+        "support": 0.53,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 7,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Additionally, a cohort health visualization displays the distribution of readiness across the student population to provide a snapshot of overall performance",
+        "chunk_id": "students-workspace::cohort-health::0::6423e5f8e578",
+        "doc_id": "students-workspace",
+        "section": "Cohort Health",
+        "support": 0.69,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 1,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "r18",
+    "query": "Import source files from Google Drive",
+    "category": "basic",
+    "scores": {
+      "recall": 0.5,
+      "precision": 1.0,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "google-drive"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "skipped",
+    "dense_top": [
+      {
+        "chunk_id": "google-drive::importing-source-files::0::a293364b15e6",
+        "doc_id": "google-drive",
+        "section": "Importing Source Files",
+        "score": 0.6414
+      },
+      {
+        "chunk_id": "google-drive::step-by-step-ui-guide-using-google-drive-with-qu::0::067a8918caf1",
+        "doc_id": "google-drive",
+        "section": "Step-by-Step UI Guide: Using Google Drive with Quizzer",
+        "score": 0.5829
+      },
+      {
+        "chunk_id": "google-drive::overview::0::6498219970f8",
+        "doc_id": "google-drive",
+        "section": "Overview",
+        "score": 0.5365
+      },
+      {
+        "chunk_id": "google-drive::limitations::0::6279488f1345",
+        "doc_id": "google-drive",
+        "section": "Limitations",
+        "score": 0.5297
+      },
+      {
+        "chunk_id": "google-drive::common-questions::0::93c0c4af5fb6",
+        "doc_id": "google-drive",
+        "section": "Common Questions",
+        "score": 0.5258
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "creating-exams",
+      "google-classroom",
+      "google-drive"
+    ],
+    "bm25_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "creating-exams",
+      "google-drive",
+      "product-overview"
+    ],
+    "fused_docs": [
+      "google-drive"
+    ],
+    "final": [
+      {
+        "chunk_id": "google-drive::importing-source-files::0::a293364b15e6",
+        "doc_id": "google-drive",
+        "section": "Importing Source Files",
+        "score": 0.0328
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To import source files from Google Drive, first connect Drive by clicking **Integrations** in the left sidebar, finding the Google Drive card, and clicking **Connect**",
+        "chunk_id": "google-drive::step-by-step-ui-guide-using-google-drive-with-qu::0::067a8918caf1",
+        "doc_id": "google-drive",
+        "section": "Step-by-Step UI Guide: Using Google Drive with Quizzer",
+        "support": 0.77,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Next, start creating an exam from the Dashboard quick actions or by pressing Ctrl+K and typing \"Create Exam.\" In the source content area's **Files tab**, click the **Import from Google Drive** button, browse or search for your file, and click **Select or Import**",
+        "chunk_id": "google-drive::step-by-step-ui-guide-using-google-drive-with-qu::0::067a8918caf1",
+        "doc_id": "google-drive",
+        "section": "Step-by-Step UI Guide: Using Google Drive with Quizzer",
+        "support": 0.88,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "r21",
+    "query": "How do I send feedback about Quizzer?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "feedback"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "feedback::overview::0::2b4a074dcbbe",
+        "doc_id": "feedback",
+        "section": "Overview",
+        "score": 0.6737
+      },
+      {
+        "chunk_id": "product-overview::common-questions::0::acba0f8cabeb",
+        "doc_id": "product-overview",
+        "section": "Common Questions",
+        "score": 0.5037
+      },
+      {
+        "chunk_id": "product-overview::overview::0::c86134ffb8e8",
+        "doc_id": "product-overview",
+        "section": "Overview",
+        "score": 0.4989
+      },
+      {
+        "chunk_id": "feedback::step-by-step-report-a-bug::0::ada602278cd3",
+        "doc_id": "feedback",
+        "section": "Step-by-Step: Report a Bug",
+        "score": 0.4983
+      },
+      {
+        "chunk_id": "product-overview::what-you-can-do::2::c9aaa367fa36",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.4862
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "feedback",
+      "navigation",
+      "product-overview",
+      "questions"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "common-problems",
+      "exam-settings",
+      "feedback",
+      "google-calendar",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "roles"
+    ],
+    "fused_docs": [
+      "feedback",
+      "common-problems",
+      "product-overview",
+      "navigation"
+    ],
+    "final": [
+      {
+        "chunk_id": "feedback::overview::0::2b4a074dcbbe",
+        "doc_id": "feedback",
+        "section": "Overview",
+        "score": 0.9952
+      },
+      {
+        "chunk_id": "common-problems::common-questions::0::fcd008094cee",
+        "doc_id": "common-problems",
+        "section": "Common Questions",
+        "score": 0.0419
+      },
+      {
+        "chunk_id": "product-overview::common-questions::0::acba0f8cabeb",
+        "doc_id": "product-overview",
+        "section": "Common Questions",
+        "score": 0.0394
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "On desktop, scroll to the **ACCOUNT** section in the left sidebar and click **Send feedback** to open the `/feedback` page",
+        "chunk_id": "feedback::how-to-open-feedback-current-ui::0::7e49961d0901",
+        "doc_id": "feedback",
+        "section": "How to Open Feedback (current UI)",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 20,
+        "bm25_rank_top20": 3,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "On mobile, open the account or more menu from the bottom navigation and tap **Send feedback**",
+        "chunk_id": "feedback::how-to-open-feedback-current-ui::0::7e49961d0901",
+        "doc_id": "feedback",
+        "section": "How to Open Feedback (current UI)",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 20,
+        "bm25_rank_top20": 3,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "r24",
+    "query": "Exam lifecycle draft published archived",
+    "category": "basic",
+    "scores": {
+      "recall": 0.67,
+      "precision": 1.0,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "lifecycle"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.publish",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "lifecycle::lifecycle-states::0::ec98d36101e2",
+        "doc_id": "lifecycle",
+        "section": "Lifecycle States",
+        "score": 0.69
+      },
+      {
+        "chunk_id": "lifecycle::overview::0::dcedd27afddc",
+        "doc_id": "lifecycle",
+        "section": "Overview",
+        "score": 0.6548
+      },
+      {
+        "chunk_id": "publishing::draft-vs-published-vs-archived::0::2f9fd82c86bc",
+        "doc_id": "publishing",
+        "section": "Draft vs Published vs Archived",
+        "score": 0.6489
+      },
+      {
+        "chunk_id": "lifecycle::state-transitions::0::2a01606b69c1",
+        "doc_id": "lifecycle",
+        "section": "State Transitions",
+        "score": 0.6361
+      },
+      {
+        "chunk_id": "lifecycle::common-questions::0::ae4f876ff746",
+        "doc_id": "lifecycle",
+        "section": "Common Questions",
+        "score": 0.618
+      }
+    ],
+    "dense_docs_top20": [
+      "common-workflows",
+      "creating-exams",
+      "lifecycle",
+      "publishing",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "empty-states",
+      "lifecycle",
+      "navigation",
+      "publishing",
+      "questions",
+      "roles",
+      "terminology"
+    ],
+    "fused_docs": [
+      "lifecycle",
+      "publishing",
+      "terminology"
+    ],
+    "final": [
+      {
+        "chunk_id": "lifecycle::lifecycle-states::0::ec98d36101e2",
+        "doc_id": "lifecycle",
+        "section": "Lifecycle States",
+        "score": 0.9586
+      },
+      {
+        "chunk_id": "terminology::exam::0::4201fb70de7c",
+        "doc_id": "terminology",
+        "section": "Exam",
+        "score": 0.4596
+      },
+      {
+        "chunk_id": "publishing::draft-vs-published-vs-archived::0::2f9fd82c86bc",
+        "doc_id": "publishing",
+        "section": "Draft vs Published vs Archived",
+        "score": 0.3134
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "An exam exists in three lifecycle states: Draft (being prepared and not accessible to students), Published (live and accessible via share link), and Archived (retired with no new attempts, but results preserved)",
+        "chunk_id": "lifecycle::lifecycle-states::0::ec98d36101e2",
+        "doc_id": "lifecycle",
+        "section": "Lifecycle States",
+        "support": 0.89,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 3,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "You can transition an exam from Draft to Published using the canonical click path `exam.publish` (approve all questions, then click **Publish**)",
+        "chunk_id": "lifecycle::state-transitions::0::2a01606b69c1",
+        "doc_id": "lifecycle",
+        "section": "State Transitions",
+        "support": 0.78,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "To archive an exam when it is finished, click the Archive action on the exam card in the Exams workspace",
+        "chunk_id": "lifecycle::typical-teacher-workflow-with-ui-steps::1::0362899678e0",
+        "doc_id": "lifecycle",
+        "section": "Typical Teacher Workflow (with UI steps)",
+        "support": 0.86,
+        "in_expected_doc": true,
+        "dense_rank_top20": 11,
+        "bm25_rank_top20": 11,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "r25",
+    "query": "Common workflow create exam then share link",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.67,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "common-workflows"
+    ],
+    "prod_route": "tool",
+    "prod_execution_class": "tool_required",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.7264
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::1::05051af6f6ce",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.6982
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::0::bac62b1f5418",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.6729
+      },
+      {
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::1::f0f5e6ea4aa8",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "score": 0.6666
+      },
+      {
+        "chunk_id": "lifecycle::typical-teacher-workflow-with-ui-steps::0::d51a2dc2b2b9",
+        "doc_id": "lifecycle",
+        "section": "Typical Teacher Workflow (with UI steps)",
+        "score": 0.6499
+      }
+    ],
+    "dense_docs_top20": [
+      "common-workflows",
+      "creating-exams",
+      "empty-states",
+      "lifecycle",
+      "navigation",
+      "product-overview",
+      "publishing"
+    ],
+    "bm25_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "creating-exams",
+      "empty-states",
+      "google-calendar",
+      "google-classroom",
+      "lifecycle",
+      "navigation",
+      "product-overview",
+      "publishing",
+      "roles",
+      "terminology"
+    ],
+    "fused_docs": [
+      "lifecycle",
+      "publishing",
+      "common-workflows",
+      "product-overview",
+      "google-calendar"
+    ],
+    "final": [
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.9223
+      },
+      {
+        "chunk_id": "lifecycle::typical-teacher-workflow-with-ui-steps::0::d51a2dc2b2b9",
+        "doc_id": "lifecycle",
+        "section": "Typical Teacher Workflow (with UI steps)",
+        "score": 0.5842
+      },
+      {
+        "chunk_id": "product-overview::the-core-loop::0::c164c9aea3b3",
+        "doc_id": "product-overview",
+        "section": "The Core Loop",
+        "score": 0.287
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To create an exam and share the link, open Create Exam from the Dashboard or press Ctrl+K and type \"Create Exam,\" then add your content, select a generation mode, and click Generate",
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::1::05051af6f6ce",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "support": 0.86,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 3,
+        "in_final": false
+      },
+      {
+        "claim": "Review and approve the questions in the Questions tab, configure your preferences in the Settings tab, and click the emerald-green Publish button",
+        "chunk_id": "lifecycle::typical-teacher-workflow-with-ui-steps::0::d51a2dc2b2b9",
+        "doc_id": "lifecycle",
+        "section": "Typical Teacher Workflow (with UI steps)",
+        "support": 0.91,
+        "in_expected_doc": false,
+        "dense_rank_top20": 5,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "Finally, click Copy Link on the success screen or find the URL on the Links tab to send it to students",
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "support": 0.9,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 3,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "r28",
+    "query": "Approve draft questions before publish",
+    "category": "multi_doc",
+    "scores": {
+      "recall": 0.8,
+      "precision": 0.6,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "questions",
+      "publishing"
+    ],
+    "prod_route": "tool",
+    "prod_execution_class": "tool_required",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "questions::step-by-step-ui-guide-reviewing-and-approving-qu::2::e7274326c34d",
+        "doc_id": "questions",
+        "section": "Step-by-Step UI Guide: Reviewing and Approving Questions",
+        "score": 0.6208
+      },
+      {
+        "chunk_id": "terminology::draft-approved-rejected::0::670ff2daa2c3",
+        "doc_id": "terminology",
+        "section": "Draft / Approved / Rejected",
+        "score": 0.5824
+      },
+      {
+        "chunk_id": "questions::question-review-workflow::0::8ed1381a98c3",
+        "doc_id": "questions",
+        "section": "Question Review Workflow",
+        "score": 0.578
+      },
+      {
+        "chunk_id": "questions::step-by-step-ui-guide-reviewing-and-approving-qu::1::1f4f4385078c",
+        "doc_id": "questions",
+        "section": "Step-by-Step UI Guide: Reviewing and Approving Questions",
+        "score": 0.5301
+      },
+      {
+        "chunk_id": "questions::bulk-actions::0::d184fa14bad3",
+        "doc_id": "questions",
+        "section": "Bulk Actions",
+        "score": 0.4975
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "creating-exams",
+      "empty-states",
+      "publishing",
+      "questions",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "common-problems",
+      "creating-exams",
+      "empty-states",
+      "lifecycle",
+      "product-overview",
+      "publishing",
+      "questions",
+      "terminology"
+    ],
+    "fused_docs": [
+      "questions",
+      "publishing",
+      "terminology",
+      "lifecycle",
+      "creating-exams"
+    ],
+    "final": [
+      {
+        "chunk_id": "terminology::draft-approved-rejected::0::670ff2daa2c3",
+        "doc_id": "terminology",
+        "section": "Draft / Approved / Rejected",
+        "score": 0.3192
+      },
+      {
+        "chunk_id": "questions::step-by-step-ui-guide-reviewing-and-approving-qu::2::e7274326c34d",
+        "doc_id": "questions",
+        "section": "Step-by-Step UI Guide: Reviewing and Approving Questions",
+        "score": 0.1873
+      },
+      {
+        "chunk_id": "publishing::publish-requirements::0::51d00e19a7f1",
+        "doc_id": "publishing",
+        "section": "Publish Requirements",
+        "score": 0.1485
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To approve draft questions before publishing, open your exam from the Exams workspace in the left sidebar and select the **Questions tab**",
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::442aa8566a68",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "support": 0.83,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": 11,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "Review each question card and click the **Approve** button (checkmark icon or green action) to mark it as ready, or use the **Bulk Approve** action at the top of the list to approve all remaining Draft questions at once",
+        "chunk_id": "questions::step-by-step-ui-guide-reviewing-and-approving-qu::1::1f4f4385078c",
+        "doc_id": "questions",
+        "section": "Step-by-Step UI Guide: Reviewing and Approving Questions",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 13,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "All questions must be in Approved status before you can publish the exam",
+        "chunk_id": "questions::question-review-workflow::0::8ed1381a98c3",
+        "doc_id": "questions",
+        "section": "Question Review Workflow",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 8,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "r30",
+    "query": "Command palette and sidebar navigation",
+    "category": "basic",
+    "scores": {
+      "recall": 0.5,
+      "precision": 1.0,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "navigation"
+    ],
+    "prod_route": "refuse",
+    "prod_execution_class": "out_of_scope",
+    "prod_canonical_intent": null,
+    "rerank": "skipped",
+    "dense_top": [
+      {
+        "chunk_id": "navigation::command-palette::0::83cbb658d658",
+        "doc_id": "navigation",
+        "section": "Command Palette",
+        "score": 0.6047
+      },
+      {
+        "chunk_id": "navigation::overview::0::3f92895e92ad",
+        "doc_id": "navigation",
+        "section": "Overview",
+        "score": 0.5214
+      },
+      {
+        "chunk_id": "navigation::step-by-step-ui-guide-finding-your-way-around::1::870d9d72b3bd",
+        "doc_id": "navigation",
+        "section": "Step-by-Step UI Guide: Finding Your Way Around",
+        "score": 0.512
+      },
+      {
+        "chunk_id": "navigation::common-questions::0::ac2289d4ae25",
+        "doc_id": "navigation",
+        "section": "Common Questions",
+        "score": 0.5076
+      },
+      {
+        "chunk_id": "navigation::global-search::0::2e70f03eaadc",
+        "doc_id": "navigation",
+        "section": "Global Search",
+        "score": 0.4921
+      }
+    ],
+    "dense_docs_top20": [
+      "account-settings",
+      "empty-states",
+      "feedback",
+      "navigation",
+      "notifications"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "creating-exams",
+      "feedback",
+      "navigation"
+    ],
+    "fused_docs": [
+      "navigation"
+    ],
+    "final": [
+      {
+        "chunk_id": "navigation::command-palette::0::83cbb658d658",
+        "doc_id": "navigation",
+        "section": "Command Palette",
+        "score": 0.0328
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Press Ctrl+K (Windows) or Cmd+K (Mac) to open the command palette, a search overlay used to quickly jump to any workspace, search exams, or trigger actions",
+        "chunk_id": "navigation::step-by-step-ui-guide-finding-your-way-around::1::870d9d72b3bd",
+        "doc_id": "navigation",
+        "section": "Step-by-Step UI Guide: Finding Your Way Around",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 4,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "To navigate the sidebar, click Exams on the left side of the screen to view your exam library as cards, then click any exam card to open its workspace",
+        "chunk_id": "navigation::step-by-step-ui-guide-finding-your-way-around::1::870d9d72b3bd",
+        "doc_id": "navigation",
+        "section": "Step-by-Step UI Guide: Finding Your Way Around",
+        "support": 0.75,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 4,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "At the top of the exam workspace, a tab row appears allowing you to switch between Questions, Monitoring, Results, Links, and Settings",
+        "chunk_id": "navigation::step-by-step-ui-guide-finding-your-way-around::1::870d9d72b3bd",
+        "doc_id": "navigation",
+        "section": "Step-by-Step UI Guide: Finding Your Way Around",
+        "support": 0.93,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 4,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "r32",
+    "query": "Join Arena as a player with code",
+    "category": "basic",
+    "scores": {
+      "recall": 0.8,
+      "precision": 1.0,
+      "relevancy": 0.6
+    },
+    "expected_docs": [
+      "arena"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "terminology::arena::0::0c9c7d017a51",
+        "doc_id": "terminology",
+        "section": "Arena",
+        "score": 0.5373
+      },
+      {
+        "chunk_id": "arena::joining-a-game-players::0::f497ddba4239",
+        "doc_id": "arena",
+        "section": "Joining a Game (Players)",
+        "score": 0.5226
+      },
+      {
+        "chunk_id": "common-problems::arena-problems::0::83ff1efa89ed",
+        "doc_id": "common-problems",
+        "section": "Arena Problems",
+        "score": 0.5135
+      },
+      {
+        "chunk_id": "arena::common-questions::0::e7d91fbb2b39",
+        "doc_id": "arena",
+        "section": "Common Questions",
+        "score": 0.4892
+      },
+      {
+        "chunk_id": "arena::overview::0::eceb563f8da2",
+        "doc_id": "arena",
+        "section": "Overview",
+        "score": 0.483
+      }
+    ],
+    "dense_docs_top20": [
+      "analytics",
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "product-overview",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "exam-settings",
+      "google-classroom",
+      "product-overview",
+      "publishing",
+      "terminology"
+    ],
+    "fused_docs": [
+      "arena",
+      "terminology",
+      "common-workflows",
+      "common-problems"
+    ],
+    "final": [
+      {
+        "chunk_id": "arena::joining-a-game-players::0::f497ddba4239",
+        "doc_id": "arena",
+        "section": "Joining a Game (Players)",
+        "score": 0.6575
+      },
+      {
+        "chunk_id": "terminology::arena::0::0c9c7d017a51",
+        "doc_id": "terminology",
+        "section": "Arena",
+        "score": 0.0374
+      },
+      {
+        "chunk_id": "common-problems::arena-problems::0::83ff1efa89ed",
+        "doc_id": "common-problems",
+        "section": "Arena Problems",
+        "score": 0.0259
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Players open the join link or go to the Arena join page and enter the room code manually",
+        "chunk_id": "arena::joining-a-game-players::0::f497ddba4239",
+        "doc_id": "arena",
+        "section": "Joining a Game (Players)",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 6,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "They choose a unique nickname consisting of 2 to 20 characters (alphanumeric plus spaces, underscores, and hyphens)",
+        "chunk_id": "arena::joining-a-game-players::0::f497ddba4239",
+        "doc_id": "arena",
+        "section": "Joining a Game (Players)",
+        "support": 0.9,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 6,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "Alternatively, if the host linked a Google Classroom course, players can pick from the class roster instead of typing a nickname",
+        "chunk_id": "arena::joining-a-game-players::0::f497ddba4239",
+        "doc_id": "arena",
+        "section": "Joining a Game (Players)",
+        "support": 0.92,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 6,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "No Quizzer account is required",
+        "chunk_id": "arena::roles-in-arena::0::cdfb2d514cf7",
+        "doc_id": "arena",
+        "section": "Roles in Arena",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 7,
+        "bm25_rank_top20": 3,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "p01",
+    "query": "I want to make a test for my class from my PDF notes",
+    "category": "paraphrase",
+    "scores": {
+      "recall": 0.8,
+      "precision": 0.67,
+      "relevancy": 0.8
+    },
+    "expected_docs": [
+      "creating-exams"
+    ],
+    "prod_route": "refuse",
+    "prod_execution_class": "out_of_scope",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.433
+      },
+      {
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::1::8099303e0d0a",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "score": 0.4231
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::1::05051af6f6ce",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.4155
+      },
+      {
+        "chunk_id": "creating-exams::step-2-adding-source-content::0::5034d12565e5",
+        "doc_id": "creating-exams",
+        "section": "Step 2: Adding Source Content",
+        "score": 0.4119
+      },
+      {
+        "chunk_id": "product-overview::quick-start-your-first-exam-in-5-minutes::0::2af78e5df371",
+        "doc_id": "product-overview",
+        "section": "Quick Start: Your First Exam in 5 Minutes",
+        "score": 0.3989
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "creating-exams",
+      "lifecycle",
+      "product-overview",
+      "publishing"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "common-problems",
+      "creating-exams",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-classroom",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "roles",
+      "students-workspace",
+      "terminology",
+      "verification"
+    ],
+    "fused_docs": [
+      "common-workflows",
+      "onboarding",
+      "creating-exams",
+      "google-classroom",
+      "account-settings",
+      "product-overview",
+      "publishing"
+    ],
+    "final": [
+      {
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::1::8099303e0d0a",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "score": 0.0159
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.0088
+      },
+      {
+        "chunk_id": "google-classroom::common-questions::0::72bacaa04832",
+        "doc_id": "google-classroom",
+        "section": "Common Questions",
+        "score": 0.0043
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To create a test from your PDF notes, go to the Dashboard in the sidebar and click the Create Exam quick action card (or press Ctrl+K / Cmd+K and type \"Create Exam\")",
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::0::1e2a4b681a68",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "support": 0.86,
+        "in_expected_doc": true,
+        "dense_rank_top20": 9,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 3,
+        "in_final": false
+      },
+      {
+        "claim": "Enter your exam title, then upload your PDF file in the source content panel by dragging and dropping it or using the file selector",
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::1::8099303e0d0a",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "support": 0.58,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 13,
+        "doc_rank_fused": 3,
+        "in_final": true
+      },
+      {
+        "claim": "Choose an AI generation mode (such as Source-first or Guided) and click the Generate button",
+        "chunk_id": "creating-exams::step-3-ai-generation-mode::0::985ac0de5240",
+        "doc_id": "creating-exams",
+        "section": "Step 3: AI Generation Mode",
+        "support": 0.88,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 3,
+        "in_final": false
+      },
+      {
+        "claim": "Finally, open the exam from the Exams list, review your questions under the Questions tab, and publish when ready",
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::3::f9a32af810c7",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "support": 0.78,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 3,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "p05",
+    "query": "how are written answers scored",
+    "category": "paraphrase",
+    "scores": {
+      "recall": 0.5,
+      "precision": 0.5,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "grading"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "grading::written-question-grading::0::21b019279a1c",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "score": 0.596
+      },
+      {
+        "chunk_id": "grading::step-by-step-ui-guide-how-grading-works-and-wher::1::af78d49a8891",
+        "doc_id": "grading",
+        "section": "Step-by-Step UI Guide: How Grading Works and Where to See It",
+        "score": 0.5902
+      },
+      {
+        "chunk_id": "exam-settings::scoring::1::7ebaa4e18138",
+        "doc_id": "exam-settings",
+        "section": "Scoring",
+        "score": 0.5796
+      },
+      {
+        "chunk_id": "grading::written-question-grading::1::f7516dee4bc8",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "score": 0.5646
+      },
+      {
+        "chunk_id": "grading::grading-style::0::6e55410621bb",
+        "doc_id": "grading",
+        "section": "Grading Style",
+        "score": 0.5549
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "exam-settings",
+      "grading",
+      "questions",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "exam-settings",
+      "grading",
+      "results-exports",
+      "taking-exams",
+      "terminology"
+    ],
+    "fused_docs": [
+      "grading",
+      "exam-settings",
+      "results-exports"
+    ],
+    "final": [
+      {
+        "chunk_id": "grading::written-question-grading::0::21b019279a1c",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "score": 0.4857
+      },
+      {
+        "chunk_id": "exam-settings::scoring::1::7ebaa4e18138",
+        "doc_id": "exam-settings",
+        "section": "Scoring",
+        "score": 0.2814
+      },
+      {
+        "chunk_id": "results-exports::filtering-results::0::44be92cee686",
+        "doc_id": "results-exports",
+        "section": "Filtering Results",
+        "score": 0.0109
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Written answers (Short Answer and Long Answer) go through a layered grading pipeline",
+        "chunk_id": "grading::written-question-grading::0::21b019279a1c",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 16,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "Step 1 is exact match after normalization, awarding full marks immediately if correct",
+        "chunk_id": "grading::written-question-grading::0::21b019279a1c",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "support": 0.8,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 16,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "Step 2 uses fuzzy match for short strings to catch minor typos",
+        "chunk_id": "grading::written-question-grading::0::21b019279a1c",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "support": 0.78,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 16,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "Step 3 checks keyword overlap for essential concepts, and Step 4 applies embedding similarity for semantic comparison",
+        "chunk_id": "grading::written-question-grading::0::21b019279a1c",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "support": 0.55,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 16,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "Step 5 uses a batched AI model if previous steps cannot score it, and Step 6 marks it as \"Pending Professor Review\" for manual grading if AI confidence is too low",
+        "chunk_id": "grading::written-question-grading::1::f7516dee4bc8",
+        "doc_id": "grading",
+        "section": "Written Question Grading",
+        "support": 0.82,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 5,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "p06",
+    "query": "stop students from switching tabs during the test",
+    "category": "paraphrase",
+    "scores": {
+      "recall": 0.5,
+      "precision": 1.0,
+      "relevancy": 0.8
+    },
+    "expected_docs": [
+      "exam-settings",
+      "live-monitoring"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "taking-exams::step-6-proctoring-during-the-exam::0::3d901ca0c50f",
+        "doc_id": "taking-exams",
+        "section": "Step 6: Proctoring During the Exam",
+        "score": 0.5809
+      },
+      {
+        "chunk_id": "exam-settings::proctoring-and-integrity::0::8f3472346b28",
+        "doc_id": "exam-settings",
+        "section": "Proctoring and Integrity",
+        "score": 0.5436
+      },
+      {
+        "chunk_id": "exam-settings::step-by-step-ui-guide-configuring-exam-settings::1::bf0a78563761",
+        "doc_id": "exam-settings",
+        "section": "Step-by-Step UI Guide: Configuring Exam Settings",
+        "score": 0.5238
+      },
+      {
+        "chunk_id": "exam-settings::attempts::1::9b7c2665021a",
+        "doc_id": "exam-settings",
+        "section": "Attempts",
+        "score": 0.5051
+      },
+      {
+        "chunk_id": "taking-exams::step-by-step-ui-guide-what-students-see-when-tak::3::047cd8746a18",
+        "doc_id": "taking-exams",
+        "section": "Step-by-Step UI Guide: What Students See When Taking an Exam",
+        "score": 0.481
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "live-monitoring",
+      "navigation",
+      "product-overview",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "arena",
+      "common-workflows",
+      "creating-exams",
+      "exam-settings",
+      "grading",
+      "product-overview",
+      "questions",
+      "results-exports",
+      "roles",
+      "students-workspace",
+      "taking-exams",
+      "terminology",
+      "verification"
+    ],
+    "fused_docs": [
+      "taking-exams",
+      "exam-settings",
+      "results-exports",
+      "product-overview"
+    ],
+    "final": [
+      {
+        "chunk_id": "exam-settings::proctoring-and-integrity::0::8f3472346b28",
+        "doc_id": "exam-settings",
+        "section": "Proctoring and Integrity",
+        "score": 0.2994
+      },
+      {
+        "chunk_id": "taking-exams::step-6-proctoring-during-the-exam::0::3d901ca0c50f",
+        "doc_id": "taking-exams",
+        "section": "Step 6: Proctoring During the Exam",
+        "score": 0.1003
+      },
+      {
+        "chunk_id": "results-exports::common-questions::1::f96070fd6fb6",
+        "doc_id": "results-exports",
+        "section": "Common Questions",
+        "score": 0.0224
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To stop students from switching tabs during a test, open Exams from the left sidebar and click on your exam card to open the workspace",
+        "chunk_id": "questions::step-by-step-ui-guide-reviewing-and-approving-qu::0::ed4255ca841a",
+        "doc_id": "questions",
+        "section": "Step-by-Step UI Guide: Reviewing and Approving Questions",
+        "support": 0.64,
+        "in_expected_doc": false,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      },
+      {
+        "claim": "Click the Settings tab at the top of the workspace, and scroll down to the Proctoring and Integrity section",
+        "chunk_id": "common-workflows::run-a-proctored-exam::1::3861affacb4c",
+        "doc_id": "common-workflows",
+        "section": "Run a Proctored Exam",
+        "support": 0.88,
+        "in_expected_doc": false,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": 18,
+        "doc_rank_fused": null,
+        "in_final": false
+      },
+      {
+        "claim": "Ensure the \"Block Tab Switching\" toggle switch is turned on, as it is enabled by default to detect when students leave the exam tab",
+        "chunk_id": "exam-settings::step-by-step-ui-guide-configuring-exam-settings::1::bf0a78563761",
+        "doc_id": "exam-settings",
+        "section": "Step-by-Step UI Guide: Configuring Exam Settings",
+        "support": 0.75,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 14,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "Settings auto-save as you make changes",
+        "chunk_id": "verification::step-by-step-ui-guide-setting-up-verification-sc::1::2dac3337a574",
+        "doc_id": "verification",
+        "section": "Step-by-Step UI Guide: Setting Up Verification Schema",
+        "support": 0.8,
+        "in_expected_doc": false,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "p08",
+    "query": "sync my scores to Google Classroom",
+    "category": "paraphrase",
+    "scores": {
+      "recall": 0.5,
+      "precision": 0.67,
+      "relevancy": 0.75
+    },
+    "expected_docs": [
+      "google-classroom"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.export_results",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "arena::google-classroom-integration::0::3ff8bce8a020",
+        "doc_id": "arena",
+        "section": "Google Classroom Integration",
+        "score": 0.6195
+      },
+      {
+        "chunk_id": "common-workflows::share-results-with-students-via-classroom::0::6ec05416e81f",
+        "doc_id": "common-workflows",
+        "section": "Share Results with Students via Classroom",
+        "score": 0.5975
+      },
+      {
+        "chunk_id": "google-classroom::overview::0::ddc9ba21311d",
+        "doc_id": "google-classroom",
+        "section": "Overview",
+        "score": 0.5966
+      },
+      {
+        "chunk_id": "google-classroom::available-features::1::14b8ae634f61",
+        "doc_id": "google-classroom",
+        "section": "Available Features",
+        "score": 0.5831
+      },
+      {
+        "chunk_id": "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574",
+        "doc_id": "google-classroom",
+        "section": "Step-by-Step UI Guide: Connecting and Using Google Classroom",
+        "score": 0.5753
+      }
+    ],
+    "dense_docs_top20": [
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "google-calendar",
+      "google-classroom",
+      "google-drive",
+      "grading",
+      "product-overview",
+      "students-workspace"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "google-classroom",
+      "product-overview",
+      "students-workspace",
+      "terminology"
+    ],
+    "fused_docs": [
+      "google-classroom",
+      "common-workflows",
+      "arena"
+    ],
+    "final": [
+      {
+        "chunk_id": "common-workflows::share-results-with-students-via-classroom::0::6ec05416e81f",
+        "doc_id": "common-workflows",
+        "section": "Share Results with Students via Classroom",
+        "score": 0.816
+      },
+      {
+        "chunk_id": "google-classroom::overview::0::ddc9ba21311d",
+        "doc_id": "google-classroom",
+        "section": "Overview",
+        "score": 0.2595
+      },
+      {
+        "chunk_id": "arena::google-classroom-integration::0::3ff8bce8a020",
+        "doc_id": "arena",
+        "section": "Google Classroom Integration",
+        "score": 0.0466
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Scores are automatically synced back to the Google Classroom coursework entry after students take the exam and grading completes",
+        "chunk_id": "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574",
+        "doc_id": "google-classroom",
+        "section": "Step-by-Step UI Guide: Connecting and Using Google Classroom",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 5,
+        "bm25_rank_top20": 7,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Teachers can also trigger a manual grade push from the Classroom section in Integrations",
+        "chunk_id": "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574",
+        "doc_id": "google-classroom",
+        "section": "Step-by-Step UI Guide: Connecting and Using Google Classroom",
+        "support": 0.86,
+        "in_expected_doc": true,
+        "dense_rank_top20": 5,
+        "bm25_rank_top20": 7,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "p09",
+    "query": "put the exam date in my calendar",
+    "category": "paraphrase",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.5,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "google-calendar"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.publish",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::1::9e06ccbc058c",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "score": 0.5831
+      },
+      {
+        "chunk_id": "common-workflows::schedule-an-exam-with-google-calendar::0::8ee358106a80",
+        "doc_id": "common-workflows",
+        "section": "Schedule an Exam with Google Calendar",
+        "score": 0.4787
+      },
+      {
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::0::2acebeda5597",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "score": 0.4752
+      },
+      {
+        "chunk_id": "google-calendar::overview::0::af0617a36b4c",
+        "doc_id": "google-calendar",
+        "section": "Overview",
+        "score": 0.4497
+      },
+      {
+        "chunk_id": "google-calendar::available-features::0::c175f4c272e4",
+        "doc_id": "google-calendar",
+        "section": "Available Features",
+        "score": 0.4478
+      }
+    ],
+    "dense_docs_top20": [
+      "common-workflows",
+      "creating-exams",
+      "empty-states",
+      "exam-settings",
+      "google-calendar",
+      "lifecycle",
+      "navigation",
+      "publishing",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "analytics",
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "google-calendar",
+      "navigation",
+      "publishing"
+    ],
+    "fused_docs": [
+      "google-calendar",
+      "common-workflows",
+      "empty-states"
+    ],
+    "final": [
+      {
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::1::9e06ccbc058c",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "score": 0.0604
+      },
+      {
+        "chunk_id": "common-workflows::schedule-an-exam-with-google-calendar::0::8ee358106a80",
+        "doc_id": "common-workflows",
+        "section": "Schedule an Exam with Google Calendar",
+        "score": 0.0575
+      },
+      {
+        "chunk_id": "empty-states::common-questions::0::556be04f149e",
+        "doc_id": "empty-states",
+        "section": "Common Questions",
+        "score": 0.0027
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To put the exam date in your calendar, first make sure your exam is published and your Google Calendar is connected under Integrations in the left sidebar",
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::0::2acebeda5597",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "support": 0.85,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 9,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Then, schedule the exam either by clicking \"Schedule on Calendar\" from the post-publish success screen or by going to the Integrations page, finding the Calendar section, and clicking \"Schedule Exam\" while selecting your published exam from the dropdown",
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::0::2acebeda5597",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "support": 0.67,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 9,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Finally, choose the date and time for the event and click \"Schedule\" to create the calendar event on your primary Google Calendar",
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::1::9e06ccbc058c",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "support": 0.8,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 1,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "p11",
+    "query": "what happens to my exam when I archive it",
+    "category": "paraphrase",
+    "scores": {
+      "recall": 0.67,
+      "precision": 1.0,
+      "relevancy": 0.6
+    },
+    "expected_docs": [
+      "lifecycle"
+    ],
+    "prod_route": "tool",
+    "prod_execution_class": "tool_required",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "publishing::common-questions::2::ad6c6ce8c154",
+        "doc_id": "publishing",
+        "section": "Common Questions",
+        "score": 0.666
+      },
+      {
+        "chunk_id": "lifecycle::typical-teacher-workflow-with-ui-steps::1::0362899678e0",
+        "doc_id": "lifecycle",
+        "section": "Typical Teacher Workflow (with UI steps)",
+        "score": 0.5877
+      },
+      {
+        "chunk_id": "lifecycle::delete-behavior::0::24a029205a58",
+        "doc_id": "lifecycle",
+        "section": "Delete Behavior",
+        "score": 0.5851
+      },
+      {
+        "chunk_id": "publishing::what-happens-to-results::0::620e846a2771",
+        "doc_id": "publishing",
+        "section": "What Happens to Results",
+        "score": 0.5658
+      },
+      {
+        "chunk_id": "publishing::draft-vs-published-vs-archived::0::2f9fd82c86bc",
+        "doc_id": "publishing",
+        "section": "Draft vs Published vs Archived",
+        "score": 0.5584
+      }
+    ],
+    "dense_docs_top20": [
+      "creating-exams",
+      "lifecycle",
+      "publishing",
+      "results-exports",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "dashboard",
+      "empty-states",
+      "google-classroom",
+      "grading",
+      "lifecycle",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "roles",
+      "taking-exams"
+    ],
+    "fused_docs": [
+      "lifecycle",
+      "publishing",
+      "onboarding",
+      "empty-states"
+    ],
+    "final": [
+      {
+        "chunk_id": "publishing::common-questions::2::ad6c6ce8c154",
+        "doc_id": "publishing",
+        "section": "Common Questions",
+        "score": 0.8522
+      },
+      {
+        "chunk_id": "lifecycle::typical-teacher-workflow-with-ui-steps::1::0362899678e0",
+        "doc_id": "lifecycle",
+        "section": "Typical Teacher Workflow (with UI steps)",
+        "score": 0.5104
+      },
+      {
+        "chunk_id": "empty-states::common-questions::0::556be04f149e",
+        "doc_id": "empty-states",
+        "section": "Common Questions",
+        "score": 0.008
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "When you archive an exam, it is retired so that students cannot start new attempts, and its share link is deactivated",
+        "chunk_id": "lifecycle::state-transitions::0::2a01606b69c1",
+        "doc_id": "lifecycle",
+        "section": "State Transitions",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 12,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "All existing results are preserved and remain accessible in the Results tab",
+        "chunk_id": "lifecycle::common-questions::0::ae4f876ff746",
+        "doc_id": "lifecycle",
+        "section": "Common Questions",
+        "support": 0.83,
+        "in_expected_doc": true,
+        "dense_rank_top20": 8,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Additionally, archived exams can later be unarchived",
+        "chunk_id": "lifecycle::lifecycle-states::0::ec98d36101e2",
+        "doc_id": "lifecycle",
+        "section": "Lifecycle States",
+        "support": 0.6,
+        "in_expected_doc": true,
+        "dense_rank_top20": 11,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "t01",
+    "query": "publsh exam",
+    "category": "typo_short_hinglish",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.67,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "publishing"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "terminology::publish::0::e8e809593794",
+        "doc_id": "terminology",
+        "section": "Publish",
+        "score": 0.5695
+      },
+      {
+        "chunk_id": "publishing::how-to-publish::0::3078e936f33f",
+        "doc_id": "publishing",
+        "section": "How to Publish",
+        "score": 0.5587
+      },
+      {
+        "chunk_id": "publishing::publish-requirements::0::51d00e19a7f1",
+        "doc_id": "publishing",
+        "section": "Publish Requirements",
+        "score": 0.5455
+      },
+      {
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::442aa8566a68",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "score": 0.5442
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.5423
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "lifecycle",
+      "publishing",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "analytics",
+      "common-workflows",
+      "empty-states",
+      "exam-settings",
+      "google-calendar",
+      "lifecycle",
+      "live-monitoring",
+      "navigation",
+      "publishing",
+      "questions",
+      "results-exports",
+      "roles"
+    ],
+    "fused_docs": [
+      "publishing",
+      "lifecycle",
+      "terminology",
+      "navigation",
+      "common-workflows",
+      "empty-states",
+      "exam-settings"
+    ],
+    "final": [
+      {
+        "chunk_id": "publishing::how-to-publish::0::3078e936f33f",
+        "doc_id": "publishing",
+        "section": "How to Publish",
+        "score": 0.8035
+      },
+      {
+        "chunk_id": "terminology::publish::0::e8e809593794",
+        "doc_id": "terminology",
+        "section": "Publish",
+        "score": 0.4403
+      },
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.1109
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To publish an exam, first ensure that all questions are approved by checking the Questions tab in the exam workspace",
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::442aa8566a68",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "support": 0.78,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 15,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Next, click the emerald-green Publish button located either on the exam card in the Exams workspace or at the top of the exam workspace view",
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::442aa8566a68",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "support": 0.77,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 15,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Once published, a success screen will appear providing the unique shareable exam link",
+        "chunk_id": "publishing::the-published-exam-link::0::199ff279dd9d",
+        "doc_id": "publishing",
+        "section": "The Published Exam Link",
+        "support": 0.6,
+        "in_expected_doc": true,
+        "dense_rank_top20": 17,
+        "bm25_rank_top20": 5,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "t02",
+    "query": "quiz kaise banaye",
+    "category": "typo_short_hinglish",
+    "scores": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "relevancy": 0.33
+    },
+    "expected_docs": [
+      "creating-exams"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "product-overview::who-quizzer-is-for::1::05a8b9207adf",
+        "doc_id": "product-overview",
+        "section": "Who Quizzer is For",
+        "score": 0.4695
+      },
+      {
+        "chunk_id": "product-overview::what-you-can-do::0::7b0020c6c65e",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.4603
+      },
+      {
+        "chunk_id": "product-overview::quick-start-your-first-exam-in-5-minutes::0::2af78e5df371",
+        "doc_id": "product-overview",
+        "section": "Quick Start: Your First Exam in 5 Minutes",
+        "score": 0.4363
+      },
+      {
+        "chunk_id": "arena::creating-an-arena-quiz-pack::0::0c65b3cc9ee0",
+        "doc_id": "arena",
+        "section": "Creating an Arena Quiz Pack",
+        "score": 0.4337
+      },
+      {
+        "chunk_id": "product-overview::what-you-can-do::3::79092419134d",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.4309
+      }
+    ],
+    "dense_docs_top20": [
+      "arena",
+      "common-workflows",
+      "creating-exams",
+      "product-overview"
+    ],
+    "bm25_docs_top20": [
+      "analytics",
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "navigation",
+      "terminology"
+    ],
+    "fused_docs": [
+      "arena",
+      "product-overview",
+      "empty-states",
+      "terminology"
+    ],
+    "final": [
+      {
+        "chunk_id": "product-overview::who-quizzer-is-for::1::05a8b9207adf",
+        "doc_id": "product-overview",
+        "section": "Who Quizzer is For",
+        "score": 0.01
+      },
+      {
+        "chunk_id": "arena::creating-an-arena-quiz-pack::0::0c65b3cc9ee0",
+        "doc_id": "arena",
+        "section": "Creating an Arena Quiz Pack",
+        "score": 0.0097
+      },
+      {
+        "chunk_id": "terminology::arena::0::0c9c7d017a51",
+        "doc_id": "terminology",
+        "section": "Arena",
+        "score": 0.0094
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To create a quiz or exam in Quizzer, go to the Dashboard in the sidebar and click the Create Exam quick action card (or press Ctrl+K / Cmd+K and type \"Create Exam\") to open the creation wizard",
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::0::1e2a4b681a68",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "support": 0.93,
+        "in_expected_doc": true,
+        "dense_rank_top20": 17,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      },
+      {
+        "claim": "Enter an exam title, add your source content by pasting text, uploading files, providing a URL, or importing from Google Drive, and then choose an AI generation mode (Source-first, Guided, or Custom)",
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::1::05051af6f6ce",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "support": 0.67,
+        "in_expected_doc": false,
+        "dense_rank_top20": 16,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      },
+      {
+        "claim": "Finally, click the Generate button at the bottom to produce your questions",
+        "chunk_id": "creating-exams::step-by-step-ui-guide-creating-your-first-exam::2::2dfa6bd7deed",
+        "doc_id": "creating-exams",
+        "section": "Step-by-Step UI Guide: Creating Your First Exam",
+        "support": 0.67,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "LANGUAGE_MISMATCH / DOC_MISS"
+  },
+  {
+    "id": "t06",
+    "query": "arena room code",
+    "category": "typo_short_hinglish",
+    "scores": {
+      "recall": 0.5,
+      "precision": 0.67,
+      "relevancy": 0.75
+    },
+    "expected_docs": [
+      "arena"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "terminology::arena::0::0c9c7d017a51",
+        "doc_id": "terminology",
+        "section": "Arena",
+        "score": 0.5019
+      },
+      {
+        "chunk_id": "common-problems::arena-problems::0::83ff1efa89ed",
+        "doc_id": "common-problems",
+        "section": "Arena Problems",
+        "score": 0.4773
+      },
+      {
+        "chunk_id": "arena::overview::0::eceb563f8da2",
+        "doc_id": "arena",
+        "section": "Overview",
+        "score": 0.4301
+      },
+      {
+        "chunk_id": "arena::step-by-step-ui-guide-hosting-an-arena-live-quiz::1::563980623cf6",
+        "doc_id": "arena",
+        "section": "Step-by-Step UI Guide: Hosting an Arena Live Quiz Battle",
+        "score": 0.4266
+      },
+      {
+        "chunk_id": "arena::hosting-a-game::0::765e73aee7c6",
+        "doc_id": "arena",
+        "section": "Hosting a Game",
+        "score": 0.4062
+      }
+    ],
+    "dense_docs_top20": [
+      "analytics",
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "product-overview",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "exam-settings",
+      "product-overview",
+      "publishing",
+      "taking-exams",
+      "terminology"
+    ],
+    "fused_docs": [
+      "arena",
+      "common-problems",
+      "terminology"
+    ],
+    "final": [
+      {
+        "chunk_id": "arena::overview::0::eceb563f8da2",
+        "doc_id": "arena",
+        "section": "Overview",
+        "score": 0.1227
+      },
+      {
+        "chunk_id": "common-problems::arena-problems::0::83ff1efa89ed",
+        "doc_id": "common-problems",
+        "section": "Arena Problems",
+        "score": 0.0668
+      },
+      {
+        "chunk_id": "terminology::arena::0::0c9c7d017a51",
+        "doc_id": "terminology",
+        "section": "Arena",
+        "score": 0.0457
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "When a teacher creates an Arena room, Quizzer generates a six-character room code and a join URL",
+        "chunk_id": "arena::step-by-step-ui-guide-hosting-an-arena-live-quiz::1::563980623cf6",
+        "doc_id": "arena",
+        "section": "Step-by-Step UI Guide: Hosting an Arena Live Quiz Battle",
+        "support": 0.9,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "The room screen prominently displays this code, which can be shared by clicking copy code, copying the link, or using the scannable QR code",
+        "chunk_id": "arena::step-by-step-ui-guide-hosting-an-arena-live-quiz::1::563980623cf6",
+        "doc_id": "arena",
+        "section": "Step-by-Step UI Guide: Hosting an Arena Live Quiz Battle",
+        "support": 0.64,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Teachers should project this screen on a classroom display so students can see the code",
+        "chunk_id": "arena::step-by-step-ui-guide-hosting-an-arena-live-quiz::1::563980623cf6",
+        "doc_id": "arena",
+        "section": "Step-by-Step UI Guide: Hosting an Arena Live Quiz Battle",
+        "support": 0.83,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Players then join the game by opening the join link or going to the Arena join page to enter the room code manually alongside a nickname",
+        "chunk_id": "arena::joining-a-game-players::0::f497ddba4239",
+        "doc_id": "arena",
+        "section": "Joining a Game (Players)",
+        "support": 0.79,
+        "in_expected_doc": true,
+        "dense_rank_top20": 6,
+        "bm25_rank_top20": 8,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "a01",
+    "query": "Where are my results?",
+    "category": "ambiguous",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.5,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "results-exports",
+      "navigation",
+      "analytics"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.export_results",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "results-exports::how-to-access-results::0::9538b98e800d",
+        "doc_id": "results-exports",
+        "section": "How to Access Results",
+        "score": 0.5172
+      },
+      {
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::1::bed5b32be3bd",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "score": 0.5005
+      },
+      {
+        "chunk_id": "results-exports::common-questions::0::e3a80af2dee9",
+        "doc_id": "results-exports",
+        "section": "Common Questions",
+        "score": 0.493
+      },
+      {
+        "chunk_id": "terminology::results::0::9ae62f9a4c33",
+        "doc_id": "terminology",
+        "section": "Results",
+        "score": 0.4684
+      },
+      {
+        "chunk_id": "empty-states::results-tab-inside-an-exam::0::3c0206074cc4",
+        "doc_id": "empty-states",
+        "section": "Results Tab (inside an exam)",
+        "score": 0.4674
+      }
+    ],
+    "dense_docs_top20": [
+      "analytics",
+      "common-problems",
+      "common-workflows",
+      "empty-states",
+      "grading",
+      "lifecycle",
+      "live-monitoring",
+      "navigation",
+      "results-exports",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "common-problems",
+      "dashboard",
+      "empty-states",
+      "google-classroom",
+      "google-drive",
+      "grading",
+      "lifecycle",
+      "live-monitoring",
+      "navigation",
+      "notifications",
+      "results-exports"
+    ],
+    "fused_docs": [
+      "results-exports",
+      "empty-states",
+      "navigation",
+      "common-problems",
+      "terminology"
+    ],
+    "final": [
+      {
+        "chunk_id": "results-exports::how-to-access-results::0::9538b98e800d",
+        "doc_id": "results-exports",
+        "section": "How to Access Results",
+        "score": 0.1661
+      },
+      {
+        "chunk_id": "navigation::critical-navigation-rule::0::c59432030d83",
+        "doc_id": "navigation",
+        "section": "Critical Navigation Rule",
+        "score": 0.1361
+      },
+      {
+        "chunk_id": "terminology::results::0::9ae62f9a4c33",
+        "doc_id": "terminology",
+        "section": "Results",
+        "score": 0.0667
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To see your results, open Exams from the sidebar, click on the specific exam card, and select the Results tab at the top of the workspace",
+        "chunk_id": "navigation::step-by-step-ui-guide-finding-your-way-around::1::870d9d72b3bd",
+        "doc_id": "navigation",
+        "section": "Step-by-Step UI Guide: Finding Your Way Around",
+        "support": 0.9,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 3,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "AMBIGUOUS_QUERY"
+  },
+  {
+    "id": "a02",
+    "query": "It's not working",
+    "category": "ambiguous",
+    "scores": {
+      "recall": 0.5,
+      "precision": 0.67,
+      "relevancy": 0.5
+    },
+    "expected_docs": [
+      "common-problems"
+    ],
+    "prod_route": "refuse",
+    "prod_execution_class": "out_of_scope",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "common-problems::browser-and-performance-problems::0::8525a5ec6fd8",
+        "doc_id": "common-problems",
+        "section": "Browser and Performance Problems",
+        "score": 0.2513
+      },
+      {
+        "chunk_id": "common-problems::overview::0::4dd1f810a58d",
+        "doc_id": "common-problems",
+        "section": "Overview",
+        "score": 0.2371
+      },
+      {
+        "chunk_id": "common-problems::integration-problems::0::33ef4f092db2",
+        "doc_id": "common-problems",
+        "section": "Integration Problems",
+        "score": 0.2174
+      },
+      {
+        "chunk_id": "empty-states::quick-diagnosis-checklist::0::b89bb0e6f9d0",
+        "doc_id": "empty-states",
+        "section": "Quick Diagnosis Checklist",
+        "score": 0.216
+      },
+      {
+        "chunk_id": "common-problems::common-questions::0::fcd008094cee",
+        "doc_id": "common-problems",
+        "section": "Common Questions",
+        "score": 0.2091
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "empty-states",
+      "feedback"
+    ],
+    "bm25_docs_top20": [
+      "common-problems",
+      "creating-exams",
+      "exam-settings",
+      "google-calendar",
+      "google-classroom",
+      "grading",
+      "navigation",
+      "product-overview",
+      "questions",
+      "taking-exams",
+      "terminology",
+      "verification"
+    ],
+    "fused_docs": [
+      "common-problems",
+      "taking-exams",
+      "empty-states",
+      "google-calendar"
+    ],
+    "final": [
+      {
+        "chunk_id": "common-problems::browser-and-performance-problems::0::8525a5ec6fd8",
+        "doc_id": "common-problems",
+        "section": "Browser and Performance Problems",
+        "score": 0.0241
+      },
+      {
+        "chunk_id": "taking-exams::common-questions::1::032e8964d443",
+        "doc_id": "taking-exams",
+        "section": "Common Questions",
+        "score": 0.0132
+      },
+      {
+        "chunk_id": "google-calendar::limitations::0::92e2491a7290",
+        "doc_id": "google-calendar",
+        "section": "Limitations",
+        "score": 0.0109
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "If you are experiencing problems, find your symptom in the common-problems guide and follow the resolution steps",
+        "chunk_id": "common-problems::overview::0::4dd1f810a58d",
+        "doc_id": "common-problems",
+        "section": "Overview",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Users call this issue help, troubleshooting, something is wrong, not working, fix, error, issue, bug, or problem",
+        "chunk_id": "common-problems::overview::0::4dd1f810a58d",
+        "doc_id": "common-problems",
+        "section": "Overview",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "If your specific problem is not listed, try checking the feature-specific guide or use **Send feedback** in the sidebar ACCOUNT section",
+        "chunk_id": "common-problems::common-questions::0::fcd008094cee",
+        "doc_id": "common-problems",
+        "section": "Common Questions",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 5,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "AMBIGUOUS_QUERY"
+  },
+  {
+    "id": "a03",
+    "query": "How do I add students?",
+    "category": "ambiguous",
+    "scores": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "students-workspace",
+      "google-classroom"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "students-workspace::common-questions::0::93496a46d420",
+        "doc_id": "students-workspace",
+        "section": "Common Questions",
+        "score": 0.5097
+      },
+      {
+        "chunk_id": "students-workspace::step-by-step-ui-guide-using-the-students-workspa::0::42d47f2e1b48",
+        "doc_id": "students-workspace",
+        "section": "Step-by-Step UI Guide: Using the Students Workspace",
+        "score": 0.4997
+      },
+      {
+        "chunk_id": "students-workspace::how-to-access::0::ee65f2b10033",
+        "doc_id": "students-workspace",
+        "section": "How to Access",
+        "score": 0.4924
+      },
+      {
+        "chunk_id": "empty-states::students-workspace::0::99619ee3a97f",
+        "doc_id": "empty-states",
+        "section": "Students Workspace",
+        "score": 0.4713
+      },
+      {
+        "chunk_id": "terminology::students-workspace::0::66a6d224c0c7",
+        "doc_id": "terminology",
+        "section": "Students (Workspace)",
+        "score": 0.4677
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "creating-exams",
+      "empty-states",
+      "google-classroom",
+      "roles",
+      "students-workspace",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "common-workflows",
+      "creating-exams",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-calendar",
+      "google-classroom",
+      "google-drive",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "results-exports",
+      "students-workspace",
+      "verification"
+    ],
+    "fused_docs": [
+      "questions",
+      "students-workspace",
+      "creating-exams",
+      "empty-states",
+      "publishing",
+      "terminology",
+      "account-settings",
+      "exam-settings"
+    ],
+    "final": [
+      {
+        "chunk_id": "students-workspace::common-questions::0::93496a46d420",
+        "doc_id": "students-workspace",
+        "section": "Common Questions",
+        "score": 0.0199
+      },
+      {
+        "chunk_id": "empty-states::students-workspace::0::99619ee3a97f",
+        "doc_id": "empty-states",
+        "section": "Students Workspace",
+        "score": 0.009
+      },
+      {
+        "chunk_id": "publishing::common-questions::1::c92259e055fc",
+        "doc_id": "publishing",
+        "section": "Common Questions",
+        "score": 0.0075
+      }
+    ],
+    "evidence": [],
+    "suggested_cause": "EVAL_ERROR (expected answer is NOT IN GUIDE)"
+  },
+  {
+    "id": "a04",
+    "query": "How do I share this?",
+    "category": "ambiguous",
+    "scores": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "publishing",
+      "arena"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.share",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::1::f0f5e6ea4aa8",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "score": 0.4337
+      },
+      {
+        "chunk_id": "publishing::sharing-the-link::0::7147daf9e83c",
+        "doc_id": "publishing",
+        "section": "Sharing the Link",
+        "score": 0.4035
+      },
+      {
+        "chunk_id": "empty-states::links-tab-inside-an-exam::0::c6ddc22d54b8",
+        "doc_id": "empty-states",
+        "section": "Links Tab (inside an exam)",
+        "score": 0.3802
+      },
+      {
+        "chunk_id": "publishing::post-publish-actions::0::7428000abba8",
+        "doc_id": "publishing",
+        "section": "Post-Publish Actions",
+        "score": 0.3664
+      },
+      {
+        "chunk_id": "publishing::common-questions::0::2bf94a098528",
+        "doc_id": "publishing",
+        "section": "Common Questions",
+        "score": 0.3617
+      }
+    ],
+    "dense_docs_top20": [
+      "common-workflows",
+      "empty-states",
+      "feedback",
+      "google-calendar",
+      "lifecycle",
+      "publishing",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "creating-exams",
+      "dashboard",
+      "exam-settings",
+      "google-calendar",
+      "google-classroom",
+      "google-drive",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "results-exports"
+    ],
+    "fused_docs": [
+      "publishing",
+      "navigation",
+      "empty-states",
+      "exam-settings",
+      "account-settings",
+      "notifications"
+    ],
+    "final": [
+      {
+        "chunk_id": "empty-states::links-tab-inside-an-exam::0::c6ddc22d54b8",
+        "doc_id": "empty-states",
+        "section": "Links Tab (inside an exam)",
+        "score": 0.0146
+      },
+      {
+        "chunk_id": "publishing::step-by-step-ui-guide-publishing-and-sharing-you::1::f0f5e6ea4aa8",
+        "doc_id": "publishing",
+        "section": "Step-by-Step UI Guide: Publishing and Sharing Your Exam",
+        "score": 0.013
+      },
+      {
+        "chunk_id": "account-settings::common-questions::0::68b20692d96e",
+        "doc_id": "account-settings",
+        "section": "Common Questions",
+        "score": 0.0036
+      }
+    ],
+    "evidence": [],
+    "suggested_cause": "EVAL_ERROR (expected answer is NOT IN GUIDE)"
+  },
+  {
+    "id": "a05",
+    "query": "Can I change it after?",
+    "category": "ambiguous",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.5,
+      "relevancy": 0.33
+    },
+    "expected_docs": [
+      "exam-settings",
+      "publishing"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.settings",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "exam-settings::settings-after-publishing::0::a7330bf74e94",
+        "doc_id": "exam-settings",
+        "section": "Settings After Publishing",
+        "score": 0.3592
+      },
+      {
+        "chunk_id": "lifecycle::settings-changes-after-publishing::0::c7747a936e58",
+        "doc_id": "lifecycle",
+        "section": "Settings Changes After Publishing",
+        "score": 0.3592
+      },
+      {
+        "chunk_id": "grading::common-questions::1::108995df6e35",
+        "doc_id": "grading",
+        "section": "Common Questions",
+        "score": 0.3516
+      },
+      {
+        "chunk_id": "arena::game-settings::1::2ddb79119b3e",
+        "doc_id": "arena",
+        "section": "Game Settings",
+        "score": 0.3468
+      },
+      {
+        "chunk_id": "questions::editing-ai-generated-questions::0::3841469d1154",
+        "doc_id": "questions",
+        "section": "Editing AI-Generated Questions",
+        "score": 0.3355
+      }
+    ],
+    "dense_docs_top20": [
+      "account-settings",
+      "arena",
+      "exam-settings",
+      "grading",
+      "lifecycle",
+      "onboarding",
+      "questions",
+      "roles",
+      "verification"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "exam-settings",
+      "google-calendar",
+      "google-classroom",
+      "google-drive",
+      "grading",
+      "lifecycle",
+      "onboarding",
+      "publishing",
+      "questions",
+      "roles",
+      "taking-exams",
+      "verification"
+    ],
+    "fused_docs": [
+      "questions",
+      "exam-settings",
+      "onboarding",
+      "lifecycle",
+      "account-settings",
+      "grading",
+      "arena",
+      "verification"
+    ],
+    "final": [
+      {
+        "chunk_id": "onboarding::common-questions::0::ef689607f804",
+        "doc_id": "onboarding",
+        "section": "Common Questions",
+        "score": 0.0549
+      },
+      {
+        "chunk_id": "questions::editing-ai-generated-questions::0::3841469d1154",
+        "doc_id": "questions",
+        "section": "Editing AI-Generated Questions",
+        "score": 0.0302
+      },
+      {
+        "chunk_id": "exam-settings::settings-after-publishing::0::a7330bf74e94",
+        "doc_id": "exam-settings",
+        "section": "Settings After Publishing",
+        "score": 0.0118
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Yes, most exam settings can be changed at any time, including after publishing",
+        "chunk_id": "exam-settings::overview::0::d791c07559e4",
+        "doc_id": "exam-settings",
+        "section": "Overview",
+        "support": 0.88,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "Changes affect future attempts only, and do not affect in-progress ones",
+        "chunk_id": "exam-settings::overview::0::d791c07559e4",
+        "doc_id": "exam-settings",
+        "section": "Overview",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 2,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "AMBIGUOUS_QUERY"
+  },
+  {
+    "id": "a06",
+    "query": "How do I start?",
+    "category": "ambiguous",
+    "scores": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "relevancy": 0.33
+    },
+    "expected_docs": [
+      "onboarding",
+      "common-workflows"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "creating-exams::how-to-start::0::4a8f5fa21d8e",
+        "doc_id": "creating-exams",
+        "section": "How to Start",
+        "score": 0.3921
+      },
+      {
+        "chunk_id": "empty-states::dashboard-new-account::0::8b4edf3eaf0f",
+        "doc_id": "empty-states",
+        "section": "Dashboard — New Account",
+        "score": 0.3831
+      },
+      {
+        "chunk_id": "product-overview::quick-start-your-first-exam-in-5-minutes::0::2af78e5df371",
+        "doc_id": "product-overview",
+        "section": "Quick Start: Your First Exam in 5 Minutes",
+        "score": 0.3617
+      },
+      {
+        "chunk_id": "empty-states::exams-workspace::0::71bb55bc7041",
+        "doc_id": "empty-states",
+        "section": "Exams Workspace",
+        "score": 0.3324
+      },
+      {
+        "chunk_id": "dashboard::step-by-step-ui-guide-using-the-dashboard::1::16cc378e0a97",
+        "doc_id": "dashboard",
+        "section": "Step-by-Step UI Guide: Using the Dashboard",
+        "score": 0.331
+      }
+    ],
+    "dense_docs_top20": [
+      "arena",
+      "common-workflows",
+      "creating-exams",
+      "dashboard",
+      "empty-states",
+      "navigation",
+      "onboarding",
+      "product-overview",
+      "taking-exams"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "common-workflows",
+      "creating-exams",
+      "dashboard",
+      "exam-settings",
+      "google-calendar",
+      "google-classroom",
+      "google-drive",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "results-exports",
+      "students-workspace"
+    ],
+    "fused_docs": [
+      "account-settings",
+      "creating-exams",
+      "empty-states",
+      "publishing",
+      "exam-settings",
+      "product-overview",
+      "dashboard",
+      "onboarding",
+      "navigation"
+    ],
+    "final": [
+      {
+        "chunk_id": "creating-exams::how-to-start::0::4a8f5fa21d8e",
+        "doc_id": "creating-exams",
+        "section": "How to Start",
+        "score": 0.0382
+      },
+      {
+        "chunk_id": "empty-states::dashboard-new-account::0::8b4edf3eaf0f",
+        "doc_id": "empty-states",
+        "section": "Dashboard — New Account",
+        "score": 0.0151
+      },
+      {
+        "chunk_id": "publishing::common-questions::1::c92259e055fc",
+        "doc_id": "publishing",
+        "section": "Common Questions",
+        "score": 0.0107
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To start using Quizzer, open the app in your browser and click the Sign Up link on the login page",
+        "chunk_id": "onboarding::step-by-step-ui-guide-signing-up-and-onboarding::0::930746c4e21b",
+        "doc_id": "onboarding",
+        "section": "Step-by-Step UI Guide: Signing Up and Onboarding",
+        "support": 0.75,
+        "in_expected_doc": true,
+        "dense_rank_top20": 7,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 8,
+        "in_final": false
+      },
+      {
+        "claim": "You can create your account using your email and password, or choose Google or Microsoft Sign-In",
+        "chunk_id": "onboarding::step-by-step-ui-guide-signing-up-and-onboarding::0::930746c4e21b",
+        "doc_id": "onboarding",
+        "section": "Step-by-Step UI Guide: Signing Up and Onboarding",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 7,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 8,
+        "in_final": false
+      },
+      {
+        "claim": "After signing in, you will go through a four-step onboarding flow where you enter your display name, choose a persona, fill in optional details, and automatically create your workspace",
+        "chunk_id": "onboarding::the-four-onboarding-steps::0::74206941d7ae",
+        "doc_id": "onboarding",
+        "section": "The Four Onboarding Steps",
+        "support": 0.61,
+        "in_expected_doc": true,
+        "dense_rank_top20": 19,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 8,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "AMBIGUOUS_QUERY"
+  },
+  {
+    "id": "m03",
+    "query": "Schedule my published exam on Google Calendar and watch who is attempting it live",
+    "category": "multi_doc",
+    "scores": {
+      "recall": 0.5,
+      "precision": 1.0,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "google-calendar",
+      "live-monitoring"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.publish",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "common-workflows::schedule-an-exam-with-google-calendar::0::8ee358106a80",
+        "doc_id": "common-workflows",
+        "section": "Schedule an Exam with Google Calendar",
+        "score": 0.6861
+      },
+      {
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::0::2acebeda5597",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "score": 0.6473
+      },
+      {
+        "chunk_id": "google-calendar::available-features::0::c175f4c272e4",
+        "doc_id": "google-calendar",
+        "section": "Available Features",
+        "score": 0.643
+      },
+      {
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::1::9e06ccbc058c",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "score": 0.637
+      },
+      {
+        "chunk_id": "google-calendar::common-questions::0::68f91e237959",
+        "doc_id": "google-calendar",
+        "section": "Common Questions",
+        "score": 0.62
+      }
+    ],
+    "dense_docs_top20": [
+      "common-workflows",
+      "google-calendar",
+      "lifecycle",
+      "live-monitoring",
+      "product-overview",
+      "publishing"
+    ],
+    "bm25_docs_top20": [
+      "common-workflows",
+      "empty-states",
+      "google-calendar",
+      "navigation",
+      "product-overview",
+      "publishing",
+      "roles",
+      "students-workspace",
+      "terminology"
+    ],
+    "fused_docs": [
+      "common-workflows",
+      "google-calendar"
+    ],
+    "final": [
+      {
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::0::2acebeda5597",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "score": 0.1918
+      },
+      {
+        "chunk_id": "common-workflows::schedule-an-exam-with-google-calendar::0::8ee358106a80",
+        "doc_id": "common-workflows",
+        "section": "Schedule an Exam with Google Calendar",
+        "score": 0.0347
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To schedule your published exam on Google Calendar, go to Integrations in the sidebar, find the Calendar section, and click Schedule Exam to select your published exam from the dropdown, or use the \"Schedule on Calendar\" option on the post-publish success screen",
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::0::2acebeda5597",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 2,
+        "in_final": true
+      },
+      {
+        "claim": "Choose the date and time, and click Schedule to create an event on your primary Google Calendar containing the exam details and link",
+        "chunk_id": "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::1::9e06ccbc058c",
+        "doc_id": "google-calendar",
+        "section": "Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+        "support": 0.85,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": 7,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "To watch who is attempting it live, click Exams in the sidebar, open the exam showing a pulsing LIVE badge, and select the Monitoring tab to view active attempts and real-time integrity data",
+        "chunk_id": "terminology::monitoring::0::132bc80ad139",
+        "doc_id": "terminology",
+        "section": "Monitoring",
+        "support": 0.79,
+        "in_expected_doc": false,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      },
+      {
+        "claim": "Alternatively, you can check the Live Exams panel on the Dashboard for a quick overview across all exams",
+        "chunk_id": "live-monitoring::step-by-step-ui-guide-monitoring-live-exams::1::7076e75117ae",
+        "doc_id": "live-monitoring",
+        "section": "Step-by-Step UI Guide: Monitoring Live Exams",
+        "support": 0.89,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": null,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "m04",
+    "query": "How is negative marking applied and where do I switch it on?",
+    "category": "multi_doc",
+    "scores": {
+      "recall": 0.5,
+      "precision": 0.67,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "grading",
+      "exam-settings"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "grading::negative-marking::0::723c9ea168f1",
+        "doc_id": "grading",
+        "section": "Negative Marking",
+        "score": 0.6184
+      },
+      {
+        "chunk_id": "terminology::negative-marking::0::b1b29b5ccf0a",
+        "doc_id": "terminology",
+        "section": "Negative Marking",
+        "score": 0.6086
+      },
+      {
+        "chunk_id": "exam-settings::scoring::0::cb0322de726a",
+        "doc_id": "exam-settings",
+        "section": "Scoring",
+        "score": 0.5232
+      },
+      {
+        "chunk_id": "grading::common-questions::0::81d04142076e",
+        "doc_id": "grading",
+        "section": "Common Questions",
+        "score": 0.4525
+      },
+      {
+        "chunk_id": "questions::marks::0::2b4ae178be5a",
+        "doc_id": "questions",
+        "section": "Marks",
+        "score": 0.4361
+      }
+    ],
+    "dense_docs_top20": [
+      "arena",
+      "exam-settings",
+      "grading",
+      "questions",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "analytics",
+      "arena",
+      "dashboard",
+      "exam-settings",
+      "google-drive",
+      "grading",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "product-overview",
+      "publishing",
+      "questions",
+      "results-exports",
+      "terminology",
+      "verification"
+    ],
+    "fused_docs": [
+      "grading",
+      "navigation",
+      "terminology",
+      "exam-settings",
+      "google-drive",
+      "questions",
+      "verification"
+    ],
+    "final": [
+      {
+        "chunk_id": "grading::negative-marking::0::723c9ea168f1",
+        "doc_id": "grading",
+        "section": "Negative Marking",
+        "score": 0.2969
+      },
+      {
+        "chunk_id": "exam-settings::scoring::0::cb0322de726a",
+        "doc_id": "exam-settings",
+        "section": "Scoring",
+        "score": 0.0581
+      },
+      {
+        "chunk_id": "terminology::negative-marking::0::b1b29b5ccf0a",
+        "doc_id": "terminology",
+        "section": "Negative Marking",
+        "score": 0.0344
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To switch on negative marking, open your exam from the Exams workspace, go to the Settings tab, scroll to the Scoring section, and toggle on Negative Marking",
+        "chunk_id": "navigation::exam-workspace::1::19f9a10c096a",
+        "doc_id": "navigation",
+        "section": "Exam Workspace",
+        "support": 0.67,
+        "in_expected_doc": false,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "Once enabled, a Penalty field appears where you can set the specific deduction amount per wrong answer",
+        "chunk_id": "exam-settings::step-by-step-ui-guide-configuring-exam-settings::2::33fb41de735f",
+        "doc_id": "exam-settings",
+        "section": "Step-by-Step UI Guide: Configuring Exam Settings",
+        "support": 0.82,
+        "in_expected_doc": true,
+        "dense_rank_top20": 6,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 4,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "m05",
+    "query": "A student's attempt was flagged. How do I review it and does it change their score?",
+    "category": "multi_doc",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.0,
+      "relevancy": 1.0
+    },
+    "expected_docs": [
+      "live-monitoring",
+      "results-exports",
+      "grading"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "complex_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "grading::step-by-step-ui-guide-how-grading-works-and-wher::1::af78d49a8891",
+        "doc_id": "grading",
+        "section": "Step-by-Step UI Guide: How Grading Works and Where to See It",
+        "score": 0.5962
+      },
+      {
+        "chunk_id": "results-exports::pending-professor-review::0::f9250b05225d",
+        "doc_id": "results-exports",
+        "section": "Pending Professor Review",
+        "score": 0.5686
+      },
+      {
+        "chunk_id": "grading::step-by-step-ui-guide-how-grading-works-and-wher::0::f4d29f9ed535",
+        "doc_id": "grading",
+        "section": "Step-by-Step UI Guide: How Grading Works and Where to See It",
+        "score": 0.5443
+      },
+      {
+        "chunk_id": "common-problems::scoring-and-results-problems::0::6f909057c42a",
+        "doc_id": "common-problems",
+        "section": "Scoring and Results Problems",
+        "score": 0.5355
+      },
+      {
+        "chunk_id": "common-workflows::handle-pending-professor-review::0::bad7080af6c8",
+        "doc_id": "common-workflows",
+        "section": "Handle Pending Professor Review",
+        "score": 0.5299
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "grading",
+      "questions",
+      "results-exports",
+      "students-workspace",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "common-workflows",
+      "exam-settings",
+      "google-classroom",
+      "grading",
+      "notifications",
+      "onboarding",
+      "questions",
+      "results-exports",
+      "students-workspace",
+      "taking-exams",
+      "verification"
+    ],
+    "fused_docs": [
+      "grading",
+      "results-exports",
+      "taking-exams",
+      "common-problems",
+      "common-workflows",
+      "verification"
+    ],
+    "final": [
+      {
+        "chunk_id": "common-workflows::handle-pending-professor-review::0::bad7080af6c8",
+        "doc_id": "common-workflows",
+        "section": "Handle Pending Professor Review",
+        "score": 0.119
+      },
+      {
+        "chunk_id": "results-exports::pending-professor-review::0::f9250b05225d",
+        "doc_id": "results-exports",
+        "section": "Pending Professor Review",
+        "score": 0.084
+      },
+      {
+        "chunk_id": "common-problems::scoring-and-results-problems::0::6f909057c42a",
+        "doc_id": "common-problems",
+        "section": "Scoring and Results Problems",
+        "score": 0.0609
+      }
+    ],
+    "evidence": [],
+    "suggested_cause": "EVAL_ERROR (expected answer is NOT IN GUIDE)"
+  },
+  {
+    "id": "m07",
+    "query": "What should I set up before publishing an exam where I need to know who each student is?",
+    "category": "multi_doc",
+    "scores": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "relevancy": 0.5
+    },
+    "expected_docs": [
+      "verification",
+      "exam-settings",
+      "publishing"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.publish",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "common-workflows::create-and-publish-your-first-exam::2::ab1e6272b467",
+        "doc_id": "common-workflows",
+        "section": "Create and Publish Your First Exam",
+        "score": 0.6058
+      },
+      {
+        "chunk_id": "exam-settings::common-questions::1::836a19709ac8",
+        "doc_id": "exam-settings",
+        "section": "Common Questions",
+        "score": 0.5876
+      },
+      {
+        "chunk_id": "taking-exams::step-2-verification-form::0::22af5ec75425",
+        "doc_id": "taking-exams",
+        "section": "Step 2: Verification Form",
+        "score": 0.5538
+      },
+      {
+        "chunk_id": "product-overview::what-you-can-do::1::574ef6012b4d",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.5534
+      },
+      {
+        "chunk_id": "empty-states::common-questions::0::556be04f149e",
+        "doc_id": "empty-states",
+        "section": "Common Questions",
+        "score": 0.5513
+      }
+    ],
+    "dense_docs_top20": [
+      "common-workflows",
+      "empty-states",
+      "exam-settings",
+      "product-overview",
+      "publishing",
+      "roles",
+      "students-workspace",
+      "taking-exams",
+      "verification"
+    ],
+    "bm25_docs_top20": [
+      "analytics",
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "lifecycle",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "product-overview",
+      "publishing",
+      "roles",
+      "students-workspace",
+      "verification"
+    ],
+    "fused_docs": [
+      "empty-states",
+      "common-workflows",
+      "exam-settings",
+      "verification",
+      "roles",
+      "taking-exams",
+      "product-overview",
+      "publishing"
+    ],
+    "final": [
+      {
+        "chunk_id": "verification::common-questions::0::70617e3be6d5",
+        "doc_id": "verification",
+        "section": "Common Questions",
+        "score": 0.0261
+      },
+      {
+        "chunk_id": "empty-states::common-questions::0::556be04f149e",
+        "doc_id": "empty-states",
+        "section": "Common Questions",
+        "score": 0.0182
+      },
+      {
+        "chunk_id": "exam-settings::common-questions::1::836a19709ac8",
+        "doc_id": "exam-settings",
+        "section": "Common Questions",
+        "score": 0.018
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Before publishing an exam where you need to identify each student, you should set up the Verification Schema in the exam's Settings tab by expanding that section to choose a preset or configure the required identity fields (such as name and enrollment number)",
+        "chunk_id": "verification::common-questions::0::70617e3be6d5",
+        "doc_id": "verification",
+        "section": "Common Questions",
+        "support": 0.68,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 4,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "m09",
+    "query": "What does a student see compared with a teacher on the dashboard?",
+    "category": "multi_doc",
+    "scores": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "roles",
+      "dashboard"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "student.view",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "dashboard::student-dashboard::0::77c10ed5abaa",
+        "doc_id": "dashboard",
+        "section": "Student Dashboard",
+        "score": 0.6263
+      },
+      {
+        "chunk_id": "dashboard::teacher-dashboard::0::2466a6c60b87",
+        "doc_id": "dashboard",
+        "section": "Teacher Dashboard",
+        "score": 0.5954
+      },
+      {
+        "chunk_id": "students-workspace::students-workspace-vs-student-accounts::0::9f9fffc841fe",
+        "doc_id": "students-workspace",
+        "section": "Students Workspace vs Student Accounts",
+        "score": 0.5911
+      },
+      {
+        "chunk_id": "students-workspace::common-questions::1::ae58e242e13e",
+        "doc_id": "students-workspace",
+        "section": "Common Questions",
+        "score": 0.546
+      },
+      {
+        "chunk_id": "dashboard::common-questions::0::9cd6eb4e7875",
+        "doc_id": "dashboard",
+        "section": "Common Questions",
+        "score": 0.5446
+      }
+    ],
+    "dense_docs_top20": [
+      "dashboard",
+      "navigation",
+      "onboarding",
+      "product-overview",
+      "roles",
+      "students-workspace",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "creating-exams",
+      "dashboard",
+      "grading",
+      "live-monitoring",
+      "navigation",
+      "onboarding",
+      "roles",
+      "students-workspace",
+      "taking-exams"
+    ],
+    "fused_docs": [
+      "dashboard",
+      "onboarding",
+      "students-workspace"
+    ],
+    "final": [
+      {
+        "chunk_id": "dashboard::student-dashboard::0::77c10ed5abaa",
+        "doc_id": "dashboard",
+        "section": "Student Dashboard",
+        "score": 0.3278
+      },
+      {
+        "chunk_id": "onboarding::step-by-step-ui-guide-signing-up-and-onboarding::1::bea4d5af8fac",
+        "doc_id": "onboarding",
+        "section": "Step-by-Step UI Guide: Signing Up and Onboarding",
+        "score": 0.0423
+      },
+      {
+        "chunk_id": "students-workspace::students-workspace-vs-student-accounts::0::9f9fffc841fe",
+        "doc_id": "students-workspace",
+        "section": "Students Workspace vs Student Accounts",
+        "score": 0.0127
+      }
+    ],
+    "evidence": [],
+    "suggested_cause": "EVAL_ERROR (expected answer is NOT IN GUIDE)"
+  },
+  {
+    "id": "c05",
+    "query": "Is the LIVE badge the same as Monitoring?",
+    "category": "confusable",
+    "scores": {
+      "recall": 0.8,
+      "precision": 0.5,
+      "relevancy": 0.9
+    },
+    "expected_docs": [
+      "terminology",
+      "live-monitoring"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "live-monitoring::live-badge-definition::0::352b325a932a",
+        "doc_id": "live-monitoring",
+        "section": "LIVE Badge Definition",
+        "score": 0.66
+      },
+      {
+        "chunk_id": "live-monitoring::common-questions::1::9a0926462e95",
+        "doc_id": "live-monitoring",
+        "section": "Common Questions",
+        "score": 0.6315
+      },
+      {
+        "chunk_id": "live-monitoring::overview::0::1f118c72a600",
+        "doc_id": "live-monitoring",
+        "section": "Overview",
+        "score": 0.5969
+      },
+      {
+        "chunk_id": "live-monitoring::where-to-find-it::0::863493675f3d",
+        "doc_id": "live-monitoring",
+        "section": "Where to Find It",
+        "score": 0.5859
+      },
+      {
+        "chunk_id": "terminology::live::0::8ea99301cab4",
+        "doc_id": "terminology",
+        "section": "LIVE",
+        "score": 0.5782
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "dashboard",
+      "live-monitoring",
+      "navigation",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "common-problems",
+      "dashboard",
+      "live-monitoring",
+      "notifications",
+      "questions",
+      "taking-exams",
+      "terminology"
+    ],
+    "fused_docs": [
+      "live-monitoring",
+      "terminology",
+      "dashboard",
+      "common-problems"
+    ],
+    "final": [
+      {
+        "chunk_id": "live-monitoring::live-badge-definition::0::352b325a932a",
+        "doc_id": "live-monitoring",
+        "section": "LIVE Badge Definition",
+        "score": 0.995
+      },
+      {
+        "chunk_id": "common-problems::live-and-monitoring-problems::0::33ac6f5037a9",
+        "doc_id": "common-problems",
+        "section": "LIVE and Monitoring Problems",
+        "score": 0.6889
+      },
+      {
+        "chunk_id": "terminology::live::0::8ea99301cab4",
+        "doc_id": "terminology",
+        "section": "LIVE",
+        "score": 0.1019
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "No, the LIVE badge is not the same as Monitoring",
+        "chunk_id": "terminology::common-confusions::0::f60d74fe67a6",
+        "doc_id": "terminology",
+        "section": "Common Confusions",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 16,
+        "bm25_rank_top20": 4,
+        "doc_rank_fused": 2,
+        "in_final": false
+      },
+      {
+        "claim": "The LIVE badge is an at-a-glance indicator on exam workspace cards and the Dashboard that shows when a student has an active, in-progress attempt with a recent heartbeat",
+        "chunk_id": "terminology::live::0::8ea99301cab4",
+        "doc_id": "terminology",
+        "section": "LIVE",
+        "support": 0.86,
+        "in_expected_doc": true,
+        "dense_rank_top20": 5,
+        "bm25_rank_top20": 19,
+        "doc_rank_fused": 2,
+        "in_final": true
+      },
+      {
+        "claim": "In contrast, Monitoring is a specific tab within each exam workspace that provides detailed attempt and integrity data",
+        "chunk_id": "live-monitoring::overview::0::1f118c72a600",
+        "doc_id": "live-monitoring",
+        "section": "Overview",
+        "support": 0.83,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": 12,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "s02",
+    "query": "How do I check my analytics in Quizzer?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "analytics"
+    ],
+    "prod_route": "tool",
+    "prod_execution_class": "tool_required",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "analytics::step-by-step-ui-guide-using-analytics::1::3a072bbcd46f",
+        "doc_id": "analytics",
+        "section": "Step-by-Step UI Guide: Using Analytics",
+        "score": 0.6484
+      },
+      {
+        "chunk_id": "terminology::analytics::0::0156d5e1047e",
+        "doc_id": "terminology",
+        "section": "Analytics",
+        "score": 0.6483
+      },
+      {
+        "chunk_id": "analytics::step-by-step-ui-guide-using-analytics::0::e8cb38211862",
+        "doc_id": "analytics",
+        "section": "Step-by-Step UI Guide: Using Analytics",
+        "score": 0.6408
+      },
+      {
+        "chunk_id": "analytics::common-questions::0::01b36bfd32a0",
+        "doc_id": "analytics",
+        "section": "Common Questions",
+        "score": 0.612
+      },
+      {
+        "chunk_id": "analytics::arena-analytics-section::0::6e875e8c1c4b",
+        "doc_id": "analytics",
+        "section": "Arena Analytics Section",
+        "score": 0.591
+      }
+    ],
+    "dense_docs_top20": [
+      "analytics",
+      "arena",
+      "common-problems",
+      "navigation",
+      "product-overview",
+      "results-exports",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "analytics",
+      "arena",
+      "common-problems",
+      "common-workflows",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-classroom",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "roles",
+      "students-workspace"
+    ],
+    "fused_docs": [
+      "account-settings",
+      "analytics",
+      "empty-states",
+      "terminology",
+      "navigation",
+      "publishing",
+      "onboarding"
+    ],
+    "final": [
+      {
+        "chunk_id": "terminology::analytics::0::0156d5e1047e",
+        "doc_id": "terminology",
+        "section": "Analytics",
+        "score": 0.363
+      },
+      {
+        "chunk_id": "analytics::step-by-step-ui-guide-using-analytics::1::3a072bbcd46f",
+        "doc_id": "analytics",
+        "section": "Step-by-Step UI Guide: Using Analytics",
+        "score": 0.0907
+      },
+      {
+        "chunk_id": "empty-states::common-questions::0::556be04f149e",
+        "doc_id": "empty-states",
+        "section": "Common Questions",
+        "score": 0.0116
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Click Analytics (chart icon) in the left sidebar to open the Analytics workspace",
+        "chunk_id": "analytics::step-by-step-ui-guide-using-analytics::0::e8cb38211862",
+        "doc_id": "analytics",
+        "section": "Step-by-Step UI Guide: Using Analytics",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 3,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 2,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "s03",
+    "query": "How can I export my game history to a CSV file?",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "arena"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "arena::game-history::0::d2943656e9fb",
+        "doc_id": "arena",
+        "section": "Game History",
+        "score": 0.5597
+      },
+      {
+        "chunk_id": "students-workspace::csv-export::0::67fc0492dea1",
+        "doc_id": "students-workspace",
+        "section": "CSV Export",
+        "score": 0.421
+      },
+      {
+        "chunk_id": "common-workflows::export-results-for-record-keeping::0::75d610131f25",
+        "doc_id": "common-workflows",
+        "section": "Export Results for Record-Keeping",
+        "score": 0.4044
+      },
+      {
+        "chunk_id": "google-drive::exporting-results-to-google-sheets::0::1e55b141911c",
+        "doc_id": "google-drive",
+        "section": "Exporting Results to Google Sheets",
+        "score": 0.4015
+      },
+      {
+        "chunk_id": "results-exports::export-options::0::0977d796dc00",
+        "doc_id": "results-exports",
+        "section": "Export Options",
+        "score": 0.3921
+      }
+    ],
+    "dense_docs_top20": [
+      "analytics",
+      "arena",
+      "common-workflows",
+      "empty-states",
+      "google-drive",
+      "results-exports",
+      "students-workspace"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "common-workflows",
+      "dashboard",
+      "google-classroom",
+      "google-drive",
+      "onboarding",
+      "product-overview",
+      "results-exports",
+      "roles",
+      "students-workspace",
+      "terminology"
+    ],
+    "fused_docs": [
+      "arena",
+      "google-drive",
+      "students-workspace",
+      "results-exports",
+      "common-workflows"
+    ],
+    "final": [
+      {
+        "chunk_id": "arena::game-history::0::d2943656e9fb",
+        "doc_id": "arena",
+        "section": "Game History",
+        "score": 0.2533
+      },
+      {
+        "chunk_id": "google-drive::exporting-results-to-google-sheets::0::1e55b141911c",
+        "doc_id": "google-drive",
+        "section": "Exporting Results to Google Sheets",
+        "score": 0.0193
+      },
+      {
+        "chunk_id": "results-exports::export-options::0::0977d796dc00",
+        "doc_id": "results-exports",
+        "section": "Export Options",
+        "score": 0.0022
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Game history can be exported to CSV, JSON, or Google Sheets from the Arena workspace",
+        "chunk_id": "arena::game-history::0::d2943656e9fb",
+        "doc_id": "arena",
+        "section": "Game History",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 1,
+        "doc_rank_fused": 1,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "s06",
+    "query": "How do I get better AI-generated questions in Quizzer?",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.5,
+      "relevancy": 0.33
+    },
+    "expected_docs": [
+      "creating-exams"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "questions::common-questions::0::cd5a685e9000",
+        "doc_id": "questions",
+        "section": "Common Questions",
+        "score": 0.5768
+      },
+      {
+        "chunk_id": "creating-exams::tips-for-better-ai-generation::0::b6b54c6dd11f",
+        "doc_id": "creating-exams",
+        "section": "Tips for Better AI Generation",
+        "score": 0.5715
+      },
+      {
+        "chunk_id": "product-overview::what-you-can-do::0::7b0020c6c65e",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.5623
+      },
+      {
+        "chunk_id": "creating-exams::ai-model-selection::0::297682de9f58",
+        "doc_id": "creating-exams",
+        "section": "AI Model Selection",
+        "score": 0.5444
+      },
+      {
+        "chunk_id": "product-overview::common-questions::0::acba0f8cabeb",
+        "doc_id": "product-overview",
+        "section": "Common Questions",
+        "score": 0.5305
+      }
+    ],
+    "dense_docs_top20": [
+      "creating-exams",
+      "product-overview",
+      "questions",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "common-problems",
+      "common-workflows",
+      "creating-exams",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-classroom",
+      "google-drive",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "product-overview",
+      "publishing",
+      "questions",
+      "results-exports",
+      "students-workspace"
+    ],
+    "fused_docs": [
+      "questions",
+      "creating-exams",
+      "notifications",
+      "product-overview",
+      "empty-states",
+      "account-settings"
+    ],
+    "final": [
+      {
+        "chunk_id": "product-overview::what-you-can-do::0::7b0020c6c65e",
+        "doc_id": "product-overview",
+        "section": "What You Can Do",
+        "score": 0.323
+      },
+      {
+        "chunk_id": "creating-exams::tips-for-better-ai-generation::0::b6b54c6dd11f",
+        "doc_id": "creating-exams",
+        "section": "Tips for Better AI Generation",
+        "score": 0.3007
+      },
+      {
+        "chunk_id": "questions::common-questions::0::cd5a685e9000",
+        "doc_id": "questions",
+        "section": "Common Questions",
+        "score": 0.1023
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Provide clear, well-structured source content with organized material, clear topics, and concepts",
+        "chunk_id": "creating-exams::tips-for-better-ai-generation::0::b6b54c6dd11f",
+        "doc_id": "creating-exams",
+        "section": "Tips for Better AI Generation",
+        "support": 1.0,
+        "in_expected_doc": true,
+        "dense_rank_top20": 2,
+        "bm25_rank_top20": 2,
+        "doc_rank_fused": 2,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "s08",
+    "query": "Where can I find the analytics for my exam?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "relevancy": 0.33
+    },
+    "expected_docs": [
+      "empty-states"
+    ],
+    "prod_route": "tool",
+    "prod_execution_class": "tool_required",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "analytics::how-to-access::0::c539eaf40565",
+        "doc_id": "analytics",
+        "section": "How to Access",
+        "score": 0.6337
+      },
+      {
+        "chunk_id": "analytics::common-questions::0::01b36bfd32a0",
+        "doc_id": "analytics",
+        "section": "Common Questions",
+        "score": 0.6257
+      },
+      {
+        "chunk_id": "analytics::step-by-step-ui-guide-using-analytics::1::3a072bbcd46f",
+        "doc_id": "analytics",
+        "section": "Step-by-Step UI Guide: Using Analytics",
+        "score": 0.6195
+      },
+      {
+        "chunk_id": "results-exports::results-vs-analytics::0::78f628e71970",
+        "doc_id": "results-exports",
+        "section": "Results vs Analytics",
+        "score": 0.6077
+      },
+      {
+        "chunk_id": "analytics::overview::0::42100dc17eef",
+        "doc_id": "analytics",
+        "section": "Overview",
+        "score": 0.605
+      }
+    ],
+    "dense_docs_top20": [
+      "analytics",
+      "common-problems",
+      "common-workflows",
+      "dashboard",
+      "live-monitoring",
+      "results-exports",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "analytics",
+      "common-problems",
+      "common-workflows",
+      "creating-exams",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-classroom",
+      "google-drive",
+      "live-monitoring",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "roles"
+    ],
+    "fused_docs": [
+      "analytics",
+      "navigation",
+      "dashboard",
+      "results-exports",
+      "empty-states"
+    ],
+    "final": [
+      {
+        "chunk_id": "analytics::how-to-access::0::c539eaf40565",
+        "doc_id": "analytics",
+        "section": "How to Access",
+        "score": 0.387
+      },
+      {
+        "chunk_id": "results-exports::results-vs-analytics::0::78f628e71970",
+        "doc_id": "results-exports",
+        "section": "Results vs Analytics",
+        "score": 0.2418
+      },
+      {
+        "chunk_id": "empty-states::common-questions::0::556be04f149e",
+        "doc_id": "empty-states",
+        "section": "Common Questions",
+        "score": 0.0974
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Analytics will show data after students take and submit the exam, grading completes, and the correct date range filter is applied",
+        "chunk_id": "empty-states::common-questions::0::556be04f149e",
+        "doc_id": "empty-states",
+        "section": "Common Questions",
+        "support": 0.86,
+        "in_expected_doc": true,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": 5,
+        "doc_rank_fused": 5,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "s09",
+    "query": "How do I change my exam settings after it's already been published?",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.67,
+      "relevancy": 0.74
+    },
+    "expected_docs": [
+      "exam-settings"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.publish",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "exam-settings::settings-after-publishing::0::a7330bf74e94",
+        "doc_id": "exam-settings",
+        "section": "Settings After Publishing",
+        "score": 0.7333
+      },
+      {
+        "chunk_id": "lifecycle::settings-changes-after-publishing::0::c7747a936e58",
+        "doc_id": "lifecycle",
+        "section": "Settings Changes After Publishing",
+        "score": 0.7167
+      },
+      {
+        "chunk_id": "exam-settings::overview::0::d791c07559e4",
+        "doc_id": "exam-settings",
+        "section": "Overview",
+        "score": 0.6419
+      },
+      {
+        "chunk_id": "exam-settings::common-questions::1::836a19709ac8",
+        "doc_id": "exam-settings",
+        "section": "Common Questions",
+        "score": 0.6025
+      },
+      {
+        "chunk_id": "lifecycle::common-questions::0::ae4f876ff746",
+        "doc_id": "lifecycle",
+        "section": "Common Questions",
+        "score": 0.5976
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "exam-settings",
+      "grading",
+      "lifecycle",
+      "navigation",
+      "product-overview",
+      "publishing"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "common-problems",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-classroom",
+      "grading",
+      "live-monitoring",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "roles",
+      "verification"
+    ],
+    "fused_docs": [
+      "exam-settings",
+      "account-settings",
+      "lifecycle",
+      "onboarding",
+      "grading",
+      "navigation"
+    ],
+    "final": [
+      {
+        "chunk_id": "lifecycle::settings-changes-after-publishing::0::c7747a936e58",
+        "doc_id": "lifecycle",
+        "section": "Settings Changes After Publishing",
+        "score": 0.9723
+      },
+      {
+        "chunk_id": "exam-settings::settings-after-publishing::0::a7330bf74e94",
+        "doc_id": "exam-settings",
+        "section": "Settings After Publishing",
+        "score": 0.9658
+      },
+      {
+        "chunk_id": "account-settings::common-questions::0::68b20692d96e",
+        "doc_id": "account-settings",
+        "section": "Common Questions",
+        "score": 0.029
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Most settings can be changed on a published exam, but they generally only affect future attempts and do not change in-progress ones",
+        "chunk_id": "exam-settings::settings-after-publishing::0::a7330bf74e94",
+        "doc_id": "exam-settings",
+        "section": "Settings After Publishing",
+        "support": 0.85,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 6,
+        "doc_rank_fused": 1,
+        "in_final": true
+      },
+      {
+        "claim": "Finalize settings before publishing when possible, as changes only impact students who start a new attempt after the change",
+        "chunk_id": "exam-settings::settings-after-publishing::0::a7330bf74e94",
+        "doc_id": "exam-settings",
+        "section": "Settings After Publishing",
+        "support": 0.83,
+        "in_expected_doc": true,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 6,
+        "doc_rank_fused": 1,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "s14",
+    "query": "How do I change how short answer questions are graded in my exam settings?",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 0.67,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "grading"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.settings",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "grading::common-questions::1::108995df6e35",
+        "doc_id": "grading",
+        "section": "Common Questions",
+        "score": 0.7135
+      },
+      {
+        "chunk_id": "exam-settings::scoring::1::7ebaa4e18138",
+        "doc_id": "exam-settings",
+        "section": "Scoring",
+        "score": 0.6396
+      },
+      {
+        "chunk_id": "exam-settings::common-questions::0::7932136cc143",
+        "doc_id": "exam-settings",
+        "section": "Common Questions",
+        "score": 0.6238
+      },
+      {
+        "chunk_id": "grading::grading-style::0::6e55410621bb",
+        "doc_id": "grading",
+        "section": "Grading Style",
+        "score": 0.6105
+      },
+      {
+        "chunk_id": "grading::step-by-step-ui-guide-how-grading-works-and-wher::1::af78d49a8891",
+        "doc_id": "grading",
+        "section": "Step-by-Step UI Guide: How Grading Works and Where to See It",
+        "score": 0.6088
+      }
+    ],
+    "dense_docs_top20": [
+      "exam-settings",
+      "grading",
+      "questions",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "common-problems",
+      "creating-exams",
+      "dashboard",
+      "exam-settings",
+      "google-classroom",
+      "grading",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "questions",
+      "students-workspace",
+      "terminology"
+    ],
+    "fused_docs": [
+      "grading",
+      "exam-settings",
+      "account-settings",
+      "questions",
+      "navigation"
+    ],
+    "final": [
+      {
+        "chunk_id": "grading::common-questions::1::108995df6e35",
+        "doc_id": "grading",
+        "section": "Common Questions",
+        "score": 0.7061
+      },
+      {
+        "chunk_id": "exam-settings::scoring::1::7ebaa4e18138",
+        "doc_id": "exam-settings",
+        "section": "Scoring",
+        "score": 0.5634
+      },
+      {
+        "chunk_id": "account-settings::common-questions::0::68b20692d96e",
+        "doc_id": "account-settings",
+        "section": "Common Questions",
+        "score": 0.0085
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Use the Answer Grading Style setting on the exam's Settings tab to control how written answers are evaluated",
+        "chunk_id": "grading::grading-style::0::6e55410621bb",
+        "doc_id": "grading",
+        "section": "Grading Style",
+        "support": 0.91,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "s15",
+    "query": "How do I unpublish an exam in Quizzer without losing my results?",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "relevancy": 0.67
+    },
+    "expected_docs": [
+      "lifecycle"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.unpublish",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "publishing::what-happens-to-results::0::620e846a2771",
+        "doc_id": "publishing",
+        "section": "What Happens to Results",
+        "score": 0.5997
+      },
+      {
+        "chunk_id": "publishing::republishing::0::122a2f579a9a",
+        "doc_id": "publishing",
+        "section": "Republishing",
+        "score": 0.5944
+      },
+      {
+        "chunk_id": "publishing::common-questions::2::ad6c6ce8c154",
+        "doc_id": "publishing",
+        "section": "Common Questions",
+        "score": 0.5935
+      },
+      {
+        "chunk_id": "results-exports::results-persistence::0::2e1eb10a8216",
+        "doc_id": "results-exports",
+        "section": "Results Persistence",
+        "score": 0.5736
+      },
+      {
+        "chunk_id": "lifecycle::what-happens-to-results::0::142ab2fb5fda",
+        "doc_id": "lifecycle",
+        "section": "What Happens to Results",
+        "score": 0.5695
+      }
+    ],
+    "dense_docs_top20": [
+      "common-problems",
+      "common-workflows",
+      "lifecycle",
+      "product-overview",
+      "publishing",
+      "results-exports",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-classroom",
+      "lifecycle",
+      "live-monitoring",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "product-overview",
+      "publishing",
+      "questions",
+      "results-exports",
+      "roles"
+    ],
+    "fused_docs": [
+      "publishing",
+      "lifecycle",
+      "account-settings",
+      "navigation",
+      "results-exports",
+      "notifications"
+    ],
+    "final": [
+      {
+        "chunk_id": "publishing::what-happens-to-results::0::620e846a2771",
+        "doc_id": "publishing",
+        "section": "What Happens to Results",
+        "score": 0.7257
+      },
+      {
+        "chunk_id": "lifecycle::what-happens-to-results::0::142ab2fb5fda",
+        "doc_id": "lifecycle",
+        "section": "What Happens to Results",
+        "score": 0.614
+      },
+      {
+        "chunk_id": "results-exports::results-persistence::0::2e1eb10a8216",
+        "doc_id": "results-exports",
+        "section": "Results Persistence",
+        "score": 0.4744
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Simply unpublish the exam",
+        "chunk_id": "publishing::state-transitions::0::10d2843cd21d",
+        "doc_id": "publishing",
+        "section": "State Transitions",
+        "support": 0.67,
+        "in_expected_doc": false,
+        "dense_rank_top20": null,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      },
+      {
+        "claim": "Results stay and remain accessible in the Results tab",
+        "chunk_id": "publishing::what-happens-to-results::0::620e846a2771",
+        "doc_id": "publishing",
+        "section": "What Happens to Results",
+        "support": 1.0,
+        "in_expected_doc": false,
+        "dense_rank_top20": 1,
+        "bm25_rank_top20": 4,
+        "doc_rank_fused": 1,
+        "in_final": true
+      }
+    ],
+    "suggested_cause": "CONTEXT_NOISE (off-topic docs in final set)"
+  },
+  {
+    "id": "s19",
+    "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "relevancy": 0.33
+    },
+    "expected_docs": [
+      "onboarding"
+    ],
+    "prod_route": "retrieval",
+    "prod_execution_class": "simple_knowledge",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "onboarding::the-four-onboarding-steps::0::74206941d7ae",
+        "doc_id": "onboarding",
+        "section": "The Four Onboarding Steps",
+        "score": 0.6248
+      },
+      {
+        "chunk_id": "product-overview::two-separate-experiences::0::31f920f6b56c",
+        "doc_id": "product-overview",
+        "section": "Two Separate Experiences",
+        "score": 0.5655
+      },
+      {
+        "chunk_id": "account-settings::workspace-tab::0::387acf5ac38e",
+        "doc_id": "account-settings",
+        "section": "Workspace Tab",
+        "score": 0.5651
+      },
+      {
+        "chunk_id": "onboarding::step-by-step-ui-guide-signing-up-and-onboarding::1::bea4d5af8fac",
+        "doc_id": "onboarding",
+        "section": "Step-by-Step UI Guide: Signing Up and Onboarding",
+        "score": 0.5604
+      },
+      {
+        "chunk_id": "onboarding::overview::0::a8463754e9a9",
+        "doc_id": "onboarding",
+        "section": "Overview",
+        "score": 0.5569
+      }
+    ],
+    "dense_docs_top20": [
+      "account-settings",
+      "empty-states",
+      "onboarding",
+      "product-overview",
+      "students-workspace"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "common-problems",
+      "dashboard",
+      "empty-states",
+      "exam-settings",
+      "google-drive",
+      "grading",
+      "navigation",
+      "notifications",
+      "onboarding",
+      "publishing",
+      "roles",
+      "verification"
+    ],
+    "fused_docs": [
+      "onboarding",
+      "navigation",
+      "product-overview",
+      "account-settings",
+      "verification",
+      "notifications",
+      "empty-states"
+    ],
+    "final": [
+      {
+        "chunk_id": "onboarding::the-four-onboarding-steps::0::74206941d7ae",
+        "doc_id": "onboarding",
+        "section": "The Four Onboarding Steps",
+        "score": 0.5497
+      },
+      {
+        "chunk_id": "product-overview::two-separate-experiences::0::31f920f6b56c",
+        "doc_id": "product-overview",
+        "section": "Two Separate Experiences",
+        "score": 0.0511
+      },
+      {
+        "chunk_id": "account-settings::workspace-tab::0::387acf5ac38e",
+        "doc_id": "account-settings",
+        "section": "Workspace Tab",
+        "score": 0.0282
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Enter your optional details (such as Institution, Subject Area, and Courses Taught based on your persona) in the fields provided in Step 5, then click Continue",
+        "chunk_id": "onboarding::step-by-step-ui-guide-signing-up-and-onboarding::1::bea4d5af8fac",
+        "doc_id": "onboarding",
+        "section": "Step-by-Step UI Guide: Signing Up and Onboarding",
+        "support": 0.86,
+        "in_expected_doc": true,
+        "dense_rank_top20": 4,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "s22",
+    "query": "How do I set the correct answer for a True/False question?",
+    "category": "basic",
+    "scores": {
+      "recall": 1.0,
+      "precision": 1.0,
+      "relevancy": 0.6
+    },
+    "expected_docs": [
+      "questions"
+    ],
+    "prod_route": "workflow_card",
+    "prod_execution_class": "deterministic",
+    "prod_canonical_intent": "exam.settings",
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "questions::correct-answers::0::b58c1204b4ef",
+        "doc_id": "questions",
+        "section": "Correct Answers",
+        "score": 0.549
+      },
+      {
+        "chunk_id": "taking-exams::step-5-answering-questions::0::1e70f44a26e8",
+        "doc_id": "taking-exams",
+        "section": "Step 5: Answering Questions",
+        "score": 0.5079
+      },
+      {
+        "chunk_id": "grading::objective-question-grading::0::4d3f93ef6896",
+        "doc_id": "grading",
+        "section": "Objective Question Grading",
+        "score": 0.4683
+      },
+      {
+        "chunk_id": "questions::question-types::0::017deb54a1fb",
+        "doc_id": "questions",
+        "section": "Question Types",
+        "score": 0.4518
+      },
+      {
+        "chunk_id": "questions::answer-key-freezing::0::4c089066ce7b",
+        "doc_id": "questions",
+        "section": "Answer Key Freezing",
+        "score": 0.4502
+      }
+    ],
+    "dense_docs_top20": [
+      "exam-settings",
+      "grading",
+      "questions",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "account-settings",
+      "arena",
+      "creating-exams",
+      "exam-settings",
+      "grading",
+      "questions",
+      "taking-exams",
+      "terminology"
+    ],
+    "fused_docs": [
+      "questions",
+      "taking-exams",
+      "terminology",
+      "grading"
+    ],
+    "final": [
+      {
+        "chunk_id": "questions::correct-answers::0::b58c1204b4ef",
+        "doc_id": "questions",
+        "section": "Correct Answers",
+        "score": 0.2913
+      },
+      {
+        "chunk_id": "taking-exams::step-5-answering-questions::0::1e70f44a26e8",
+        "doc_id": "taking-exams",
+        "section": "Step 5: Answering Questions",
+        "score": 0.241
+      },
+      {
+        "chunk_id": "grading::objective-question-grading::0::4d3f93ef6896",
+        "doc_id": "grading",
+        "section": "Objective Question Grading",
+        "score": 0.0193
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "Mark one of True or False as correct",
+        "chunk_id": "grading::common-questions::0::81d04142076e",
+        "doc_id": "grading",
+        "section": "Common Questions",
+        "support": 1.0,
+        "in_expected_doc": false,
+        "dense_rank_top20": 7,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 4,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  },
+  {
+    "id": "s23",
+    "query": "Where can I find the exam results to download them?",
+    "category": "basic",
+    "scores": {
+      "recall": 0.5,
+      "precision": 0.5,
+      "relevancy": 0.8
+    },
+    "expected_docs": [
+      "results-exports"
+    ],
+    "prod_route": "tool",
+    "prod_execution_class": "tool_required",
+    "prod_canonical_intent": null,
+    "rerank": "ok",
+    "dense_top": [
+      {
+        "chunk_id": "common-workflows::export-results-for-record-keeping::0::75d610131f25",
+        "doc_id": "common-workflows",
+        "section": "Export Results for Record-Keeping",
+        "score": 0.5437
+      },
+      {
+        "chunk_id": "results-exports::how-to-access-results::0::9538b98e800d",
+        "doc_id": "results-exports",
+        "section": "How to Access Results",
+        "score": 0.5354
+      },
+      {
+        "chunk_id": "results-exports::common-questions::0::e3a80af2dee9",
+        "doc_id": "results-exports",
+        "section": "Common Questions",
+        "score": 0.5267
+      },
+      {
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::0::6cfc4122508a",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "score": 0.5098
+      },
+      {
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::1::bed5b32be3bd",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "score": 0.5061
+      }
+    ],
+    "dense_docs_top20": [
+      "common-workflows",
+      "creating-exams",
+      "empty-states",
+      "google-drive",
+      "grading",
+      "lifecycle",
+      "navigation",
+      "publishing",
+      "results-exports",
+      "taking-exams",
+      "terminology"
+    ],
+    "bm25_docs_top20": [
+      "analytics",
+      "arena",
+      "common-workflows",
+      "exam-settings",
+      "google-calendar",
+      "google-drive",
+      "lifecycle",
+      "live-monitoring",
+      "navigation",
+      "product-overview",
+      "publishing",
+      "questions",
+      "results-exports",
+      "students-workspace"
+    ],
+    "fused_docs": [
+      "results-exports",
+      "common-workflows",
+      "navigation",
+      "google-drive"
+    ],
+    "final": [
+      {
+        "chunk_id": "common-workflows::export-results-for-record-keeping::0::75d610131f25",
+        "doc_id": "common-workflows",
+        "section": "Export Results for Record-Keeping",
+        "score": 0.7472
+      },
+      {
+        "chunk_id": "results-exports::how-to-access-results::0::9538b98e800d",
+        "doc_id": "results-exports",
+        "section": "How to Access Results",
+        "score": 0.0825
+      },
+      {
+        "chunk_id": "navigation::common-questions::0::ac2289d4ae25",
+        "doc_id": "navigation",
+        "section": "Common Questions",
+        "score": 0.0099
+      }
+    ],
+    "evidence": [
+      {
+        "claim": "To find the exam results to download, go to the Results tab at the top of the exam workspace and look for the Export button (usually in the top-right area or as a dropdown menu)",
+        "chunk_id": "results-exports::step-by-step-ui-guide-viewing-and-exporting-resu::1::bed5b32be3bd",
+        "doc_id": "results-exports",
+        "section": "Step-by-Step UI Guide: Viewing and Exporting Results",
+        "support": 0.8,
+        "in_expected_doc": true,
+        "dense_rank_top20": 5,
+        "bm25_rank_top20": null,
+        "doc_rank_fused": 1,
+        "in_final": false
+      }
+    ],
+    "suggested_cause": "EVIDENCE_MISS (right doc, supporting chunk not selected)"
+  }
+]

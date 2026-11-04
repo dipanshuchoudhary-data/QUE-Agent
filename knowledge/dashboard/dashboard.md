@@ -73,6 +73,14 @@ The Dashboard is a summary view. For detailed data, navigate to the
 specific workspace (Exams for exam management, Analytics for trends,
 Students for learner data).
 
+The KPI strip shows active students, weekly attempts, average score, and
+AI jobs. The count of exams you created lives on Exams, not on the
+Dashboard (ask "how many exams have I created?" for published vs draft).
+LIVE on a Dashboard exam means a student has an active, in-progress
+attempt right now, with their browser tab open and the timer running. If
+you have not created any exams yet, the Dashboard shows a getting-
+started guide; create your first exam to see activity.
+
 ## Student Dashboard
 
 Student accounts see a different, simpler dashboard:
@@ -89,6 +97,9 @@ The student dashboard does NOT list available exams or show scores.
 Students access exams through links shared by teachers, not through
 the dashboard.
 
+Student accounts have a simplified dashboard of cards that explains how
+to use exam links. To take an exam, open the link your teacher shared.
+
 ## What Makes the Dashboard Empty
 
 The teacher dashboard may show an empty or minimal state when:
@@ -98,35 +109,6 @@ The teacher dashboard may show an empty or minimal state when:
 
 The Dashboard fills up as you create exams, publish them, and students
 start taking them.
-
-## Common Questions
-
-What is on the Dashboard?
-An overview of your exam activity: four summary metric cards (active
-now, weekly attempts, weekly avg score, AI jobs), live exams,
-quick actions, and (for new accounts) an activation checklist.
-
-How many exams did I create?
-That count lives on Exams, not on the Dashboard KPI strip. Ask
-“how many exams have I created?” for published vs draft. Dashboard
-metrics are active students, weekly attempts, average score, and
-AI jobs.
-
-Why is my Dashboard empty?
-If you have not created any exams yet, the Dashboard shows a getting-
-started guide. Create your first exam to see activity here.
-
-I am a student. Why do I only see cards, not my exams?
-Student accounts have a simplified dashboard that explains how to use
-exam links. To take an exam, open a link shared by your teacher.
-
-Where do I see detailed data?
-The Dashboard is a summary. For exam management go to Exams, for
-performance trends go to Analytics, for learner data go to Students.
-
-What does LIVE mean on the Dashboard?
-It means a student has an active, in-progress attempt on that exam
-right now, with their browser tab open and timer running.
 
 ## Related Features
 

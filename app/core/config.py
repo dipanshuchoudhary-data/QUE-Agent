@@ -1,6 +1,7 @@
 """Application settings (pydantic-settings)."""
 
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic import Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -79,8 +80,38 @@ class Settings(BaseSettings):
     que_rag_enabled: bool = Field(default=True, alias="QUE_RAG_ENABLED")
     que_chroma_path: str = Field(default="data/chroma", alias="QUE_CHROMA_PATH")
     que_embedding_model: str = Field(
-        default="openai/text-embedding-3-small",
+        default="openai/text-embedding-3-large",
         alias="QUE_EMBEDDING_MODEL",
+    )
+    # Which key (1-based position in the deduped key list) embeds the index and queries.
+    # Embeddings stay on one key; pick one whose account has credit.
+    que_embedding_key_index: int = Field(default=1, alias="QUE_EMBEDDING_KEY_INDEX")
+    # ``local`` (development only) or the API already configured below.
+    # ``existing_api`` and ``openrouter`` both mean that API. Never inferred from the OS.
+    embedding_provider: str = Field(default="existing_api", alias="EMBEDDING_PROVIDER")
+    # `nvidia_pool`: the same Nemotron embedding model served by NVIDIA and OpenRouter, round
+    # robin with instant failover (app/knowledge/embeddings.py). Keys are named, never inferred.
+    nvidia_emb_dipanshu: str = Field(default="", alias="NVIDIA_EMB_DIPANSHU")
+    openrouter_emb_dipanshu: str = Field(default="", alias="OPENROUTER_EMB_DIPANSHU")
+    nvidia_emb_base_url: str = Field(default="https://integrate.api.nvidia.com/v1", alias="NVIDIA_EMB_BASE_URL")
+    nvidia_emb_model: str = Field(default="nvidia/nemotron-3.5-embed-1b", alias="NVIDIA_EMB_MODEL")
+    openrouter_emb_base_url: str = Field(default="https://openrouter.ai/api/v1", alias="OPENROUTER_EMB_BASE_URL")
+    openrouter_emb_model: str = Field(default="nvidia/nemotron-3.5-embed-1b:free", alias="OPENROUTER_EMB_MODEL")
+    # A provider that is slow or erroring is skipped at once; it is retried after the cooldown.
+    que_embed_timeout_seconds: float = Field(default=6.0, alias="QUE_EMBED_TIMEOUT_SECONDS")
+    que_embed_cooldown_seconds: float = Field(default=30.0, alias="QUE_EMBED_COOLDOWN_SECONDS")
+    local_embedding_model: str = Field(
+        default="sentence-transformers/all-MiniLM-L6-v2",
+        alias="LOCAL_EMBEDDING_MODEL",
+    )
+    local_embedding_cache: str = Field(default="", alias="LOCAL_EMBEDDING_CACHE")
+    local_embedding_device: str = Field(default="cpu", alias="LOCAL_EMBEDDING_DEVICE")
+    local_chroma_path: str = Field(default="data/chroma_local", alias="LOCAL_CHROMA_PATH")
+    # ``local`` (development only) or ``existing_api`` (Voyage / Cohere / OpenRouter as configured).
+    reranker_provider: str = Field(default="existing_api", alias="RERANKER_PROVIDER")
+    local_rerank_model: str = Field(
+        default="cross-encoder/ms-marco-MiniLM-L6-v2",
+        alias="LOCAL_RERANK_MODEL",
     )
     que_rag_top_k: int = Field(default=2, alias="QUE_RAG_TOP_K")
     # Cosine similarity floor (Chroma hnsw:space=cosine returns distance;
@@ -92,8 +123,35 @@ class Settings(BaseSettings):
     )
     # Phase 6 hybrid — BM25 + dense RRF (default on when corpus exists).
     que_rag_hybrid: bool = Field(default=True, alias="QUE_RAG_HYBRID")
-    que_rag_candidate_k: int = Field(default=8, alias="QUE_RAG_CANDIDATE_K")
+    que_rag_candidate_k: int = Field(default=4, alias="QUE_RAG_CANDIDATE_K")
     que_rag_rrf_k: int = Field(default=60, alias="QUE_RAG_RRF_K")
+    # Cross-encoder over the hybrid candidate pool. Dense floor stays on cosine.
+    que_rag_rerank_enabled: bool = Field(default=True, alias="QUE_RAG_RERANK_ENABLED")
+    que_rag_rerank_model: str = Field(
+        default="nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+        alias="QUE_RAG_RERANK_MODEL",
+    )
+    # Dedicated rerank providers, used round-robin with failover (names: voyage, cohere).
+    # Empty = the single OpenRouter-style call above.
+    que_rag_rerank_providers: str = Field(default="", alias="QUE_RAG_RERANK_PROVIDERS")
+    que_rerank_voyage_api_key: str = Field(default="", alias="QUE_RERANK_VOYAGE_API_KEY")
+    que_rerank_voyage_model: str = Field(default="rerank-2.5-lite", alias="QUE_RERANK_VOYAGE_MODEL")
+    que_rerank_cohere_api_key: str = Field(default="", alias="QUE_RERANK_COHERE_API_KEY")
+    que_rerank_cohere_model: str = Field(default="rerank-v3.5", alias="QUE_RERANK_COHERE_MODEL")
+    # Experiments (both off by default; see evals/diagnostics/ablations.md).
+    # Append up to N following chunks of the top hit's section, so a workflow split
+    # across chunks is not cut mid-way.
+    que_rag_neighbor_expand: int = Field(default=0, alias="QUE_RAG_NEIGHBOR_EXPAND")
+    # Retrieval-only typo/Hinglish rewrite (never changes the user's message).
+    que_rag_query_normalize: bool = Field(default=False, alias="QUE_RAG_QUERY_NORMALIZE")
+    # Retrieval found nothing above the floor: answer with a fixed honest reply instead of
+    # asking a (possibly weak) LLM to follow a "do not answer" instruction.
+    que_noanswer_deterministic: bool = Field(default=True, alias="QUE_NOANSWER_DETERMINISTIC")
+    # On a retrieval miss only: one small LLM call rewrites an informal/Hinglish ask into an
+    # English search query (one retry) or asks a clarifying question when readings differ.
+    que_interpret_on_miss: bool = Field(default=True, alias="QUE_INTERPRET_ON_MISS")
+    # With rerank ok: keep only chunks scoring >= ratio * best score (0 = off).
+    que_rag_dynamic_k_ratio: float = Field(default=0.0, alias="QUE_RAG_DYNAMIC_K_RATIO")
 
     # Phase 4 insight tools (QUE → Quizzer internal API).
     que_tools_enabled: bool = Field(default=False, alias="QUE_TOOLS_ENABLED")
@@ -173,6 +231,64 @@ class Settings(BaseSettings):
         return [o.strip() for o in self.cors_allow_origins.split(",") if o.strip()]
 
     @property
+    def resolved_embedding_provider(self) -> str:
+        raw = (self.embedding_provider or "existing_api").strip().lower()
+        if raw in {"existing_api", "openrouter"}:
+            return "openrouter"
+        if raw in {"nvidia_pool", "nvidia_openrouter", "pool"}:
+            return "nvidia_pool"
+        return raw
+
+    @property
+    def uses_embedding_pool(self) -> bool:
+        return self.resolved_embedding_provider == "nvidia_pool"
+
+    @property
+    def uses_local_embeddings(self) -> bool:
+        return self.resolved_embedding_provider == "local"
+
+    @property
+    def resolved_reranker_provider(self) -> str:
+        raw = (self.reranker_provider or "existing_api").strip().lower()
+        if raw in {"existing_api", "openrouter", "voyage", "cohere"}:
+            return "existing_api"
+        return raw
+
+    @property
+    def uses_local_reranker(self) -> bool:
+        return self.resolved_reranker_provider == "local"
+
+    @property
+    def active_embedding_model(self) -> str:
+        """Model id shared by indexing and query-time retrieval."""
+        if self.uses_local_embeddings:
+            return self.local_embedding_model
+        if self.uses_embedding_pool:
+            return self.nvidia_emb_model
+        return self.que_embedding_model
+
+    @property
+    def expected_embedding_dim(self) -> int:
+        """384 for local MiniLM. 0 means the API model does not declare a fixed check here."""
+        if self.uses_embedding_pool:
+            return 2048
+        return 384 if self.uses_local_embeddings else 0
+
+    @property
+    def active_chroma_path(self) -> str:
+        """API index and the local MiniLM index never share a directory."""
+        if self.uses_local_embeddings:
+            return self.local_chroma_path
+        return self.que_chroma_path
+
+    @property
+    def active_rerank_model(self) -> str:
+        if self.uses_local_reranker:
+            return self.local_rerank_model
+        providers = (self.que_rag_rerank_providers or "openrouter").strip()
+        return f"{providers}:{self.que_rag_rerank_model}"
+
+    @property
     def llm_api_keys(self) -> tuple[str, ...]:
         """Deduped chat/embedding keys: LLM_API_KEY then LLM_API_KEY_1…8."""
         ordered = (
@@ -229,7 +345,39 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def enforce_production_guards(self) -> "Settings":
+        embed = (self.embedding_provider or "existing_api").strip().lower()
+        rerank = (self.reranker_provider or "existing_api").strip().lower()
+        if embed not in {"local", "openrouter", "existing_api", "nvidia_pool", "nvidia_openrouter", "pool"}:
+            raise ValueError(
+                "EMBEDDING_PROVIDER must be 'local', 'existing_api' (openrouter) or 'nvidia_pool'. "
+                f"Got {self.embedding_provider!r}."
+            )
+        if rerank not in {"local", "existing_api", "openrouter", "voyage", "cohere"}:
+            raise ValueError(
+                "RERANKER_PROVIDER must be 'local' or 'existing_api'. "
+                f"Got {self.reranker_provider!r}."
+            )
         if not self.is_local:
+            if embed == "local":
+                raise ValueError(
+                    "EMBEDDING_PROVIDER=local is only allowed when APP_ENV is local, dev, or development. "
+                    "Production must set EMBEDDING_PROVIDER=existing_api."
+                )
+            if embed in {"nvidia_pool", "nvidia_openrouter", "pool"} and not (
+                self.nvidia_emb_dipanshu.strip() or self.openrouter_emb_dipanshu.strip()
+            ):
+                raise ValueError(
+                    "EMBEDDING_PROVIDER=nvidia_pool needs NVIDIA_EMB_DIPANSHU and/or OPENROUTER_EMB_DIPANSHU."
+                )
+            if rerank == "local":
+                raise ValueError(
+                    "RERANKER_PROVIDER=local is only allowed when APP_ENV is local, dev, or development. "
+                    "Production must set RERANKER_PROVIDER=existing_api."
+                )
+            if Path(self.que_chroma_path) == Path(self.local_chroma_path):
+                raise ValueError(
+                    "QUE_CHROMA_PATH must not be the local MiniLM index (LOCAL_CHROMA_PATH) in production."
+                )
             if self.allow_insecure_local_no_auth:
                 raise ValueError("ALLOW_INSECURE_LOCAL_NO_AUTH cannot be true outside local/dev")
             weak = {

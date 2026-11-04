@@ -199,6 +199,13 @@ want to create from scratch.
 Users may call this: generation mode, how to create questions, AI mode,
 auto-generate, source-first vs guided.
 
+Source-first lets the AI decide question types and counts from the
+content. Guided follows your exact blueprint (section count, question
+type, quantity). To create questions without AI, choose Custom mode, or
+add questions manually from the Questions tab after creating the exam.
+You can combine multiple sources (uploaded files, pasted text, and URLs)
+on one exam; they are all combined as source material.
+
 ## The Blueprint (Guided Mode)
 
 When using Guided mode, the blueprint defines the exact exam structure:
@@ -217,6 +224,10 @@ Default is 1 mark. Range: 1 to 100.
 
 The blueprint is your specification — the AI generates exactly what
 you ask for, using the source material as the knowledge base.
+
+Guided mode supports up to 100 total questions across up to 20 sections.
+Source-first determines the question count automatically from the
+content.
 
 ## AI Generation Process
 
@@ -283,6 +294,10 @@ exam generation counts.
 Users may call this: generation limit, daily limit, how many exams
 can I create, quota.
 
+Explorer gets 1 generation per day, Professional 3, and Elite 10; the
+quota resets daily. Regenerating single questions from the Questions tab
+does not use a quota slot.
+
 ## AI Model Selection
 
 Quizzer's AI gateway routes generation requests to the best available
@@ -340,54 +355,6 @@ useful text.
 
 Splitting very large documents across multiple exams can produce better
 results than feeding everything into one generation.
-
-## Common Questions
-
-How do I create an exam?
-Click Create Exam, add your source content (paste text, upload files,
-or provide URLs), choose a generation mode, and run AI generation.
-
-What file types can I upload?
-PDF, DOCX, PPTX, TXT, and images (PNG, JPG).
-
-How long does generation take?
-Usually a few seconds to a couple of minutes, depending on content
-length and question count.
-
-Can I create questions manually without AI?
-Yes. Choose the Custom mode during creation, or add questions manually
-from the Questions tab after creating the exam.
-
-What is the difference between Source-first and Guided?
-Source-first lets the AI decide question types and counts based on the
-content. Guided follows your exact blueprint specifying section count,
-question type, and quantity. Use Guided when you need precise control.
-
-Why did generation fail?
-Check the notification for details. Common causes: source content too
-short, extraction errors on scanned PDFs, daily quota exceeded, or
-temporary AI service errors.
-
-Can I import files from Google Drive?
-Yes, if you have connected Google Drive via Integrations. The import
-option appears in the Files tab during exam creation.
-
-How many exams can I generate per day?
-Depends on your tier: Explorer gets 1/day, Professional gets 3/day,
-Elite gets 10/day. The quota resets daily.
-
-Does regenerating individual questions count against my daily quota?
-No. Only the initial full exam generation counts. Regenerating single
-questions from the Questions tab does not use a quota slot.
-
-Can I combine multiple sources on one exam?
-Yes. You can upload multiple files, paste text, and provide URLs all
-on the same exam. They are all combined as source material.
-
-What is the maximum number of questions I can generate?
-In Guided mode, the blueprint supports up to 100 total questions
-across up to 20 sections. Source-first determines the count
-automatically based on the content.
 
 ## Related Features
 

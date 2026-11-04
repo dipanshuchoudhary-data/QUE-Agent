@@ -1,0 +1,3712 @@
+{
+  "summary": {
+    "base": {
+      "rows": 67,
+      "coverage": 0.646,
+      "full_coverage_rows": 32,
+      "doc_hit": 0.955,
+      "noise": 0.587,
+      "chunks": 2.821,
+      "chars": 1757.03,
+      "rerank_ok": 53,
+      "rerank_failed": 11,
+      "rerank_skipped": 3
+    },
+    "rerank_off": {
+      "rows": 67,
+      "coverage": 0.623,
+      "full_coverage_rows": 29,
+      "doc_hit": 0.955,
+      "noise": 0.592,
+      "chunks": 2.821,
+      "chars": 1763.373,
+      "rerank_ok": 0,
+      "rerank_failed": 0,
+      "rerank_skipped": 0
+    },
+    "neighbor1": {
+      "rows": 67,
+      "coverage": 0.667,
+      "full_coverage_rows": 34,
+      "doc_hit": 0.955,
+      "noise": 0.567,
+      "chunks": 3,
+      "chars": 1891.507,
+      "rerank_ok": 53,
+      "rerank_failed": 11,
+      "rerank_skipped": 3
+    },
+    "dynamic0.6": {
+      "rows": 67,
+      "coverage": 0.533,
+      "full_coverage_rows": 24,
+      "doc_hit": 0.836,
+      "noise": 0.363,
+      "chunks": 1.597,
+      "chars": 1028.642,
+      "rerank_ok": 53,
+      "rerank_failed": 11,
+      "rerank_skipped": 3
+    },
+    "dynamic0.8": {
+      "rows": 67,
+      "coverage": 0.511,
+      "full_coverage_rows": 22,
+      "doc_hit": 0.821,
+      "noise": 0.331,
+      "chunks": 1.493,
+      "chars": 955.343,
+      "rerank_ok": 53,
+      "rerank_failed": 11,
+      "rerank_skipped": 3
+    },
+    "normalize": {
+      "rows": 67,
+      "coverage": 0.641,
+      "full_coverage_rows": 31,
+      "doc_hit": 0.955,
+      "noise": 0.587,
+      "chunks": 2.821,
+      "chars": 1746.164,
+      "rerank_ok": 51,
+      "rerank_failed": 13,
+      "rerank_skipped": 3
+    }
+  },
+  "rerank_cache": {
+    "hits": 263,
+    "calls": 57
+  },
+  "results": {
+    "base": [
+      {
+        "id": "r01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2818,
+        "rerank": "ok"
+      },
+      {
+        "id": "r02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "ok"
+      },
+      {
+        "id": "r03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "ok"
+      },
+      {
+        "id": "r04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1829,
+        "rerank": "ok"
+      },
+      {
+        "id": "r05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2293,
+        "rerank": "ok"
+      },
+      {
+        "id": "r06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1862,
+        "rerank": "ok"
+      },
+      {
+        "id": "r08",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1820,
+        "rerank": "ok"
+      },
+      {
+        "id": "r10",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2048,
+        "rerank": "ok"
+      },
+      {
+        "id": "r11",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2195,
+        "rerank": "ok"
+      },
+      {
+        "id": "r12",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1802,
+        "rerank": "ok"
+      },
+      {
+        "id": "r15",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1264,
+        "rerank": "ok"
+      },
+      {
+        "id": "r16",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1165,
+        "rerank": "ok"
+      },
+      {
+        "id": "r17",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 685,
+        "rerank": "ok"
+      },
+      {
+        "id": "r18",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 835,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r19",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 346,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r21",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1681,
+        "rerank": "ok"
+      },
+      {
+        "id": "r22",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 675,
+        "rerank": "ok"
+      },
+      {
+        "id": "r23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1303,
+        "rerank": "ok"
+      },
+      {
+        "id": "r24",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1712,
+        "rerank": "ok"
+      },
+      {
+        "id": "r25",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2521,
+        "rerank": "ok"
+      },
+      {
+        "id": "r26",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2162,
+        "rerank": "ok"
+      },
+      {
+        "id": "r27",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1588,
+        "rerank": "ok"
+      },
+      {
+        "id": "r28",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1786,
+        "rerank": "ok"
+      },
+      {
+        "id": "r30",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 439,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r31",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 959,
+        "rerank": "ok"
+      },
+      {
+        "id": "r32",
+        "coverage": 0.75,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1883,
+        "rerank": "ok"
+      },
+      {
+        "id": "p01",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2506,
+        "rerank": "ok"
+      },
+      {
+        "id": "p03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2211,
+        "rerank": "ok"
+      },
+      {
+        "id": "p04",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1388,
+        "rerank": "ok"
+      },
+      {
+        "id": "p05",
+        "coverage": 0.6,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2021,
+        "rerank": "ok"
+      },
+      {
+        "id": "p06",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2050,
+        "rerank": "ok"
+      },
+      {
+        "id": "p07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1843,
+        "rerank": "ok"
+      },
+      {
+        "id": "p08",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1120,
+        "rerank": "ok"
+      },
+      {
+        "id": "p09",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1270,
+        "rerank": "ok"
+      },
+      {
+        "id": "p10",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2825,
+        "rerank": "ok"
+      },
+      {
+        "id": "p11",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 984,
+        "rerank": "ok"
+      },
+      {
+        "id": "t01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1506,
+        "rerank": "ok"
+      },
+      {
+        "id": "t02",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 2089,
+        "rerank": "ok"
+      },
+      {
+        "id": "t04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2373,
+        "rerank": "ok"
+      },
+      {
+        "id": "t06",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1735,
+        "rerank": "ok"
+      },
+      {
+        "id": "a01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1088,
+        "rerank": "ok"
+      },
+      {
+        "id": "a02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2105,
+        "rerank": "ok"
+      },
+      {
+        "id": "a05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2340,
+        "rerank": "ok"
+      },
+      {
+        "id": "a06",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1617,
+        "rerank": "ok"
+      },
+      {
+        "id": "m02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2548,
+        "rerank": "ok"
+      },
+      {
+        "id": "m03",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1260,
+        "rerank": "ok"
+      },
+      {
+        "id": "m04",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1596,
+        "rerank": "ok"
+      },
+      {
+        "id": "m06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1831,
+        "rerank": "ok"
+      },
+      {
+        "id": "m07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "ok"
+      },
+      {
+        "id": "c02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1814,
+        "rerank": "ok"
+      },
+      {
+        "id": "c03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1731,
+        "rerank": "ok"
+      },
+      {
+        "id": "c05",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1989,
+        "rerank": "ok"
+      },
+      {
+        "id": "s02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1404,
+        "rerank": "ok"
+      },
+      {
+        "id": "s03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1657,
+        "rerank": "ok"
+      },
+      {
+        "id": "s05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2616,
+        "rerank": "ok"
+      },
+      {
+        "id": "s06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2447,
+        "rerank": "ok"
+      },
+      {
+        "id": "s07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1090,
+        "rerank": "failed"
+      },
+      {
+        "id": "s08",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1909,
+        "rerank": "failed"
+      },
+      {
+        "id": "s09",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2476,
+        "rerank": "failed"
+      },
+      {
+        "id": "s11",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 771,
+        "rerank": "failed"
+      },
+      {
+        "id": "s14",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2694,
+        "rerank": "failed"
+      },
+      {
+        "id": "s15",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2127,
+        "rerank": "failed"
+      },
+      {
+        "id": "s17",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "failed"
+      },
+      {
+        "id": "s19",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2673,
+        "rerank": "failed"
+      },
+      {
+        "id": "s21",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "failed"
+      },
+      {
+        "id": "s22",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "failed"
+      },
+      {
+        "id": "s23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1418,
+        "rerank": "failed"
+      }
+    ],
+    "rerank_off": [
+      {
+        "id": "r01",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2621,
+        "rerank": "off"
+      },
+      {
+        "id": "r02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "off"
+      },
+      {
+        "id": "r03",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2124,
+        "rerank": "off"
+      },
+      {
+        "id": "r04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1829,
+        "rerank": "off"
+      },
+      {
+        "id": "r05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2293,
+        "rerank": "off"
+      },
+      {
+        "id": "r06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1862,
+        "rerank": "off"
+      },
+      {
+        "id": "r08",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1820,
+        "rerank": "off"
+      },
+      {
+        "id": "r10",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2048,
+        "rerank": "off"
+      },
+      {
+        "id": "r11",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2621,
+        "rerank": "off"
+      },
+      {
+        "id": "r12",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1802,
+        "rerank": "off"
+      },
+      {
+        "id": "r15",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1264,
+        "rerank": "off"
+      },
+      {
+        "id": "r16",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1165,
+        "rerank": "off"
+      },
+      {
+        "id": "r17",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 685,
+        "rerank": "off"
+      },
+      {
+        "id": "r18",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 835,
+        "rerank": "off"
+      },
+      {
+        "id": "r19",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 346,
+        "rerank": "off"
+      },
+      {
+        "id": "r21",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1681,
+        "rerank": "off"
+      },
+      {
+        "id": "r22",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 675,
+        "rerank": "off"
+      },
+      {
+        "id": "r23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1875,
+        "rerank": "off"
+      },
+      {
+        "id": "r24",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1712,
+        "rerank": "off"
+      },
+      {
+        "id": "r25",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2515,
+        "rerank": "off"
+      },
+      {
+        "id": "r26",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2162,
+        "rerank": "off"
+      },
+      {
+        "id": "r27",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1588,
+        "rerank": "off"
+      },
+      {
+        "id": "r28",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1786,
+        "rerank": "off"
+      },
+      {
+        "id": "r30",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 439,
+        "rerank": "off"
+      },
+      {
+        "id": "r31",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 959,
+        "rerank": "off"
+      },
+      {
+        "id": "r32",
+        "coverage": 0.75,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1991,
+        "rerank": "off"
+      },
+      {
+        "id": "p01",
+        "coverage": 0.75,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2469,
+        "rerank": "off"
+      },
+      {
+        "id": "p03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2365,
+        "rerank": "off"
+      },
+      {
+        "id": "p04",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1388,
+        "rerank": "off"
+      },
+      {
+        "id": "p05",
+        "coverage": 0.6,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2021,
+        "rerank": "off"
+      },
+      {
+        "id": "p06",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2050,
+        "rerank": "off"
+      },
+      {
+        "id": "p07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1909,
+        "rerank": "off"
+      },
+      {
+        "id": "p08",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1120,
+        "rerank": "off"
+      },
+      {
+        "id": "p09",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1270,
+        "rerank": "off"
+      },
+      {
+        "id": "p10",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2700,
+        "rerank": "off"
+      },
+      {
+        "id": "p11",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1296,
+        "rerank": "off"
+      },
+      {
+        "id": "t01",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1220,
+        "rerank": "off"
+      },
+      {
+        "id": "t02",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1762,
+        "rerank": "off"
+      },
+      {
+        "id": "t04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2373,
+        "rerank": "off"
+      },
+      {
+        "id": "t06",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1735,
+        "rerank": "off"
+      },
+      {
+        "id": "a01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1076,
+        "rerank": "off"
+      },
+      {
+        "id": "a02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2075,
+        "rerank": "off"
+      },
+      {
+        "id": "a05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2340,
+        "rerank": "off"
+      },
+      {
+        "id": "a06",
+        "coverage": 0.3333333333333333,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1631,
+        "rerank": "off"
+      },
+      {
+        "id": "m02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2548,
+        "rerank": "off"
+      },
+      {
+        "id": "m03",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1260,
+        "rerank": "off"
+      },
+      {
+        "id": "m04",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1064,
+        "rerank": "off"
+      },
+      {
+        "id": "m06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1831,
+        "rerank": "off"
+      },
+      {
+        "id": "m07",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2102,
+        "rerank": "off"
+      },
+      {
+        "id": "c02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1814,
+        "rerank": "off"
+      },
+      {
+        "id": "c03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2025,
+        "rerank": "off"
+      },
+      {
+        "id": "c05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2202,
+        "rerank": "off"
+      },
+      {
+        "id": "s02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1922,
+        "rerank": "off"
+      },
+      {
+        "id": "s03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1180,
+        "rerank": "off"
+      },
+      {
+        "id": "s05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2616,
+        "rerank": "off"
+      },
+      {
+        "id": "s06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2428,
+        "rerank": "off"
+      },
+      {
+        "id": "s07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1090,
+        "rerank": "off"
+      },
+      {
+        "id": "s08",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1909,
+        "rerank": "off"
+      },
+      {
+        "id": "s09",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2476,
+        "rerank": "off"
+      },
+      {
+        "id": "s11",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 771,
+        "rerank": "off"
+      },
+      {
+        "id": "s14",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2694,
+        "rerank": "off"
+      },
+      {
+        "id": "s15",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2127,
+        "rerank": "off"
+      },
+      {
+        "id": "s17",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "off"
+      },
+      {
+        "id": "s19",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2673,
+        "rerank": "off"
+      },
+      {
+        "id": "s21",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "off"
+      },
+      {
+        "id": "s22",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "off"
+      },
+      {
+        "id": "s23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1418,
+        "rerank": "off"
+      }
+    ],
+    "neighbor1": [
+      {
+        "id": "r01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 4,
+        "chars": 3793,
+        "rerank": "ok"
+      },
+      {
+        "id": "r02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "ok"
+      },
+      {
+        "id": "r03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "ok"
+      },
+      {
+        "id": "r04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1829,
+        "rerank": "ok"
+      },
+      {
+        "id": "r05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2293,
+        "rerank": "ok"
+      },
+      {
+        "id": "r06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1862,
+        "rerank": "ok"
+      },
+      {
+        "id": "r08",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2733,
+        "rerank": "ok"
+      },
+      {
+        "id": "r10",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2048,
+        "rerank": "ok"
+      },
+      {
+        "id": "r11",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2195,
+        "rerank": "ok"
+      },
+      {
+        "id": "r12",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 4,
+        "chars": 2615,
+        "rerank": "ok"
+      },
+      {
+        "id": "r15",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2225,
+        "rerank": "ok"
+      },
+      {
+        "id": "r16",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1165,
+        "rerank": "ok"
+      },
+      {
+        "id": "r17",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 685,
+        "rerank": "ok"
+      },
+      {
+        "id": "r18",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 835,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r19",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 346,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r21",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1681,
+        "rerank": "ok"
+      },
+      {
+        "id": "r22",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 675,
+        "rerank": "ok"
+      },
+      {
+        "id": "r23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1303,
+        "rerank": "ok"
+      },
+      {
+        "id": "r24",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1712,
+        "rerank": "ok"
+      },
+      {
+        "id": "r25",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2521,
+        "rerank": "ok"
+      },
+      {
+        "id": "r26",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2162,
+        "rerank": "ok"
+      },
+      {
+        "id": "r27",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1588,
+        "rerank": "ok"
+      },
+      {
+        "id": "r28",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1786,
+        "rerank": "ok"
+      },
+      {
+        "id": "r30",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 439,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r31",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 959,
+        "rerank": "ok"
+      },
+      {
+        "id": "r32",
+        "coverage": 0.75,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1883,
+        "rerank": "ok"
+      },
+      {
+        "id": "p01",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 4,
+        "chars": 3374,
+        "rerank": "ok"
+      },
+      {
+        "id": "p03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2211,
+        "rerank": "ok"
+      },
+      {
+        "id": "p04",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1388,
+        "rerank": "ok"
+      },
+      {
+        "id": "p05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 4,
+        "chars": 2934,
+        "rerank": "ok"
+      },
+      {
+        "id": "p06",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2050,
+        "rerank": "ok"
+      },
+      {
+        "id": "p07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1843,
+        "rerank": "ok"
+      },
+      {
+        "id": "p08",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1120,
+        "rerank": "ok"
+      },
+      {
+        "id": "p09",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1270,
+        "rerank": "ok"
+      },
+      {
+        "id": "p10",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.25,
+        "chunks": 4,
+        "chars": 3710,
+        "rerank": "ok"
+      },
+      {
+        "id": "p11",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 984,
+        "rerank": "ok"
+      },
+      {
+        "id": "t01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1506,
+        "rerank": "ok"
+      },
+      {
+        "id": "t02",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 2089,
+        "rerank": "ok"
+      },
+      {
+        "id": "t04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2373,
+        "rerank": "ok"
+      },
+      {
+        "id": "t06",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1735,
+        "rerank": "ok"
+      },
+      {
+        "id": "a01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1088,
+        "rerank": "ok"
+      },
+      {
+        "id": "a02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2105,
+        "rerank": "ok"
+      },
+      {
+        "id": "a05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2340,
+        "rerank": "ok"
+      },
+      {
+        "id": "a06",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1617,
+        "rerank": "ok"
+      },
+      {
+        "id": "m02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 4,
+        "chars": 3145,
+        "rerank": "ok"
+      },
+      {
+        "id": "m03",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1477,
+        "rerank": "ok"
+      },
+      {
+        "id": "m04",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1596,
+        "rerank": "ok"
+      },
+      {
+        "id": "m06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1831,
+        "rerank": "ok"
+      },
+      {
+        "id": "m07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 4,
+        "chars": 3063,
+        "rerank": "ok"
+      },
+      {
+        "id": "c02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1814,
+        "rerank": "ok"
+      },
+      {
+        "id": "c03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1731,
+        "rerank": "ok"
+      },
+      {
+        "id": "c05",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1989,
+        "rerank": "ok"
+      },
+      {
+        "id": "s02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1404,
+        "rerank": "ok"
+      },
+      {
+        "id": "s03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1657,
+        "rerank": "ok"
+      },
+      {
+        "id": "s05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 4,
+        "chars": 2903,
+        "rerank": "ok"
+      },
+      {
+        "id": "s06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.75,
+        "chunks": 4,
+        "chars": 3291,
+        "rerank": "ok"
+      },
+      {
+        "id": "s07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1090,
+        "rerank": "failed"
+      },
+      {
+        "id": "s08",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1909,
+        "rerank": "failed"
+      },
+      {
+        "id": "s09",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2476,
+        "rerank": "failed"
+      },
+      {
+        "id": "s11",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 771,
+        "rerank": "failed"
+      },
+      {
+        "id": "s14",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2694,
+        "rerank": "failed"
+      },
+      {
+        "id": "s15",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2127,
+        "rerank": "failed"
+      },
+      {
+        "id": "s17",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "failed"
+      },
+      {
+        "id": "s19",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2673,
+        "rerank": "failed"
+      },
+      {
+        "id": "s21",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "failed"
+      },
+      {
+        "id": "s22",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "failed"
+      },
+      {
+        "id": "s23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1418,
+        "rerank": "failed"
+      }
+    ],
+    "dynamic0.6": [
+      {
+        "id": "r01",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 829,
+        "rerank": "ok"
+      },
+      {
+        "id": "r02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 846,
+        "rerank": "ok"
+      },
+      {
+        "id": "r03",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 573,
+        "rerank": "ok"
+      },
+      {
+        "id": "r04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1829,
+        "rerank": "ok"
+      },
+      {
+        "id": "r05",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1652,
+        "rerank": "ok"
+      },
+      {
+        "id": "r06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1246,
+        "rerank": "ok"
+      },
+      {
+        "id": "r08",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 866,
+        "rerank": "ok"
+      },
+      {
+        "id": "r10",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 610,
+        "rerank": "ok"
+      },
+      {
+        "id": "r11",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 696,
+        "rerank": "ok"
+      },
+      {
+        "id": "r12",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 750,
+        "rerank": "ok"
+      },
+      {
+        "id": "r15",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 835,
+        "rerank": "ok"
+      },
+      {
+        "id": "r16",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 184,
+        "rerank": "ok"
+      },
+      {
+        "id": "r17",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 685,
+        "rerank": "ok"
+      },
+      {
+        "id": "r18",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 835,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r19",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 346,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r21",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 300,
+        "rerank": "ok"
+      },
+      {
+        "id": "r22",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 447,
+        "rerank": "ok"
+      },
+      {
+        "id": "r23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 858,
+        "rerank": "ok"
+      },
+      {
+        "id": "r24",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 594,
+        "rerank": "ok"
+      },
+      {
+        "id": "r25",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1597,
+        "rerank": "ok"
+      },
+      {
+        "id": "r26",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 941,
+        "rerank": "ok"
+      },
+      {
+        "id": "r27",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 767,
+        "rerank": "ok"
+      },
+      {
+        "id": "r28",
+        "coverage": 0.3333333333333333,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 668,
+        "rerank": "ok"
+      },
+      {
+        "id": "r30",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 439,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r31",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 398,
+        "rerank": "ok"
+      },
+      {
+        "id": "r32",
+        "coverage": 0.75,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 692,
+        "rerank": "ok"
+      },
+      {
+        "id": "p01",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 975,
+        "rerank": "ok"
+      },
+      {
+        "id": "p03",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 696,
+        "rerank": "ok"
+      },
+      {
+        "id": "p04",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1102,
+        "rerank": "ok"
+      },
+      {
+        "id": "p05",
+        "coverage": 0.6,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 866,
+        "rerank": "ok"
+      },
+      {
+        "id": "p06",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 981,
+        "rerank": "ok"
+      },
+      {
+        "id": "p07",
+        "coverage": 1.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 749,
+        "rerank": "ok"
+      },
+      {
+        "id": "p08",
+        "coverage": 0.5,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 497,
+        "rerank": "ok"
+      },
+      {
+        "id": "p09",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 685,
+        "rerank": "ok"
+      },
+      {
+        "id": "p10",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 2,
+        "chars": 1836,
+        "rerank": "ok"
+      },
+      {
+        "id": "p11",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 128,
+        "rerank": "ok"
+      },
+      {
+        "id": "t01",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 573,
+        "rerank": "ok"
+      },
+      {
+        "id": "t02",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 2089,
+        "rerank": "ok"
+      },
+      {
+        "id": "t04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 841,
+        "rerank": "ok"
+      },
+      {
+        "id": "t06",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 544,
+        "rerank": "ok"
+      },
+      {
+        "id": "a01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 2,
+        "chars": 723,
+        "rerank": "ok"
+      },
+      {
+        "id": "a02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 692,
+        "rerank": "ok"
+      },
+      {
+        "id": "a05",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 897,
+        "rerank": "ok"
+      },
+      {
+        "id": "a06",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 494,
+        "rerank": "ok"
+      },
+      {
+        "id": "m02",
+        "coverage": 0.6666666666666666,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 1000,
+        "rerank": "ok"
+      },
+      {
+        "id": "m03",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 792,
+        "rerank": "ok"
+      },
+      {
+        "id": "m04",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 435,
+        "rerank": "ok"
+      },
+      {
+        "id": "m06",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 749,
+        "rerank": "ok"
+      },
+      {
+        "id": "m07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "ok"
+      },
+      {
+        "id": "c02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1261,
+        "rerank": "ok"
+      },
+      {
+        "id": "c03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1085,
+        "rerank": "ok"
+      },
+      {
+        "id": "c05",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1339,
+        "rerank": "ok"
+      },
+      {
+        "id": "s02",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 436,
+        "rerank": "ok"
+      },
+      {
+        "id": "s03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 485,
+        "rerank": "ok"
+      },
+      {
+        "id": "s05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 1000,
+        "rerank": "ok"
+      },
+      {
+        "id": "s06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1538,
+        "rerank": "ok"
+      },
+      {
+        "id": "s07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1090,
+        "rerank": "failed"
+      },
+      {
+        "id": "s08",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1909,
+        "rerank": "failed"
+      },
+      {
+        "id": "s09",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2476,
+        "rerank": "failed"
+      },
+      {
+        "id": "s11",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 771,
+        "rerank": "failed"
+      },
+      {
+        "id": "s14",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2694,
+        "rerank": "failed"
+      },
+      {
+        "id": "s15",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2127,
+        "rerank": "failed"
+      },
+      {
+        "id": "s17",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "failed"
+      },
+      {
+        "id": "s19",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2673,
+        "rerank": "failed"
+      },
+      {
+        "id": "s21",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "failed"
+      },
+      {
+        "id": "s22",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "failed"
+      },
+      {
+        "id": "s23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1418,
+        "rerank": "failed"
+      }
+    ],
+    "dynamic0.8": [
+      {
+        "id": "r01",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 829,
+        "rerank": "ok"
+      },
+      {
+        "id": "r02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 846,
+        "rerank": "ok"
+      },
+      {
+        "id": "r03",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 573,
+        "rerank": "ok"
+      },
+      {
+        "id": "r04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1829,
+        "rerank": "ok"
+      },
+      {
+        "id": "r05",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 903,
+        "rerank": "ok"
+      },
+      {
+        "id": "r06",
+        "coverage": 0.5,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 497,
+        "rerank": "ok"
+      },
+      {
+        "id": "r08",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 866,
+        "rerank": "ok"
+      },
+      {
+        "id": "r10",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 610,
+        "rerank": "ok"
+      },
+      {
+        "id": "r11",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 696,
+        "rerank": "ok"
+      },
+      {
+        "id": "r12",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 750,
+        "rerank": "ok"
+      },
+      {
+        "id": "r15",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 835,
+        "rerank": "ok"
+      },
+      {
+        "id": "r16",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 184,
+        "rerank": "ok"
+      },
+      {
+        "id": "r17",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 685,
+        "rerank": "ok"
+      },
+      {
+        "id": "r18",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 835,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r19",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 346,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r21",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 300,
+        "rerank": "ok"
+      },
+      {
+        "id": "r22",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 447,
+        "rerank": "ok"
+      },
+      {
+        "id": "r23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 858,
+        "rerank": "ok"
+      },
+      {
+        "id": "r24",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 594,
+        "rerank": "ok"
+      },
+      {
+        "id": "r25",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 597,
+        "rerank": "ok"
+      },
+      {
+        "id": "r26",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 941,
+        "rerank": "ok"
+      },
+      {
+        "id": "r27",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 767,
+        "rerank": "ok"
+      },
+      {
+        "id": "r28",
+        "coverage": 0.3333333333333333,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 668,
+        "rerank": "ok"
+      },
+      {
+        "id": "r30",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 439,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r31",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 398,
+        "rerank": "ok"
+      },
+      {
+        "id": "r32",
+        "coverage": 0.75,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 692,
+        "rerank": "ok"
+      },
+      {
+        "id": "p01",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 975,
+        "rerank": "ok"
+      },
+      {
+        "id": "p03",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 696,
+        "rerank": "ok"
+      },
+      {
+        "id": "p04",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 763,
+        "rerank": "ok"
+      },
+      {
+        "id": "p05",
+        "coverage": 0.6,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 866,
+        "rerank": "ok"
+      },
+      {
+        "id": "p06",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 981,
+        "rerank": "ok"
+      },
+      {
+        "id": "p07",
+        "coverage": 1.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 749,
+        "rerank": "ok"
+      },
+      {
+        "id": "p08",
+        "coverage": 0.5,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 497,
+        "rerank": "ok"
+      },
+      {
+        "id": "p09",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 685,
+        "rerank": "ok"
+      },
+      {
+        "id": "p10",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 2,
+        "chars": 1836,
+        "rerank": "ok"
+      },
+      {
+        "id": "p11",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 128,
+        "rerank": "ok"
+      },
+      {
+        "id": "t01",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 573,
+        "rerank": "ok"
+      },
+      {
+        "id": "t02",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 2089,
+        "rerank": "ok"
+      },
+      {
+        "id": "t04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 841,
+        "rerank": "ok"
+      },
+      {
+        "id": "t06",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 544,
+        "rerank": "ok"
+      },
+      {
+        "id": "a01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 2,
+        "chars": 723,
+        "rerank": "ok"
+      },
+      {
+        "id": "a02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 692,
+        "rerank": "ok"
+      },
+      {
+        "id": "a05",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 897,
+        "rerank": "ok"
+      },
+      {
+        "id": "a06",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 494,
+        "rerank": "ok"
+      },
+      {
+        "id": "m02",
+        "coverage": 0.6666666666666666,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 1000,
+        "rerank": "ok"
+      },
+      {
+        "id": "m03",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 792,
+        "rerank": "ok"
+      },
+      {
+        "id": "m04",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 435,
+        "rerank": "ok"
+      },
+      {
+        "id": "m06",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 749,
+        "rerank": "ok"
+      },
+      {
+        "id": "m07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 897,
+        "rerank": "ok"
+      },
+      {
+        "id": "c02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1261,
+        "rerank": "ok"
+      },
+      {
+        "id": "c03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1085,
+        "rerank": "ok"
+      },
+      {
+        "id": "c05",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 694,
+        "rerank": "ok"
+      },
+      {
+        "id": "s02",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 1,
+        "chars": 436,
+        "rerank": "ok"
+      },
+      {
+        "id": "s03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 485,
+        "rerank": "ok"
+      },
+      {
+        "id": "s05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 1000,
+        "rerank": "ok"
+      },
+      {
+        "id": "s06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1538,
+        "rerank": "ok"
+      },
+      {
+        "id": "s07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1090,
+        "rerank": "failed"
+      },
+      {
+        "id": "s08",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1909,
+        "rerank": "failed"
+      },
+      {
+        "id": "s09",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2476,
+        "rerank": "failed"
+      },
+      {
+        "id": "s11",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 771,
+        "rerank": "failed"
+      },
+      {
+        "id": "s14",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2694,
+        "rerank": "failed"
+      },
+      {
+        "id": "s15",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2127,
+        "rerank": "failed"
+      },
+      {
+        "id": "s17",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "failed"
+      },
+      {
+        "id": "s19",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2673,
+        "rerank": "failed"
+      },
+      {
+        "id": "s21",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "failed"
+      },
+      {
+        "id": "s22",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "failed"
+      },
+      {
+        "id": "s23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1418,
+        "rerank": "failed"
+      }
+    ],
+    "normalize": [
+      {
+        "id": "r01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2818,
+        "rerank": "ok"
+      },
+      {
+        "id": "r02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "ok"
+      },
+      {
+        "id": "r03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "ok"
+      },
+      {
+        "id": "r04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1829,
+        "rerank": "ok"
+      },
+      {
+        "id": "r05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2293,
+        "rerank": "ok"
+      },
+      {
+        "id": "r06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1862,
+        "rerank": "ok"
+      },
+      {
+        "id": "r08",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1820,
+        "rerank": "ok"
+      },
+      {
+        "id": "r10",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2048,
+        "rerank": "ok"
+      },
+      {
+        "id": "r11",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2195,
+        "rerank": "ok"
+      },
+      {
+        "id": "r12",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1802,
+        "rerank": "ok"
+      },
+      {
+        "id": "r15",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1264,
+        "rerank": "ok"
+      },
+      {
+        "id": "r16",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1165,
+        "rerank": "ok"
+      },
+      {
+        "id": "r17",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 685,
+        "rerank": "ok"
+      },
+      {
+        "id": "r18",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 835,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r19",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 346,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r21",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1681,
+        "rerank": "ok"
+      },
+      {
+        "id": "r22",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 675,
+        "rerank": "ok"
+      },
+      {
+        "id": "r23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1303,
+        "rerank": "ok"
+      },
+      {
+        "id": "r24",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1712,
+        "rerank": "ok"
+      },
+      {
+        "id": "r25",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2521,
+        "rerank": "ok"
+      },
+      {
+        "id": "r26",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2162,
+        "rerank": "ok"
+      },
+      {
+        "id": "r27",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1588,
+        "rerank": "ok"
+      },
+      {
+        "id": "r28",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1786,
+        "rerank": "ok"
+      },
+      {
+        "id": "r30",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.0,
+        "chunks": 1,
+        "chars": 439,
+        "rerank": "skipped"
+      },
+      {
+        "id": "r31",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 959,
+        "rerank": "ok"
+      },
+      {
+        "id": "r32",
+        "coverage": 0.75,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1883,
+        "rerank": "ok"
+      },
+      {
+        "id": "p01",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2506,
+        "rerank": "ok"
+      },
+      {
+        "id": "p03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2211,
+        "rerank": "ok"
+      },
+      {
+        "id": "p04",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1388,
+        "rerank": "ok"
+      },
+      {
+        "id": "p05",
+        "coverage": 0.6,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2021,
+        "rerank": "ok"
+      },
+      {
+        "id": "p06",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2050,
+        "rerank": "ok"
+      },
+      {
+        "id": "p07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1843,
+        "rerank": "ok"
+      },
+      {
+        "id": "p08",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1120,
+        "rerank": "ok"
+      },
+      {
+        "id": "p09",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1270,
+        "rerank": "ok"
+      },
+      {
+        "id": "p10",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2825,
+        "rerank": "ok"
+      },
+      {
+        "id": "p11",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 984,
+        "rerank": "ok"
+      },
+      {
+        "id": "t01",
+        "coverage": 0.3333333333333333,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1004,
+        "rerank": "failed"
+      },
+      {
+        "id": "t02",
+        "coverage": 0.3333333333333333,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1863,
+        "rerank": "failed"
+      },
+      {
+        "id": "t04",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2373,
+        "rerank": "ok"
+      },
+      {
+        "id": "t06",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1735,
+        "rerank": "ok"
+      },
+      {
+        "id": "a01",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1088,
+        "rerank": "ok"
+      },
+      {
+        "id": "a02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2105,
+        "rerank": "ok"
+      },
+      {
+        "id": "a05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2340,
+        "rerank": "ok"
+      },
+      {
+        "id": "a06",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1617,
+        "rerank": "ok"
+      },
+      {
+        "id": "m02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 2548,
+        "rerank": "ok"
+      },
+      {
+        "id": "m03",
+        "coverage": 0.25,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 1260,
+        "rerank": "ok"
+      },
+      {
+        "id": "m04",
+        "coverage": 0.5,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1596,
+        "rerank": "ok"
+      },
+      {
+        "id": "m06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1831,
+        "rerank": "ok"
+      },
+      {
+        "id": "m07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "ok"
+      },
+      {
+        "id": "c02",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1814,
+        "rerank": "ok"
+      },
+      {
+        "id": "c03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1731,
+        "rerank": "ok"
+      },
+      {
+        "id": "c05",
+        "coverage": 0.6666666666666666,
+        "doc_hit": true,
+        "noise": 0.3333333333333333,
+        "chunks": 3,
+        "chars": 1989,
+        "rerank": "ok"
+      },
+      {
+        "id": "s02",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1404,
+        "rerank": "ok"
+      },
+      {
+        "id": "s03",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1657,
+        "rerank": "ok"
+      },
+      {
+        "id": "s05",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2616,
+        "rerank": "ok"
+      },
+      {
+        "id": "s06",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2447,
+        "rerank": "ok"
+      },
+      {
+        "id": "s07",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1090,
+        "rerank": "failed"
+      },
+      {
+        "id": "s08",
+        "coverage": 0.0,
+        "doc_hit": false,
+        "noise": 1.0,
+        "chunks": 3,
+        "chars": 1909,
+        "rerank": "failed"
+      },
+      {
+        "id": "s09",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2476,
+        "rerank": "failed"
+      },
+      {
+        "id": "s11",
+        "coverage": 0.0,
+        "doc_hit": true,
+        "noise": 0.5,
+        "chunks": 2,
+        "chars": 771,
+        "rerank": "failed"
+      },
+      {
+        "id": "s14",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2694,
+        "rerank": "failed"
+      },
+      {
+        "id": "s15",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2127,
+        "rerank": "failed"
+      },
+      {
+        "id": "s17",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1034,
+        "rerank": "failed"
+      },
+      {
+        "id": "s19",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2673,
+        "rerank": "failed"
+      },
+      {
+        "id": "s21",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2104,
+        "rerank": "failed"
+      },
+      {
+        "id": "s22",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 2326,
+        "rerank": "failed"
+      },
+      {
+        "id": "s23",
+        "coverage": 1.0,
+        "doc_hit": true,
+        "noise": 0.6666666666666666,
+        "chunks": 3,
+        "chars": 1418,
+        "rerank": "failed"
+      }
+    ]
+  }
+}

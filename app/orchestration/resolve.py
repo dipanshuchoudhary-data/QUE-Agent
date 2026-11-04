@@ -11,6 +11,12 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
+from app.orchestration.clarify import (
+    answer_is_usable,
+    is_referent_reply,
+    merge_with_answer,
+    needs_referent,
+)
 from app.orchestration.understanding import _has_quizzer_hint, is_hard_out_of_scope
 from app.schemas.chat import ChatMessage
 
@@ -514,6 +520,29 @@ def _compose_resolved(
     return stripped
 
 
+def _referent_clarification_answer(
+    messages: list[ChatMessage], raw: str
+) -> tuple[str, str] | None:
+    """If the last turn answers our "what do you mean?", return (vague ask, merged ask).
+
+    Requires the exact shape [user vague ask, our clarifying reply, user answer]
+    at the end of the thread, so an unrelated later turn never gets glued to an
+    old vague ask.
+    """
+    if len(messages) < 3:
+        return None
+    ask, reply, answer = messages[-3], messages[-2], messages[-1]
+    if (ask.role, reply.role, answer.role) != ("user", "assistant", "user"):
+        return None
+    if not is_referent_reply(reply.content) or not needs_referent(ask.content):
+        return None
+    if answer.content.strip() != raw:
+        return None
+    if not answer_is_usable(raw) or _is_conversation_meta(raw) or _looks_like_new_topic_ask(raw):
+        return None
+    return ask.content.strip(), merge_with_answer(ask.content, raw)
+
+
 def resolve_request(
     messages: list[ChatMessage],
     *,
@@ -531,6 +560,22 @@ def resolve_request(
             intent="clarification",
             response_mode="normal",
             reasons=("empty_message",),
+        )
+
+    answered = _referent_clarification_answer(messages, raw)
+    if answered is not None:
+        vague_ask, merged = answered
+        return ResolvedRequest(
+            raw_message=raw,
+            resolved_query=merged,
+            is_follow_up=True,
+            topic=_infer_topic(raw) or prior_topic or previous_intent,
+            intent="follow_up",
+            response_mode=_detect_mode(raw),
+            prior_user_message=vague_ask,
+            prior_assistant_summary=_prior_assistant_snippet(messages),
+            thread_active=True,
+            reasons=("referent_clarification_answered",),
         )
 
     immediate_prior = _prior_user_message(messages)

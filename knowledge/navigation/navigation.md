@@ -209,6 +209,13 @@ Account Settings → Notifications tab.
 To learn about features with video walkthroughs:
 Help & Support (sidebar ACCOUNT section) → Explore Quizzer.
 
+Exam settings: open the exam from Exams, then select the Settings tab.
+Create Exam: the sidebar quick action button or the Dashboard quick
+actions panel. Command palette: press Ctrl+K (Windows) or Cmd+K (Mac)
+from any page. Notifications: the bell icon in the top navigation bar.
+Finding an exam: use the Exams workspace to search, filter by status
+(Draft, Published, Archived), or browse the list.
+
 ## Command Palette
 
 Teachers can open the command palette with a keyboard shortcut (Ctrl+K
@@ -296,42 +303,10 @@ published exam link, which is a completely separate interface.
 Account Settings is under ACCOUNT → **Settings** in the left sidebar
 (`/account/settings`). It is not inside the avatar dropdown.
 
-Where do I report a bug or send feedback?
-Click **Send feedback** in the left sidebar ACCOUNT section. Choose
+To report a bug or send feedback, click **Send feedback** in the left
+sidebar ACCOUNT section. Choose
 **Bug report** (or Found a bug), describe the issue, and submit. Do
 not open the avatar menu for Feedback — that menu is only for Log out.
-
-## Common Questions
-
-Where is Monitoring?
-Not in the sidebar. Open Exams, open the specific exam, then select
-the Monitoring tab.
-
-Where are my Results?
-Not in the sidebar. Open Exams, open the specific exam, then select
-the Results tab. For cross-exam trends, use Analytics in the sidebar.
-
-How do I find a specific exam?
-Use the Exams workspace in the sidebar. You can search, filter by
-status (Draft, Published, Archived), or browse the list.
-
-Where do I change exam settings?
-Open the exam from Exams, then select the Settings tab.
-
-Where is the Create Exam button?
-In the sidebar as a quick action button, or on the Dashboard quick
-actions panel.
-
-How do I open the command palette?
-Press Ctrl+K (Windows) or Cmd+K (Mac) from any page.
-
-Where are my notifications?
-Click the bell icon in the top navigation bar.
-
-Why does /monitoring redirect to Exams?
-There is no standalone Monitoring page. Monitoring lives inside each
-exam's workspace. Open the specific exam first, then select the
-Monitoring tab.
 
 ## Related Features
 

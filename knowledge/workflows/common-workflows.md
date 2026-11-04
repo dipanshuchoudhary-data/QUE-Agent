@@ -45,6 +45,11 @@ Goal: go from zero to a live exam that students can take.
 10. Send the link to students via email, chat, Google Classroom
     (Assign to Classroom button on Links tab), or project the QR code.
 
+Fastest path: paste text or upload a PDF, configure the blueprint, click
+Generate, approve questions, and publish. Questions belong to their
+exam; you cannot currently share questions between exams, but you can
+create similar content from the same source material.
+
 ## Run a Proctored Exam
 
 Goal: use Quizzer's integrity and proctoring features for a supervised
@@ -179,23 +184,6 @@ Goal: resolve written answers that need manual grading.
 5. Assign a score manually based on your evaluation.
 6. Once all flagged answers are resolved, the status changes to
    Graded and the final score is updated.
-
-## Common Questions
-
-What is the fastest way to create an exam?
-Paste text content or upload a PDF, configure the blueprint, click
-Generate, approve questions, and publish. The AI handles question
-creation.
-
-Can I reuse questions across exams?
-Questions belong to their exam. You cannot currently share questions
-between exams, but you can create similar content using the same source
-material.
-
-How do I know if students are struggling?
-Check the Students workspace for readiness labels (Needs coaching,
-Needs check-in) and the support queue. Use Analytics for score
-distribution trends.
 
 ## Related Features
 

@@ -9,7 +9,7 @@ from __future__ import annotations
 from typing import Any, Literal
 
 from app.core.config import Settings, get_settings
-from app.orchestration.understanding import is_multi_step_ask
+from app.orchestration.understanding import is_guidance_ask, is_multi_step_ask
 from app.tools.select import ToolSelection, select_tool_prefer_raw
 
 RuntimeMode = Literal["knowledge", "workflow", "agent"]
@@ -49,6 +49,13 @@ def decide_runtime_mode(
 
     if not enabled:
         return "knowledge", "tools_disabled", None
+
+    # The tool selector matches topic words, so it cannot tell "Where is Monitoring
+    # in the sidebar?" (guidance) from "Who is in Monitoring right now?" (live data).
+    # The *form* of the ask can: how/where/what-does questions want a procedure from
+    # product knowledge, not a tool call. Only chained asks (how + live) keep tools.
+    if not (live and want_agent) and is_guidance_ask(raw or q):
+        return "knowledge", "guidance_ask", None
 
     selection = select_tool_prefer_raw(
         raw_query=raw or None,

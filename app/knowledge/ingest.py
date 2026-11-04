@@ -14,7 +14,13 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from app.core.config import Settings, get_settings
-from app.knowledge.chunking import KnowledgeChunk, chunk_markdown, content_hash, strip_frontmatter
+from app.knowledge.chunking import (
+    KnowledgeChunk,
+    chunk_markdown,
+    content_hash,
+    contextual_text,
+    strip_frontmatter,
+)
 from app.knowledge.embeddings import EmbeddingsClient, get_embeddings
 from app.knowledge.paths import KNOWLEDGE_ROOT, MANIFEST_PATH
 from app.knowledge.sparse import SparseCorpusEntry, save_bm25_corpus
@@ -92,10 +98,23 @@ def _embed_batches(
     texts: Sequence[str],
     embeddings: EmbeddingsClient,
 ) -> list[list[float]]:
+    import time
+
     vectors: list[list[float]] = []
     for i in range(0, len(texts), _EMBED_BATCH):
         batch = list(texts[i : i + _EMBED_BATCH])
-        vectors.extend(embeddings.embed_documents(batch))
+        delay = 4.0
+        for attempt in range(6):
+            try:
+                vectors.extend(embeddings.embed_documents(batch))
+                break
+            except Exception as exc:  # noqa: BLE001 - OpenRouter 429 on free embed models
+                if "429" not in str(exc) or attempt == 5:
+                    raise
+                time.sleep(delay)
+                delay = min(delay * 1.5, 20.0)
+        else:  # pragma: no cover
+            raise RuntimeError("embedding batch failed")
     return vectors
 
 
@@ -110,11 +129,12 @@ def build_index(
     manifest = _load_manifest()
     corpus_version = str(manifest.get("version") or "0")
     docs = list(manifest.get("documents") or [])
-    embed_model = cfg.que_embedding_model
+    embed_model = cfg.active_embedding_model
     emb = embeddings or get_embeddings(settings=cfg)
 
     prior = load_index_state(cfg)
     rebuilt = False
+    embedding_dim = prior.embedding_dim if prior else 0
     if force or (prior and prior.embedding_model and prior.embedding_model != embed_model):
         logger.info(
             "rag_index_rebuild",
@@ -170,7 +190,16 @@ def build_index(
 
         # Retire old chunk ids for this doc before upsert (ids may change).
         delete_doc_chunks(doc_id, settings=cfg)
-        vectors = _embed_batches([c.text for c in chunks], emb)
+        vectors = _embed_batches(
+            [contextual_text(c.title, c.section, c.text) for c in chunks], emb
+        )
+        if vectors:
+            embedding_dim = len(vectors[0])
+            expected = cfg.expected_embedding_dim
+            if expected and embedding_dim != expected:
+                raise ValueError(
+                    f"Embedding dimension {embedding_dim} does not match {cfg.active_embedding_model} ({expected})."
+                )
         upsert_chunks(chunks, vectors, embedding_model=embed_model, settings=cfg)
         prior_docs[doc_id] = {
             "content_hash": file_hash,
@@ -190,6 +219,7 @@ def build_index(
 
     state = IndexState(
         embedding_model=embed_model,
+        embedding_dim=embedding_dim,
         corpus_version=corpus_version,
         updated_at=datetime.now(UTC).isoformat(),
         documents=prior_docs,

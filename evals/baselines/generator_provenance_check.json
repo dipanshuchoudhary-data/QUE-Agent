@@ -1,0 +1,1351 @@
+{
+  "summary": {
+    "rows": 24,
+    "errors": 3,
+    "route_mismatches": 1,
+    "completeness": 0.61,
+    "contradiction": 0.257,
+    "relevancy": 0.786,
+    "by_route": {
+      "retrieval": {
+        "completeness": 0.677,
+        "contradiction": 0.254,
+        "relevancy": 0.846
+      },
+      "workflow_card": {
+        "completeness": 0.5,
+        "contradiction": 0.263,
+        "relevancy": 0.688
+      }
+    },
+    "judge_calls": 24,
+    "provisional": true
+  },
+  "cases": [
+    {
+      "id": "c03",
+      "query": "What is the difference between an Exam and an Arena game?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "**Exam**\n- Asynchronous: students take it on their own time\n- Individually timed per student\n- Detailed proctoring and grading\n- Results appear in the **Results** tab\n\n**Arena game**\n- Synchronous: everyone plays at the same time\n- Host controls the pace\n- Speed-based scoring with streaks\n- No detailed proctoring\n- Results go to **game history**, not the **Results** tab\n- Analytics appear in a separate **Analytics** workspace section",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "terminology",
+        "arena"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:terminology",
+        "knowledge:arena",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "What is the difference between an Exam and an Arena game?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "terminology::common-confusions::1::c886a6fde3da",
+            "arena::how-arena-differs-from-graded-exams::0::3c43e19a0908"
+          ],
+          "scores": {
+            "terminology::common-confusions::1::c886a6fde3da": 0.8923472,
+            "terminology": 0.8923472,
+            "arena::how-arena-differs-from-graded-exams::0::3c43e19a0908": 0.78413767,
+            "arena": 0.78413767
+          },
+          "truncated": false
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Quizzer Terminology and Glossary / Common Confusions",
+              "score": 0.89,
+              "text": "Arena vs Exams: Arena is a live, synchronous game with speed scoring.\nExams are asynchronous, individually timed assessments with detailed\ngrading.\n\nNotifications vs Email: Most notifications are in-app only. Quizzer\ndoes not email about generation, attempts, integrity, or exports.\nEmail is only for signup verification, password reset, and exam share\ninvitations.\n\nDraft (exam) vs Draft (question): An exam in Draft state means it is\nunpublished. A question in Draft status means it has not been reviewed\nyet. Different concepts sharing the same word."
+            },
+            {
+              "title": "Arena — Live Quiz Battles / How Arena Differs from Graded Exams",
+              "score": 0.78,
+              "text": "## How Arena Differs from Graded Exams\nGraded exams: asynchronous. Publish a link, students take it on their\nown time, individually timed, detailed proctoring, graded results in\nthe Results tab.\n\nArena: synchronous. Everyone plays at the same time. Host controls the\npace. Speed-based scoring with streaks. No detailed proctoring.\nResults go to game history, not the exam Results tab.\n\nArena packs do not appear in the regular exam Results or Monitoring\ntabs. Arena analytics appear in a separate section of the Analytics\nworkspace."
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2508
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "complex_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:terminology",
+            "knowledge:arena"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "complex_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "guidance_ask",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately and comprehensively covers all key differences outlined in the reference."
+      }
+    },
+    {
+      "id": "t03",
+      "query": "results?",
+      "served_by": "workflow_card",
+      "route_predicted": "workflow_card",
+      "answer": "Open the exam, go to the **Results** tab, then export **CSV**, **Excel**, or **Google Sheets**. Exports include graded scores. Results remain after unpublish or archive.",
+      "model": "workflow:exam.export_results",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "evidence": {},
+      "executed_path": {
+        "route": null,
+        "execution_class": null,
+        "runtime_mode": null,
+        "runtime_mode_reason": null,
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.6,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers finding and exporting results, but misses how to navigate to the exam and details about what the results contain."
+      }
+    },
+    {
+      "id": "r01",
+      "query": "How do I create a quiz?",
+      "served_by": "workflow_card",
+      "route_predicted": "workflow_card",
+      "answer": "Use **Create Exam**, add sources (files, text, or links), generate questions, then review them on the **Questions** tab. The exam stays **Draft** until you approve questions and **Publish**.",
+      "model": "workflow:exam.create",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "evidence": {},
+      "executed_path": {
+        "route": null,
+        "execution_class": null,
+        "runtime_mode": null,
+        "runtime_mode_reason": null,
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.6,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer provides a concise summary of quiz creation steps but misses specific navigation details like the Dashboard, keyboard shortcuts, and URL paths."
+      }
+    },
+    {
+      "id": "a05",
+      "query": "Can I change it after?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "No, the persona label cannot be changed through the UI after onboarding. It only affects copy and greeting, not permissions.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "onboarding"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:onboarding",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "Can I change it after?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "onboarding::common-questions::0::15eb76f2a295"
+          ],
+          "scores": {
+            "onboarding::common-questions::0::15eb76f2a295": 0.40882006,
+            "onboarding": 0.40882006
+          },
+          "truncated": true
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Onboarding and Signup / Common Questions",
+              "score": 0.41,
+              "text": "## Common Questions\nHow do I sign up?\nGo to the signup page and enter your email and password, or use Google\nor Microsoft Sign-In. Then complete the four-step onboarding.\n\nDo I need to verify my email?\nYes, for email+password signups. Quizzer sends a verification email.\nClick the link to verify. Google and Microsoft sign-ins do not require\nseparate verification.\n\nCan I change my persona after onboarding?\nThe persona label is stored but cannot be changed through the UI after\nonboarding. It only affects copy and greeting, not permissions.\n\nI chose Student but I want to create exams. What do I do?\nThe Student persona sets a limited role. You would need support to\n…[truncated]"
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2395
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:onboarding"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "no_live_need",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.2,
+        "note": "The answer discusses persona labels, which completely contradicts the reference answer about exam settings."
+      }
+    },
+    {
+      "id": "r19",
+      "query": "How does onboarding work after signup?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "After signup, onboarding is a four-step flow that personalizes your workspace:\n\n1. **Enter your name** and choose a persona (e.g., Teacher, Student).\n2. Fill in relevant details for that persona.\n3. The system creates your workspace based on the selections.\n4. You’re taken to the **Dashboard**, where you can start creating exams or explore other features.\n\nIf you skip or complete steps, the flow may reappear the next time you open the app, or you can revisit settings to update your persona and details.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "onboarding"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:onboarding",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "How does onboarding work after signup?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "onboarding::overview::0::a8463754e9a9"
+          ],
+          "scores": {
+            "onboarding::overview::0::a8463754e9a9": 0.03278688524590164,
+            "onboarding": 0.03278688524590164
+          },
+          "truncated": false
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Onboarding and Signup / Overview",
+              "score": 0.03,
+              "text": "## Overview\nWhen you first sign up for Quizzer, you go through a four-step\nonboarding flow that personalizes your workspace. The onboarding\ncollects your name, lets you choose a persona, fills in relevant\ndetails, and then creates your workspace.\n\nUsers may call this: signup, getting started, first-time setup,\nregistration, creating an account."
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2084
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:onboarding"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "guidance_ask",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.2,
+        "relevancy": 1.0,
+        "note": "The answer covers most key onboarding steps but adds unsourced details about skipping and creating exams."
+      }
+    },
+    {
+      "id": "s09",
+      "query": "How do I change my exam settings after it's already been published?",
+      "served_by": "workflow_card",
+      "route_predicted": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "evidence": {},
+      "executed_path": {
+        "route": null,
+        "execution_class": null,
+        "runtime_mode": null,
+        "runtime_mode_reason": null,
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.1,
+        "note": "The answer describes how to publish a draft exam instead of how to change settings on an already published one."
+      }
+    },
+    {
+      "id": "c05",
+      "query": "Is the LIVE badge the same as Monitoring?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "That live insight isn't available for your account role, so I can't pull it. Ask me how it works in Quizzer, or open the page directly.",
+      "model": "deterministic:tool_unavailable",
+      "knowledge_packs": [],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:workflow",
+        "tools",
+        "tool:summarize_live_exam_health",
+        "tool_error"
+      ],
+      "evidence": {
+        "generator_context": {
+          "documents": [],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 0
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "workflow",
+          "runtime_mode_reason": "single_tool",
+          "tool": "summarize_live_exam_health",
+          "tool_error": "forbidden",
+          "tool_fallback": "none",
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:workflow",
+            "tools",
+            "tool:summarize_live_exam_health",
+            "tool_error"
+          ]
+        },
+        "llm_called": false
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "workflow",
+        "runtime_mode_reason": "single_tool",
+        "tool": "summarize_live_exam_health",
+        "tool_error": "forbidden",
+        "tool_fallback": "none"
+      },
+      "route_mismatch": true,
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.2,
+        "relevancy": 0.1,
+        "note": "The answer avoids the question by claiming role restrictions instead of providing the reference information."
+      }
+    },
+    {
+      "id": "s16",
+      "query": "How can I see active attempts across all exams in the live panel?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "Go to the **Dashboard** from the sidebar. The **Live Exams** panel shows all exams with currently active attempts.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "live-monitoring"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:live-monitoring",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "How can I see active attempts across all exams in the live panel?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "live-monitoring::step-by-step-ui-guide-monitoring-live-exams::1::7076e75117ae"
+          ],
+          "scores": {
+            "live-monitoring::step-by-step-ui-guide-monitoring-live-exams::1::7076e75117ae": 0.828125,
+            "live-monitoring": 0.828125
+          },
+          "truncated": false
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "LIVE, Monitoring, and Real-Time Tracking / Step-by-Step UI Guide: Monitoring Live Exams",
+              "score": 0.83,
+              "text": "Step 4 — View integrity events for a specific attempt:\nClick on an attempt row to expand it. The integrity detail panel opens\nshowing a chronological timeline of all events: session start, tab\nswitches, fullscreen exits, phone detections, face checks, and\ntimestamps for each.\n\nFor in-progress attempts, this panel can update in real time via a\nlive connection, so you see violations as they happen.\n\nStep 5 — Check the Dashboard live panel:\nFor a quick overview across all exams, go to the Dashboard (click\nDashboard in the sidebar). The Live Exams panel shows all exams with\ncurrently active LIVE attempts, so you do not need to check each exam\nindividually."
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2505
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:live-monitoring"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "guidance_ask",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately conveys all necessary steps and information from the reference."
+      }
+    },
+    {
+      "id": "r31",
+      "query": "Link window vs exam duration meaning",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "error": "LLM returned an empty response"
+    },
+    {
+      "id": "s22",
+      "query": "How do I set the correct answer for a True/False question?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "To set the correct answer for a True/False question:\n\n1. Open the **Exam** and go to the **Questions** tab.  \n2. Find the True/False question and click **Edit**.  \n3. In the question editor, locate the **Correct Answer** field (or toggle) and select **True** or **False**.  \n4. Save the question. The question cannot be approved until a correct answer is set.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "questions"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:questions",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "How do I set the correct answer for a True/False question?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "questions::correct-answers::0::b58c1204b4ef"
+          ],
+          "scores": {
+            "questions::correct-answers::0::b58c1204b4ef": 0.72559077,
+            "questions": 0.72559077
+          },
+          "truncated": true
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Question Types and Review / Correct Answers",
+              "score": 0.73,
+              "text": "## Correct Answers\nMCQ: exactly one option must be marked as correct. The question cannot\nbe approved without a valid correct answer.\n\nTrue/False: one of True or False must be marked as correct. Same\napproval requirement.\n\nShort Answer: one or more accepted answers can be set. The grading\npipeline uses smart matching, so minor variations (spelling differences,\nextra spaces, case changes) may still match even if not explicitly\nlisted as accepted answers.\n\nLong Answer: there is no single \"correct answer\" field. Grading uses\nAI evaluation against the question context, the source material, and\nthe grading style setting. Teachers may set reference answers or key\n…[truncated]"
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2449
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:questions"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "guidance_ask",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer correctly captures the core fact and provides helpful, non-contradictory UI context."
+      }
+    },
+    {
+      "id": "p09",
+      "query": "put the exam date in my calendar",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "To add the exam date to your calendar, first **Publish** the exam from the **Exams** tab. Then, go to the **Links** tab and click **Schedule on Google Calendar**. Choose the date and time, and click **Schedule** to create the event on your primary Google Calendar with the exam link.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "google-calendar"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:google-calendar",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "put the exam date in my calendar",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::1::9e06ccbc058c"
+          ],
+          "scores": {
+            "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::1::9e06ccbc058c": 0.709684,
+            "google-calendar": 0.709684
+          },
+          "truncated": false
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Google Calendar Integration / Step-by-Step UI Guide: Scheduling an Exam on Google Calendar",
+              "score": 0.71,
+              "text": "Step 4 — Set the event details:\nChoose the date and time for the exam. The event title is auto-filled\nfrom the exam name. Click Schedule. A calendar event is created on your\nprimary Google Calendar with the exam link."
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2021
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:google-calendar"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "no_live_need",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.6,
+        "contradiction": 0.8,
+        "relevancy": 1.0,
+        "note": "The answer invents incorrect UI navigation steps like the 'Links' tab."
+      }
+    },
+    {
+      "id": "r12",
+      "query": "Question types MCQ and true false",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "**MCQ** (Multiple Choice): Presents a set of answer options; exactly one is correct. Students select one answer and receive instant grading by comparison to the correct option.\n\n**True/False**: A binary choice. Students select **True** or **False** and are graded instantly against the correct answer.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "questions"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:questions",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "Question types MCQ and true false",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "questions::question-types::0::017deb54a1fb"
+          ],
+          "scores": {
+            "questions::question-types::0::017deb54a1fb": 0.86713725,
+            "questions": 0.86713725
+          },
+          "truncated": true
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Question Types and Review / Question Types",
+              "score": 0.87,
+              "text": "## Question Types\nQuizzer supports five question types for graded exams:\n\nMultiple Choice (MCQ): presents a set of answer options where exactly\none is correct. The student selects one answer. Graded instantly by\ncomparing to the correct option.\n\nTrue/False: a binary choice question. The student selects True or\nFalse. Graded instantly by comparing to the correct answer.\n\nShort Answer: the student types a text response. Graded automatically\nthrough a 6-step smart matching pipeline: exact match (normalized),\nfuzzy match (for typos), keyword overlap, embedding similarity, AI\nevaluation, and Pending Professor Review if needed. One or more accepted\n…[truncated]"
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2401
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:questions"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "no_live_need",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.83,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers MCQ and True/False definitions well but omits the detail about the small badge in the exam workspace."
+      }
+    },
+    {
+      "id": "s15",
+      "query": "How do I unpublish an exam in Quizzer without losing my results?",
+      "served_by": "workflow_card",
+      "route_predicted": "workflow_card",
+      "answer": "Open the **Published** exam and click **Unpublish**. The share link deactivates and the exam returns to **Draft**. Existing **Results** are kept.",
+      "model": "workflow:exam.unpublish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "evidence": {},
+      "executed_path": {
+        "route": null,
+        "execution_class": null,
+        "runtime_mode": null,
+        "runtime_mode_reason": null,
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately covers the process and confirms that results are kept."
+      }
+    },
+    {
+      "id": "s08",
+      "query": "Where can I find the analytics for my exam?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "error": "LLM returned an empty response"
+    },
+    {
+      "id": "m06",
+      "query": "How do I bring in my Classroom roster and push grades back after grading?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "To bring in your Classroom roster:  \n1. Go to the **Students** workspace in the teacher sidebar.  \n2. Click **Import Roster** for your connected Google Classroom course.  \n3. Student names and enrollment details will appear in the **Students** workspace under that Classroom cluster.  \n\nTo push grades back after grading:  \n1. After students complete the exam and grading is finished, scores sync automatically to the linked Google Classroom coursework entry.  \n2. No manual action is required—grades are pushed back once grading completes.  \n\nIf you don’t see the roster",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "google-classroom"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:google-classroom",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "How do I bring in my Classroom roster and push grades back after grading?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574"
+          ],
+          "scores": {
+            "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574": 0.83452857,
+            "google-classroom": 0.83452857
+          },
+          "truncated": true
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Google Classroom Integration / Step-by-Step UI Guide: Connecting and Using Google Classroom",
+              "score": 0.83,
+              "text": "Step 4 — Import a roster:\nClick on an imported course. Click Import Roster. Student names and\nenrollment info from Google Classroom are pulled into Quizzer. These\nappear in the Students workspace when you filter by this Classroom\ncluster.\n\nStep 5 — Assign an exam as coursework:\nAfter publishing an exam, go to the exam's Links tab. Find the Assign\nto Classroom option. Click it, select the Classroom course from the\ndropdown, and click Assign. Students see the assignment in their\nGoogle Classroom with a link to the exam.\n\nStep 6 — Push grades:\nAfter students take the exam and grading completes, scores are\nautomatically synced back to the Classroom coursework entry. You can\n…[truncated]"
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2555
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:google-classroom"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "guidance_ask",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.6,
+        "contradiction": 0.3,
+        "relevancy": 0.9,
+        "note": "The answer misses the initial Google Classroom connection steps and cuts off at the end, while incorrectly claiming no manual grade push is possible."
+      }
+    },
+    {
+      "id": "r02",
+      "query": "Where is Monitoring in the sidebar?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "Monitoring is not a top-level item in the sidebar. To access it:\n\n1. Click **Dashboard** in the sidebar.  \n2. Open the specific exam from the Exams workspace.  \n3. Select the **Monitoring** tab within that exam.",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "live-monitoring"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:live-monitoring",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "Where is Monitoring in the sidebar?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "live-monitoring::where-to-find-it::0::863493675f3d"
+          ],
+          "scores": {
+            "live-monitoring::where-to-find-it::0::863493675f3d": 0.7859175,
+            "live-monitoring": 0.7859175
+          },
+          "truncated": false
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "LIVE, Monitoring, and Real-Time Tracking / Where to Find It",
+              "score": 0.79,
+              "text": "## Where to Find It\nLIVE badges: appear on exam cards in the Exams workspace and on the\nDashboard's live exams panel. These are at-a-glance indicators.\n\nMonitoring tab: open Exams from the sidebar, open a specific exam, then\nselect the Monitoring tab. This shows detailed per-attempt data.\n\nThere is no top-level Monitoring or LIVE item in the sidebar. The URL\n/monitoring redirects to the Exams workspace. Always navigate through\nthe specific exam."
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2226
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:live-monitoring"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "guidance_ask",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.67,
+        "contradiction": 0.5,
+        "relevancy": 0.8,
+        "note": "The answer adds an incorrect step by telling the user to click Dashboard first."
+      }
+    },
+    {
+      "id": "s21",
+      "query": "How do I publish an exam in Quizzer?",
+      "served_by": "workflow_card",
+      "route_predicted": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "evidence": {},
+      "executed_path": {
+        "route": null,
+        "execution_class": null,
+        "runtime_mode": null,
+        "runtime_mode_reason": null,
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers all reference steps while adding helpful context."
+      }
+    },
+    {
+      "id": "r29",
+      "query": "Negative marking settings",
+      "served_by": "workflow_card",
+      "route_predicted": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "evidence": {},
+      "executed_path": {
+        "route": null,
+        "execution_class": null,
+        "runtime_mode": null,
+        "runtime_mode_reason": null,
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.0,
+        "relevancy": 0.2,
+        "note": "The answer explains general exam settings but completely misses the specifics of negative marking."
+      }
+    },
+    {
+      "id": "r14",
+      "query": "Difference between Monitoring and Analytics",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "error": "LLM returned an empty response"
+    },
+    {
+      "id": "s19",
+      "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "When setting up a new workspace in Quizzer, you enter your information during the onboarding process across four screens:\n\n1. **Welcome** screen: Enter your display name.\n2. **Persona** screen: Choose a persona card that describes your role.\n3. **Details** screen: Answer dynamic questions based on your selected persona (e.g., institution, subject area, company name, team size).\n4. **Finalize** screen: Complete setup and access your workspace.\n\nThese steps guide you through providing the necessary information to configure your new workspace.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "onboarding"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:onboarding",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "onboarding::the-four-onboarding-screens-inside-steps-3-6-abo::0::d131b2f2d510"
+          ],
+          "scores": {
+            "onboarding::the-four-onboarding-screens-inside-steps-3-6-abo::0::d131b2f2d510": 0.81347597,
+            "onboarding": 0.81347597
+          },
+          "truncated": true
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Onboarding and Signup / The Four Onboarding Screens (inside Steps 3-6 above)",
+              "score": 0.81,
+              "text": "## The Four Onboarding Screens (inside Steps 3-6 above)\nScreen 1 — Welcome: enter your display name. This is the name shown\nacross your workspace.\n\nScreen 2 — Persona: choose from ten persona cards that describe how you\nwill use Quizzer. Your persona personalizes the onboarding questions\nand workspace greeting, but does NOT affect permissions. Only the\nStudent persona sets the Student role. All other personas set the\nTeacher role.\n\nScreen 3 — Details: answer dynamic questions based on your persona. For\nexample, a teacher might see institution, subject area, and courses\ntaught. A corporate trainer might see company name and team size. These\n…[truncated]"
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2537
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:onboarding"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "guidance_ask",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.5,
+        "contradiction": 0.3,
+        "relevancy": 1.0,
+        "note": "The answer provides a detailed 4-step breakdown that conflicts slightly with the reference's mention of Step 5."
+      }
+    },
+    {
+      "id": "r23",
+      "query": "What shows on the teacher dashboard?",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "The teacher dashboard shows:\n\n- **Summary metrics** — four KPI cards: Active Right Now, Attempts (7d), Avg Score (7d), and AI Jobs Running.\n- **Live exams panel** — exams currently LIVE (published, unsubmitted, timer running, heartbeat active), each with a LIVE badge and quick access.\n- **Quick actions** — one-click access to Create Exam and other common tasks.\n- **Activation checklist** — guided first-step checklist for newer accounts (create exam, approve questions, publish, etc.).",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "knowledge_packs": [
+        "core",
+        "dashboard"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:dashboard",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "What shows on the teacher dashboard?",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "dashboard::teacher-dashboard::0::2466a6c60b87"
+          ],
+          "scores": {
+            "dashboard::teacher-dashboard::0::2466a6c60b87": 0.93359375,
+            "dashboard": 0.93359375
+          },
+          "truncated": true
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Dashboard / Teacher Dashboard",
+              "score": 0.93,
+              "text": "## Teacher Dashboard\nThe teacher dashboard shows:\n\nSummary metrics: the four KPI cards — Active Right Now, Attempts\n(7d), Avg Score (7d), and AI Jobs Running. These are not the same\nas Exams-page published/draft counts.\n\nLive exams panel: exams that currently have LIVE (active, in-progress)\nattempts. Shows the LIVE badge and quick access to each exam. Uses the\nsame LIVE definition as the Exams workspace (published, unsubmitted,\ntimer running, heartbeat active).\n\nQuick actions: one-click access to Create Exam and other common tasks.\n\nActivation checklist: for newer accounts, a guided checklist of\nfirst steps (create your first exam, approve questions, publish, etc.).\n…[truncated]"
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2435
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:dashboard"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "no_live_need",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 1.0,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer accurately and comprehensively covers all the facts from the reference answer."
+      }
+    },
+    {
+      "id": "r27",
+      "query": "Integrity events and live proctoring",
+      "served_by": "workflow_card",
+      "route_predicted": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "evidence": {},
+      "executed_path": {
+        "route": null,
+        "execution_class": null,
+        "runtime_mode": null,
+        "runtime_mode_reason": null,
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.2,
+        "note": "The answer describes exam settings instead of explaining how to view integrity events for live proctoring."
+      }
+    },
+    {
+      "id": "p03",
+      "query": "give students the link to the exam",
+      "served_by": "workflow_card",
+      "route_predicted": "workflow_card",
+      "answer": "Open the exam, go to the **Links** tab, click **Copy Link**, then send it (paste, **Share by Email**, Classroom, or QR). Students use that URL to start the exam (while the link window is active).",
+      "model": "workflow:exam.share",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "evidence": {},
+      "executed_path": {
+        "route": null,
+        "execution_class": null,
+        "runtime_mode": null,
+        "runtime_mode_reason": null,
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.1,
+        "relevancy": 1.0,
+        "note": "The answer covers most ways to find and share the link, though it adds a minor unverified restriction about the link window being active."
+      }
+    },
+    {
+      "id": "p04",
+      "query": "download my students' marks sheet",
+      "served_by": "retrieval",
+      "route_predicted": "retrieval",
+      "answer": "To download your students' marks sheet, go to the **Results** tab of your exam and use the export options. You can export as CSV, Excel, or Google Sheets if Drive is connected. Exports run in the background, and you’ll get an in-app notification with a download link when ready.",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "knowledge_packs": [
+        "core",
+        "results-exports"
+      ],
+      "sources_used": [
+        "identity",
+        "runtime",
+        "runtime:knowledge",
+        "knowledge",
+        "knowledge_mode:hybrid",
+        "knowledge:core",
+        "knowledge:results-exports",
+        "llm"
+      ],
+      "evidence": {
+        "retrieved": {
+          "query": "download my students' marks sheet",
+          "mode": "hybrid",
+          "no_answer": false,
+          "chunk_ids": [
+            "results-exports::export-options::0::0977d796dc00"
+          ],
+          "scores": {
+            "results-exports::export-options::0::0977d796dc00": 0.42734948,
+            "results-exports": 0.42734948
+          },
+          "truncated": true
+        },
+        "generator_context": {
+          "documents": [
+            {
+              "title": "Results and Exports / Export Options",
+              "score": 0.43,
+              "text": "## Export Options\nTeachers can export results from the Results tab:\n\nCSV export: download results as a CSV file. Includes student identity\nfields, scores, violation counts, integrity flags, and timestamps.\n\nExcel export: download results as an Excel spreadsheet with the same\ndata as CSV.\n\nGoogle Sheets export: if Google Drive is connected via Integrations,\nexport results directly to a Google Sheets spreadsheet. The spreadsheet\nis created in the teacher's Drive account.\n\nExports are processed as background tasks. When the export is ready,\nthe teacher receives an in-app notification with a download link. The\ndownload link is available for a limited time.\n…[truncated]"
+            }
+          ],
+          "tool_blocks": [],
+          "capabilities_stub": false,
+          "prompt_chars": 2420
+        },
+        "route": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "data_need": "knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null,
+          "sources_used": [
+            "identity",
+            "runtime",
+            "runtime:knowledge",
+            "knowledge",
+            "knowledge_mode:hybrid",
+            "knowledge:core",
+            "knowledge:results-exports"
+          ]
+        },
+        "llm_called": true
+      },
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "no_live_need",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "route_mismatch": false,
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer covers most key steps but omits navigating via the left sidebar and Exams menu."
+      }
+    }
+  ]
+}

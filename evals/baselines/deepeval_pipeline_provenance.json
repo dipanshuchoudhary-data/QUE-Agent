@@ -1,0 +1,792 @@
+{
+  "summary": {
+    "rows": 13,
+    "threshold": 0.7,
+    "means": {
+      "recall": 0.69,
+      "precision": 0.846,
+      "relevancy": 0.865,
+      "faithfulness": 0.744,
+      "answer_relevancy": 0.923,
+      "correctness": 0.608
+    },
+    "below_threshold": {
+      "recall": [
+        "a05",
+        "p09",
+        "r12",
+        "m06",
+        "s19"
+      ],
+      "precision": [
+        "a05",
+        "s19"
+      ],
+      "relevancy": [
+        "a05",
+        "s16"
+      ],
+      "faithfulness": [
+        "r19",
+        "c05",
+        "s22",
+        "p09",
+        "m06",
+        "r02"
+      ],
+      "answer_relevancy": [
+        "c05"
+      ],
+      "correctness": [
+        "a05",
+        "c05",
+        "s22",
+        "p09",
+        "m06",
+        "s19"
+      ]
+    },
+    "errors": 0,
+    "judge_models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "provisional": true,
+    "faithfulness_context_source": {
+      "generator_context": 13,
+      "retriever_rerun_legacy": 0
+    },
+    "no_generator_evidence": [
+      "c05"
+    ],
+    "mode": "combined",
+    "judge_calls_per_row": 1
+  },
+  "rows": [
+    {
+      "id": "c03",
+      "query": "What is the difference between an Exam and an Arena game?",
+      "answer": "**Exam**\n- Asynchronous: students take it on their own time\n- Individually timed per student\n- Detailed proctoring and grading\n- Results appear in the **Results** tab\n\n**Arena game**\n- Synchronous: everyone plays at the same time\n- Host controls the pace\n- Speed-based scoring with streaks\n- No detailed proctoring\n- Results go to **game history**, not the **Results** tab\n- Analytics appear in a separate **Analytics** workspace section",
+      "chunks": 2,
+      "generator_chunks": 2,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "complex_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "terminology::common-confusions::1::c886a6fde3da",
+          "arena::how-arena-differs-from-graded-exams::0::3c43e19a0908"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Quizzer Terminology and Glossary / Common Confusions",
+          "Arena — Live Quiz Battles / How Arena Differs from Graded Exams"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2508
+      },
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunks contain all the facts needed to cover the reference answer."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunks are ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "All retrieved text directly discusses the differences between Arena and Exams."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "Every claim in the answer is fully supported by the generator context."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The entire answer directly addresses the question about the differences between an Exam and an Arena game."
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The answer accurately captures all the steps and facts detailed in the reference answer."
+        }
+      }
+    },
+    {
+      "id": "a05",
+      "query": "Can I change it after?",
+      "answer": "No, the persona label cannot be changed through the UI after onboarding. It only affects copy and greeting, not permissions.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "onboarding::common-questions::0::15eb76f2a295"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Onboarding and Signup / Common Questions"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2395
+      },
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The retrieved chunks do not contain any facts about changing exam settings."
+        },
+        "precision": {
+          "score": 0.0,
+          "reason": "The retrieved chunks are irrelevant to the user's question about changing exam settings."
+        },
+        "relevancy": {
+          "score": 0.1,
+          "reason": "Most of the retrieved text discusses onboarding and personas rather than what was asked."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are directly supported by the generator context."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses the question based on the available context."
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The answer discusses changing personas instead of exam settings due to mismatched context."
+        }
+      }
+    },
+    {
+      "id": "r19",
+      "query": "How does onboarding work after signup?",
+      "answer": "After signup, onboarding is a four-step flow that personalizes your workspace:\n\n1. **Enter your name** and choose a persona (e.g., Teacher, Student).\n2. Fill in relevant details for that persona.\n3. The system creates your workspace based on the selections.\n4. You’re taken to the **Dashboard**, where you can start creating exams or explore other features.\n\nIf you skip or complete steps, the flow may reappear the next time you open the app, or you can revisit settings to update your persona and details.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "onboarding::overview::0::a8463754e9a9"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Onboarding and Signup / Overview"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2084
+      },
+      "scores": {
+        "recall": {
+          "score": 0.8,
+          "reason": "The chunk contains most of the key facts about the four-step onboarding flow."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The only retrieved chunk contains the relevant facts and is ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely focused on the onboarding overview."
+        },
+        "faithfulness": {
+          "score": 0.6,
+          "reason": "The generator context supports the first part, but does not mention dashboard creation details or skipping steps."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "All statements directly address how onboarding works after signup."
+        },
+        "correctness": {
+          "score": 0.7,
+          "reason": "The answer captures the four-step flow and workspace creation, though it adds unverified details not present in the reference."
+        }
+      }
+    },
+    {
+      "id": "c05",
+      "query": "Is the LIVE badge the same as Monitoring?",
+      "answer": "That live insight isn't available for your account role, so I can't pull it. Ask me how it works in Quizzer, or open the page directly.",
+      "chunks": 1,
+      "generator_chunks": 0,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "workflow",
+          "runtime_mode_reason": "single_tool",
+          "tool": "summarize_live_exam_health",
+          "tool_error": "forbidden",
+          "tool_fallback": "none"
+        },
+        "llm_called": false,
+        "retrieved_chunk_ids": [],
+        "retrieval_mode": null,
+        "retrieval_no_answer": null,
+        "generator_documents": [],
+        "generator_tool_blocks": [],
+        "prompt_chars": 0
+      },
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunk contains all the facts needed to answer the question."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely about common terminology confusions including LIVE versus Monitoring."
+        },
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "The generator received no context and made unsupported claims about account roles."
+        },
+        "answer_relevancy": {
+          "score": 0.0,
+          "reason": "The answer refuses to address the question and talks about account roles."
+        },
+        "correctness": {
+          "score": 0.0,
+          "reason": "The answer fails to provide the facts given in the reference answer."
+        }
+      }
+    },
+    {
+      "id": "s16",
+      "query": "How can I see active attempts across all exams in the live panel?",
+      "answer": "Go to the **Dashboard** from the sidebar. The **Live Exams** panel shows all exams with currently active attempts.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "live-monitoring::step-by-step-ui-guide-monitoring-live-exams::1::7076e75117ae"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "LIVE, Monitoring, and Real-Time Tracking / Step-by-Step UI Guide: Monitoring Live Exams"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2505
+      },
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunk contains all the facts needed to answer the question."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is placed at the top of the retrieval results."
+        },
+        "relevancy": {
+          "score": 0.5,
+          "reason": "The retrieved text includes extra information about viewing integrity events for a specific attempt."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are directly supported by the generator context."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to see active attempts across all exams."
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The answer provides the exact same steps and facts as the reference answer."
+        }
+      }
+    },
+    {
+      "id": "s22",
+      "query": "How do I set the correct answer for a True/False question?",
+      "answer": "To set the correct answer for a True/False question:\n\n1. Open the **Exam** and go to the **Questions** tab.  \n2. Find the True/False question and click **Edit**.  \n3. In the question editor, locate the **Correct Answer** field (or toggle) and select **True** or **False**.  \n4. Save the question. The question cannot be approved until a correct answer is set.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "questions::correct-answers::0::b58c1204b4ef"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Question Types and Review / Correct Answers"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2449
+      },
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunks contain the required fact that one of True or False must be marked as correct."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is ranked first."
+        },
+        "relevancy": {
+          "score": 0.8,
+          "reason": "Most of the retrieved text discusses correct answers for various question types, which is relevant to the query."
+        },
+        "faithfulness": {
+          "score": 0.6,
+          "reason": "The answer includes UI navigation steps (opening Exam tab, clicking Edit) that are not supported by the context."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to set the correct answer for a True/False question."
+        },
+        "correctness": {
+          "score": 0.5,
+          "reason": "While it mentions selecting True or False, it misses the directness of the reference answer by adding unsupported UI steps."
+        }
+      }
+    },
+    {
+      "id": "p09",
+      "query": "put the exam date in my calendar",
+      "answer": "To add the exam date to your calendar, first **Publish** the exam from the **Exams** tab. Then, go to the **Links** tab and click **Schedule on Google Calendar**. Choose the date and time, and click **Schedule** to create the event on your primary Google Calendar with the exam link.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "google-calendar::step-by-step-ui-guide-scheduling-an-exam-on-goog::1::9e06ccbc058c"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Google Calendar Integration / Step-by-Step UI Guide: Scheduling an Exam on Google Calendar"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2021
+      },
+      "scores": {
+        "recall": {
+          "score": 0.2,
+          "reason": "The retrieved chunks only contain details about Step 4 of scheduling the exam."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The only retrieved chunk is directly relevant to the question."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely about scheduling an exam on Google Calendar."
+        },
+        "faithfulness": {
+          "score": 0.5,
+          "reason": "The generator context supports setting the date, time, and clicking schedule, but not the specific UI instructions about the Exams or Links tabs."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to put the exam date in the calendar."
+        },
+        "correctness": {
+          "score": 0.4,
+          "reason": "The answer misses the requirement to connect Google Calendar under Integrations and includes unsupported UI steps like the Links tab."
+        }
+      }
+    },
+    {
+      "id": "r12",
+      "query": "Question types MCQ and true false",
+      "answer": "**MCQ** (Multiple Choice): Presents a set of answer options; exactly one is correct. Students select one answer and receive instant grading by comparison to the correct option.\n\n**True/False**: A binary choice. Students select **True** or **False** and are graded instantly against the correct answer.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "questions::question-types::0::017deb54a1fb"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Question Types and Review / Question Types"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2401
+      },
+      "scores": {
+        "recall": {
+          "score": 0.67,
+          "reason": "The chunks contain facts about MCQ and True/False definitions and grading, but omit the badge detail."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The top retrieved chunk directly contains the relevant facts about MCQ and True/False question types."
+        },
+        "relevancy": {
+          "score": 0.85,
+          "reason": "Most of the retrieved text is about question types, with only a minor portion discussing short answer questions."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the generated answer are fully supported by the generator context."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "Every statement in the answer directly addresses the question about MCQ and True/False question types."
+        },
+        "correctness": {
+          "score": 0.8,
+          "reason": "The answer provides accurate definitions and grading details for MCQ and True/False, but omits the detail about the small badge on the Questions tab."
+        }
+      }
+    },
+    {
+      "id": "m06",
+      "query": "How do I bring in my Classroom roster and push grades back after grading?",
+      "answer": "To bring in your Classroom roster:  \n1. Go to the **Students** workspace in the teacher sidebar.  \n2. Click **Import Roster** for your connected Google Classroom course.  \n3. Student names and enrollment details will appear in the **Students** workspace under that Classroom cluster.  \n\nTo push grades back after grading:  \n1. After students complete the exam and grading is finished, scores sync automatically to the linked Google Classroom coursework entry.  \n2. No manual action is required—grades are pushed back once grading completes.  \n\nIf you don’t see the roster",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::62ae60033574"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Google Classroom Integration / Step-by-Step UI Guide: Connecting and Using Google Classroom"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2555
+      },
+      "scores": {
+        "recall": {
+          "score": 0.5,
+          "reason": "The chunks contain information about importing rosters and pushing grades, but miss the initial OAuth connection steps."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The retrieved chunks directly address how to import rosters and push grades in order."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "All retrieved text focuses entirely on Google Classroom integration steps."
+        },
+        "faithfulness": {
+          "score": 0.5,
+          "reason": "The answer claims you go to the Students workspace to click Import Roster, whereas the context states to click on an imported course."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The generated answer directly addresses both parts of the user's question."
+        },
+        "correctness": {
+          "score": 0.6,
+          "reason": "The answer correctly describes automatic grade syncing but gives incorrect UI steps for importing the roster compared to the reference."
+        }
+      }
+    },
+    {
+      "id": "r02",
+      "query": "Where is Monitoring in the sidebar?",
+      "answer": "Monitoring is not a top-level item in the sidebar. To access it:\n\n1. Click **Dashboard** in the sidebar.  \n2. Open the specific exam from the Exams workspace.  \n3. Select the **Monitoring** tab within that exam.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "live-monitoring::where-to-find-it::0::863493675f3d"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "LIVE, Monitoring, and Real-Time Tracking / Where to Find It"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2226
+      },
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunk contains all the facts needed to answer the question."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is ranked first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely focused on where to find monitoring."
+        },
+        "faithfulness": {
+          "score": 0.67,
+          "reason": "The context does not mention clicking Dashboard in step 1."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses where Monitoring is located."
+        },
+        "correctness": {
+          "score": 0.75,
+          "reason": "The answer adds an incorrect step to click Dashboard instead of Exams."
+        }
+      }
+    },
+    {
+      "id": "s19",
+      "query": "Where do I enter my information when setting up a new workspace in Quizzer?",
+      "answer": "When setting up a new workspace in Quizzer, you enter your information during the onboarding process across four screens:\n\n1. **Welcome** screen: Enter your display name.\n2. **Persona** screen: Choose a persona card that describes your role.\n3. **Details** screen: Answer dynamic questions based on your selected persona (e.g., institution, subject area, company name, team size).\n4. **Finalize** screen: Complete setup and access your workspace.\n\nThese steps guide you through providing the necessary information to configure your new workspace.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "guidance_ask",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "onboarding::the-four-onboarding-screens-inside-steps-3-6-abo::0::d131b2f2d510"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Onboarding and Signup / The Four Onboarding Screens (inside Steps 3-6 above)"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2537
+      },
+      "scores": {
+        "recall": {
+          "score": 0.0,
+          "reason": "The retrieved chunks contain information about onboarding screens, but do not contain the specific reference facts about Step 5."
+        },
+        "precision": {
+          "score": 0.0,
+          "reason": "Since the chunks do not contain the reference facts, precision cannot be evaluated positively."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "All retrieved text is directly about the onboarding screens and workspace setup."
+        },
+        "faithfulness": {
+          "score": 0.8,
+          "reason": "Most claims are supported by the context, except for the mention of a 'Finalize' screen which is not in the context."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses where to enter information when setting up a new workspace."
+        },
+        "correctness": {
+          "score": 0.3,
+          "reason": "The answer misses the specific reference steps and details, incorrectly attributing information across four generic screens instead of Step 5."
+        }
+      }
+    },
+    {
+      "id": "r23",
+      "query": "What shows on the teacher dashboard?",
+      "answer": "The teacher dashboard shows:\n\n- **Summary metrics** — four KPI cards: Active Right Now, Attempts (7d), Avg Score (7d), and AI Jobs Running.\n- **Live exams panel** — exams currently LIVE (published, unsubmitted, timer running, heartbeat active), each with a LIVE badge and quick access.\n- **Quick actions** — one-click access to Create Exam and other common tasks.\n- **Activation checklist** — guided first-step checklist for newer accounts (create exam, approve questions, publish, etc.).",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "dashboard::teacher-dashboard::0::2466a6c60b87"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Dashboard / Teacher Dashboard"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2435
+      },
+      "scores": {
+        "recall": {
+          "score": 1.0,
+          "reason": "The retrieved chunks contain all the facts present in the reference answer."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The relevant chunk is placed at rank 1."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "The retrieved text is entirely focused on the teacher dashboard."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are fully supported by the generator context."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "Every statement directly addresses what is shown on the teacher dashboard."
+        },
+        "correctness": {
+          "score": 1.0,
+          "reason": "The answer accurately includes all summary metrics, the live exams panel, quick actions, and the activation checklist matching the reference."
+        }
+      }
+    },
+    {
+      "id": "p04",
+      "query": "download my students' marks sheet",
+      "answer": "To download your students' marks sheet, go to the **Results** tab of your exam and use the export options. You can export as CSV, Excel, or Google Sheets if Drive is connected. Exports run in the background, and you’ll get an in-app notification with a download link when ready.",
+      "chunks": 1,
+      "generator_chunks": 1,
+      "context_source": "generator_context",
+      "evidence": {
+        "executed_path": {
+          "route": "knowledge",
+          "execution_class": "simple_knowledge",
+          "runtime_mode": "knowledge",
+          "runtime_mode_reason": "no_live_need",
+          "tool": null,
+          "tool_error": null,
+          "tool_fallback": null
+        },
+        "llm_called": true,
+        "retrieved_chunk_ids": [
+          "results-exports::export-options::0::0977d796dc00"
+        ],
+        "retrieval_mode": "hybrid",
+        "retrieval_no_answer": false,
+        "generator_documents": [
+          "Results and Exports / Export Options"
+        ],
+        "generator_tool_blocks": [],
+        "prompt_chars": 2420
+      },
+      "scores": {
+        "recall": {
+          "score": 0.8,
+          "reason": "The retrieved chunk contains most facts about formats and notifications but misses the initial navigation step via Exams."
+        },
+        "precision": {
+          "score": 1.0,
+          "reason": "The single retrieved chunk is directly relevant and placed first."
+        },
+        "relevancy": {
+          "score": 1.0,
+          "reason": "All retrieved text is about export options for results."
+        },
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "All claims in the answer are fully supported by the generator context."
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "The answer directly addresses how to download the students' marks sheet."
+        },
+        "correctness": {
+          "score": 0.85,
+          "reason": "The answer gives the core export steps and formats but omits the explicit instruction to click Exams in the sidebar."
+        }
+      }
+    }
+  ]
+}

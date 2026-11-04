@@ -99,6 +99,11 @@ or flagged (integrity issues).
 If Analytics appears empty, the first thing to check is whether the
 filters (especially date range) are too narrow.
 
+Date range, quiz selection, and status filters all affect which attempts
+are included. A narrow date range can exclude recent or older data,
+which is the usual reason the numbers look different from what you
+expected.
+
 ## Charts and Visualizations
 
 Score distribution: a chart showing how scores are distributed across
@@ -154,6 +159,10 @@ If Analytics is empty:
 
 Publishing alone does not populate Analytics. Graded results are needed.
 
+Check the date range filters first (the most common cause), then confirm
+you have exams with submitted and graded attempts. Publishing an exam
+alone does not populate Analytics; students must take and submit it.
+
 ## Analytics vs Results
 
 Analytics: cross-exam aggregate view. Shows trends and distributions
@@ -165,36 +174,6 @@ workspace.
 
 Use Analytics for the big picture. Use Results for individual student
 performance on a specific exam.
-
-## Common Questions
-
-Where is Analytics?
-In the sidebar. Click Analytics. It is a top-level workspace, not
-inside a specific exam.
-
-Why is Analytics empty?
-Check your date range filters first (the most common cause). Then
-verify that you have exams with submitted and graded attempts. Simply
-publishing an exam does not populate Analytics — students need to take
-and submit it.
-
-What is the difference between Analytics and Results?
-Analytics shows aggregate trends across exams. Results shows individual
-scores for one exam. Use Analytics for the portfolio view, Results for
-per-student details.
-
-Can I see Arena data in Analytics?
-Yes. Analytics has a separate section for Arena game history. It is
-separate from graded exam data.
-
-How do I narrow down the data?
-Use the date range, quiz, and status filters at the top of the
-Analytics workspace.
-
-Why do the numbers look different from what I expected?
-Check your filters. Date range, quiz selection, and status filters all
-affect which attempts are included. A narrow date range may exclude
-recent or older data.
 
 ## Related Features
 

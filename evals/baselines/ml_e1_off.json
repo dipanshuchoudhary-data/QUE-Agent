@@ -1,0 +1,290 @@
+{
+  "summary": {
+    "all": {
+      "n": 8,
+      "routing_ok": 0.375,
+      "evidence_hit": 0.0,
+      "cross_language": null,
+      "ambiguity_ok": 1.0,
+      "grounded": 0.5,
+      "intent_preserved": 0.75,
+      "latency_ms_mean": 9678.225,
+      "tokens_mean": 564.5,
+      "llm_calls": 4
+    },
+    "by_kind": {
+      "ambiguous": {
+        "n": 3,
+        "routing_ok": 1.0,
+        "evidence_hit": null,
+        "cross_language": null,
+        "ambiguity_ok": 1.0,
+        "grounded": 0.0,
+        "intent_preserved": 0.5,
+        "latency_ms_mean": 15229.9,
+        "tokens_mean": 532.5,
+        "llm_calls": 2
+      },
+      "english_anchor": {
+        "n": 1,
+        "routing_ok": 0.0,
+        "evidence_hit": null,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": 1.0,
+        "intent_preserved": 1.0,
+        "latency_ms_mean": 6894.2,
+        "tokens_mean": 774,
+        "llm_calls": 1
+      },
+      "hinglish": {
+        "n": 2,
+        "routing_ok": 0.0,
+        "evidence_hit": 0.0,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": 1.0,
+        "intent_preserved": 1.0,
+        "latency_ms_mean": 1358.9,
+        "tokens_mean": 419,
+        "llm_calls": 1
+      },
+      "typo": {
+        "n": 1,
+        "routing_ok": 0.0,
+        "evidence_hit": 0.0,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "unsupported": {
+        "n": 1,
+        "routing_ok": 0.0,
+        "evidence_hit": null,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "m01",
+      "kind": "english_anchor",
+      "group": "improve_marks",
+      "query": "How can I help students improve their marks?",
+      "outcome": "answer",
+      "docs": [
+        "common-workflows",
+        "questions"
+      ],
+      "scores": {
+        "common-workflows::review-and-improve-low-performing-exams::0::a6c852d2b29d": -0.338,
+        "questions::sections::0::b719f0d1ee9c": -0.477
+      },
+      "routing_ok": false,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 14069.0,
+      "cross_language": null,
+      "latency_ms": 6894.2,
+      "prompt_tokens": 682,
+      "completion_tokens": 92,
+      "llm_called": true,
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "answer": "Review score distribution in **Analytics** to spot exams with low averages or high drop-off. Open the exam's **Results** tab and check which questions are causing most wrong answers or timing out. Verify exam **Settings**—ensure the timer isn't too short and negative marking isn't too harsh. If adjustments are needed, unpublish, modify questions or settings, then re-publish. Changes only affect future attempts; existing results keep the original settings.",
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "tools_disabled",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "generator_docs": 2,
+      "grounded": 1.0,
+      "intent_preserved": 1.0,
+      "judge_reason": "The assistant accurately and completely utilized the provided evidence regarding how to review and improve low-performing exams to help students improve their marks, directly addressing the user's query using only supported product documentation."
+    },
+    {
+      "id": "m03",
+      "kind": "hinglish",
+      "group": "improve_marks",
+      "query": "Baccho ke marks improve kaise kare?",
+      "outcome": "answer",
+      "docs": [
+        "common-workflows",
+        "questions"
+      ],
+      "scores": {
+        "common-workflows::review-and-improve-low-performing-exams::0::a6c852d2b29d": -11.32,
+        "questions::sections::0::b719f0d1ee9c": -11.393
+      },
+      "routing_ok": false,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 491.7,
+      "cross_language": null,
+      "generate_error": "LLMError: Error code: 404 - {'error': {'message': 'Provider returned error', 'code': 404, 'metadata': {'raw': '{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'ac74040f-9fc9-4c5e-ac74-279ba5161d"
+    },
+    {
+      "id": "m07",
+      "kind": "ambiguous",
+      "group": "vague_marks",
+      "query": "mujhe bato apne baccho ke marks kese badye",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 526.1,
+      "cross_language": null,
+      "latency_ms": 2560.2,
+      "prompt_tokens": 411,
+      "completion_tokens": 128,
+      "llm_called": true,
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "answer": "Quizzer marks depend on how the exam is set up. Follow these steps to check or release scores:\n\n1. **Open your Exam** from the Dashboard → **Exams** list.\n2. Go to the **Results** tab.\n3. If results are still processing, wait for grading to complete or check the **Monitoring** tab for status.\n4. Once grading is done, students can view their marks on their **Results** page, or you can download a marks sheet from the **Links** tab.\n\nIf you don’t see marks yet, it usually means the exam isn’t published, attempts aren’t allowed, or",
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "tools_disabled",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "generator_docs": 0,
+      "grounded": 0.0,
+      "intent_preserved": 0.0,
+      "judge_reason": "The user is asking in Hinglish how to improve their children's exam marks ('mujhe bato apne baccho ke marks kese badye'). The assistant completely misunderstands the intent and instead explains how a teacher/admin can check, grade, or release exam scores in the product dashboard. Furthermore, since "
+    },
+    {
+      "id": "m08",
+      "kind": "ambiguous",
+      "group": "vague_marks",
+      "query": "marks badhane hain",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 487.7,
+      "cross_language": null,
+      "generate_error": "LLMError: Error code: 404 - {'error': {'message': 'Provider returned error', 'code': 404, 'metadata': {'raw': '{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'ac74040f-9fc9-4c5e-ac74-279ba5161d"
+    },
+    {
+      "id": "m09",
+      "kind": "ambiguous",
+      "group": "vague_marks",
+      "query": "baccho ka result improve krna h",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 448.6,
+      "cross_language": null,
+      "latency_ms": 27899.6,
+      "prompt_tokens": 398,
+      "completion_tokens": 128,
+      "llm_called": true,
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "answer": "To help students improve their results in Quizzer, you can follow these steps:\n\n1. **Publish the exam** — ensure the exam is published so students can take it and answers are graded.\n2. **Set attempt limits and timing** — configure how many times students can attempt and the time allowed per question.\n3. **Review Monitoring data** — use the **Monitoring** tab to see which questions students struggled with most.\n4. **Release results** — after grading, go to the **Results** tab and make results visible to students.\n5. **Share feedback** — if the exam has explanatory answers, students can review",
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "tools_disabled",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "generator_docs": 0,
+      "grounded": 0.0,
+      "intent_preserved": 1.0,
+      "judge_reason": "The user wants to improve students' results ('baccho ka result improve krna h'). The assistant addresses this intent by providing actionable steps within Quizzer. However, because no evidence was retrieved, the specific product features mentioned (Publish the exam, Monitoring tab, Results tab, attem"
+    },
+    {
+      "id": "m12",
+      "kind": "typo",
+      "group": "publish",
+      "query": "how to pubish my exm",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": false,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 464.2,
+      "cross_language": null,
+      "generate_error": "LLMError: Error code: 404 - {'error': {'message': 'Provider returned error', 'code': 404, 'metadata': {'raw': '{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'ac74040f-9fc9-4c5e-ac74-279ba5161d"
+    },
+    {
+      "id": "m17",
+      "kind": "hinglish",
+      "group": "monitoring",
+      "query": "monitoring kaha milega",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": false,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 511.1,
+      "cross_language": null,
+      "latency_ms": 1358.9,
+      "prompt_tokens": 392,
+      "completion_tokens": 27,
+      "llm_called": true,
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "answer": "I am not sure from the current Quizzer guides. Could you rephrase or share more details about what you are looking for?",
+      "executed_path": {
+        "route": "knowledge",
+        "execution_class": "simple_knowledge",
+        "runtime_mode": "knowledge",
+        "runtime_mode_reason": "tools_disabled",
+        "tool": null,
+        "tool_error": null,
+        "tool_fallback": null
+      },
+      "generator_docs": 0,
+      "grounded": 1.0,
+      "intent_preserved": 1.0,
+      "judge_reason": "The evidence was empty, and the assistant correctly acknowledged it didn't have the information while asking for clarification."
+    },
+    {
+      "id": "m39",
+      "kind": "unsupported",
+      "group": "unsupported_c",
+      "query": "can you edit the questions order by drag and drop in whatsapp",
+      "outcome": "answer",
+      "docs": [
+        "questions",
+        "creating-exams"
+      ],
+      "scores": {
+        "questions::sections::0::b719f0d1ee9c": 1.008,
+        "creating-exams::step-by-step-ui-guide-creating-your-first-exam::1::d50a4df90189": -4.413
+      },
+      "routing_ok": false,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 485.9,
+      "cross_language": null,
+      "generate_error": "LLMError: Error code: 404 - {'error': {'message': 'Provider returned error', 'code': 404, 'metadata': {'raw': '{\"status\":404,\"title\":\"Not Found\",\"detail\":\"Function \\'ac74040f-9fc9-4c5e-ac74-279ba5161d"
+    }
+  ]
+}

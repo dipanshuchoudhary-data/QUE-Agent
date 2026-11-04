@@ -27,7 +27,7 @@ def embed_query_cached(
 ) -> list[float]:
     q = (query or "").strip()
     cfg = settings or get_settings()
-    key = f"{cfg.que_embedding_model}::{q}"
+    key = f"{cfg.active_embedding_model}::{q}"
     with _lock:
         hit = _cache.get(key)
         if hit is not None:

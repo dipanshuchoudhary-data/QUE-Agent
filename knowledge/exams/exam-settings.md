@@ -29,6 +29,9 @@ Exams (sidebar) → open the exam → Settings tab.
 For account-wide defaults (marks, duration, verification): Account
 Settings → Workspace tab.
 
+Default marks, default duration, and a default verification schema can
+be set once and apply to all new exams.
+
 ## Step-by-Step UI Guide: Configuring Exam Settings
 
 Follow these steps to set up your exam's timing, proctoring, and
@@ -302,6 +305,11 @@ fields) from starting multiple overlapping attempts simultaneously.
 Prevents a student from opening the exam in multiple browser tabs.
 Default: On.
 
+To let students retake the exam, set Maximum Attempts to a number
+greater than 1. Prevent Duplicate blocks the same student (by
+verification identity) from starting multiple simultaneous attempts,
+such as opening the exam in two tabs.
+
 ## Access Control
 
 Require Access Code: require a single-use, teacher-generated access
@@ -361,53 +369,6 @@ verification data is not modified.
 Best practice: finalize settings before publishing. If changes are
 needed on a live exam, be aware that they only affect students who
 start a new attempt after the change.
-
-## Common Questions
-
-How do I set a time limit?
-Open Exams, open your exam, go to Settings, and change the Duration
-field.
-
-How do I allow students to retake the exam?
-Change Maximum Attempts to a number greater than 1 in Settings.
-
-How do I enable webcam monitoring?
-Open Settings and turn on Enable Webcam Monitoring. The other webcam
-settings (phone detection, face monitoring) become active once this
-is on.
-
-What is the difference between Violation Limit and Auto-Submit?
-Violation Limit sets how many violations are tolerated. Auto-Submit,
-when enabled, automatically submits the exam once the violation limit
-is reached. Without Auto-Submit, violations are recorded but the
-student can continue.
-
-Why do I not see the Answer Grading Style setting?
-It only appears when your exam has at least one written question (Short
-Answer or Long Answer). If you only have MCQ, True/False, or Multi-
-Select questions, this setting is hidden.
-
-Can I require an access code for the exam?
-Yes. Turn on Require Access Code in Settings, then generate codes in
-batches. Students enter a code before starting. Each code is single-use.
-
-How do I set default settings for all my exams?
-Go to Account Settings, then the Workspace tab. You can set default
-marks, default duration, and a default verification schema that apply
-to all new exams.
-
-Is webcam video uploaded to a server?
-No. All webcam analysis runs in the student's browser. Only violation
-event metadata (type, timestamp, confidence) is sent to the server.
-No video frames or images are transmitted.
-
-Can I change settings after publishing?
-Yes. Most settings can be changed at any time. Changes affect future
-attempts, not in-progress ones.
-
-What does Prevent Duplicate do?
-It blocks the same student (by verification identity) from starting
-multiple simultaneous attempts (like opening the exam in two tabs).
 
 ## Related Features
 

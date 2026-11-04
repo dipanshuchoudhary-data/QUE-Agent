@@ -1,0 +1,284 @@
+{
+ "r02": {
+  "frozen": [
+   "Monitoring is not located in the sidebar.",
+   "To find it, click Exams in the left sidebar",
+   "open the specific exam card",
+   "and then select the Monitoring tab."
+  ],
+  "repeat_counts": [
+   4,
+   4
+  ],
+  "frozen_count": 4,
+  "coverage_of_frozen": [
+   1.0,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   1.0,
+   1.0
+  ]
+ },
+ "s17": {
+  "frozen": [
+   "Open Exams",
+   "open the specific exam",
+   "select the Monitoring tab"
+  ],
+  "repeat_counts": [
+   3,
+   3
+  ],
+  "frozen_count": 3,
+  "coverage_of_frozen": [
+   1.0,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   1.0,
+   1.0
+  ]
+ },
+ "r16": {
+  "frozen": [
+   "To access information about cohort health, open the Students workspace.",
+   "Open the Students workspace by clicking Students in the left sidebar.",
+   "Below the scope bar, check the metrics strip",
+   "The metrics strip includes a \"Cohort count\" card.",
+   "The \"Cohort count\" card shows the number of distinct cohorts or groups.",
+   "Additionally, a cohort health visualization displays the distribution of readiness across the student population",
+   "to provide a snapshot of overall performance"
+  ],
+  "repeat_counts": [
+   7,
+   7
+  ],
+  "frozen_count": 7,
+  "coverage_of_frozen": [
+   1.0,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   1.0,
+   1.0
+  ]
+ },
+ "s11": {
+  "frozen": [
+   "To schedule an exam, use the 'Schedule exam' feature",
+   "to create a Google Calendar event",
+   "on your primary calendar",
+   "which includes the exam title",
+   "link",
+   "and timing information"
+  ],
+  "repeat_counts": [
+   5,
+   6
+  ],
+  "frozen_count": 6,
+  "coverage_of_frozen": [
+   0.67,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   1.0,
+   1.0
+  ]
+ },
+ "p06": {
+  "frozen": [
+   "open Exams from the left sidebar",
+   "click on your exam card to open the workspace",
+   "Click the Settings tab at the top of the workspace",
+   "scroll down to the Proctoring and Integrity section",
+   "Ensure the \"Block Tab Switching\" toggle switch is turned on",
+   "it is enabled by default",
+   "it detects when students leave the exam tab",
+   "Settings auto-save as you make changes"
+  ],
+  "repeat_counts": [
+   8,
+   12
+  ],
+  "frozen_count": 8,
+  "coverage_of_frozen": [
+   1.0,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   1.0,
+   0.75
+  ]
+ },
+ "s03": {
+  "frozen": [
+   "Game history can be exported to CSV from the Arena workspace.",
+   "Game history can be exported to JSON from the Arena workspace.",
+   "Game history can be exported to Google Sheets from the Arena workspace."
+  ],
+  "repeat_counts": [
+   3,
+   3
+  ],
+  "frozen_count": 3,
+  "coverage_of_frozen": [
+   1.0,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   1.0,
+   1.0
+  ]
+ },
+ "r12": {
+  "frozen": [
+   "Multiple Choice (MCQ) presents a set of answer options",
+   "where exactly one is correct",
+   "and is graded instantly by comparing to the correct option",
+   "True/False is a binary choice question",
+   "where the student selects True or False",
+   "and is graded instantly by comparing to the correct answer",
+   "Both MCQ and True/False question cards show their question type as a small badge on the Questions tab in the exam workspace"
+  ],
+  "repeat_counts": [
+   8,
+   10
+  ],
+  "frozen_count": 7,
+  "coverage_of_frozen": [
+   1.0,
+   0.86
+  ],
+  "coverage_of_repeat": [
+   0.88,
+   0.9
+  ]
+ },
+ "s07": {
+  "frozen": [
+   "Your teacher dashboard is empty",
+   "the account is brand new",
+   "no exams have been created yet",
+   "no exams currently have LIVE activity"
+  ],
+  "repeat_counts": [
+   4,
+   4
+  ],
+  "frozen_count": 4,
+  "coverage_of_frozen": [
+   1.0,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   1.0,
+   1.0
+  ]
+ },
+ "p05": {
+  "frozen": [
+   "Written answers (Short Answer and Long Answer) go through a layered grading pipeline.",
+   "Step 1 is exact match after normalization",
+   "Step 1 awards full marks immediately if correct.",
+   "Step 2 uses fuzzy match for short strings to catch minor typos.",
+   "Step 3 checks keyword overlap for essential concepts",
+   "Step 4 applies embedding similarity for semantic comparison.",
+   "Step 5 uses a batched AI model if previous steps cannot score it",
+   "Step 6 marks it as \"Pending Professor Review\" for manual grading if AI confidence is too low."
+  ],
+  "repeat_counts": [
+   8,
+   8
+  ],
+  "frozen_count": 8,
+  "coverage_of_frozen": [
+   1.0,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   1.0,
+   1.0
+  ]
+ },
+ "m06": {
+  "frozen": [
+   "To bring in your Google Classroom roster and push grades back, go to the Integrations page in the sidebar",
+   "click Connect on the Google Classroom card",
+   "complete the Google OAuth authorization",
+   "After connecting, go to the Classroom section in Integrations to import your courses",
+   "click Import Roster for a specific course to pull in student names and enrollment info",
+   "Once students take the exam and grading completes, scores are automatically synced back to the Classroom coursework entry",
+   "you can trigger a manual grade push from the Classroom section in Integrations"
+  ],
+  "repeat_counts": [
+   14,
+   13
+  ],
+  "frozen_count": 7,
+  "coverage_of_frozen": [
+   0.86,
+   0.86
+  ],
+  "coverage_of_repeat": [
+   0.5,
+   0.62
+  ]
+ },
+ "a06": {
+  "frozen": [
+   "To start using Quizzer, open the app in your browser",
+   "click the Sign Up link on the login page",
+   "You can create your account using your email",
+   "You can create your account using your password",
+   "choose Google Sign-In",
+   "choose Microsoft Sign-In",
+   "After signing in, you will go through a four-step onboarding flow",
+   "you enter your display name",
+   "choose a persona",
+   "fill in optional details",
+   "and automatically create your workspace"
+  ],
+  "repeat_counts": [
+   12,
+   11
+  ],
+  "frozen_count": 11,
+  "coverage_of_frozen": [
+   1.0,
+   1.0
+  ],
+  "coverage_of_repeat": [
+   0.92,
+   1.0
+  ]
+ },
+ "t06": {
+  "frozen": [
+   "When a teacher creates an Arena room, Quizzer generates a six-character room code",
+   "Quizzer generates a join URL",
+   "The room screen prominently displays this code",
+   "this code can be shared by clicking copy code",
+   "this code can be shared by copying the link",
+   "this code can be shared by using the scannable QR code",
+   "Teachers should project this screen on a classroom display",
+   "students can see the code",
+   "Players then join the game by opening the join link",
+   "or going to the Arena join page to enter the room code manually alongside a nickname"
+  ],
+  "repeat_counts": [
+   10,
+   9
+  ],
+  "frozen_count": 10,
+  "coverage_of_frozen": [
+   0.9,
+   0.9
+  ],
+  "coverage_of_repeat": [
+   0.9,
+   1.0
+  ]
+ }
+}

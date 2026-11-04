@@ -82,6 +82,12 @@ two to three minutes.
 Users may call this: active, in progress, currently taking, online,
 who is live right now, live status.
 
+All conditions must be true for LIVE: the exam is published and not
+archived, the attempt has started (not just the landing page opened), it
+is not submitted, the timer is running, and the tab is open with a
+recent heartbeat. LIVE is not just "the exam is published." If a student
+is taking the exam but LIVE is missing, check each condition.
+
 ## Why LIVE Might Not Appear
 
 The exam is not published: publish the exam first.
@@ -184,6 +190,9 @@ Analytics: cross-exam, focused on aggregate trends over time.
 Completion rates, average scores, score distribution, integrity flag
 rates. Best for portfolio analysis.
 
+After a student submits, the attempt moves from Monitoring to Results,
+LIVE disappears, and grading runs immediately.
+
 ## LIVE on the Dashboard
 
 The Dashboard workspace has a live exams panel showing all exams with
@@ -192,44 +201,6 @@ without opening each exam individually.
 
 The Dashboard's live exam count uses the same LIVE definition: published,
 unsubmitted, timer running, heartbeat active.
-
-## Common Questions
-
-Where is Monitoring?
-Monitoring is not in the sidebar. Open Exams, open the specific exam,
-then select the Monitoring tab.
-
-Why is LIVE not showing even though students are taking the exam?
-All five conditions must be true: published, not archived, attempt
-started (not just page opened), not submitted, timer running, tab open
-with recent heartbeat. If the student closed their tab, LIVE drops
-within a few minutes. Check each condition.
-
-What does LIVE actually mean?
-It means a student has an active, in-progress exam attempt with their
-browser tab open right now. It is not just "the exam is published."
-
-Can I see violations in real time?
-Yes. The Monitoring tab shows integrity events as they happen for
-in-progress attempts, using a real-time connection.
-
-What happens after a student submits?
-The attempt moves from Monitoring to Results. LIVE disappears. Grading
-runs immediately and results appear on the Results tab.
-
-What is the difference between Monitoring and Results?
-Monitoring shows in-progress and recent attempts with integrity data
-(best during the exam). Results shows graded scores and exports (best
-after the exam).
-
-A student says they are taking the exam but I see no LIVE badge. Why?
-They may have only opened the exam landing page without clicking Start.
-Or their tab may be closed (heartbeat expired). Or the timer may have
-already run out. Check each LIVE condition.
-
-Can I see LIVE for all my exams at once?
-Yes. The Dashboard has a live exams panel showing all exams with active
-LIVE attempts.
 
 ## Related Features
 

@@ -56,6 +56,11 @@ class QueGraphState(TypedDict):
     unresolved_question: NotRequired[str | None]
     pending_action: NotRequired[str | None]
 
+    # Structured Quizzer page/entity/role hint. Must be a declared channel: LangGraph
+    # drops undeclared input keys, which silently removed the role before tool policy
+    # checks (every graph-path tool call failed as "forbidden") and skipped UI injection.
+    ui_context: NotRequired[dict[str, Any] | None]
+
     # --- Phase 4 tools ---
     understanding_route: NotRequired[str | None]
     data_need: NotRequired[str | None]
@@ -73,3 +78,13 @@ class QueGraphState(TypedDict):
     tool_args: NotRequired[dict[str, Any] | None]
     tool_error: NotRequired[str | None]
     tool_latency_ms: NotRequired[float | None]
+    # Tool failure recovery: "knowledge" when a failed tool was replaced by KB
+    # retrieval; ``direct_reply`` is a deterministic answer that skips the LLM
+    # (live data that could not be fetched must never be paraphrased by a model).
+    tool_fallback: NotRequired[str | None]
+    direct_reply: NotRequired[str | None]
+    # model_name reported for a `direct_reply` (defaults to the tool-unavailable tag).
+    direct_model: NotRequired[str | None]
+    # Retrieval missed and nothing else can ground the turn; `resolve_knowledge_miss` decides
+    # (interpret + one retry, ask, or honest no-answer) before generation.
+    knowledge_miss: NotRequired[bool]

@@ -113,6 +113,9 @@ The notification preferences page in Account Settings mentions email
 alerts, but the backend only writes in-app notifications. No email
 is dispatched for the event types listed above.
 
+Email is only used for signup verification, password reset, and exam
+share invitations.
+
 ## Managing Notifications
 
 Mark as read: click on a notification or use the mark-all-read action.
@@ -138,6 +141,11 @@ announcements.
 These toggles filter the in-app inbox, not email delivery (since email
 is not sent for these events).
 
+To turn off a category, go to Account Settings, open the Notifications
+tab, and toggle it off. Attempt notifications arrive only at milestone
+counts (1, 5, 10, 25, 50, and 100 attempts on an exam), not on every
+single attempt.
+
 ## Deduplication
 
 Notifications use deduplication to avoid flooding the inbox. For
@@ -150,28 +158,6 @@ Most notifications include an action link that takes you directly to
 the relevant page. For example, a generation-complete notification
 links to the exam, and an integrity alert links to the exam's
 Monitoring tab.
-
-## Common Questions
-
-Where do I see my notifications?
-Click the bell icon in the top navigation bar.
-
-Does Quizzer send email notifications?
-Not for most events. Notifications for generation, attempts, integrity,
-exports, and Arena are in-app only. Email is only used for signup
-verification, password reset, and exam share invitations.
-
-How do I turn off certain notifications?
-Go to Account Settings, Notifications tab, and toggle the categories
-you want to disable.
-
-What triggers an integrity alert notification?
-When a student's violation count reaches or exceeds the violation limit
-set in the exam's Settings during an active attempt.
-
-When do I get attempt notifications?
-At milestone counts: 1, 5, 10, 25, 50, and 100 attempts on a specific
-exam. Not on every single attempt.
 
 ## Related Features
 
