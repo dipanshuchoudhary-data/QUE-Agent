@@ -44,6 +44,41 @@ def test_production_requires_strong_jwt_secret():
         Settings(**_base(QUE_JWT_SECRET="short"))
 
 
+def test_production_rejects_local_embedding_provider():
+    with pytest.raises(ValueError, match="EMBEDDING_PROVIDER=local"):
+        Settings(**_base(EMBEDDING_PROVIDER="local"))
+
+
+def test_production_rejects_local_reranker_provider():
+    with pytest.raises(ValueError, match="RERANKER_PROVIDER=local"):
+        Settings(**_base(RERANKER_PROVIDER="local"))
+
+
+def test_production_existing_api_stays_on_the_api_index():
+    cfg = Settings(**_base(EMBEDDING_PROVIDER="existing_api", RERANKER_PROVIDER="existing_api"))
+    assert cfg.uses_local_embeddings is False
+    assert cfg.uses_local_reranker is False
+    assert cfg.resolved_embedding_provider == "openrouter"
+    assert cfg.active_chroma_path == cfg.que_chroma_path
+    assert cfg.active_embedding_model == cfg.que_embedding_model
+
+
+def test_production_requires_llm_key_instead_of_falling_back_local():
+    with pytest.raises(ValueError, match="LLM_API_KEY"):
+        Settings(**_base(
+            EMBEDDING_PROVIDER="existing_api",
+            LLM_API_KEY="",
+            LLM_API_KEY_1="",
+            LLM_API_KEY_2="",
+            LLM_API_KEY_3="",
+            LLM_API_KEY_4="",
+            LLM_API_KEY_5="",
+            LLM_API_KEY_6="",
+            LLM_API_KEY_7="",
+            LLM_API_KEY_8="",
+        ))
+
+
 def test_local_env_does_not_enforce_any_guard():
     Settings(
         APP_ENV="local",
