@@ -43,10 +43,12 @@ class IndexState:
     corpus_version: str
     updated_at: str
     documents: dict[str, dict[str, Any]]
+    embedding_dim: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "embedding_model": self.embedding_model,
+            "embedding_dim": self.embedding_dim,
             "corpus_version": self.corpus_version,
             "updated_at": self.updated_at,
             "documents": self.documents,
@@ -56,6 +58,7 @@ class IndexState:
     def from_dict(cls, data: dict[str, Any]) -> IndexState:
         return cls(
             embedding_model=str(data.get("embedding_model") or ""),
+            embedding_dim=int(data.get("embedding_dim") or 0),
             corpus_version=str(data.get("corpus_version") or ""),
             updated_at=str(data.get("updated_at") or ""),
             documents=dict(data.get("documents") or {}),
@@ -64,7 +67,7 @@ class IndexState:
 
 def chroma_path(settings: Settings | None = None) -> Path:
     cfg = settings or get_settings()
-    path = Path(cfg.que_chroma_path)
+    path = Path(cfg.active_chroma_path)
     if not path.is_absolute():
         # Repo root (parent of app/)
         path = Path(__file__).resolve().parents[2] / path
@@ -100,7 +103,9 @@ def index_ready(settings: Settings | None = None) -> bool:
     state = load_index_state(cfg)
     if state is None or not state.documents:
         return False
-    if state.embedding_model != cfg.que_embedding_model:
+    if state.embedding_model != cfg.active_embedding_model:
+        return False
+    if cfg.expected_embedding_dim and state.embedding_dim and state.embedding_dim != cfg.expected_embedding_dim:
         return False
     root = chroma_path(cfg)
     if not root.is_dir():
