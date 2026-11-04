@@ -1,0 +1,819 @@
+{
+  "summary": {
+    "all": {
+      "n": 41,
+      "routing_ok": 0.854,
+      "evidence_hit": 0.654,
+      "cross_language": 0.667,
+      "ambiguity_ok": 0.8,
+      "grounded": null,
+      "intent_preserved": null,
+      "latency_ms_mean": null,
+      "tokens_mean": null,
+      "llm_calls": null
+    },
+    "by_kind": {
+      "ambiguous": {
+        "n": 5,
+        "routing_ok": 0.8,
+        "evidence_hit": null,
+        "cross_language": null,
+        "ambiguity_ok": 0.8,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "english_anchor": {
+        "n": 11,
+        "routing_ok": 0.909,
+        "evidence_hit": 0.714,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "followup": {
+        "n": 3,
+        "routing_ok": 1.0,
+        "evidence_hit": 1.0,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "hinglish": {
+        "n": 13,
+        "routing_ok": 0.846,
+        "evidence_hit": 0.545,
+        "cross_language": 0.643,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "informal_en": {
+        "n": 2,
+        "routing_ok": 1.0,
+        "evidence_hit": 0.5,
+        "cross_language": 0.5,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "shorthand": {
+        "n": 2,
+        "routing_ok": 0.5,
+        "evidence_hit": 0.5,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "typo": {
+        "n": 2,
+        "routing_ok": 1.0,
+        "evidence_hit": 1.0,
+        "cross_language": 1.0,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      },
+      "unsupported": {
+        "n": 3,
+        "routing_ok": 0.667,
+        "evidence_hit": null,
+        "cross_language": null,
+        "ambiguity_ok": null,
+        "grounded": null,
+        "intent_preserved": null,
+        "latency_ms_mean": null,
+        "tokens_mean": null,
+        "llm_calls": null
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "m01",
+      "kind": "english_anchor",
+      "group": "improve_marks",
+      "query": "How can I help students improve their marks?",
+      "outcome": "answer",
+      "docs": [
+        "students-workspace",
+        "questions"
+      ],
+      "scores": {
+        "students-workspace::readiness-labels::0::e9d31befbead": 0.219,
+        "questions::sections::0::b719f0d1ee9c": 0.179
+      },
+      "routing_ok": false,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 12725.4,
+      "cross_language": null
+    },
+    {
+      "id": "m02",
+      "kind": "hinglish",
+      "group": "improve_marks",
+      "query": "Students ki performance kaise improve kru?",
+      "outcome": "tool",
+      "docs": [],
+      "scores": null,
+      "routing_ok": false,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 3055.6,
+      "cross_language": null
+    },
+    {
+      "id": "m03",
+      "kind": "hinglish",
+      "group": "improve_marks",
+      "query": "Baccho ke marks improve kaise kare?",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 6466.1,
+      "cross_language": null
+    },
+    {
+      "id": "m04",
+      "kind": "english_anchor",
+      "group": "change_marks",
+      "query": "How do I change already awarded exam marks?",
+      "outcome": "answer",
+      "docs": [
+        "questions",
+        "exam-settings"
+      ],
+      "scores": {
+        "questions::sections::0::b719f0d1ee9c": 0.191,
+        "exam-settings::settings-after-publishing::0::e0437706659d": 0.19
+      },
+      "routing_ok": true,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 5622.4,
+      "cross_language": null
+    },
+    {
+      "id": "m05",
+      "kind": "hinglish",
+      "group": "change_marks",
+      "query": "Student ke existing marks kaise edit kru?",
+      "outcome": "answer",
+      "docs": [
+        "navigation",
+        "questions"
+      ],
+      "scores": {
+        "navigation::exam-workspace::0::b1b53192445e": 0.256,
+        "questions::sections::0::b719f0d1ee9c": 0.229
+      },
+      "routing_ok": true,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 4620.5,
+      "cross_language": 0.333
+    },
+    {
+      "id": "m06",
+      "kind": "hinglish",
+      "group": "change_marks",
+      "query": "Exam check hone ke baad marks change kr sakte hain?",
+      "outcome": "answer",
+      "docs": [
+        "questions",
+        "exam-settings"
+      ],
+      "scores": {
+        "questions::sections::0::b719f0d1ee9c": 0.209,
+        "exam-settings::settings-after-publishing::0::e0437706659d": 0.173
+      },
+      "routing_ok": true,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 4575.3,
+      "cross_language": 1.0
+    },
+    {
+      "id": "m07",
+      "kind": "ambiguous",
+      "group": "vague_marks",
+      "query": "mujhe bato apne baccho ke marks kese badye",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 4433.7,
+      "cross_language": null
+    },
+    {
+      "id": "m08",
+      "kind": "ambiguous",
+      "group": "vague_marks",
+      "query": "marks badhane hain",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 4763.1,
+      "cross_language": null
+    },
+    {
+      "id": "m09",
+      "kind": "ambiguous",
+      "group": "vague_marks",
+      "query": "baccho ka result improve krna h",
+      "outcome": "no_answer",
+      "docs": [],
+      "scores": {},
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 4453.7,
+      "cross_language": null
+    },
+    {
+      "id": "m10",
+      "kind": "english_anchor",
+      "group": "publish",
+      "query": "How do I publish my exam?",
+      "outcome": "card",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 2644.5,
+      "cross_language": null
+    },
+    {
+      "id": "m11",
+      "kind": "hinglish",
+      "group": "publish",
+      "query": "exam publish kese kru",
+      "outcome": "tool",
+      "docs": [],
+      "scores": null,
+      "routing_ok": false,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 2756.8,
+      "cross_language": null
+    },
+    {
+      "id": "m12",
+      "kind": "typo",
+      "group": "publish",
+      "query": "how to pubish my exm",
+      "outcome": "answer",
+      "docs": [
+        "publishing"
+      ],
+      "scores": {
+        "publishing::how-to-publish::0::3078e936f33f": 0.816,
+        "publishing::step-by-step-ui-guide-publishing-and-sharing-you::0::d3c84cf49f84": 0.81
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 5536.3,
+      "cross_language": null
+    },
+    {
+      "id": "m13",
+      "kind": "shorthand",
+      "group": "publish",
+      "query": "exam publish krna h kaise",
+      "outcome": "tool",
+      "docs": [],
+      "scores": null,
+      "routing_ok": false,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 3044.9,
+      "cross_language": null
+    },
+    {
+      "id": "m14",
+      "kind": "english_anchor",
+      "group": "share_link",
+      "query": "How do students take the exam from a link?",
+      "outcome": "answer",
+      "docs": [
+        "taking-exams",
+        "publishing"
+      ],
+      "scores": {
+        "taking-exams::step-by-step-ui-guide-what-students-see-when-tak::0::fc029d709359": 0.856,
+        "publishing::the-published-exam-link::0::fc9735587ab2": 0.759
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4386.6,
+      "cross_language": null
+    },
+    {
+      "id": "m15",
+      "kind": "hinglish",
+      "group": "share_link",
+      "query": "students exam link se kaise denge",
+      "outcome": "answer",
+      "docs": [
+        "publishing",
+        "roles"
+      ],
+      "scores": {
+        "publishing::the-published-exam-link::0::fc9735587ab2": 0.654,
+        "roles::student-role::1::3a23b74026e9": 0.649
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 9076.8,
+      "cross_language": 0.333
+    },
+    {
+      "id": "m16",
+      "kind": "english_anchor",
+      "group": "monitoring",
+      "query": "Where can I find monitoring?",
+      "outcome": "answer",
+      "docs": [
+        "common-problems",
+        "live-monitoring"
+      ],
+      "scores": {
+        "common-problems::live-and-monitoring-problems::0::3f1a9a8440e0": 0.777,
+        "live-monitoring::step-by-step-ui-guide-monitoring-live-exams::0::ef4cc41de951": 0.691
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4250.8,
+      "cross_language": null
+    },
+    {
+      "id": "m17",
+      "kind": "hinglish",
+      "group": "monitoring",
+      "query": "monitoring kaha milega",
+      "outcome": "answer",
+      "docs": [
+        "navigation",
+        "live-monitoring"
+      ],
+      "scores": {
+        "navigation::common-navigation-mistakes::0::7e6f8781407b": 0.045,
+        "live-monitoring::step-by-step-ui-guide-monitoring-live-exams::0::ef4cc41de951": 0.036
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4348.8,
+      "cross_language": 0.333
+    },
+    {
+      "id": "m18",
+      "kind": "informal_en",
+      "group": "monitoring",
+      "query": "wheres the live monitor thing",
+      "outcome": "answer",
+      "docs": [
+        "live-monitoring"
+      ],
+      "scores": {
+        "live-monitoring::step-by-step-ui-guide-monitoring-live-exams::1::7dbd5d3ff6a8": 0.375,
+        "live-monitoring::live-monitoring-and-real-time-exam-tracking::0::71a736e908ee": 0.334
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4388.3,
+      "cross_language": 0.5
+    },
+    {
+      "id": "m19",
+      "kind": "english_anchor",
+      "group": "arena_code",
+      "query": "Where is the arena room code?",
+      "outcome": "answer",
+      "docs": [
+        "arena"
+      ],
+      "scores": {
+        "arena::hosting-a-game::0::71aaa1f6f29c": 0.612,
+        "arena::arena-live-quiz-battles::0::4b33ca4f439b": 0.596
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4418.8,
+      "cross_language": null
+    },
+    {
+      "id": "m20",
+      "kind": "hinglish",
+      "group": "arena_code",
+      "query": "arena room code kaha hai",
+      "outcome": "answer",
+      "docs": [
+        "arena"
+      ],
+      "scores": {
+        "arena::step-by-step-ui-guide-hosting-an-arena-live-quiz::1::563980623cf6": 0.606,
+        "arena::arena-live-quiz-battles::0::4b33ca4f439b": 0.595
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4608.1,
+      "cross_language": 1.0
+    },
+    {
+      "id": "m21",
+      "kind": "english_anchor",
+      "group": "analytics_empty",
+      "query": "Why is there no data in analytics?",
+      "outcome": "tool",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 2930.1,
+      "cross_language": null
+    },
+    {
+      "id": "m22",
+      "kind": "hinglish",
+      "group": "analytics_empty",
+      "query": "analytics me data kyu nhi aa rha",
+      "outcome": "tool",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 2715.3,
+      "cross_language": null
+    },
+    {
+      "id": "m23",
+      "kind": "informal_en",
+      "group": "analytics_empty",
+      "query": "analytics page empty why",
+      "outcome": "tool",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 2737.3,
+      "cross_language": null
+    },
+    {
+      "id": "m24",
+      "kind": "english_anchor",
+      "group": "classroom",
+      "query": "How do I connect Google Classroom?",
+      "outcome": "answer",
+      "docs": [
+        "google-classroom"
+      ],
+      "scores": {
+        "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::0::f2dfb7d3c3e8": 0.905,
+        "google-classroom::google-classroom-integration::0::cc3f81a516f7": 0.853
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 5142.5,
+      "cross_language": null
+    },
+    {
+      "id": "m25",
+      "kind": "hinglish",
+      "group": "classroom",
+      "query": "Google Classroom kaise connect kru",
+      "outcome": "answer",
+      "docs": [
+        "google-classroom"
+      ],
+      "scores": {
+        "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::0::f2dfb7d3c3e8": 0.874,
+        "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::33aa4a18d581": 0.843
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4495.0,
+      "cross_language": 1.0
+    },
+    {
+      "id": "m26",
+      "kind": "typo",
+      "group": "classroom",
+      "query": "googel clasroom connect kese kare",
+      "outcome": "answer",
+      "docs": [
+        "google-classroom"
+      ],
+      "scores": {
+        "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::0::f2dfb7d3c3e8": 0.725,
+        "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::1::33aa4a18d581": 0.673
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4822.8,
+      "cross_language": 1.0
+    },
+    {
+      "id": "m27",
+      "kind": "english_anchor",
+      "group": "create_exam",
+      "query": "How do I create a quiz?",
+      "outcome": "card",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 2909.3,
+      "cross_language": null
+    },
+    {
+      "id": "m28",
+      "kind": "hinglish",
+      "group": "create_exam",
+      "query": "naya quiz kaise banaye",
+      "outcome": "answer",
+      "docs": [
+        "product-overview",
+        "arena"
+      ],
+      "scores": {
+        "product-overview::what-you-can-do::0::7b0020c6c65e": 0.193,
+        "arena::step-by-step-ui-guide-hosting-an-arena-live-quiz::0::391da2cd1281": 0.189
+      },
+      "routing_ok": true,
+      "evidence_hit": false,
+      "ambiguity_ok": null,
+      "ms": 4457.5,
+      "cross_language": null
+    },
+    {
+      "id": "m29",
+      "kind": "shorthand",
+      "group": "create_exam",
+      "query": "quiz bnana h pdf se",
+      "outcome": "answer",
+      "docs": [
+        "creating-exams",
+        "common-problems"
+      ],
+      "scores": {
+        "creating-exams::step-by-step-ui-guide-creating-your-first-exam::1::d50a4df90189": 0.075,
+        "common-problems::exam-creation-problems::0::490b324fbf87": 0.056
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4375.4,
+      "cross_language": null
+    },
+    {
+      "id": "m30",
+      "kind": "english_anchor",
+      "group": "export_results",
+      "query": "How do I export results to a spreadsheet?",
+      "outcome": "card",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 4397.2,
+      "cross_language": null
+    },
+    {
+      "id": "m31",
+      "kind": "hinglish",
+      "group": "export_results",
+      "query": "results excel me download kaise kare",
+      "outcome": "answer",
+      "docs": [
+        "results-exports",
+        "common-workflows"
+      ],
+      "scores": {
+        "results-exports::integrity-review::0::9a9ea67a3437": 0.77,
+        "common-workflows::export-results-for-record-keeping::0::4cab64eb5ca3": 0.746
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 6282.4,
+      "cross_language": null
+    },
+    {
+      "id": "m32",
+      "kind": "english_anchor",
+      "group": "add_students",
+      "query": "How do I add students to my class?",
+      "outcome": "answer",
+      "docs": [
+        "students-workspace"
+      ],
+      "scores": {
+        "students-workspace::students-workspace::0::6140ae455b3c": 0.258,
+        "students-workspace::step-by-step-ui-guide-using-the-students-workspa::0::482aecc19575": 0.163
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4297.7,
+      "cross_language": null
+    },
+    {
+      "id": "m33",
+      "kind": "hinglish",
+      "group": "add_students",
+      "query": "students ko class me kaise add kru",
+      "outcome": "answer",
+      "docs": [
+        "google-classroom",
+        "students-workspace"
+      ],
+      "scores": {
+        "google-classroom::step-by-step-ui-guide-connecting-and-using-googl::0::f2dfb7d3c3e8": 0.394,
+        "students-workspace::step-by-step-ui-guide-using-the-students-workspa::0::482aecc19575": 0.168
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4544.8,
+      "cross_language": 0.5
+    },
+    {
+      "id": "m34",
+      "kind": "followup",
+      "group": "followup_share",
+      "query": "aur uske baad students ko link kaise bheju",
+      "outcome": "card",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 2848.9,
+      "cross_language": null
+    },
+    {
+      "id": "m35",
+      "kind": "followup",
+      "group": "followup_share",
+      "query": "and then how do I send it to students",
+      "outcome": "answer",
+      "docs": [
+        "publishing"
+      ],
+      "scores": {
+        "publishing::step-by-step-ui-guide-publishing-and-sharing-you::1::5b4ca9eeca94": 0.585,
+        "publishing::sharing-the-link::0::b3eda1c028e7": 0.448
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4443.5,
+      "cross_language": null
+    },
+    {
+      "id": "m36",
+      "kind": "followup",
+      "group": "followup_monitor",
+      "query": "uska result kaha dikhega",
+      "outcome": "answer",
+      "docs": [
+        "live-monitoring",
+        "terminology"
+      ],
+      "scores": {
+        "live-monitoring::step-by-step-ui-guide-monitoring-live-exams::0::ef4cc41de951": 0.358,
+        "terminology::monitoring::0::2e5185ac5efb": 0.304
+      },
+      "routing_ok": true,
+      "evidence_hit": true,
+      "ambiguity_ok": null,
+      "ms": 4182.2,
+      "cross_language": null
+    },
+    {
+      "id": "m37",
+      "kind": "unsupported",
+      "group": "unsupported_a",
+      "query": "mere baccho ko ghar pe padhai kaise karwau",
+      "outcome": "refuse",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 2673.0,
+      "cross_language": null
+    },
+    {
+      "id": "m38",
+      "kind": "unsupported",
+      "group": "unsupported_b",
+      "query": "aaj ka mausam kaisa hai",
+      "outcome": "refuse",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 2677.4,
+      "cross_language": null
+    },
+    {
+      "id": "m39",
+      "kind": "unsupported",
+      "group": "unsupported_c",
+      "query": "can you edit the questions order by drag and drop in whatsapp",
+      "outcome": "answer",
+      "docs": [
+        "questions",
+        "creating-exams"
+      ],
+      "scores": {
+        "questions::sections::0::b719f0d1ee9c": 0.519,
+        "creating-exams::step-by-step-ui-guide-creating-your-first-exam::1::d50a4df90189": 0.394
+      },
+      "routing_ok": false,
+      "evidence_hit": null,
+      "ambiguity_ok": null,
+      "ms": 4442.8,
+      "cross_language": null
+    },
+    {
+      "id": "m40",
+      "kind": "ambiguous",
+      "group": "vague_it",
+      "query": "ye kaam nahi kar raha",
+      "outcome": "refuse",
+      "docs": [],
+      "scores": null,
+      "routing_ok": false,
+      "evidence_hit": null,
+      "ambiguity_ok": false,
+      "ms": 2949.1,
+      "cross_language": null
+    },
+    {
+      "id": "m41",
+      "kind": "ambiguous",
+      "group": "vague_it",
+      "query": "it is not working",
+      "outcome": "clarify",
+      "docs": [],
+      "scores": null,
+      "routing_ok": true,
+      "evidence_hit": null,
+      "ambiguity_ok": true,
+      "ms": 12.8,
+      "cross_language": null
+    }
+  ]
+}
