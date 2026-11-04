@@ -124,6 +124,13 @@ URL is a different application route from the creator workspace.
 Users may call this: test taker, exam participant, student (in the
 context of taking an exam).
 
+Anyone with a published exam link can take the exam by filling the
+verification form; most exam takers are not student accounts. The
+Students workspace shows people who took exams (identified by
+verification form fields), not Quizzer user accounts. A student-account
+holder who took an exam can appear there, but the two are tracked
+separately.
+
 ## Onboarding Personas
 
 During signup, users choose from ten personas that personalize the
@@ -147,6 +154,10 @@ Student persona sets the Student role with its limited interface.
 
 A Corporate Trainer and a University Professor have the exact same
 feature access. The persona is cosmetic except for role assignment.
+
+Each account has one role. Student accounts have a limited interface
+(Dashboard and Help); to create and manage exams you need a non-student
+persona chosen during onboarding.
 
 ## Role Assignment
 
@@ -202,47 +213,6 @@ Account Settings         | Yes     | Yes     | No access
 Help                     | Yes     | Yes     | No access
 Take exams via link      | Yes     | Yes     | Yes
 Verification form        | Yes     | Yes     | Yes
-
-## Common Questions
-
-Can a student create exams?
-No. Student accounts only see the Student Dashboard and Help. To
-create exams, sign up with any non-student persona during onboarding.
-
-Do students need an account to take an exam?
-No. Anyone with a published exam link can take the exam by filling
-the verification form. No account required.
-
-Why can I only see Dashboard and Help?
-Your account has the Student role, set during onboarding. Student
-accounts have a limited interface. To access exam creation and
-management features, you need a Teacher role account.
-
-Can I change my role?
-Not through the UI. Contact support for role changes, or create a new
-account with a different persona.
-
-Can I have both roles?
-No. Each account has one role. However, a teacher can take their own
-exams using the published link just like any other taker.
-
-What is the difference between a student account and a student taking
-an exam?
-A student account is a logged-in Quizzer user with the Student role
-and limited sidebar navigation. A student taking an exam is anyone
-(with or without an account) who opens a published exam link and
-fills out the verification form. Most exam takers are not student
-accounts.
-
-I signed up as a student but want to create exams. What do I do?
-Contact support to change your role, or create a new account with a
-non-student persona.
-
-Can teachers see student accounts?
-The Students workspace shows people who took exams (identified by
-verification form fields), not Quizzer user accounts. It is possible
-for a student account holder to also appear in the Students workspace
-if they took an exam, but these are tracked separately.
 
 ## Related Features
 
