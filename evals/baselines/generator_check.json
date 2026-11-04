@@ -1,0 +1,184 @@
+{
+  "summary": {
+    "rows": 16,
+    "errors": 9,
+    "completeness": 0.271,
+    "contradiction": 0.214,
+    "relevancy": 0.514,
+    "by_route": {
+      "retrieval": {
+        "completeness": null,
+        "contradiction": null,
+        "relevancy": null
+      },
+      "workflow_card": {
+        "completeness": 0.271,
+        "contradiction": 0.214,
+        "relevancy": 0.514
+      }
+    },
+    "judge_calls": 16,
+    "provisional": true
+  },
+  "cases": [
+    {
+      "id": "r12",
+      "query": "Question types MCQ and true false",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "s07",
+      "query": "Why is my teacher dashboard completely empty right now?",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "r16",
+      "query": "Students workspace cohort health",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "s03",
+      "query": "How can I export my game history to a CSV file?",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "p09",
+      "query": "put the exam date in my calendar",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.1,
+        "contradiction": 0.2,
+        "relevancy": 0.3,
+        "note": "The answer explains how to publish an exam instead of how to put the exam date in the calendar."
+      }
+    },
+    {
+      "id": "p04",
+      "query": "download my students' marks sheet",
+      "served_by": "retrieval",
+      "error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit'"
+    },
+    {
+      "id": "r29",
+      "query": "Negative marking settings",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.0,
+        "relevancy": 0.2,
+        "note": "The answer discusses exam settings in general but completely misses the reference details about negative marking and penalty deductions."
+      }
+    },
+    {
+      "id": "t08",
+      "query": "student ko exam link kaise bheje",
+      "served_by": "workflow_card",
+      "answer": "Open the exam, go to the **Links** tab, click **Copy Link**, then send it (paste, **Share by Email**, Classroom, or QR). Students use that URL to start the exam (while the link window is active).",
+      "model": "workflow:exam.share",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.8,
+        "contradiction": 0.1,
+        "relevancy": 1.0,
+        "note": "The answer covers most key steps well but misses the initial requirement to publish the exam first."
+      }
+    },
+    {
+      "id": "m03",
+      "query": "Schedule my published exam on Google Calendar and watch who is attempting it live",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 0.2,
+        "relevancy": 0.1,
+        "note": "The answer explains how to publish an exam instead of answering how to schedule it on Google Calendar and monitor live attempts."
+      }
+    },
+    {
+      "id": "p05",
+      "query": "how are written answers scored",
+      "served_by": "retrieval",
+      "error": "LLM circuit open"
+    },
+    {
+      "id": "r01",
+      "query": "How do I create a quiz?",
+      "served_by": "workflow_card",
+      "answer": "Use **Create Exam**, add sources (files, text, or links), generate questions, then review them on the **Questions** tab. The exam stays **Draft** until you approve questions and **Publish**.",
+      "model": "workflow:exam.create",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.5,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer misses navigation details and keyboard shortcuts, but correctly identifies the core steps to create a quiz."
+      }
+    },
+    {
+      "id": "r32",
+      "query": "Join Arena as a player with code",
+      "served_by": "retrieval",
+      "error": "LLM circuit open"
+    },
+    {
+      "id": "r02",
+      "query": "Where is Monitoring in the sidebar?",
+      "served_by": "retrieval",
+      "error": "LLM circuit open"
+    },
+    {
+      "id": "r20",
+      "query": "Change account settings and profile",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the exam, then open the **Settings** tab (duration, proctoring, scoring, attempts, access code). Changes apply to future attempts. Duration is the in-exam timer; the link window on **Links** is a separate availability deadline.",
+      "model": "workflow:exam.settings",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.0,
+        "contradiction": 1.0,
+        "relevancy": 0.0,
+        "note": "The answer discusses exam settings instead of user account settings and profile."
+      }
+    },
+    {
+      "id": "p07",
+      "query": "play a live quiz game with my class",
+      "served_by": "retrieval",
+      "error": "LLM circuit open"
+    },
+    {
+      "id": "r24",
+      "query": "Exam lifecycle draft published archived",
+      "served_by": "workflow_card",
+      "answer": "Open **Exams**, open the draft exam, make sure every question is **Approved**, then click **Publish**. The exam becomes **Published** and a shareable link appears on the **Links** tab. Students cannot enter a **Draft** exam.",
+      "model": "workflow:exam.publish",
+      "knowledge_packs": [],
+      "sources_used": [],
+      "judge": {
+        "completeness": 0.5,
+        "contradiction": 0.0,
+        "relevancy": 1.0,
+        "note": "The answer explains the Draft to Published transition well, but omits the Archived state and the archive action mentioned in the reference."
+      }
+    }
+  ]
+}
