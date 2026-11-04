@@ -8,10 +8,13 @@ Manifest lists every injectable document.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from dataclasses import dataclass, field
 from functools import lru_cache
+
+from langsmith import traceable
 
 from app.core.config import Settings, get_settings
 from app.knowledge.dense import select_dense
@@ -351,6 +354,43 @@ def select_knowledge(
     return selection
 
 
+def _trace_retrieve_inputs(inputs: dict) -> dict:
+    """LangSmith input: query size + hash only (no raw text, no settings object)."""
+    q = str(inputs.get("query") or "")
+    cfg = inputs.get("settings")
+    return {
+        "query_chars": len(q),
+        "query_sha": hashlib.sha256(q.encode("utf-8")).hexdigest()[:12],
+        "canonical_intent": inputs.get("canonical_intent"),
+        "execution_class": inputs.get("execution_class"),
+        "top_k": getattr(cfg, "que_rag_top_k", None),
+        "candidate_k": getattr(cfg, "que_rag_candidate_k", None),
+        "min_score": getattr(cfg, "que_rag_min_score", None),
+        "hybrid": getattr(cfg, "que_rag_hybrid", None),
+    }
+
+
+def _trace_retrieve_outputs(selection: object) -> dict:
+    if not isinstance(selection, KnowledgeSelection):
+        return {}
+    return {
+        "mode": selection.mode,
+        "no_answer": selection.no_answer,
+        "pack_ids": list(selection.pack_ids),
+        "chunk_ids": list(selection.chunk_ids),
+        "scores": dict(selection.scores),
+        "injected_chars": len(selection.content),
+        "truncated": selection.truncated,
+    }
+
+
+@traceable(
+    name="que.retrieve",
+    run_type="retriever",
+    tags=["que-agent", "que.retrieve"],
+    process_inputs=_trace_retrieve_inputs,
+    process_outputs=_trace_retrieve_outputs,
+)
 def _select_knowledge_uncached(
     input_messages: list[dict[str, str]],
     *,
