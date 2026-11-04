@@ -71,6 +71,10 @@ checks whether the student selected exactly the right set of options.
 Objective grading happens instantly on submission. No AI or external
 service is involved.
 
+Multiple choice and true/false are graded instantly by comparing to the
+correct answer. Exams with only MCQ or True/False questions do not show
+the Answer Grading Style setting.
+
 ## Written Question Grading
 
 Short Answer and Long Answer questions go through a layered grading
@@ -109,6 +113,9 @@ review and manually score it.
 
 Users may call this: how short answers are graded, AI grading, smart
 grading, automatic marking, answer checking.
+
+Long answers may need teacher review if the AI is not confident enough;
+those go to Pending Professor Review.
 
 ## Grading Style
 
@@ -150,6 +157,8 @@ setting. Negative marking applies to all question types.
 
 Users may call this: penalty for wrong answers, mark deduction, minus
 marking, negative scoring.
+
+Unanswered questions are not penalized.
 
 ## Violation Penalty
 
@@ -210,43 +219,6 @@ answer after a student has started, the student's attempt is graded
 against the original answers, not the updated ones. This prevents
 unfair grading due to mid-exam changes.
 
-## Common Questions
-
-How does scoring work?
-Multiple choice and true/false are graded instantly by comparing to
-the correct answer. Short answers go through a multi-step pipeline
-(exact match, fuzzy match, keywords, embedding similarity, AI
-evaluation). Long answers may need teacher review if the AI is not
-confident enough.
-
-What is negative marking?
-When enabled, wrong answers cause a mark deduction. The penalty amount
-is configurable per exam. Unanswered questions are not penalized.
-
-How are short answers graded?
-Through a layered pipeline: exact match first, then fuzzy matching for
-typos, keyword overlap, embedding similarity, and finally AI evaluation.
-Only answers the pipeline cannot resolve go to Pending Professor Review.
-
-What does Pending Professor Review mean?
-It means the automated grading could not confidently score one or more
-written answers. The teacher should review these manually. The score
-may be incomplete until review is done.
-
-Can I change how written answers are graded?
-Yes. The Answer Grading Style setting (in exam Settings) controls the
-evaluation emphasis. Choose Balanced for general use, or a specialized
-style for STEM, writing, concepts, or key terms.
-
-Why does this setting not appear?
-Answer Grading Style only shows when the exam has Short Answer or Long
-Answer questions. Exams with only MCQ or True/False do not show it.
-
-Does grading happen for in-progress attempts?
-No. Grading only runs when the exam is submitted (manually, by timer
-expiry, or by auto-submit on violation limit).
-
-What happens if I change a question's answer after students started?
 Students who already started are graded against the answers that were
 frozen when they began their attempt. Changes only affect future
 attempts.
