@@ -51,6 +51,8 @@ Click the Export button and select Google Sheets from the format
 options. A new spreadsheet is created in your Google Drive with the
 results data.
 
+Google Sheets exports are saved in your connected Google Drive account.
+
 ## How to Connect
 
 Go to Integrations in the sidebar, find Google Drive, and click Connect.
@@ -118,35 +120,6 @@ types may not be importable as exam source material.
 Drive access is read-only for file listing and download. Quizzer
 creates new files (Sheets exports) but does not modify existing Drive
 files.
-
-## Common Questions
-
-How do I import a file from Google Drive?
-Connect Google Drive from Integrations first. Then, during exam
-creation, go to the Files tab and click Import from Google Drive.
-Select your file.
-
-How do I export results to Google Sheets?
-Connect Google Drive from Integrations. Go to the Results tab for
-your exam and use the Google Sheets export option. A new spreadsheet
-is created in your Drive.
-
-What file types can I import from Drive?
-Google Docs, PDFs, Word documents (.docx), and plain text files.
-
-Where does the imported file go?
-It is processed through the same document extraction pipeline as a
-direct upload. The extracted text becomes source material for AI
-question generation on that exam.
-
-Where is the Google Sheets export saved?
-In your connected Google Drive account. A new spreadsheet is created
-with the results data.
-
-Can I edit Drive files from Quizzer?
-No. Drive access is read-only. Quizzer can list, search, and download
-files from your Drive, and create new Sheets files, but it does not
-modify existing files.
 
 ## Related Features
 
